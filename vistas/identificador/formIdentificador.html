@@ -1,0 +1,38 @@
+<form method="POST" action="?ctrl=documento&acc=guarIden" enctype="multipart/form-data" autocomplete="off">
+
+<section>
+	<article>
+			<div class="formulario">
+				<ul>
+					<div class="sub_titulo">Fondo del Identificador</div>
+						
+					<li>
+						<div class="complemento">
+							<label>Fondo actual</label>
+						</div>
+						<div class="unico">
+							<img width="300px" height="220px" src="{#link_imagen_fondo}"/>
+						</div>
+					</li>
+					<li>
+						<div class="unico">
+							<input id="filaFondoDoc" name="filaFondoDoc" type="file" accept="image/*">
+							{#error_filaFondoDoc}
+						</div>
+						<div class="unico">
+							<label class="nota">Dimensiones: 1100 pixeles de ancho por 800 pixeles de alto preferiblemente</label>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+	</article>
+
+</section>
+
+	<div class="botones">
+		<input id="guardarIdentificador" name="guardarIdentificador" type="submit" value="Guardar">
+		<a href="./?ctrl=edicion&acc=menuEdic">Salir</a>
+	</div>
+	
+	</form>

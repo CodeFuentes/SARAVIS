@@ -1,0 +1,37 @@
+<form method="POST" action="{#link_form_curso}" autocomplete="off">
+			
+<section>
+	<article>
+			<div class="sub_titulo">Datos del Curso/Taller</div>
+			
+			<div class="formulario">
+				<ul>
+					<li>
+						<div class="unico">
+							<label>Nombre<span>*</span></label>
+							<input id="nombreCurso" name="nombreCurso" value="{#post_nombreCurso}" type="text" >
+							{#error_nombreCurso}
+						</div>
+					</li>
+
+					<li>
+						<div class="unico">
+							<label>Descripci&oacute;n<span>*</span></label>
+							<textarea id="descripcionCurso" name="descripcionCurso">{#post_descripcionCurso}</textarea>
+							{#error_descripcionCurso}
+						</div>
+					</li>
+				</ul>
+				
+			</div>
+
+	</article>
+
+</section>
+
+	<div class="botones">
+		<input id="guardarCurso" name="guardarCurso" type="submit" value="Guardar">
+		<a href="./?ctrl=curso&acc=formBusq">Salir</a>
+	</div>
+	
+	</form>

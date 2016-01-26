@@ -1,0 +1,206 @@
+body
+{
+background: rgb(148, 183, 255);
+}
+
+.todo
+{
+display:table;
+padding:5px;
+margin:0 auto;
+border-radius:4px;
+width:900px;
+background:white;
+}
+
+.header
+{
+width:900px;
+height:140px;
+border-radius:12px;
+-moz-border-radius-topleft:10px;
+-moz-border-radius-topright:10px;
+-moz-border-radius-bottomleft:10px;
+-moz-border-radius-bottomright:10px;
+
+/* Otros estilos */ 
+border:1px solid #FFF;
+}
+
+.cabeza
+{
+background: #FFFF66;
+height:40px;
+border-radius:4px;
+width:900px;
+list-style-type:none;
+margin:5px 0px;
+padding:0px;
+text-align:end;
+}
+
+.menu
+{
+background: rgb(84, 125, 255);
+height:40px;
+border-radius:4px;
+width:900px;
+list-style-type:none;
+margin:5px 0px;
+padding:0px;
+}
+
+.menu  > li
+{
+line-height: 40px;
+margin: 0px 45px;
+float: left;
+font-weight: bold;
+}
+
+.contenido
+{
+font-size:0.9em;
+width:370px;
+margin:5px;
+text-align:justify;
+}
+
+.relleno
+{
+float:right;
+height:390px;
+width:520px;
+border-radius:5px; 
+-moz-border-radius-topleft:0px;
+-moz-border-radius-topright:10px;
+-moz-border-radius-bottomleft:10px;
+-moz-border-radius-bottomright:0px;
+
+/* Otros estilos */ 
+border:1px solid #FFF;
+}
+
+.relleno2
+{
+margin:0px auto;
+width:520px;
+}
+
+.footer
+{
+width:900px;
+border-radius:4px;
+height:40px;
+background:rgb(84, 125, 255);
+float: left;
+}
+
+.footer b
+{
+line-height: 40px;
+text-align: center;
+margin: 0 auto;
+display: block;
+}
+
+form.alineado
+{
+display: block;
+margin: 0 auto;
+width:370px;
+}
+
+form.lector
+{
+padding:50px 5px;
+}
+
+form.inicio
+{
+padding:130px 5px;
+}
+
+form.alineado input,form.alineado label,form.alineado  select
+{
+display:inline-block;
+width:145px;
+margin:5px;
+}
+
+ul ul
+{
+list-style-type:none;
+z-index:10;
+background: rgb(84, 125, 255);
+color: black;
+padding: 0px;
+height:0px;
+overflow:hidden;
+position: absolute;
+opacity:0;
+width: 180px;
+margin-top: -5px;
+transition:.5s .5s ease;
+}
+
+ul li:hover ul
+{
+height:auto;
+opacity:0.9;
+padding:5px;
+border-radius:2px;
+}
+
+ul a
+{
+text-decoration:none;
+color:yellow;
+}
+
+ul li:hover ul a
+{
+text-decoration:none;
+}
+
+ul li:hover ul li
+{
+cursor:pointer;
+text-decoration:none;
+}
+
+ul li:hover ul li:hover
+{
+font-weight:bold;
+}
+
+.icono
+{
+height: 40px;
+width: 40px;
+border-radius: 5px; 
+-moz-border-radius-topleft: 0px;
+-moz-border-radius-topright: 10px;
+-moz-border-radius-bottomleft: 10px;
+-moz-border-radius-bottomright: 0px;
+
+}
+
+.alineate
+{
+	text-align:end;
+}
+
+.relleno3
+{
+height:275px;
+width:275px;
+border-radius:5px; 
+-moz-border-radius-topleft:0px;
+-moz-border-radius-topright:10px;
+-moz-border-radius-bottomleft:10px;
+-moz-border-radius-bottomright:0px;
+
+/* Otros estilos */ 
+border:1px solid #FFF;
+}

@@ -1,0 +1,44 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment http://php-font-lib.googlecode.com/
+EncodingScheme FontSpecific
+Copyright Copyright© 1994 Corel Corporation and Corel Corporation Limited. All Rights Reserved.
+FontName WP MultinationalB Roman
+FontSubfamily Normal
+UniqueID WPCO:WP MultinationalB Roman
+FullName WP MultinationalB Roman
+Version 1.0 Thu Jul 14 10:43:38 1994
+PostScriptName WP-MultinationalBRoman
+Weight Medium
+ItalicAngle 0
+IsFixedPitch false
+UnderlineThickness 20
+UnderlinePosition -133
+FontHeightOffset 0
+Ascender 800
+Descender 200
+FontBBox -6 -224 886 849
+StartCharMetrics 24
+U 61472 ; WX 500 ; N space ; G 3
+U 61473 ; WX 611 ; N exclam ; G 4
+U 61474 ; WX 278 ; N quotedbl ; G 5
+U 61475 ; WX 722 ; N numbersign ; G 6
+U 61476 ; WX 500 ; N dollar ; G 7
+U 61477 ; WX 722 ; N percent ; G 8
+U 61478 ; WX 500 ; N ampersand ; G 9
+U 61479 ; WX 822 ; N quotesingle ; G 10
+U 61480 ; WX 616 ; N parenleft ; G 11
+U 61481 ; WX 831 ; N parenright ; G 12
+U 61482 ; WX 589 ; N asterisk ; G 13
+U 61483 ; WX 885 ; N plus ; G 14
+U 61484 ; WX 594 ; N comma ; G 15
+U 61485 ; WX 611 ; N hyphen ; G 16
+U 61486 ; WX 444 ; N period ; G 17
+U 61487 ; WX 333 ; N slash ; G 18
+U 61488 ; WX 278 ; N zero ; G 19
+U 61489 ; WX 333 ; N one ; G 20
+U 61490 ; WX 278 ; N two ; G 21
+U 61491 ; WX 722 ; N three ; G 22
+U 61492 ; WX 500 ; N four ; G 23
+EndCharMetrics
+EndFontMetrics

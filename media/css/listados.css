@@ -1,0 +1,127 @@
+
+	
+	div#cuerpo_completo section table.tabla_listado 
+	{
+		border: 2px solid #999999;
+		border-collapse: collapse;
+	}
+	
+	
+	div#cuerpo_completo section table.tabla_listado *
+	{
+		text-align: center;
+	}
+	
+	
+	div#cuerpo_completo section table.tabla_listado th,
+	div#cuerpo_completo section table.tabla_listado td
+	{
+		padding: 4px;
+		height: 40px;
+		border: 1px solid #c0c0c0;
+	}
+	
+	
+	div#cuerpo_completo section table.tabla_listado thead * 
+	{
+		color: #FFF;
+		font-weight: bold;
+	}
+	
+	
+	div#cuerpo_completo section table.tabla_listado caption 
+	{
+		font-size: 20px;
+		font-weight: bold;
+		margin: 5px;
+		color: #2872b9;
+	}
+
+	
+	div#cuerpo_completo section table.tabla_listado thead th 
+	{
+		background: #D3D3D3;
+		color: #404040;
+		Sbackground: linear-gradient(to bottom, #5b8bb7 40%,#2872b9 100%);
+	}
+	
+	div#cuerpo_completo section table.tabla_listado tbody tr 
+	{
+		background: #FFF; 
+	}
+
+	
+	div#cuerpo_completo section table.tabla_listado tbody tr.listo 
+	{
+		background: #d3dfef; 
+	}
+		
+	div#cuerpo_completo section table.tabla_listado tbody td a img
+	{
+		float: left;
+		margin-top: 2px;
+	}
+	
+	div#cuerpo_completo section table.tabla_listado tbody td 
+	{
+		font-size: 12px;
+		color: #000;
+		text-align: center;
+	}
+	
+	
+	div#cuerpo_completo section table.tabla_listado tfoot tr 
+	{
+		background-color: #FFF;	
+		padding: 20px;
+		height: 70px;
+	}
+	
+	
+	div#cuerpo_completo section table.tabla_listado tfoot tr th div.paginador 
+	{
+		height: 15px;
+		margin: auto;
+	}
+		
+		
+	div#cuerpo_completo section table.tabla_listado tfoot tr th a 
+	{
+		background: none repeat scroll 0 0 #404040;
+		border: 1px solid #CCCCCC;
+		border-radius: 4px;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+		color: #FFFFFF;
+		padding: 5px 10px;
+		text-align: center;
+		vertical-align: middle;
+		width: 100px;
+	}
+	
+	div#cuerpo_completo section table.tabla_listado tfoot tr th span 
+	{
+		background: none repeat scroll 0 0 #4682B4;
+		border: 1px solid #CCCCCC;
+		border-radius: 4px;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+		color: #FFFFFF;
+		padding: 5px 10px;
+		text-align: center;
+		vertical-align: middle;
+		width: 100px;
+	}
+		
+		
+	div#cuerpo_completo section table.tabla_listado tfoot tr th a.anterior,
+	div#cuerpo_completo section table.tabla_listado tfoot tr th a.siguiente 
+	{
+		width: 70px;
+	}
+	
+	
+	div#cuerpo_completo section table.tabla_listado tfoot tr th a:hover 
+	{
+		color: #9EC630;
+	}
+	
+	

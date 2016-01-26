@@ -1,0 +1,181 @@
+
+
+	/*
+	****
+	*******
+	**********	PRINCIPAL
+	*******
+	****
+	*/
+	
+	div#cuerpo_completo section div.formulario ul
+	{
+		padding-left: 0px;
+	}	
+	
+	
+	div#cuerpo_completo section div.formulario ul li
+	{
+		width: 575px;
+		margin-bottom: 10px;
+		float: left;
+	}
+	
+	div.formulario div.error
+	{
+		float: left;
+		width: 100%;
+		min-width: 120px;
+		color: red;
+		font-size: 12px;
+	}
+	
+	div.formulario img
+	{
+		border-radius: 4px;
+		border: 1px solid #CCCCCC;
+	}
+		
+	/*
+	****
+	*******
+	**********	TAMAÑOS LINEAS
+	*******
+	****
+	*/
+	
+	div#cuerpo_completo section div.formulario ul li div.unico
+	{
+		float: left;
+		width: 450px
+	}
+	
+	
+	div#cuerpo_completo section div.formulario ul li div.doble
+	{
+		float: left;
+		width: 213px
+	}
+	
+	
+	div#cuerpo_completo section div.formulario ul li div.triple
+	{
+		float: left;
+		width: 145px
+	}
+	
+	
+	div#cuerpo_completo section div.formulario ul li div.complemento
+	{
+		float: left;
+		width: 284px
+	}
+	
+	
+	/*
+	****
+	*******
+	**********	TAMAÑOS CAMPOS
+	*******
+	****
+	*/
+	
+	article div.formulario ul li div.total input[type="text"],
+	article div.formulario ul li div.total input[type="password"],
+	article div.formulario ul li div.total input[type="file"],
+	article div.formulario ul li div.total select,
+	article div.formulario ul li div.total textarea 
+	{
+		width: 627px;
+	}
+	
+	article div.formulario ul li div.unico input[type="text"],
+	article div.formulario ul li div.unico input[type="password"],
+	article div.formulario ul li div.unico input[type="file"],
+	article div.formulario ul li div.unico select,
+	article div.formulario ul li div.unico textarea 
+	{
+		width: 403px;
+	}
+	
+	
+	article div.formulario ul li div.doble input[type="text"],
+	article div.formulario ul li div.doble input[type="password"],
+	article div.formulario ul li div.doble input[type="file"],
+	article div.formulario ul li div.doble select,
+	article div.formulario ul li div.doble textarea 
+	{
+		width: 190px;
+	}
+	
+	
+	article div.formulario ul li div.triple input[type="text"],
+	article div.formulario ul li div.triple input[type="password"],
+	article div.formulario ul li div.triple input[type="file"],
+	article div.formulario ul li div.triple select,
+	article div.formulario ul li div.triple textarea 
+	{
+		width: 124px;
+	}
+	
+	
+	article div.formulario ul li div.complemento input[type="text"],
+	article div.formulario ul li div.complemento input[type="password"],
+	article div.formulario ul li div.complemento input[type="file"],
+	article div.formulario ul li div.complemento select,
+	article div.formulario ul li div.complemento textarea 
+	{
+		width: 258px;
+	}
+
+	article div.formulario select
+	{
+		height: 31px;
+	}
+	
+	/*
+	****
+	*******
+	**********	BOTON ACOMPAÑANTE
+	*******
+	****
+	*/
+	
+	article div.formulario ul li div.boton_acompanante
+	{
+		float: left;
+		width: 112px;
+		padding-top: 17px;
+	}
+	
+	article div.formulario ul li div.boton_acompanante input
+	{
+		float: left;
+		text-align: center;
+		
+		width: 100px;
+		height: 34px;
+		margin-top: 4px;
+		margin-right: 10px;
+		
+		border-radius: 4px;
+		vertical-align: middle;
+		
+		background: none repeat scroll 0 0 #404040;
+		border: 1px solid #CCCCCC;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+		color: #FFF;
+		padding: 5px 0px;
+	}
+	
+	article div.formulario ul li div.boton_acompanante input:hover
+	{
+		color: #9EC630;
+	}
+	
+	
+	article div.formulario ul li div.boton_acompanante input:active
+	{
+		position:relative;
+		top:2px;
+	}

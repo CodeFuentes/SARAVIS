@@ -1,0 +1,554 @@
+
+	
+	/*
+	****
+	*******
+	**********	PRINCIPAL
+	*******
+	****
+	*/
+	
+	@font-face
+	{
+		font-family: ComfortaaRegular;
+		src: local("?"), url("../fuentes/ComfortaaRegular.ttf") format("truetype");
+	}
+	
+	*
+	{
+		font-family: ComfortaaRegular, arial, Corbert, trebuchet ms, sans-serif;
+		font-weight: normal;
+		font-size: 15px;
+		list-style:none;
+		text-decoration:none;
+		color: #404040;
+	}
+
+	
+	html 
+	{
+		background-color: #fff;
+	}
+	
+	
+	body 
+	{
+		margin: 0px;
+		min-width: 960px;
+		background-color: #FFF;
+	}
+		
+	div.separador
+	{
+		float: left;
+		height: 20px;
+		width: 90%;
+	}
+	
+	/*
+	****
+	*******
+	**********	HEADER
+	*******
+	****
+	*/
+		
+		
+	header
+	{
+		background: #fff;
+		height: 65px;
+	}	
+	
+		
+	header div#cuerpo_header 
+	{
+		width: 1000px;
+		height: 85px;
+		margin: auto;
+	}
+	
+	header div#cuerpo_header div.banner
+	{
+		width: 1000px;
+		height: 85px;
+		margin: auto;
+		background: url("../imagenes/barra_n.png") no-repeat;
+	}
+	
+	
+	/*
+	****
+	*******
+	**********	CERRAR SESSION
+	*******
+	****
+	*/
+	div.cerrarSession
+	{
+		width: auto;
+		float: right;
+		border-left: 3px double  #CCCCCC;
+		border-right: 3px double  #CCCCCC;
+		border-bottom: 3px double  #CCCCCC;
+		margin-top: -24px;
+		margin-right: 15px;
+		background: none repeat scroll 0% 0% #FFF;
+		padding: 6px 6px 3px 6px;
+		border-radius: 0px 0px 5px 5px;
+	}
+	
+	div.cerrarSession a
+	{
+		color: #4682B4;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	
+	
+	div.cerrarSession a.link:hover
+	{
+		color: #9EC630;
+	}
+	
+	
+	
+	
+	
+	
+	/*
+	****
+	*******
+	**********	NAV
+	*******
+	****
+	*/
+		
+		
+	nav
+	{
+		background-color: #9EC630;
+		height: 8px;
+	}	
+
+	
+	/*
+	****
+	*******
+	**********	CUERPO
+	*******
+	****
+	*/
+	
+	div#cuerpo_completo
+	{
+		margin: auto auto 0px;
+		padding: 25px 10px 20px 10px;
+		width: 938px;
+	
+		border: 1px #CCCCCC solid;
+		min-height: 550px;
+		overflow: hidden;
+		position: relative;
+		
+		background: url("../imagenes/division.png");
+		background-position: 21%, 0%; 
+		background-repeat: repeat-y;
+		background-color: #F4F4F4;
+	}
+	
+	div#cuerpo_principal
+	{
+		float: left;
+		width: 720px;
+		margin-left: 35px;
+	}
+	
+	div#cuerpo_completo aside
+	{
+		float: left;
+		width: 180px;
+		height: auto;
+	}
+	
+	
+	div#cuerpo_completo div#titulo_principal
+	{
+		float: left;
+		width: 693px;
+		height: 30px;
+		margin-bottom: 10px;
+		text-align: left;
+		color: #9EC630;
+		
+		background-color: #404040;
+		font-size: 22px;
+		margin-top: 10px;
+		padding-bottom: 5px;
+		padding-left: 15px;
+		padding-top: 5px;
+		border-radius: 2px;
+	}
+	
+	
+	div#cuerpo_completo section
+	{
+		float: left;
+		width: 675px;
+		margin-bottom: 15px;
+		border: 4px double #CCCCCC;
+		border-radius: 3px;
+		background-color: white;
+		padding: 0px 10px 0px 15px;
+
+	}
+	
+	
+	div#cuerpo_completo section table
+	{
+		float: left;
+		width: 100%;
+	}
+	
+	
+	div#cuerpo_completo section p
+	{
+		float: left;
+		color: #404040;
+		margin: 0px;
+	}
+	
+	
+	
+	div#cuerpo_completo section label
+	{
+		float: left;
+		font-weight: bold;
+		color: #656B71;
+		margin-bottom: 3px;
+		width: 90%;
+	}
+	
+	div#cuerpo_completo section label.nota
+	{
+		float: left;
+		font-weight: normal!important;
+		color: #595F65;
+		margin-bottom: 3px;
+		font-size: 12px;
+	}
+	
+	div#cuerpo_completo section label span
+	{
+		color: red;
+		font-weight: bold;
+	}
+	
+	
+	div#cuerpo_completo section article
+	{
+		float: left;
+		margin-bottom: 20px;
+	}
+	
+	
+	div#cuerpo_completo section div.sub_titulo
+	{
+		float: left;
+		width: 675px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		text-align: left;
+		color: #4682B4;
+		font-weight: normal;
+		font-size: 22px;
+	}
+		
+	div#cuerpo_completo section div.opciones
+	{
+		float: left;
+		width: 675px;
+		margin: 10px 0px;
+	}
+	
+	
+	div#cuerpo_completo section div.opciones a
+	{
+		float: left;
+		padding: 10px 10px;
+		margin: 3px 2px;
+		color: #4682B4;
+		border-radius: 5px;
+		background-color: #efefef;
+		border: 1px #cfcfcf solid;
+	}
+	
+	
+	
+	div#cuerpo_completo section div.opciones a:hover
+	{
+		color: #9EC630;
+	}
+	
+	
+	/*
+	****
+	*******
+	**********	MENSAJES DE ERROR
+	*******
+	****
+	*/
+	
+	div#cuerpo_completo div.mensaje_resultado
+	{
+		float: left;
+		width: 678px;
+		height: 30px;
+		text-align: center;
+		color: #FFF;
+
+		font-size: 22px;
+		margin-bottom: 10px;
+		padding: 5px 15px;
+		border-radius: 2px;
+	}
+	
+	div#cuerpo_completo div.mensaje_resultado.exito
+	{
+		background-color: #4682B4;
+	}
+	
+	div#cuerpo_completo div.mensaje_resultado.error
+	{
+		background-color: #CD5C5C;
+	}
+	
+	div#cuerpo_completo div.mensaje_resultado.alerta
+	{
+		background-color: #DCB400;
+	}
+	
+	div#cuerpo_completo div.mensaje_resultado img
+	{
+		width: 24px; 
+		height: 24px;
+		margin-top: 3px;
+		margin-left: 5px;
+	}
+	
+	div#cuerpo_completo div.mensaje_resultado.exito img
+	{
+		background-image: url('../imagenes/iconos/blanco/success.png');
+	}
+	
+	div#cuerpo_completo div.mensaje_resultado.error img
+	{
+		background-image: url('../imagenes/iconos/blanco/alert.png');
+	}
+	
+	div#cuerpo_completo div.mensaje_resultado.alerta img
+	{
+		background-image: url('../imagenes/iconos/blanco/event.png');
+	}
+	
+	div#cuerpo_completo div.mensaje_resultado img.izquierda
+	{
+		float: left;
+	}
+	
+	div#cuerpo_completo div.mensaje_resultado img.derecha
+	{
+		float: right;
+	}
+	
+	/*
+	****
+	*******
+	**********	ICONOS IMAGENES
+	*******
+	****
+	*/
+	
+	div#cuerpo_completo a img
+	{
+		width: 24px; 
+		height: 24px; 
+		float: right;
+		margin-top: -3px;
+		margin-left: 5px;
+	}
+	
+	/*
+	****
+	*******
+	**********	FOOTER
+	*******
+	****
+	*/
+	
+	
+	footer 
+	{
+		height: 100px;
+		background: #404040;
+		z-index: -1;
+		border-top: 8px solid #9EC630;
+	}
+	
+	
+	footer div#cuerpo_footer
+	{
+		width: 960px;
+		height: 100px;
+		margin: 0px auto;
+		
+	}
+	
+	
+	footer div#cuerpo_footer div#imagen_footer
+	{
+		float: left;
+		background: url("../imagenes/footer.png") no-repeat;
+		width: 220px;
+		height: 120px;
+	}
+	
+	
+	footer div#cuerpo_footer div#contenido_footer
+	{
+		float: left;
+		width: 700px;
+		margin-left: 250px;
+		margin-top: 50px;
+	}
+	
+	
+	footer div#cuerpo_footer div#contenido_footer *
+	{
+		color: #FFF;
+	}
+	
+	
+	footer div#cuerpo_footer div#contenido_footer h1
+	{
+		float: right;
+		margin: 0px;
+		margin-right: 20px;
+	}
+	
+	
+	footer div#cuerpo_footer div#contenido_footer a 
+	{
+		float: left;
+		margin-left: 20px;
+		padding-right: 20px;
+		font-size: 12px;
+	}	
+	
+	footer div#cuerpo_footer div#contenido_footer a:hover 
+	{
+		color: #4284B0;
+	}
+	
+	/*
+	****
+	*******
+	**********	CAMPOS
+	*******
+	****
+	*/
+	
+	
+	input[type="text"],	input[type="password"],	input[type="file"],	select,	textarea 
+	{
+		background-color: #FFFFFF;
+		border: 1px solid #CCCCCC;
+		border-radius: 3px;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+		color: #415063;
+		font-size: 14px;
+		padding: 5px;
+		transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+	}
+	
+	
+	input[type="text"]:focus, input[type="password"]:focus, input[type="file"]:focus, select:focus, textarea:focus
+	{
+		border: 1px #9EC630 solid;
+	}
+	
+	/*
+	****
+	*******
+	**********	BOTONES
+	*******
+	****
+	*/
+
+	
+	div.botones 
+	{
+		float: left;
+		margin: 0px 0px 10px 0px;
+		width: 690px;
+	}
+	
+	div.botones input, div.botones a 
+	{
+		float: left;
+		text-align: center;
+		
+		width: 100px;
+		height: 32px;
+		margin-right: 10px;
+		
+		border-radius: 4px;
+		vertical-align: middle;
+		
+		background: none repeat scroll 0 0 #404040;
+		border: 1px solid #CCCCCC;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+		color: #FFF;
+		padding: 5px 0px;
+	}
+	
+	
+	div.botones a 
+	{
+		width: 98px;
+		height: 20px;
+	}
+	
+	
+	div.botones a:hover, div.botones input:hover
+	{
+		color: #9EC630;
+	}
+	
+	
+	div.botones a:active, div.botones input:active
+	{
+		position:relative;
+		top:2px;
+	}
+	
+	/*
+	****
+	*******
+	**********	LINKS
+	*******
+	****
+	*/
+	
+	a.links
+	{
+		margin-left: 10px;
+		color: #4682B4;
+	}
+	
+	
+	a.links:hover
+	{
+		text-decoration: underline;
+	}
+	

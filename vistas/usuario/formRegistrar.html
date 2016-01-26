@@ -1,0 +1,81 @@
+	<section>
+									
+		<article>
+		
+			<div class="sub_titulo">Datos del Usuario</div>
+
+			<div class="formulario">
+				
+				<form id="formRegistrarUsua" name="formRegistrarUsua" method="post" action="?ctrl=usuario&acc=guarUsua" autocomplete="off">
+				
+				<ul>
+					<li>
+						<div class="unico">
+							<label>Nombre<span>*</span></label>
+							<input id="nombreUsua" name="nombreUsua" type="text" value="{#post_nombreUsua}" autofocus/>
+							
+							{#error_nombreUsua}
+						</div>
+					</li>
+					
+					<li>
+						<div class="unico">
+							<label>Usuario<span>*</span></label>
+							<input id="loginUsua" name="loginUsua" type="text" value="{#post_loginUsua}"/>
+							
+							{#error_loginUsua}
+						</div>
+					</li>
+	
+					<li>
+						<div class="unico">
+							<label>Contraseña<span>*</span></label>
+							<input id="claveUno" name="claveUno" value="{#post_claveUno}"  type="password"/>
+							
+							{#error_claveUno}
+						</div>
+					</li/>
+
+					<li>
+						<div class="unico">
+							<label>Repita la contraseña<span>*</span></label>
+							<input id="claveDos" name="claveDos" value="{#post_claveDos}" type="password"/>
+							
+							{#error_claveDos}
+						</div>
+						
+						
+					</li>
+
+					<li>
+						<div class="unico">
+							<label>Permisos<span>*</span></label>
+													
+								<br/><br/><input id="cursosPerm" name="cursosPerm" type="checkbox" value="cursos" {#checked_permisos_cursos}>Curso/Taller/Facilitador
+								
+								<br/><input id="personasPerm" name="personasPerm" type="checkbox" value="personas" {#checked_permisos_personas}>Persona/Participante
+								
+								
+								<br/><input id="documentosPerm" name="documentosPerm" type="checkbox" value="documentos" {#checked_permisos_documentos}>Documentos
+								
+								<br/><input id="impresionesPerm" name="impresionesPerm" type="checkbox" value="impresiones" {#checked_permisos_impresiones}>Impresiones	
+						</div>
+						
+						{#error_permisos}
+					</li/>
+				</ul>
+	
+			</div>	
+
+		</article>
+		
+	</section>
+	
+		<div class="botones">	
+			<input id="btnGuardar" name="btnGuardar" type="submit" value="Guardar">
+			<a href="./">Salir</a>		
+		</div>
+	
+		
+		
+	</form>

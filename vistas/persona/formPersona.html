@@ -1,0 +1,84 @@
+<form method="POST" action="{#link_form_persona}" autocomplete="off">
+			
+<section>
+	<article>
+			<div class="sub_titulo">Datos de la persona</div>
+			
+			<div class="formulario">
+				<ul>
+					<li>
+						<div class="doble">
+							<label>Nombres<span>*</span></label>
+							<input id="nombrePers" name="nombrePers" value="{#post_nombrePers}" type="text" >
+							{#error_nombrePers}
+						</div>
+						
+						<div class="doble">
+							<label>Apellidos<span>*</span></label>
+							<input id="apellidoPers" name="apellidoPers" value="{#post_apellidoPers}" type="text" >
+							{#error_apellidoPers}
+						</div>
+					</li>
+
+					<li>
+						<div class="doble">
+							<label>Sexo<span>*</span></label>
+							<select id="sexoPers" name="sexoPers">
+								<option value="masculino" {#selected_sexo_masculino}>Masculino</option>
+								<option value="femenino" {#selected_sexo_femenino}>Femenino</option>
+							</select>
+							{#error_sexoPers}
+						</div>
+						
+						<div class="doble">
+							<label>Fecha Nacimiento<span>*</span></label>
+							<input id="fechaNacimientoPers" placeholder="dd-mm-aaaa" name="fechaNacimientoPers" value="{#post_fechaNacimientoPers}" type="text"/>
+							{#error_fechaNacimientoPers}
+						</div>
+					</li>
+					
+					<li>
+						<div class="doble">
+							<label>Tipo Documento<span>*</span></label>
+							<select id="tipoDocumentoPers" name="tipoDocumentoPers">
+								<option value="V" {#selected_tipo_V}>Venezolano</option>
+								<option value="E" {#selected_tipo_E}>Extranjero</option>
+							</select>
+							{#error_tipoDocumentoPers}
+						</div>
+						<div class="doble">
+							<label>Documento<span>*</span></label>
+							<input id="documentoPers" name="documentoPers" value="{#post_documentoPers}" type="text"/>
+							{#error_documentoPers}
+						</div>
+					</li>
+					
+					<li>
+						<div class="unico">
+							<label>Tel&eacute;fono<span>*</span></label>
+							<input id="telefonoPers" name="telefonoPers" value="{#post_telefonoPers}" type="text"/>
+							{#error_telefonoPers}
+						</div>
+					</li>
+					
+					<li>
+						<div class="unico">
+							<label>Correo Electr&oacute;nico<span>*</span></label>
+							<textarea id="direccionPers" name="direccionPers">{#post_direccionPers}</textarea>
+							{#error_direccionPers}
+						</div>
+					</li>
+				</ul>
+				
+			</div>
+
+	</article>
+
+</section>
+
+	<div class="botones">
+		<input id="guardarPersona" name="guardarPersona" type="submit" value="Guardar">
+		<a href="./?ctrl=persona&acc=formBusq">Salir</a>
+	</div>
+	
+	</form>

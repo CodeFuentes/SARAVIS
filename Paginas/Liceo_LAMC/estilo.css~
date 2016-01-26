@@ -1,0 +1,163 @@
+body {
+	font-family: Calibri, Helvetica, sans-serif;
+}
+
+h3{
+color:#FFFFFF;
+};
+
+td {
+	font-family: Calibri, Helvetica, sans-serif;
+}
+
+th {
+	font-family: Calibri, Helvetica, sans-serif;
+}
+
+#Encabezado{
+float: top;
+padding: 10px;
+height:110px;
+margin: 1px 0px 1px 0px;
+background: #1941b9;
+border-radius: 5px 0px 5px 0px;
+}
+
+#barra{
+background:#b2b2b2;
+border-radius: 5px 5px 5px 5px;
+display: inline;
+float: left;
+height:32px;
+margin: -1px 0px 0px 0px;
+padding: 10px;
+width: 1242px;
+
+}
+
+#nav{
+background: #1941b9;
+border-radius: 5px 5px 5px 5px;
+float: left;
+height:30px;
+margin: 0px 0px 0px 0px;
+padding: 10px;
+width: 1242px;
+}
+
+
+#contenedor{
+
+display: inline;
+float: left;
+height: 620px;
+padding: 10px;
+margin: 1px 0px 1px 2px;
+width: 1242px;
+}
+
+#area{
+border-radius: 5px 5px 5px 5px;
+display: inline;
+float: left;
+height: 620px;
+padding: 10px;
+margin: 1px 0px 1px 2px;
+width: 1215px;
+}
+
+#pie_pag{
+background-image: url(celda.png);
+width: 1242px;
+float: left;
+padding: 10px;
+height:20px;
+margin: 0px 0px 0px 0px;
+border-radius: 5px 5px 5px 5px;
+}
+
+ul, ol{
+margin:0px;
+padding:0px;
+list-style:none;
+}
+
+.mainmenu li a{
+background: #1941b9;
+color:#FFFFFF;
+display: block;
+padding: 10px 15px;
+text-decoration:none;
+
+}
+
+.mainmenu li a:hover{
+background-color:#0033FF;
+}
+
+.mainmenu > li{
+float:left;
+}
+.mainmenu li ul{
+display:none;
+position:absolute;
+min-width:120px;
+}
+
+.mainmenu li:hover> ul{
+display:block;
+}
+
+.fondo{
+background-image: url(celda.png);
+border-radius: 5px 5px 5px 5px;
+}
+
+.menu li a{
+background: #b2b2b2;
+color:#FFFFFF;
+display: block;
+padding: 10px 15px;
+text-decoration:none;
+
+}
+
+.menu li a:hover{
+background-color:#000000;
+}
+
+.menu > li{
+float:right;
+}
+.menu li ul{
+display:none;
+position:absolute;
+min-width:120px;
+}
+
+.menu li:hover> ul{
+display:block;
+}
+
+H2{
+margin:0px;
+padding:0px;
+}
+H5{
+margin:0px;
+padding:0px;
+}
+
+.img{
+margin:-20px;
+margin-right:1px;
+margin-left:5px;
+padding:-5px;
+}
+
+label{
+margin-left:10px;
+}
+
+.inputexto{ font: 14px Calibri; color: #000000; border-radius: 5px 5px 5px 5px;}
+label{font: 14px Calibri; font-weight:bold; color: #000000;}

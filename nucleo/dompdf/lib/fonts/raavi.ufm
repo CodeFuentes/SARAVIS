@@ -1,0 +1,156 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment http://php-font-lib.googlecode.com/
+EncodingScheme FontSpecific
+Copyright © 2001 Microsoft Corporation. All rights reserved.
+FontName Raavi
+FontSubfamily Regular
+UniqueID Raavi Regular
+FullName Raavi
+Version Version 1.06
+PostScriptName Raavi
+Designer Raghunath Joshi (Type Design Director), Apurva Joshi
+Description Raavi is an OpenType font for the Indic script- Gurmukhi. It is based on Unicode, contains TrueType outlines and has been designed for use as a UI font.
+FontDesignerURL http://www.ncst.ernet.in/~rkjoshi
+Weight Medium
+ItalicAngle 0
+IsFixedPitch false
+UnderlineThickness 31
+UnderlinePosition -156
+FontHeightOffset 125
+Ascender 982
+Descender -660
+FontBBox -569 -660 1258 1000
+StartCharMetrics 265
+U 32 ; WX 313 ; N space ; G 3
+U 33 ; WX 313 ; N exclam ; G 4
+U 34 ; WX 451 ; N quotedbl ; G 5
+U 35 ; WX 782 ; N numbersign ; G 6
+U 37 ; WX 782 ; N percent ; G 7
+U 38 ; WX 730 ; N ampersand ; G 8
+U 39 ; WX 225 ; N quotesingle ; G 9
+U 40 ; WX 417 ; N parenleft ; G 10
+U 41 ; WX 417 ; N parenright ; G 11
+U 42 ; WX 525 ; N asterisk ; G 12
+U 43 ; WX 626 ; N plus ; G 13
+U 44 ; WX 273 ; N comma ; G 14
+U 45 ; WX 410 ; N hyphen ; G 15
+U 46 ; WX 273 ; N period ; G 16
+U 47 ; WX 626 ; N slash ; G 17
+U 48 ; WX 641 ; N zero ; G 18
+U 49 ; WX 417 ; N one ; G 19
+U 50 ; WX 561 ; N two ; G 20
+U 51 ; WX 573 ; N three ; G 21
+U 52 ; WX 573 ; N four ; G 22
+U 53 ; WX 573 ; N five ; G 23
+U 54 ; WX 658 ; N six ; G 24
+U 55 ; WX 573 ; N seven ; G 25
+U 56 ; WX 573 ; N eight ; G 26
+U 57 ; WX 658 ; N nine ; G 27
+U 58 ; WX 273 ; N colon ; G 28
+U 59 ; WX 273 ; N semicolon ; G 29
+U 60 ; WX 730 ; N less ; G 30
+U 61 ; WX 626 ; N equal ; G 31
+U 62 ; WX 730 ; N greater ; G 32
+U 63 ; WX 592 ; N question ; G 33
+U 64 ; WX 990 ; N at ; G 34
+U 91 ; WX 451 ; N bracketleft ; G 35
+U 92 ; WX 626 ; N backslash ; G 36
+U 93 ; WX 451 ; N bracketright ; G 37
+U 94 ; WX 574 ; N asciicircum ; G 38
+U 95 ; WX 543 ; N underscore ; G 39
+U 123 ; WX 561 ; N braceleft ; G 40
+U 124 ; WX 382 ; N bar ; G 41
+U 125 ; WX 561 ; N braceright ; G 42
+U 126 ; WX 730 ; N asciitilde ; G 43
+U 160 ; WX 313 ; N space ; G 3
+U 215 ; WX 626 ; N Oslash ; G 51
+U 247 ; WX 626 ; N Odieresis ; G 49
+U 2404 ; WX 291 ; N .notdef ; G 145
+U 2405 ; WX 479 ; N .notdef ; G 248
+U 2562 ; WX 0 ; N u0A02 ; G 52
+U 2565 ; WX 730 ; N u0A05 ; G 53
+U 2566 ; WX 963 ; N u0A06 ; G 54
+U 2567 ; WX 802 ; N u0A07 ; G 55
+U 2568 ; WX 802 ; N u0A08 ; G 56
+U 2569 ; WX 691 ; N u0A09 ; G 57
+U 2570 ; WX 691 ; N u0A0A ; G 58
+U 2575 ; WX 580 ; N u0A0F ; G 59
+U 2576 ; WX 730 ; N u0A10 ; G 60
+U 2579 ; WX 691 ; N u0A13 ; G 61
+U 2580 ; WX 730 ; N u0A14 ; G 62
+U 2581 ; WX 664 ; N u0A15 ; G 63
+U 2582 ; WX 645 ; N u0A16 ; G 64
+U 2583 ; WX 721 ; N u0A17 ; G 65
+U 2584 ; WX 705 ; N u0A18 ; G 66
+U 2585 ; WX 615 ; N u0A19 ; G 67
+U 2586 ; WX 701 ; N u0A1A ; G 68
+U 2587 ; WX 672 ; N u0A1B ; G 69
+U 2588 ; WX 688 ; N u0A1C ; G 70
+U 2589 ; WX 688 ; N u0A1D ; G 71
+U 2590 ; WX 688 ; N u0A1E ; G 72
+U 2591 ; WX 672 ; N u0A1F ; G 73
+U 2592 ; WX 688 ; N u0A20 ; G 74
+U 2593 ; WX 672 ; N u0A21 ; G 75
+U 2594 ; WX 672 ; N u0A22 ; G 76
+U 2595 ; WX 615 ; N u0A23 ; G 77
+U 2596 ; WX 672 ; N u0A24 ; G 78
+U 2597 ; WX 672 ; N u0A25 ; G 79
+U 2598 ; WX 672 ; N u0A26 ; G 80
+U 2599 ; WX 645 ; N u0A27 ; G 81
+U 2600 ; WX 672 ; N u0A28 ; G 82
+U 2602 ; WX 645 ; N u0A2A ; G 83
+U 2603 ; WX 615 ; N u0A2B ; G 84
+U 2604 ; WX 682 ; N u0A2C ; G 85
+U 2605 ; WX 615 ; N u0A2D ; G 86
+U 2606 ; WX 654 ; N u0A2E ; G 87
+U 2607 ; WX 705 ; N u0A2F ; G 88
+U 2608 ; WX 645 ; N u0A30 ; G 89
+U 2610 ; WX 705 ; N u0A32 ; G 90
+U 2611 ; WX 705 ; N u0A33 ; G 91
+U 2613 ; WX 615 ; N u0A35 ; G 92
+U 2614 ; WX 654 ; N u0A36 ; G 93
+U 2616 ; WX 654 ; N u0A38 ; G 94
+U 2617 ; WX 645 ; N u0A39 ; G 95
+U 2620 ; WX 0 ; N u0A3C ; G 96
+U 2622 ; WX 232 ; N u0A3E ; G 97
+U 2623 ; WX 284 ; N u0A3F ; G 98
+U 2624 ; WX 250 ; N u0A40 ; G 99
+U 2625 ; WX 0 ; N u0A41 ; G 100
+U 2626 ; WX 0 ; N u0A42 ; G 101
+U 2631 ; WX 0 ; N u0A47 ; G 102
+U 2632 ; WX 0 ; N u0A48 ; G 103
+U 2635 ; WX 0 ; N u0A4B ; G 104
+U 2636 ; WX 0 ; N u0A4C ; G 105
+U 2637 ; WX 0 ; N u0A4D ; G 106
+U 2649 ; WX 645 ; N u0A59 ; G 107
+U 2650 ; WX 721 ; N u0A5A ; G 108
+U 2651 ; WX 688 ; N u0A5B ; G 109
+U 2652 ; WX 672 ; N u0A5C ; G 110
+U 2654 ; WX 615 ; N u0A5E ; G 111
+U 2662 ; WX 564 ; N u0A66 ; G 112
+U 2663 ; WX 422 ; N u0A67 ; G 113
+U 2664 ; WX 549 ; N u0A68 ; G 114
+U 2665 ; WX 549 ; N u0A69 ; G 115
+U 2666 ; WX 646 ; N u0A6A ; G 116
+U 2667 ; WX 568 ; N u0A6B ; G 117
+U 2668 ; WX 568 ; N u0A6C ; G 118
+U 2669 ; WX 451 ; N u0A6D ; G 119
+U 2670 ; WX 646 ; N u0A6E ; G 120
+U 2671 ; WX 646 ; N u0A6F ; G 121
+U 2672 ; WX 0 ; N .notdef ; G 134
+U 2673 ; WX 129 ; N u0A71 ; G 123
+U 2674 ; WX 580 ; N u0A72 ; G 124
+U 2675 ; WX 691 ; N u0A73 ; G 125
+U 2676 ; WX 1298 ; N u0A74 ; G 126
+U 8204 ; WX 0 ; N .notdef ; G 235
+U 8205 ; WX 0 ; N .notdef ; G 236
+U 8211 ; WX 543 ; N Eth ; G 45
+U 8212 ; WX 887 ; N Ntilde ; G 46
+U 8216 ; WX 313 ; N Ocircumflex ; G 47
+U 8217 ; WX 312 ; N Otilde ; G 48
+U 8230 ; WX 885 ; N Eacute ; G 44
+U 8722 ; WX 626 ; N multiply ; G 50
+U 9676 ; WX 628 ; N .notdef ; G 237
+EndCharMetrics
+EndFontMetrics

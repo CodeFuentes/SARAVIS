@@ -1,0 +1,354 @@
+	
+	/*
+		cancelar
+	*/
+	
+	div#cuerpo_completo a img.cancelar.negro
+	{
+		background-image: url('../imagenes/iconos/negro/cancel.png');
+	}
+	
+	div#cuerpo_completo a img.cancelar.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/cancel.png');
+	}
+	
+	/*
+		abierto
+	*/
+	
+	div#cuerpo_completo a img.abierto.negro
+	{
+		background-image: url('../imagenes/iconos/negro/open.png');
+	}
+	
+	div#cuerpo_completo a img.abierto.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/open.png');
+	}
+	
+	/*
+		verificar
+	*/
+	
+	div#cuerpo_completo a img.verificar.negro
+	{
+		background-image: url('../imagenes/iconos/negro/information.png');
+	}
+	
+	div#cuerpo_completo a img.verificar.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/information.png');
+	}
+	
+	/*
+		bloquear
+	*/
+	
+	div#cuerpo_completo a img.bloquear.negro
+	{
+		background-image: url('../imagenes/iconos/negro/lock.png');
+	}
+	
+	div#cuerpo_completo a img.bloquear.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/lock.png');
+	}
+	/*
+		usuarios
+	*/
+	
+	div#cuerpo_completo a img.usuarios.negro
+	{
+		background-image: url('../imagenes/iconos/negro/users.png');
+	}
+	
+	div#cuerpo_completo a img.usuarios.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/users.png');
+	}
+	
+	/*
+	
+		continuar
+	*/
+	
+	div#cuerpo_completo a img.continuar.negro
+	{
+		background-image: url('../imagenes/iconos/negro/foward.png');
+	}
+	
+	div#cuerpo_completo a img.continuar.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/foward.png');
+	}
+	
+	/*
+		borrar
+	*/
+	
+	div#cuerpo_completo a img.borrar.negro
+	{
+		background-image: url('../imagenes/iconos/negro/delete.png');
+	}
+	
+	div#cuerpo_completo a img.borrar.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/delete.png');
+	}
+	
+	/*
+		actualizar
+	*/
+	
+	div#cuerpo_completo a img.actualizar.negro
+	{
+		background-image: url('../imagenes/iconos/negro/refresh.png');
+	}
+	
+	div#cuerpo_completo a img.actualizar.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/refresh.png');
+	}
+	
+	/*
+		imprimir
+	*/
+	
+	div#cuerpo_completo a img.imprimir.negro
+	{
+		background-image: url('../imagenes/iconos/negro/document.png');
+	}
+	
+	div#cuerpo_completo a img.imprimir.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/document.png');
+	}	
+	
+	/*
+		crear
+	*/
+	
+	div#cuerpo_completo a img.crear.negro
+	{
+		background-image: url('../imagenes/iconos/negro/bulb.png');
+	}
+	
+	div#cuerpo_completo a img.crear.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/bulb.png');
+	}
+	
+	/*
+		inscribir
+	*/
+	
+	div#cuerpo_completo a img.inscribir.negro
+	{
+		background-image: url('../imagenes/iconos/negro/signature.png');
+	}
+	
+	div#cuerpo_completo a img.inscribir.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/signature.png');
+	}
+	
+	/*
+		selccionar
+	*/
+	
+	div#cuerpo_completo a img.selccionar.negro
+	{
+		background-image: url('../imagenes/iconos/negro/success.png');
+	}
+	
+	div#cuerpo_completo a img.selccionar.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/success.png');
+	}
+	
+	
+	/*
+		Modificar
+	*/
+	
+	div#cuerpo_completo a img.modificar.negro
+	{
+		background-image: url('../imagenes/iconos/negro/edit.png');
+	}
+	
+	div#cuerpo_completo a img.modificar.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/edit.png');
+	}
+	
+	/*
+		Persona
+	*/
+	
+	div#cuerpo_completo a img.persona.negro
+	{
+		background-image: url('../imagenes/iconos/negro/id-card.png');
+	}
+	
+	div#cuerpo_completo a img.persona.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/id-card.png');
+	}
+	
+	/*
+		asignar
+	*/
+	
+	
+	div#cuerpo_completo a img.asignar.negro
+	{
+		background-image: url('../imagenes/iconos/negro/redo.png');
+	}
+	
+	div#cuerpo_completo a img.asignar.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/redo.png');
+	}
+	
+	/*
+		Guardar
+	*/
+	
+	
+	div#cuerpo_completo a img.guardar.negro
+	{
+		background-image: url('../imagenes/iconos/negro/save.png');
+	}
+	
+	div#cuerpo_completo a img.guardar.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/save.png');
+	}
+	
+	/*
+		Inicio
+	*/
+	
+	div#cuerpo_completo a img.inicio.negro
+	{
+		background-image: url('../imagenes/iconos/negro/home.png');
+	}
+	
+	div#cuerpo_completo a img.inicio.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/home.png');
+	}
+	
+	/*
+		Cursos
+	*/
+	
+	div#cuerpo_completo a img.cursos.negro
+	{
+		background-image: url('../imagenes/iconos/negro/presentation.png');
+	}
+	
+	div#cuerpo_completo a img.cursos.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/presentation.png');
+	}
+	
+	/*
+		Mantenimiento
+	*/
+	
+	div#cuerpo_completo a img.mantenimiento.negro
+	{
+		background-image: url('../imagenes/iconos/negro/wrench.png');
+	}
+	
+	div#cuerpo_completo a img.mantenimiento.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/wrench.png');
+	}
+	
+	/*
+		Usuarios
+	*/
+	
+	div#cuerpo_completo a img.usuarios.negro
+	{
+		background-image: url('../imagenes/iconos/negro/users.png');
+	}
+	
+	div#cuerpo_completo a img.usuarios.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/users.png');
+	}
+	
+	/*
+		Registrar
+	*/
+	
+	div#cuerpo_completo a img.registrar.negro
+	{
+		background-image: url('../imagenes/iconos/negro/add.png');
+	}
+	
+	div#cuerpo_completo a img.registrar.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/add.png');
+	}
+	
+	/*
+		Buscar
+	*/
+	
+	div#cuerpo_completo a img.buscar.negro
+	{
+		background-image: url('../imagenes/iconos/negro/search.png');
+	}
+	
+	div#cuerpo_completo a img.buscar.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/search.png');
+	}
+	
+	/*
+		Listado
+	*/
+	
+	div#cuerpo_completo a img.listado.negro
+	{
+		background-image: url('../imagenes/iconos/negro/paste.png');
+	}
+	
+	div#cuerpo_completo a img.listado.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/paste.png');
+	}
+	
+	/*
+		Listado
+	*/
+	
+	div#cuerpo_completo a img.ver.negro
+	{
+		background-image: url('../imagenes/iconos/negro/eye.png');
+	}
+	
+	div#cuerpo_completo a img.ver.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/eye.png');
+	}
+	
+	/*
+		salir
+	*/
+	
+	div#cuerpo_completo a img.salir.negro
+	{
+		background-image: url('../imagenes/iconos/negro/power.png');
+	}
+	
+	div#cuerpo_completo a img.salir.blanco
+	{
+		background-image: url('../imagenes/iconos/blanco/power.png');
+	}
+	

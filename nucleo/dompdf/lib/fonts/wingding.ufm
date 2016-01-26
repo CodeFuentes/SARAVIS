@@ -1,0 +1,26 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment http://php-font-lib.googlecode.com/
+EncodingScheme FontSpecific
+Copyright Copyright © 1992-1995 Microsoft Corp. All Rights Reserved. © 1990-1991 Type Solutions, Inc. All Rights Reserved.
+FontName Wingdings
+FontSubfamily Normal
+UniqueID Wingdings Regular: MS: 1995
+FullName Wingdings
+Version Version 2.55
+PostScriptName Wingdings-Regular
+Trademark The Windows logo is a trademark of Microsoft Corporation.
+Manufacturer Microsoft Typography
+Designer Kris Holmes and Charles Bigelow
+FontVendorURL http://www.microsoft.com/truetype/fonts/wingdings/
+FontDesignerURL http://www.microsoft.com/truetype/designers/bandh/
+Weight Medium
+ItalicAngle 0
+IsFixedPitch false
+UnderlineThickness 49
+UnderlinePosition -98
+FontHeightOffset 24
+Ascender 771
+Descender 205
+FontBBox 0 -211 1359 899
+EndFontMetrics

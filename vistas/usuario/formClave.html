@@ -1,0 +1,54 @@
+	<form id="formClaveUsua" name="formClaveUsua" method="post" action="?ctrl=usuario&acc=guarClav" autocomplete="off">
+		
+		<section>
+			
+		<article>
+		
+			<div class="sub_titulo">Datos de la clave</div>
+
+			<div class="formulario">
+
+				<ul>
+					<li>
+						<div class="unico">
+							<label>Contraseña anterior<span>*</span></label>
+							<input id="claveAnterior" name="claveAnterior" value="{#post_claveAnterior}"  type="password"/>
+							
+							{#error_claveAnterior}
+						</div>
+					</li/>
+
+					<li>
+						<div class="unico">
+							<label>Nueva contraseña<span>*</span></label>
+							<input id="claveUno" name="claveUno" value="{#post_claveUno}"  type="password"/>
+							
+							{#error_claveUno}
+						</div>
+					</li/>
+
+					<li>
+						<div class="unico">
+							<label>Repita la nueva contraseña<span>*</span></label>
+							<input id="claveDos" name="claveDos" value="{#post_claveDos}" type="password"/>
+							
+							{#error_claveDos}
+						</div>
+						
+					</li>
+				</ul>
+	
+			</div>	
+
+		</article>
+		
+	</section>
+	
+		<div class="botones">	
+			<input id="btnGuardar" name="btnGuardar" type="submit" value="Guardar">
+			<a href="./">Salir</a>		
+		</div>
+	
+		
+		
+	</form>

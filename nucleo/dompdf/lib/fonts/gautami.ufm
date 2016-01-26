@@ -1,0 +1,157 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment http://php-font-lib.googlecode.com/
+EncodingScheme FontSpecific
+Copyright © 2001 Microsoft Corporation. All rights reserved.
+FontName Gautami
+FontSubfamily Regular
+UniqueID Gautami Regular
+FullName Gautami
+Version Version 1.21
+PostScriptName Gautami
+Designer Raghunath Joshi (Type Director), Omkar Shende
+Description Gautami is an OpenType font for the Indic script-Telugu. It is based on Unicode, contains TrueType outlines and has been designed for use as a UI font.
+FontDesignerURL http://www.ncst.ernet.in/~rkjoshi
+Weight Medium
+ItalicAngle 0
+IsFixedPitch false
+UnderlineThickness 47
+UnderlinePosition -293
+FontHeightOffset 170
+Ascender 924
+Descender -813
+FontBBox -1462 -813 1723 924
+StartCharMetrics 614
+U 32 ; WX 313 ; N space ; G 3
+U 33 ; WX 165 ; N exclam ; G 4
+U 34 ; WX 272 ; N quotedbl ; G 5
+U 35 ; WX 440 ; N numbersign ; G 6
+U 37 ; WX 459 ; N percent ; G 7
+U 38 ; WX 471 ; N ampersand ; G 8
+U 39 ; WX 98 ; N quotesingle ; G 9
+U 40 ; WX 228 ; N parenleft ; G 10
+U 41 ; WX 228 ; N parenright ; G 11
+U 42 ; WX 380 ; N asterisk ; G 12
+U 43 ; WX 396 ; N plus ; G 13
+U 44 ; WX 179 ; N comma ; G 14
+U 46 ; WX 176 ; N period ; G 16
+U 47 ; WX 383 ; N slash ; G 17
+U 48 ; WX 512 ; N zero ; G 18
+U 49 ; WX 244 ; N one ; G 19
+U 50 ; WX 461 ; N two ; G 20
+U 51 ; WX 466 ; N three ; G 21
+U 52 ; WX 525 ; N four ; G 22
+U 53 ; WX 427 ; N five ; G 23
+U 54 ; WX 476 ; N six ; G 24
+U 55 ; WX 390 ; N seven ; G 25
+U 56 ; WX 467 ; N eight ; G 26
+U 57 ; WX 474 ; N nine ; G 27
+U 58 ; WX 176 ; N colon ; G 28
+U 59 ; WX 176 ; N semicolon ; G 29
+U 60 ; WX 447 ; N less ; G 30
+U 61 ; WX 342 ; N equal ; G 31
+U 62 ; WX 447 ; N greater ; G 32
+U 63 ; WX 333 ; N question ; G 33
+U 64 ; WX 698 ; N at ; G 34
+U 91 ; WX 268 ; N bracketleft ; G 35
+U 92 ; WX 383 ; N backslash ; G 36
+U 93 ; WX 268 ; N bracketright ; G 37
+U 94 ; WX 326 ; N asciicircum ; G 38
+U 95 ; WX 402 ; N underscore ; G 39
+U 123 ; WX 389 ; N braceleft ; G 40
+U 124 ; WX 114 ; N bar ; G 41
+U 125 ; WX 386 ; N braceright ; G 42
+U 126 ; WX 494 ; N asciitilde ; G 43
+U 160 ; WX 313 ; N space ; G 3
+U 215 ; WX 316 ; N Oslash ; G 49
+U 247 ; WX 348 ; N Odieresis ; G 47
+U 3073 ; WX 272 ; N u0C01 ; G 50
+U 3074 ; WX 481 ; N u0C02 ; G 51
+U 3075 ; WX 172 ; N u0C03 ; G 52
+U 3077 ; WX 715 ; N u0C05 ; G 53
+U 3078 ; WX 736 ; N u0C06 ; G 54
+U 3079 ; WX 690 ; N u0C07 ; G 55
+U 3080 ; WX 870 ; N u0C08 ; G 56
+U 3081 ; WX 690 ; N u0C09 ; G 57
+U 3082 ; WX 909 ; N u0C0A ; G 58
+U 3083 ; WX 1271 ; N u0C0B ; G 59
+U 3084 ; WX 754 ; N u0C0C ; G 60
+U 3086 ; WX 630 ; N u0C0E ; G 61
+U 3087 ; WX 654 ; N u0C0F ; G 62
+U 3088 ; WX 690 ; N u0C10 ; G 63
+U 3090 ; WX 690 ; N u0C12 ; G 64
+U 3091 ; WX 690 ; N u0C13 ; G 65
+U 3092 ; WX 773 ; N u0C14 ; G 66
+U 3093 ; WX 551 ; N u0C15 ; G 67
+U 3094 ; WX 750 ; N u0C16 ; G 68
+U 3095 ; WX 551 ; N u0C17 ; G 69
+U 3096 ; WX 1054 ; N u0C18 ; G 70
+U 3097 ; WX 690 ; N u0C19 ; G 71
+U 3098 ; WX 690 ; N u0C1A ; G 72
+U 3099 ; WX 690 ; N u0C1B ; G 73
+U 3100 ; WX 690 ; N u0C1C ; G 74
+U 3101 ; WX 1271 ; N u0C1D ; G 75
+U 3102 ; WX 863 ; N u0C1E ; G 76
+U 3103 ; WX 690 ; N u0C1f ; G 77
+U 3104 ; WX 551 ; N u0C20 ; G 78
+U 3105 ; WX 690 ; N u0C21 ; G 79
+U 3106 ; WX 690 ; N u0C22 ; G 80
+U 3107 ; WX 690 ; N u0C23 ; G 81
+U 3108 ; WX 690 ; N u0C24 ; G 82
+U 3109 ; WX 690 ; N u0C25 ; G 83
+U 3110 ; WX 690 ; N u0C26 ; G 84
+U 3111 ; WX 690 ; N u0C27 ; G 85
+U 3112 ; WX 690 ; N u0C28 ; G 86
+U 3114 ; WX 690 ; N u0C2A ; G 87
+U 3115 ; WX 690 ; N u0C2B ; G 88
+U 3116 ; WX 690 ; N u0C2C ; G 89
+U 3117 ; WX 690 ; N u0C2D ; G 90
+U 3118 ; WX 1054 ; N u0C2E ; G 91
+U 3119 ; WX 1271 ; N u0C2F ; G 92
+U 3120 ; WX 551 ; N u0C30 ; G 93
+U 3121 ; WX 721 ; N u0C31 ; G 94
+U 3122 ; WX 690 ; N u0C32 ; G 95
+U 3123 ; WX 614 ; N u0C33 ; G 96
+U 3125 ; WX 690 ; N u0C35 ; G 97
+U 3126 ; WX 551 ; N u0C36 ; G 98
+U 3127 ; WX 690 ; N u0C37 ; G 99
+U 3128 ; WX 690 ; N u0C38 ; G 100
+U 3129 ; WX 979 ; N u0C39 ; G 101
+U 3134 ; WX 303 ; N u0C3E ; G 102
+U 3135 ; WX 0 ; N u0C3F ; G 103
+U 3136 ; WX 0 ; N u0C40 ; G 104
+U 3137 ; WX 370 ; N u0C41 ; G 105
+U 3138 ; WX 659 ; N u0C42 ; G 106
+U 3139 ; WX 313 ; N u0C43 ; G 107
+U 3140 ; WX 541 ; N u0C44 ; G 108
+U 3142 ; WX 0 ; N u0C46 ; G 109
+U 3143 ; WX 0 ; N u0C47 ; G 110
+U 3144 ; WX 0 ; N u0C48 ; G 111
+U 3146 ; WX 83 ; N u0C4A ; G 112
+U 3147 ; WX 83 ; N u0C4B ; G 113
+U 3148 ; WX 246 ; N u0C4C ; G 114
+U 3149 ; WX 0 ; N u0C4D ; G 115
+U 3157 ; WX 0 ; N u0C55 ; G 116
+U 3158 ; WX 0 ; N u0C56 ; G 117
+U 3168 ; WX 1563 ; N u0C60 ; G 118
+U 3169 ; WX 1063 ; N u0C61 ; G 119
+U 3174 ; WX 551 ; N u0C66 ; G 120
+U 3175 ; WX 570 ; N u0C67 ; G 121
+U 3176 ; WX 659 ; N u0C68 ; G 122
+U 3177 ; WX 455 ; N u0C69 ; G 123
+U 3178 ; WX 613 ; N u0C6A ; G 124
+U 3179 ; WX 670 ; N u0C6B ; G 125
+U 3180 ; WX 586 ; N u0C6C ; G 126
+U 3181 ; WX 498 ; N u0C6D ; G 127
+U 3182 ; WX 631 ; N u0C6E ; G 128
+U 3183 ; WX 571 ; N u0C6F ; G 129
+U 8204 ; WX 0 ; N .notdef ; G 612
+U 8205 ; WX 0 ; N .notdef ; G 613
+U 8208 ; WX 294 ; N hyphen ; G 15
+U 8211 ; WX 402 ; N Eth ; G 45
+U 8212 ; WX 655 ; N Ntilde ; G 46
+U 8230 ; WX 498 ; N Eacute ; G 44
+U 8722 ; WX 348 ; N multiply ; G 48
+U 9676 ; WX 628 ; N .notdef ; G 611
+EndCharMetrics
+EndFontMetrics

@@ -1,0 +1,92 @@
+
+	div#cuerpo_completo section.logeo
+	{
+		float: left;
+		width: 250px;
+	}
+	
+	div#cuerpo_principal
+	{
+		width: 940px;
+		margin-left: 0px;
+	}
+	
+	
+	div#cuerpo_completo section article.logeo
+	{
+		float: left;
+	}
+	
+	
+	div#cuerpo_completo section div.sub_titulo.logeo
+	{
+		width: 250px;
+		color: #9EC630;
+	}
+	
+	
+	div#cuerpo_completo section.portada
+	{
+		float: left;
+		width: 595px;
+		margin-left: 25px;
+	}
+	
+	div#cuerpo_completo section article.portada
+	{
+		float: left;
+	}
+	
+	
+	div#cuerpo_completo section div.sub_titulo.portada
+	{
+		background-color: #404040;
+		font-size: 22px;
+		margin-left: -15px;
+		padding-bottom: 5px;
+		padding-left: 15px;
+		padding-top: 5px;
+		margin-top: 0px;
+		width: 605px;
+		color: #9EC630;
+	}
+	
+	div.botones
+	{
+		margin: 0px 0px 10px 0px;
+		width: 300px;
+	}
+	
+	div.botones input, div.botones a
+	{
+		width: 100px;
+	}
+	
+
+	
+	div#cuerpo_completo section div.formulario ul li
+	{
+		margin-top: 5px;
+		width: 270px;
+		margin-bottom: 5px;
+		float: left;
+	}
+	
+	div#cuerpo_completo section div.formulario ul li div.complemento input
+	{
+		width: 220px;
+		margin-bottom: 15px;
+		float: left;
+	}
+	
+	div.formulario div.error
+	{
+		float: left;
+		width: 250px;
+		color: red;
+	}
+
+	div#cuerpo_completo
+	{
+		background-position: 31.7%, 0%;
+	}

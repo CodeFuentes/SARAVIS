@@ -1,0 +1,44 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment http://php-font-lib.googlecode.com/
+EncodingScheme FontSpecific
+Copyright Copyright© 1994 Corel Corporation and Corel Corporation Limited. All Rights Reserved.
+FontName WP MultinationalB Helve
+FontSubfamily Normal
+UniqueID WPCO:WP MultinationalB Helve
+FullName WP MultinationalB Helve
+Version 1.0 Thu Jul 14 10:47:42 1994
+PostScriptName WP-MultinationalBHelve
+Weight Medium
+ItalicAngle 0
+IsFixedPitch false
+UnderlineThickness 20
+UnderlinePosition -133
+FontHeightOffset 0
+Ascender 800
+Descender 200
+FontBBox -14 -219 878 957
+StartCharMetrics 24
+U 61472 ; WX 500 ; N space ; G 3
+U 61473 ; WX 611 ; N exclam ; G 4
+U 61474 ; WX 278 ; N quotedbl ; G 5
+U 61475 ; WX 667 ; N numbersign ; G 6
+U 61476 ; WX 500 ; N dollar ; G 7
+U 61477 ; WX 667 ; N percent ; G 8
+U 61478 ; WX 500 ; N ampersand ; G 9
+U 61479 ; WX 841 ; N quotesingle ; G 10
+U 61480 ; WX 640 ; N parenleft ; G 11
+U 61481 ; WX 877 ; N parenright ; G 12
+U 61482 ; WX 633 ; N asterisk ; G 13
+U 61483 ; WX 815 ; N plus ; G 14
+U 61484 ; WX 665 ; N comma ; G 15
+U 61485 ; WX 667 ; N hyphen ; G 16
+U 61486 ; WX 556 ; N period ; G 17
+U 61487 ; WX 278 ; N slash ; G 18
+U 61488 ; WX 270 ; N zero ; G 19
+U 61489 ; WX 278 ; N one ; G 20
+U 61490 ; WX 270 ; N two ; G 21
+U 61491 ; WX 778 ; N three ; G 22
+U 61492 ; WX 556 ; N four ; G 23
+EndCharMetrics
+EndFontMetrics

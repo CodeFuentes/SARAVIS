@@ -1,0 +1,27 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment http://php-font-lib.googlecode.com/
+EncodingScheme FontSpecific
+Copyright Copyright (c) 1997 Microsoft Corporation. All rights reserved.
+FontName Webdings
+FontSubfamily Normal
+UniqueID Microsoft Webdings
+FullName Webdings
+Version Version 1.03
+PostScriptName Webdings
+Trademark Webdings is a trademark of Microsoft Corporation.
+Manufacturer  Microsoft Corporation
+Designer V.Connare,S.Lightfoot,I.Patterson,G.Wade
+Description Designed in 1997 as a collaborative work between Microsoft's Vincent Connare and  top Monotype designers Sue Lightfoot, Ian Patterson and Geraldine Wade. The images are intended for web designers who wish to include live fonts as a fast way of rendering graphics. Webdings is the latest member of Microsoft's Webfonts. Design coordination by Vincent Connare. Image designs by Vincent Connare, Ian Patterson, Sue Lightfoot and Geraldine Wade. Web and design consultation by Simon Daniels. TrueType hinting by Vincent Connare. Completed April 29, 1997.
+FontVendorURL http://www.microsoft.com/
+FontDesignerURL http://www.microsoft.com/truetype/
+Weight Medium
+ItalicAngle 0
+IsFixedPitch false
+UnderlineThickness 49
+UnderlinePosition -133
+FontHeightOffset 0
+Ascender 800
+Descender -200
+FontBBox -1 -200 4000 800
+EndFontMetrics

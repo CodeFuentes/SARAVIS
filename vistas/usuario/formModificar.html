@@ -1,0 +1,51 @@
+	<section>
+									
+		<article>
+		
+			<div class="sub_titulo">Datos del Usuario</div>
+
+			<div class="formulario">
+				
+				<form id="formModificarUsua" name="formModificarUsua" method="post" action="?ctrl=usuario&acc=guarModi" autocomplete="off">
+				
+				<ul>
+					<li>
+						<div class="unico">
+							<label>Nombre<span>*</span></label>
+							<input id="nombreUsua" name="nombreUsua" type="text" value="{#post_nombreUsua}" autofocus/>
+							
+							{#error_nombreUsua}
+						</div>
+					</li>
+
+
+					<li>
+						<div class="unico">
+							<label>Permisos<span>*</span></label>
+								<br/><br/><input id="cursosPerm" name="cursosPerm" type="checkbox" value="cursos" {#checked_permisos_cursos}>Curso/Taller/Facilitador
+								
+								<br/><input id="personasPerm" name="personasPerm" type="checkbox" value="personas" {#checked_permisos_personas}>Persona/Participante
+								
+								
+								<br/><input id="documentosPerm" name="documentosPerm" type="checkbox" value="documentos" {#checked_permisos_documentos}>Documentos
+								
+								<br/><input id="impresionesPerm" name="impresionesPerm" type="checkbox" value="impresiones" {#checked_permisos_impresiones}>Impresiones	
+						</div>
+						{#error_permisos}
+					</li/>
+				</ul>
+	
+			</div>	
+
+		</article>
+		
+	</section>
+	
+		<div class="botones">	
+			<input id="btnGuardar" name="btnGuardar" type="submit" value="Guardar">
+			<a href="./">Salir</a>		
+		</div>
+	
+		
+		
+	</form>
