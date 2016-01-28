@@ -6,15 +6,15 @@
 		const TIEMPO_BLOQUEADO = 5;
 		const USUARIO_BLOQUEDO = 'bloqueado';		
 		
-		function existeUsuario(&$usuario, &$clave)
+		function existeUsuario($usuario, $clave)
 		{
 			$errorValidar = '';
-			$errorValidar .= validarCampo::validarDato(&$usuario, 'usuario', 'ALFANUMERICO', 'no', '5-10', 'minusculas');
-			$errorValidar .= validarCampo::validarDato(&$clave, 'clave', 'ALFANUMERICO', 'no', '6-16', 'minusculas');
+			$errorValidar .= validarCampo::validarDato($usuario, 'usuario', 'ALFANUMERICO', 'no', '5-10', 'minusculas');
+			$errorValidar .= validarCampo::validarDato($clave, 'clave', 'ALFANUMERICO', 'no', '6-16', 'minusculas');
 				
 			if(empty($errorValidar))
 			{				
-				$usuarioArray = self::_verificarExisteUsuario(&$usuario, &$clave);
+				$usuarioArray = self::_verificarExisteUsuario($usuario, $clave);
 				
 				if(!empty($usuarioArray[0]['id_usuario']) and (int)$usuarioArray[0]['id_usuario'] > 0)
 				{

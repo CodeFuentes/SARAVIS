@@ -72,7 +72,7 @@ require_once 'modelos/logeo.php';
 		
 		private function _iniciarSession()
 		{
-			$id = logeo::existeUsuario(&$_POST['usuario'], &$_POST['clave']);
+			$id = logeo::existeUsuario($_POST['usuario'], $_POST['clave']);
 			
 			switch($id)
 			{

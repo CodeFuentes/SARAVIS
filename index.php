@@ -1,4 +1,5 @@
 <?php
+
 header("Content-Type: text/html; charset=iso-8859-1");
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
@@ -98,7 +99,8 @@ require_once 'nucleo/utilidades/listadoGenerador.php';
 
 		static private function _usuarioConectado()
 		{
-			if($_SESSION['session']['conectado'] == self::USUARIO_CONECTADO)
+			if( isset($_SESSION['session']['conectado']) &&
+			$_SESSION['session']['conectado'] == self::USUARIO_CONECTADO)
 			{
 				$retorna = TRUE;
 			}
@@ -154,12 +156,13 @@ require_once 'nucleo/utilidades/listadoGenerador.php';
 	$controlador = index::iniciar();
 
 	$rutaControlador = 'controladores/'. $controlador . 'Controlador.php';
-	
+
 	require_once $rutaControlador;
 
 	$nombreControlador = $controlador . 'Controlador';
 	
-	$nombreControlador::procesarAccion($_GET['acc']);
+	$acc = isset($_GET['acc']) ? $_GET['acc'] : '';
+	$nombreControlador::procesarAccion($acc);
 
 
 
