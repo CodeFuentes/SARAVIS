@@ -1,0 +1,36 @@
+<form method="POST" action="{#link_form_contacto}" autocomplete="off">
+			
+<section>
+	<article>
+			<div class="sub_titulo">Contacto</div>
+			
+			<div class="formulario">
+				<ul>	
+						
+					<li>
+						<div class="unico">
+							<label>Correo:<span>*</span></label>
+							<input id="correo" type="email" name="correo" value="{#post_correo}" style="height:25px;">
+							{#error_correo}
+						</div>
+
+						<div class="unico">
+							<label>Mensaje:<span>*</span></label>
+							<textarea id="mensaje" name="mensaje">{#post_mensaje}</textarea>
+							{#error_mensaje}
+						</div>
+					</li>
+				</ul>
+				
+			</div>
+
+	</article>
+
+</section>
+
+	<div class="botones">
+		<input id="guardarContacto" name="guardarContacto" type="submit" value="Guardar">
+		<a href="./?ctrl=contacto&acc=guarRegi">Salir</a>
+	</div>
+	
+	</form>
