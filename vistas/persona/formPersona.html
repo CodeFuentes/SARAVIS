@@ -63,9 +63,22 @@
 					
 					<li>
 						<div class="unico">
-							<label>Correo Electr&oacute;nico<span>*</span></label>
+							<label>Direcci&oacute;n<span>*</span></label>
 							<textarea id="direccionPers" name="direccionPers">{#post_direccionPers}</textarea>
 							{#error_direccionPers}
+						</div>
+					</li>
+
+					<li>
+						<div class="doble">
+							<label>Correo<span>*</span></label>
+							<input id="correoPers" type="email" name="correo" value="{#post_correoPers}" style="height:25px;">
+							{#error_correoPers}
+						</div>
+
+						<div class="doble">
+							<label>Confirmar Correo<span>*</span></label>
+							<input id="confCorreoPers" type="email" name="confCorreo" value="{#post_confCorreoPers}" style="height:25px;">
 						</div>
 					</li>
 				</ul>
