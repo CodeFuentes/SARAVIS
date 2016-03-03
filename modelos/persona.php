@@ -67,7 +67,7 @@ require_once 'persistencias/personaPersistencia.php';
 			return $this->_direccion;
 		}
 
-		public function dameDireccion(){
+		public function dameCorreo(){
 			return $this->_correo;
 		}
 		
