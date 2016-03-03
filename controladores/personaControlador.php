@@ -90,6 +90,8 @@ require_once 'modelos/persona.php';
 			$errores .= validarCampo::validarDato($_POST['telefonoPers'], 'telefonoPers', 'NUMERICO', 'no', '11');
 			$errores .= validarCampo::validarDato($_POST['direccionPers'], 'direccionPers', 'NINGUNO', 'no', '3-200');
 			
+			if ($_POST['correoPers'] != $_POST['confCorreoPers']) $errores .= "ERROR";
+
 			vistaGestor::agregarDiccionario('selected_sexo_' . $_POST['sexoPers'], 'selected="selected"');
 			vistaGestor::agregarDiccionario('selected_tipo_' . $_POST['tipoDocumentoPers'], 'selected="selected"');
 			
@@ -103,7 +105,8 @@ require_once 'modelos/persona.php';
 										$_POST['sexoPers'], 
 										invertirFecha($_POST['fechaNacimientoPers']),
 										$_POST['telefonoPers'], 
-										$_POST['direccionPers']
+										$_POST['direccionPers'],
+										$_POST['correoPers']
 									);
 
 				$resultado = $persona->registrar();
@@ -156,6 +159,7 @@ require_once 'modelos/persona.php';
 					vistaGestor::agregarDiccionario('datoApellido', $persona->dameApellido());
 					vistaGestor::agregarDiccionario('datoDocumento', $persona->dameDocumento());
 					vistaGestor::agregarDiccionario('datoTelefono', $persona->dameTelefono());
+					vistaGestor::agregarDiccionario('datoCorreo', $persona->dameCorreo());
 					
 					vistaGestor::agregarArchivoCss('formularios');
 					vistaGestor::documentoNormal('Buscar Persona', array('vistas/persona/formBusqueda.html', 'vistas/persona/opcionesPersona.html'));
@@ -212,6 +216,8 @@ require_once 'modelos/persona.php';
 					
 					vistaGestor::agregarDiccionario('post_fechaNacimientoPers', invertirFecha($persona->dameFechaNacimiento()));
 					vistaGestor::agregarDiccionario('post_direccionPers', $persona->dameDireccion());
+					vistaGestor::agregarDiccionario('post_correoPers', $persona->dameCorreo());
+					vistaGestor::agregarDiccionario('post_confCorreoPers', $persona->dameCorreo());
 				}
 				
 				vistaGestor::agregarArchivoCss('formularios');
@@ -238,6 +244,8 @@ require_once 'modelos/persona.php';
 				$errores .= validarCampo::validarDato($_POST['telefonoPers'], 'telefonoPers', 'NUMERICO', 'no', '11');
 				$errores .= validarCampo::validarDato($_POST['direccionPers'], 'direccionPers', 'NINGUNO', 'no', '3-200');
 				
+				if ($_POST['correoPers'] != $_POST['confCorreoPers']) $errores .= "ERROR";
+
 				vistaGestor::agregarDiccionario('selected_sexo_' . $_POST['sexoPers'], 'selected="selected"');
 				vistaGestor::agregarDiccionario('selected_tipo_' . $_POST['tipoDocumentoPers'], 'selected="selected"');
 				
@@ -251,7 +259,8 @@ require_once 'modelos/persona.php';
 											$_POST['sexoPers'], 
 											invertirFecha($_POST['fechaNacimientoPers']),
 											$_POST['telefonoPers'], 
-											$_POST['direccionPers']
+											$_POST['direccionPers'],
+											$_POST['correoPers']
 										);
 
 					$resultado = $persona->modificar();
