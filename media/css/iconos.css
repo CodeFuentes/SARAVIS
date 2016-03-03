@@ -26,6 +26,7 @@
 	{
 		background-image: url('../imagenes/iconos/blanco/open.png');
 	}
+
 	
 	/*
 		verificar
@@ -352,3 +353,7 @@
 		background-image: url('../imagenes/iconos/blanco/power.png');
 	}
 	
+	div#cuerpo_completo a img.alert.negro
+	{
+		background-image: url('../imagenes/iconos/negro/alert.png');
+	}
