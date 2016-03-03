@@ -81,14 +81,14 @@ require_once 'modelos/persona.php';
 		
 		private function _guardarRegistro()
 		{		
-			$errores .= validarCampo::validarDato(&$_POST['documentoPers'], 'documentoPers', 'NUMERICO', 'no', '4-8');
-			$errores .= validarCampo::validarSelect(&$_POST['tipoDocumentoPers'], 'tipoDocumentoPers', 'no');
-			$errores .= validarCampo::validarDato(&$_POST['nombrePers'], 'nombrePers', 'NOMBRE', 'no', '3-30', 'palabras');
-			$errores .= validarCampo::validarDato(&$_POST['apellidoPers'], 'apellidoPers', 'NOMBRE', 'no', '3-30', 'palabras');
-			$errores .= validarCampo::validarSelect(&$_POST['sexoPers'], 'sexoPers', 'no');
-			$errores .= validarCampo::validarFecha(&$_POST['fechaNacimientoPers'], 'fechaNacimientoPers', 'no');
-			$errores .= validarCampo::validarDato(&$_POST['telefonoPers'], 'telefonoPers', 'NUMERICO', 'no', '11');
-			$errores .= validarCampo::validarDato(&$_POST['direccionPers'], 'direccionPers', 'NINGUNO', 'no', '3-200');
+			$errores .= validarCampo::validarDato($_POST['documentoPers'], 'documentoPers', 'NUMERICO', 'no', '4-8');
+			$errores .= validarCampo::validarSelect($_POST['tipoDocumentoPers'], 'tipoDocumentoPers', 'no');
+			$errores .= validarCampo::validarDato($_POST['nombrePers'], 'nombrePers', 'NOMBRE', 'no', '3-30', 'palabras');
+			$errores .= validarCampo::validarDato($_POST['apellidoPers'], 'apellidoPers', 'NOMBRE', 'no', '3-30', 'palabras');
+			$errores .= validarCampo::validarSelect($_POST['sexoPers'], 'sexoPers', 'no');
+			$errores .= validarCampo::validarFecha($_POST['fechaNacimientoPers'], 'fechaNacimientoPers', 'no');
+			$errores .= validarCampo::validarDato($_POST['telefonoPers'], 'telefonoPers', 'NUMERICO', 'no', '11');
+			$errores .= validarCampo::validarDato($_POST['direccionPers'], 'direccionPers', 'NINGUNO', 'no', '3-200');
 			
 			vistaGestor::agregarDiccionario('selected_sexo_' . $_POST['sexoPers'], 'selected="selected"');
 			vistaGestor::agregarDiccionario('selected_tipo_' . $_POST['tipoDocumentoPers'], 'selected="selected"');
@@ -139,8 +139,8 @@ require_once 'modelos/persona.php';
 		
 		private function _realizarBusqueda()
 		{
-			$errores .= validarCampo::validarDato(&$_POST['documentoPers'], 'busqueda', 'NUMERICO', 'no', '4-8');
-			$errores .= validarCampo::validarSelect(&$_POST['tipoDocumentoPers'], 'busqueda', 'no');
+			$errores .= validarCampo::validarDato($_POST['documentoPers'], 'busqueda', 'NUMERICO', 'no', '4-8');
+			$errores .= validarCampo::validarSelect($_POST['tipoDocumentoPers'], 'busqueda', 'no');
 			
 			vistaGestor::agregarDiccionario('selected_tipo_' . $_POST['tipoDocumentoPers'], 'selected="selected"');
 
@@ -229,14 +229,14 @@ require_once 'modelos/persona.php';
 		{
 			if(!empty($_SESSION['formulario']['idPersona']))
 			{
-				$errores .= validarCampo::validarDato(&$_POST['documentoPers'], 'documentoPers', 'NUMERICO', 'no', '4-8');
-				$errores .= validarCampo::validarSelect(&$_POST['tipoDocumentoPers'], 'tipoDocumentoPers', 'no');
-				$errores .= validarCampo::validarDato(&$_POST['nombrePers'], 'nombrePers', 'NOMBRE', 'no', '3-30', 'palabras');
-				$errores .= validarCampo::validarDato(&$_POST['apellidoPers'], 'apellidoPers', 'NOMBRE', 'no', '3-30', 'palabras');
-				$errores .= validarCampo::validarSelect(&$_POST['sexoPers'], 'sexoPers', 'no');
-				$errores .= validarCampo::validarFecha(&$_POST['fechaNacimientoPers'], 'fechaNacimientoPers', 'no');
-				$errores .= validarCampo::validarDato(&$_POST['telefonoPers'], 'telefonoPers', 'NUMERICO', 'no', '11');
-				$errores .= validarCampo::validarDato(&$_POST['direccionPers'], 'direccionPers', 'NINGUNO', 'no', '3-200');
+				$errores .= validarCampo::validarDato($_POST['documentoPers'], 'documentoPers', 'NUMERICO', 'no', '4-8');
+				$errores .= validarCampo::validarSelect($_POST['tipoDocumentoPers'], 'tipoDocumentoPers', 'no');
+				$errores .= validarCampo::validarDato($_POST['nombrePers'], 'nombrePers', 'NOMBRE', 'no', '3-30', 'palabras');
+				$errores .= validarCampo::validarDato($_POST['apellidoPers'], 'apellidoPers', 'NOMBRE', 'no', '3-30', 'palabras');
+				$errores .= validarCampo::validarSelect($_POST['sexoPers'], 'sexoPers', 'no');
+				$errores .= validarCampo::validarFecha($_POST['fechaNacimientoPers'], 'fechaNacimientoPers', 'no');
+				$errores .= validarCampo::validarDato($_POST['telefonoPers'], 'telefonoPers', 'NUMERICO', 'no', '11');
+				$errores .= validarCampo::validarDato($_POST['direccionPers'], 'direccionPers', 'NINGUNO', 'no', '3-200');
 				
 				vistaGestor::agregarDiccionario('selected_sexo_' . $_POST['sexoPers'], 'selected="selected"');
 				vistaGestor::agregarDiccionario('selected_tipo_' . $_POST['tipoDocumentoPers'], 'selected="selected"');
