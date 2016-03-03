@@ -12,8 +12,9 @@ require_once 'persistencias/personaPersistencia.php';
 		private $_fechaNacimiento;
 		private $_telefono;
 		private $_direccion;
+		private $_correo;
 	
-		public function __construct($idPersona, $documento, $nombre, $apellido, $sexo, $fechaNacimiento, $telefono, $direccion)
+		public function __construct($idPersona, $documento, $nombre, $apellido, $sexo, $fechaNacimiento, $telefono, $direccion, $correo)
 		{
 			$this->_idPersona = $idPersona;
 			$this->_documento = $documento;
@@ -23,6 +24,7 @@ require_once 'persistencias/personaPersistencia.php';
 			$this->_fechaNacimiento = $fechaNacimiento;
 			$this->_telefono = $telefono;
 			$this->_direccion = $direccion;
+			$this->_correo = $correo;
 		}
 		
 		//
@@ -64,6 +66,10 @@ require_once 'persistencias/personaPersistencia.php';
 		public function dameDireccion(){
 			return $this->_direccion;
 		}
+
+		public function dameDireccion(){
+			return $this->_correo;
+		}
 		
 		//
 		//++
@@ -88,7 +94,8 @@ require_once 'persistencias/personaPersistencia.php';
 														$this->_sexo,
 														$this->_fechaNacimiento,
 														$this->_telefono,
-														$this->_direccion
+														$this->_direccion,
+														$this->_correo
 														);
 				$this->_idPersona = $idGenerado;
 
@@ -117,7 +124,8 @@ require_once 'persistencias/personaPersistencia.php';
 														$this->_sexo,
 														$this->_fechaNacimiento,
 														$this->_telefono,
-														$this->_direccion
+														$this->_direccion,
+														$this->_correo
 														);
 				$retorna = 'exito';
 			}
@@ -144,7 +152,8 @@ require_once 'persistencias/personaPersistencia.php';
 										$datosPersona[0]['sexo'],
 										$datosPersona[0]['fecha_nacimiento'],
 										$datosPersona[0]['telefono'],
-										$datosPersona[0]['direccion']
+										$datosPersona[0]['direccion'],
+										$datosPersona[0]['correo']
 									);
 			}
 			else
@@ -177,7 +186,8 @@ require_once 'persistencias/personaPersistencia.php';
 										$datosPersona[0]['sexo'],
 										$datosPersona[0]['fecha_nacimiento'],
 										$datosPersona[0]['telefono'],
-										$datosPersona[0]['direccion']
+										$datosPersona[0]['direccion'],
+										$datosPersona[0]['correo']
 									);
 			}
 			else
