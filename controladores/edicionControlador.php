@@ -109,8 +109,8 @@ require_once 'modelos/edicion.php';
 			
 			if(!empty($curso))
 			{
-				$errores .= validarCampo::validarFecha(&$_POST['fechaInicioEdic'], 'fechaInicioEdic', 'no');
-				$errores .= validarCampo::validarFecha(&$_POST['fechaFinEdic'], 'fechaFinEdic', 'no');
+				$errores .= validarCampo::validarFecha($_POST['fechaInicioEdic'], 'fechaInicioEdic', 'no');
+				$errores .= validarCampo::validarFecha($_POST['fechaFinEdic'], 'fechaFinEdic', 'no');
 				
 				if(empty($errores) )
 				{
@@ -121,11 +121,11 @@ require_once 'modelos/edicion.php';
 					}
 				}
 				
-				$errores .= validarCampo::validarDato(&$_POST['limiteEdic'], 'limiteEdic', 'NUMERICO', 'no', '1-3');
-				$errores .= validarCampo::validarSelect(&$_POST['tipoEdic'], 'tipoEdic', 'no');
-				$errores .= validarCampo::validarDato(&$_POST['duracionEdic'], 'duracionEdic', 'NINGUNO', 'no', '3-15', 'palabras');
-				$errores .= validarCampo::validarDato(&$_POST['horarioEdic'], 'horarioEdic', 'NINGUNO', 'no', '3-200');
-				$errores .= validarCampo::validarDato(&$_POST['sinopticoEdic'], 'sinopticoEdic', 'NINGUNO', 'si', '3-500');
+				$errores .= validarCampo::validarDato($_POST['limiteEdic'], 'limiteEdic', 'NUMERICO', 'no', '1-3');
+				$errores .= validarCampo::validarSelect($_POST['tipoEdic'], 'tipoEdic', 'no');
+				$errores .= validarCampo::validarDato($_POST['duracionEdic'], 'duracionEdic', 'NINGUNO', 'no', '3-15', 'palabras');
+				$errores .= validarCampo::validarDato($_POST['horarioEdic'], 'horarioEdic', 'NINGUNO', 'no', '3-200');
+				$errores .= validarCampo::validarDato($_POST['sinopticoEdic'], 'sinopticoEdic', 'NINGUNO', 'si', '3-500');
 
 			
 				if(empty($errores))
@@ -201,8 +201,8 @@ require_once 'modelos/edicion.php';
 	
 				if(!empty($_POST) and isset($_POST['documentoPers']))
 				{
-					$errores .= validarCampo::validarDato(&$_POST['documentoPers'], 'busqueda', 'NUMERICO', 'no', '4-8');
-					$errores .= validarCampo::validarSelect(&$_POST['tipoDocumentoPers'], 'busqueda', 'no');
+					$errores .= validarCampo::validarDato($_POST['documentoPers'], 'busqueda', 'NUMERICO', 'no', '4-8');
+					$errores .= validarCampo::validarSelect($_POST['tipoDocumentoPers'], 'busqueda', 'no');
 					
 					vistaGestor::agregarDiccionario('selected_tipo_' . $_POST['tipoDocumentoPers'], 'selected="selected"');
 
@@ -426,7 +426,7 @@ require_once 'modelos/edicion.php';
 							{
 								
 								$errorDato = validarCampo::validarDato(
-										&$_POST['participante_' . $idPersona], '', 'NUMERICO', 'no', '1-3');
+										$_POST['participante_' . $idPersona], '', 'NUMERICO', 'no', '1-3');
 							
 								if(
 									$_POST['participante_' . $idPersona] >= 0 and 
@@ -795,8 +795,8 @@ require_once 'modelos/edicion.php';
 			
 			if(!empty($curso) and !empty($edicion) and $edicion->dameEstado() != 'bloqueada')
 			{
-				$errores .= validarCampo::validarFecha(&$_POST['fechaInicioEdic'], 'fechaInicioEdic', 'no');
-				$errores .= validarCampo::validarFecha(&$_POST['fechaFinEdic'], 'fechaFinEdic', 'no');
+				$errores .= validarCampo::validarFecha($_POST['fechaInicioEdic'], 'fechaInicioEdic', 'no');
+				$errores .= validarCampo::validarFecha($_POST['fechaFinEdic'], 'fechaFinEdic', 'no');
 				
 				if(empty($errores) )
 				{
@@ -807,11 +807,11 @@ require_once 'modelos/edicion.php';
 					}
 				}
 				
-				$errores .= validarCampo::validarDato(&$_POST['limiteEdic'], 'limiteEdic', 'NUMERICO', 'no', '1-3');
-				$errores .= validarCampo::validarSelect(&$_POST['tipoEdic'], 'tipoEdic', 'no');
-				$errores .= validarCampo::validarDato(&$_POST['duracionEdic'], 'duracionEdic', 'NINGUNO', 'no', '3-15', 'palabras');
-				$errores .= validarCampo::validarDato(&$_POST['horarioEdic'], 'horarioEdic', 'NINGUNO', 'no', '3-200');
-				$errores .= validarCampo::validarDato(&$_POST['sinopticoEdic'], 'sinopticoEdic', 'NINGUNO', 'si', '3-500');
+				$errores .= validarCampo::validarDato($_POST['limiteEdic'], 'limiteEdic', 'NUMERICO', 'no', '1-3');
+				$errores .= validarCampo::validarSelect($_POST['tipoEdic'], 'tipoEdic', 'no');
+				$errores .= validarCampo::validarDato($_POST['duracionEdic'], 'duracionEdic', 'NINGUNO', 'no', '3-15', 'palabras');
+				$errores .= validarCampo::validarDato($_POST['horarioEdic'], 'horarioEdic', 'NINGUNO', 'no', '3-200');
+				$errores .= validarCampo::validarDato($_POST['sinopticoEdic'], 'sinopticoEdic', 'NINGUNO', 'si', '3-500');
 			
 				if(empty($errores))
 				{
@@ -888,8 +888,8 @@ require_once 'modelos/edicion.php';
 	
 				if(!empty($_POST) and isset($_POST['documentoPers']))
 				{
-					$errores .= validarCampo::validarDato(&$_POST['documentoPers'], 'busqueda', 'NUMERICO', 'no', '4-8');
-					$errores .= validarCampo::validarSelect(&$_POST['tipoDocumentoPers'], 'busqueda', 'no');
+					$errores .= validarCampo::validarDato($_POST['documentoPers'], 'busqueda', 'NUMERICO', 'no', '4-8');
+					$errores .= validarCampo::validarSelect($_POST['tipoDocumentoPers'], 'busqueda', 'no');
 					
 					vistaGestor::agregarDiccionario('selected_tipo_' . $_POST['tipoDocumentoPers'], 'selected="selected"');
 

@@ -247,7 +247,7 @@ require_once 'modelos/identificador.php';
 			
 			if(!empty($curso) and !empty($edicion) and !empty($_POST) and $edicion->dameEstado() != 'bloqueada')
 			{
-				$errores .= validarCampo::validarSelect(&$_POST['numFirmasDoc'], 'numFirmasDoc', 'no');				
+				$errores .= validarCampo::validarSelect($_POST['numFirmasDoc'], 'numFirmasDoc', 'no');				
 				
 				if(empty($errores))
 				{
@@ -255,17 +255,17 @@ require_once 'modelos/identificador.php';
 
 					for($i = 1; $i <= $_POST['numFirmasDoc']; $i++)
 					{
-						$errores .= validarCampo::validarDato(&$_POST['calificativo' . $i . 'Doc'], 'calificativo' . $i . 'Doc', 'NINGUNO', 'no', '2-50');
-						$errores .= validarCampo::validarDato(&$_POST['cargo' . $i . 'Doc'], 'cargo' . $i . 'Doc', 'NINGUNO', 'no', '2-100');
-						$errores .= validarCampo::validarDato(&$_POST['nombre' . $i . 'Doc'], 'nombre' . $i . 'Doc', 'NINGUNO', 'no', '2-60');
+						$errores .= validarCampo::validarDato($_POST['calificativo' . $i . 'Doc'], 'calificativo' . $i . 'Doc', 'NINGUNO', 'no', '2-50');
+						$errores .= validarCampo::validarDato($_POST['cargo' . $i . 'Doc'], 'cargo' . $i . 'Doc', 'NINGUNO', 'no', '2-100');
+						$errores .= validarCampo::validarDato($_POST['nombre' . $i . 'Doc'], 'nombre' . $i . 'Doc', 'NINGUNO', 'no', '2-60');
 					}
 				}
 
-				$errores .= validarCampo::validarDato(&$_POST['calificativoFacilitadorDoc'], 'calificativoFacilitadorDoc', 'NINGUNO', 'no', '2-50');
-				$errores .= validarCampo::validarDato(&$_POST['cargoFacilitadorDoc'], 'cargoFacilitadorDoc', 'NINGUNO', 'no', '3-140');
+				$errores .= validarCampo::validarDato($_POST['calificativoFacilitadorDoc'], 'calificativoFacilitadorDoc', 'NINGUNO', 'no', '2-50');
+				$errores .= validarCampo::validarDato($_POST['cargoFacilitadorDoc'], 'cargoFacilitadorDoc', 'NINGUNO', 'no', '3-140');
 
 				$errorTemporalLogo = '';
-				$errorTemporalLogo .= validarCampo::validarSelect(&$_POST['accionLogoDoc'], 'accionLogoDoc', 'no');
+				$errorTemporalLogo .= validarCampo::validarSelect($_POST['accionLogoDoc'], 'accionLogoDoc', 'no');
 
 				if(empty($errorTemporalLogo) and $_POST['accionLogoDoc'] == 'cambiar')
 				{
@@ -298,7 +298,7 @@ require_once 'modelos/identificador.php';
 				vistaGestor::agregarDiccionario('selected_logo_' . $_POST['accionLogoDoc'], 'selected="selected"');
 
 				$errorTemporalFondo = '';
-				$errorTemporalFondo .= validarCampo::validarSelect(&$_POST['accionFondoDoc'], 'accionLogoDoc', 'no');
+				$errorTemporalFondo .= validarCampo::validarSelect($_POST['accionFondoDoc'], 'accionLogoDoc', 'no');
 				
 				if($_POST['accionFondoDoc'] == 'cambiar')
 				{

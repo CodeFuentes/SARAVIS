@@ -93,9 +93,9 @@ require_once 'modelos/usuario.php';
 		
 			if(!empty($usuario))
 			{
-				$errores .= validarCampo::validarDato(&$_POST['claveAnterior'], 'claveAnterior', 'ALFANUMERICO', 'no', '6-16');
-				$errores .= validarCampo::validarDato(&$_POST['claveUno'], 'claveUno', 'ALFANUMERICO', 'no', '6-16');
-				$errores .= validarCampo::validarDato(&$_POST['claveDos'], 'claveDos', 'ALFANUMERICO', 'no', '6-16');
+				$errores .= validarCampo::validarDato($_POST['claveAnterior'], 'claveAnterior', 'ALFANUMERICO', 'no', '6-16');
+				$errores .= validarCampo::validarDato($_POST['claveUno'], 'claveUno', 'ALFANUMERICO', 'no', '6-16');
+				$errores .= validarCampo::validarDato($_POST['claveDos'], 'claveDos', 'ALFANUMERICO', 'no', '6-16');
 
 				if(empty($errores)) {
 					if($_POST['claveUno'] != $_POST['claveDos']) {
@@ -308,10 +308,10 @@ require_once 'modelos/usuario.php';
 		
 		private function _guardarRegistro()
 		{
-			$errores .= validarCampo::validarDato(&$_POST['nombreUsua'], 'nombreUsua', 'NOMBRE', 'no', '3-50');
-			$errores .= validarCampo::validarDato(&$_POST['loginUsua'], 'loginUsua', 'ALFANUMERICO', 'no', '3-10');
-			$errores .= validarCampo::validarDato(&$_POST['claveUno'], 'claveUno', 'ALFANUMERICO', 'no', '6-16');
-			$errores .= validarCampo::validarDato(&$_POST['claveDos'], 'claveDos', 'ALFANUMERICO', 'no', '6-16');
+			$errores .= validarCampo::validarDato($_POST['nombreUsua'], 'nombreUsua', 'NOMBRE', 'no', '3-50');
+			$errores .= validarCampo::validarDato($_POST['loginUsua'], 'loginUsua', 'ALFANUMERICO', 'no', '3-10');
+			$errores .= validarCampo::validarDato($_POST['claveUno'], 'claveUno', 'ALFANUMERICO', 'no', '6-16');
+			$errores .= validarCampo::validarDato($_POST['claveDos'], 'claveDos', 'ALFANUMERICO', 'no', '6-16');
 			
 			$errores .= validarCampo::multiMarcado(
 							'permisos', 'Debe al menos seleccionar alg&uacute;n permiso', 1, 
@@ -383,7 +383,7 @@ require_once 'modelos/usuario.php';
 		
 			if(!empty($usuario))
 			{
-				$errores .= validarCampo::validarDato(&$_POST['nombreUsua'], 'nombreUsua', 'NOMBRE', 'no', '3-50');
+				$errores .= validarCampo::validarDato($_POST['nombreUsua'], 'nombreUsua', 'NOMBRE', 'no', '3-50');
 				
 				$errores .= validarCampo::multiMarcado(
 								'permisos', 'Debe al menos seleccionar alg&uacute;n permiso', 1, 

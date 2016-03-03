@@ -65,7 +65,7 @@ require_once 'modelos/edicion.php';
 		
 		private function _busquedaCodigo()
 		{
-			$errores .= validarCampo::validarDato(&$_POST['buscarCodigo'], 'buscarCodigo', 'NINGUNO', 'no', '5-30');
+			$errores .= validarCampo::validarDato($_POST['buscarCodigo'], 'buscarCodigo', 'NINGUNO', 'no', '5-30');
 			
 			if(empty($errores))
 			{
@@ -143,8 +143,8 @@ require_once 'modelos/edicion.php';
 		
 		private function _guardarRegistro()
 		{
-			$errores .= validarCampo::validarDato(&$_POST['nombreCurso'], 'nombreCurso', 'NINGUNO', 'no', '5-100');
-			$errores .= validarCampo::validarDato(&$_POST['descripcionCurso'], 'descripcionCurso', 'NINGUNO', 'no', '5-200');
+			$errores .= validarCampo::validarDato($_POST['nombreCurso'], 'nombreCurso', 'NINGUNO', 'no', '5-100');
+			$errores .= validarCampo::validarDato($_POST['descripcionCurso'], 'descripcionCurso', 'NINGUNO', 'no', '5-200');
 			
 			if(empty($errores))
 			{
@@ -179,13 +179,13 @@ require_once 'modelos/edicion.php';
 		{
 			if(!empty($_POST['nombreCurso']))
 			{
-				$errores .= validarCampo::validarDato(&$_POST['nombreCurso'], 'busqueda', 'NINGUNO', 'no', '2-100');
+				$errores .= validarCampo::validarDato($_POST['nombreCurso'], 'busqueda', 'NINGUNO', 'no', '2-100');
 				$_GET['dato'] = $_POST['nombreCurso'];
 				
 			}
 			else
 			{
-				$errores .= validarCampo::validarDato(&$_GET['dato'], 'busqueda', 'NINGUNO', 'no', '2-100');
+				$errores .= validarCampo::validarDato($_GET['dato'], 'busqueda', 'NINGUNO', 'no', '2-100');
 			}			
 			
 			if(empty($errores))
@@ -283,8 +283,8 @@ require_once 'modelos/edicion.php';
 		{
 			if(!empty($_SESSION['formulario']['idCurso']))
 			{
-				$errores .= validarCampo::validarDato(&$_POST['nombreCurso'], 'nombreCurso', 'NINGUNO', 'no', '5-100');
-				$errores .= validarCampo::validarDato(&$_POST['descripcionCurso'], 'descripcionCurso', 'NINGUNO', 'no', '5-200');
+				$errores .= validarCampo::validarDato($_POST['nombreCurso'], 'nombreCurso', 'NINGUNO', 'no', '5-100');
+				$errores .= validarCampo::validarDato($_POST['descripcionCurso'], 'descripcionCurso', 'NINGUNO', 'no', '5-200');
 
 				if(empty($errores))
 				{
