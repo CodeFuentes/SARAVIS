@@ -53,11 +53,9 @@ require_once 'modelos/contacto.php';
 		}
 		
 		private function _guardarRegistro()
-		{		
-			echo "<script> 
-				alert('Mensaje Enviado');
-			</script>";
-			header("Location: ./");
+		{	
+			$contacto = new Contacto($_POST['correo'], $_POST['mensaje']);
+			$enviar = $contacto->enviar();
 		}
 		
 		

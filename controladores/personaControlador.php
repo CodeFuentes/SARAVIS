@@ -110,7 +110,6 @@ require_once 'modelos/persona.php';
 									);
 
 				$resultado = $persona->registrar();
-
 				if($resultado == 'exito')
 				{
 					vistaGestor::agregarNotificacion('exito', 'Se ha registrado con éxito a la persona');
