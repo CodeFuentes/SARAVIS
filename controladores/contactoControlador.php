@@ -38,14 +38,6 @@ require_once 'modelos/contacto.php';
 		
 		private function _formularioRegistro()
 		{			
-			if(!empty($_GET['documento']))
-			{
-				list($tipo, $documento) = explode('-', $_GET['documento']);
-				
-				vistaGestor::agregarDiccionario('post_documentoContact', $documento);
-				vistaGestor::agregarDiccionario('selected_tipo_' . $tipo, 'selected="selected"');
-				
-			}
 		
 			vistaGestor::agregarArchivoCss('formularios');
 			vistaGestor::agregarDiccionario('link_form_contacto', '?ctrl=contacto&acc=guarRegi');
@@ -54,7 +46,7 @@ require_once 'modelos/contacto.php';
 		
 		private function _guardarRegistro()
 		{	
-			$contacto = new Contacto($_POST['correo'], $_POST['mensaje']);
+			$contacto = new contacto($_POST['correo'], $_POST['mensaje']);
 			$enviar = $contacto->enviar();
 		}
 		

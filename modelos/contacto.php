@@ -2,7 +2,7 @@
 
 require_once 'persistencias/contactoPersistencia.php';
 
-	class Contacto
+	class contacto
 	{
 		private $_correo;
 		private $_mensaje;
@@ -53,11 +53,9 @@ require_once 'persistencias/contactoPersistencia.php';
 			//     echo "Mensaje enviado";
 			// }else{
 			//     echo "Mensaje no enviado";
-			// }
-			echo dameMensaje();
-
+			// 
 			echo "<script> 
-				alert('Mensaje Enviado');
+				alert($mensaje);
 				location.href='./';
 			</script>";		
 		}

@@ -2,20 +2,22 @@
 			
 <section>
 	<article>
-			<div class="sub_titulo">Contactanos</div>
+			<div class="sub_titulo">Cont&aacute;ctanos</div>
 			
 			<div class="formulario">
 				<ul>	
 						
 					<li>
 						<div class="unico">
-							<label>Correo:<span>*</span></label>
-							<input id="correo" type="email" name="correo" value="{#post_correo}" style="height:25px;">
-							{#error_correo}
+							<label>Preguntas Frecuentes:<span>*</span></label>
+							<select id="opcion" name="opcion">
+								<option value="" selected disabled>Seleccione una Pregunta</option>
+								<option value="">asfsa</option>
+							</select>
 						</div>
 
 						<div class="unico">
-							<label>Mensaje:<span>*</span></label>
+							<label>Descripci&oacute;n:<span>*</span></label>
 							<textarea id="mensaje" name="mensaje">{#post_mensaje}</textarea>
 							{#error_mensaje}
 						</div>
