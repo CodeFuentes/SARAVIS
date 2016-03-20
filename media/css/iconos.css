@@ -357,3 +357,11 @@
 	{
 		background-image: url('../imagenes/iconos/negro/alert.png');
 	}
+
+/*
+	Contacto
+*/
+	div#cuerpo_completo a img.contacto
+	{
+		background-image: url('../imagenes/iconos/blanco/phone.png');
+	}

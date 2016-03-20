@@ -39,25 +39,26 @@ require_once 'persistencias/contactoPersistencia.php';
 		//
 		
 		
-		public function enviar()
+		public function registrar()
 		{
-			// $mail = dameMensaje();
-			// $correo = dameCorreo();
-			// $titulo = "Contacto";
-			// $headers = "MIME-Version: 1.0\r\n"; 
-			// $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-			// $headers .= "From: ".$correo." >\r\n";
+			 $mail = $this->_mensaje;
+			 $titulo = "Contacto";
+			 $headers = "MIME-Version: 1.0\r\n"; 
+			 $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+			 $headers .= "From: blink242@outlook.com"." >\r\n";
 		
-			// $bool = mail("blink242@outlook.com",$titulo,$mail,$headers);
-			// if($bool){
-			//     echo "Mensaje enviado";
-			// }else{
-			//     echo "Mensaje no enviado";
-			// 
-			echo "<script> 
-				alert($mensaje);
-				location.href='./';
-			</script>";		
+			 $bool = mail("blink242@outlook.com",$titulo,$mail,$headers);
+			 if($bool){
+			     echo "Mensaje enviado";
+			     echo "<script>
+			     	location.href='./';
+			     </script>";
+			 }else{
+			     echo "Mensaje no enviado";
+			     echo "<script>
+			     	location.href='./';
+			     </script>";
+			 }
 		}
 		
 	}

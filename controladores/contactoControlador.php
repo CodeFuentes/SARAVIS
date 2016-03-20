@@ -20,7 +20,34 @@ require_once 'modelos/contacto.php';
 					index::permitirAcceso('personas');
 					self::_guardarRegistro();
 					
-				break;				
+				break;
+
+				case 'formBusq': 
+				
+					self::_formularioBusqueda();
+					
+				break;
+				
+				case 'buscPers': 
+				
+					self::_realizarBusqueda();
+					
+				break;
+				
+				case 'formModi': 
+					
+					index::permitirAcceso('personas');
+					self::_formularioModificar();
+					
+				break;
+				
+				case 'guarModi': 
+				
+					index::permitirAcceso('personas');
+					self::_guardarModificar();
+					
+				break;
+				
 
 				default:
 
@@ -32,12 +59,13 @@ require_once 'modelos/contacto.php';
 		
 		//
 		//++++
-		//		REGISTRO CONTACTO
+		//		REGISTRO PERSONA
 		//++++
 		//
 		
 		private function _formularioRegistro()
 		{			
+			
 		
 			vistaGestor::agregarArchivoCss('formularios');
 			vistaGestor::agregarDiccionario('link_form_contacto', '?ctrl=contacto&acc=guarRegi');
@@ -45,12 +73,16 @@ require_once 'modelos/contacto.php';
 		}
 		
 		private function _guardarRegistro()
-		{	
-			$contacto = new contacto($_POST['correo'], $_POST['mensaje']);
-			$enviar = $contacto->enviar();
+		{		
+			
+			$a = $_POST['mensaje'];
+			$b = $_POST['asunto'];
+
+			$contacto = new contacto($_POST['asunto'], $_POST['mensaje']);
+
+			$resultado = $contacto->registrar();
+
 		}
-		
-		
 	}
 	
 	

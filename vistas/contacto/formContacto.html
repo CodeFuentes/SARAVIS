@@ -9,16 +9,14 @@
 						
 					<li>
 						<div class="unico">
-							<label>Preguntas Frecuentes:<span>*</span></label>
-							<select id="opcion" name="opcion">
-								<option value="" selected disabled>Seleccione una Pregunta</option>
-								<option value="">asfsa</option>
-							</select>
+							<label>Asunto:<span>*</span></label>
+							<textarea id="asunto" name="asunto" value="{#post_asunto}"></textarea>
+							{#error_asunto}
 						</div>
 
 						<div class="unico">
 							<label>Descripci&oacute;n:<span>*</span></label>
-							<textarea id="mensaje" name="mensaje">{#post_mensaje}</textarea>
+							<textarea id="mensaje" name="mensaje" value="{#post_mensaje}"></textarea>
 							{#error_mensaje}
 						</div>
 					</li>
