@@ -193,4 +193,28 @@ require_once 'nucleo/bdGestor.php';
 				
 			return $retorna;
 		}
+
+		public function bloquearEdicion($id_edicion){
+
+			$GBD  = new baseDatosGestor();
+			$GBD->abrirConexion();
+
+			$query = "UPDATE ediciones SET estado = 'bloqueada' WHERE id_edicion = '$id_edicion'";
+			$idGenerado = $GBD->insertarQuery($query);
+			$GBD->cerrarConexion();
+			
+			return $idGenerado;
+		}
+
+		public function desbloquearEdicion($id_edicion){
+
+			$GBD  = new baseDatosGestor();
+			$GBD->abrirConexion();
+
+			$query = "UPDATE ediciones SET estado = 'normal' WHERE id_edicion = '$id_edicion'";
+			$idGenerado = $GBD->insertarQuery($query);
+			$GBD->cerrarConexion();
+			
+			return $idGenerado;
+		}
 	}

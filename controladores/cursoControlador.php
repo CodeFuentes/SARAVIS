@@ -48,6 +48,9 @@ require_once 'modelos/edicion.php';
 				case 'busqCodi': 
 					self::_busquedaCodigo();					
 				break;
+				case 'bloquear':
+					self::bloquear();
+					break;
 				
 				default:
 
@@ -100,6 +103,7 @@ require_once 'modelos/edicion.php';
 					
 					vistaGestor::agregarDiccionario('nombreCurso', $curso->dameNombre());
 					vistaGestor::agregarDiccionario('tipoEdicion', $edicion->dameTipoLegible());
+					vistaGestor::agregarDiccionario('idEdicion', $edicion->dameId());
 					vistaGestor::agregarDiccionario('duracionEdicion', $edicion->dameDuracion());
 					vistaGestor::agregarDiccionario('inicioEdicion', invertirFecha($edicion->dameFechaInicio()));
 					vistaGestor::agregarDiccionario('finalEdicion', invertirFecha($edicion->dameFechaFin()));
@@ -316,8 +320,14 @@ require_once 'modelos/edicion.php';
 			}
 		}
 		
+		
 		private function _verEdiciones()
 		{
+			$edicion = new edicion();
+			if($_GET['accion']=='bloquear') $bloquear = $edicion->bloquearEdicion($_GET['id_edicion']);
+			if($_GET['accion']=='desbloquear') $desbloquear = $edicion->desbloquearEdicion($_GET['id_edicion']);
+
+
 			if(!empty($_GET['id']))
 			{
 				$_SESSION['formulario']['idCurso'] = $_GET['id'];
@@ -354,12 +364,12 @@ require_once 'modelos/edicion.php';
 							}
 							
 							if($edicion->dameEstado() == 'bloqueada') {
-								$estadoIcono = '<a title="Edición Bloqueada" href="#">
+								$estadoIcono = '<a title="Edición Bloqueada" href="?ctrl=curso&acc=verEdic&accion=desbloquear&id='.$curso->dameId().'&id_edicion='.$edicion->dameId().'">
 													<img class="bloquear negro">
 												</a>';
 							}
 							else {
-								$estadoIcono = '<a title="Edición Abierta" href="#">
+								$estadoIcono = '<a title="Edición Abierta" href="?ctrl=curso&acc=verEdic&accion=bloquear&id='.$curso->dameId().'&id_edicion='.$edicion->dameId().'">
 													<img class="abierto negro">
 												</a>';
 							}

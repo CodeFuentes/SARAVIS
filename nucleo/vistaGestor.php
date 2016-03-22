@@ -162,6 +162,10 @@
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/jquery/jquery.js"></script>';
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/jquery/jqueryui.js"></script>';
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/calendario.js"></script>';
+			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/jquery/qrcode.js"></script>';
+			
+
+
 			
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/general.js"></script>';
 			

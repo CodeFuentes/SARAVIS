@@ -373,6 +373,20 @@ require_once 'modelos/identificador.php';
 			
 		
 		}
+
+		public function bloquearEdicion($id_edicion){
+			$edicionPersistencia = new edicionPersistencia();
+			$datosAsociaciones = $edicionPersistencia->bloquearEdicion($id_edicion);
+
+			return $datosAsociaciones;
+		}
+
+		public function desbloquearEdicion($id_edicion){
+			$edicionPersistencia = new edicionPersistencia();
+			$datosAsociaciones = $edicionPersistencia->desbloquearEdicion($id_edicion);
+
+			return $datosAsociaciones;
+		}
 		
 		
 		//	FUNCTION CARGAR FULL EDICCION
