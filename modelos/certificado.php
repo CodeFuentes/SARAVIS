@@ -114,7 +114,8 @@ require_once 'persistencias/certificadoPersistencia.php';
 			$miFondo = 'background: url("recursos/certificados/' . $this->_fondo . '") no-repeat';
 		
 			$valorLogoExtra = $this->dameLogoExtra();
-			
+			$qr = '<div id="qr"></div>';
+
 			if($valorLogoExtra != 'ninguno'){
 				$miLogoExtra = '<div class="logo"><img src="recursos/certificados/' . $this->_logoExtra . '"></img></div>';
 			}
@@ -242,6 +243,7 @@ require_once 'persistencias/certificadoPersistencia.php';
 							' . $tdFirmantesCargos . '
 						</tr>
 					</table>
+					'.$qr.'
 					<table class="codigoGenerado"><tr><td><p style="font-size: 20px; margin: 0px;">C&oacute;digo Verificaci&oacute;n: ' . $codigoGenerado . '-' . $idPersona . '</p></td></tr></table>
 				</div>';
 				}

@@ -364,12 +364,12 @@ require_once 'modelos/edicion.php';
 							}
 							
 							if($edicion->dameEstado() == 'bloqueada') {
-								$estadoIcono = '<a title="Edición Bloqueada" href="?ctrl=curso&acc=verEdic&accion=desbloquear&id='.$curso->dameId().'&id_edicion='.$edicion->dameId().'">
+								$estadoIcono = '<a title="Edición Bloqueada" href="#">
 													<img class="bloquear negro">
 												</a>';
 							}
 							else {
-								$estadoIcono = '<a title="Edición Abierta" href="?ctrl=curso&acc=verEdic&accion=bloquear&id='.$curso->dameId().'&id_edicion='.$edicion->dameId().'">
+								$estadoIcono = '<a title="Edición Abierta" href="#">
 													<img class="abierto negro">
 												</a>';
 							}
