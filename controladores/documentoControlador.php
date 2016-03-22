@@ -496,6 +496,7 @@ require_once 'modelos/identificador.php';
 			vistaGestor::agregarDiccionario('duracionEdicion', $edicion->dameDuracion());
 			vistaGestor::agregarDiccionario('inicioEdicion', invertirFecha($edicion->dameFechaInicio()));
 			vistaGestor::agregarDiccionario('finalEdicion', invertirFecha($edicion->dameFechaFin()));
+			
 
 			if(!empty($facilitador))
 			{				

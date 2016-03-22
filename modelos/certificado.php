@@ -249,7 +249,10 @@ require_once 'persistencias/certificadoPersistencia.php';
 		
 			$htmlPDF = '
 		<html>
+
 			<head>
+				<script type="text/javascript" src="media/js/jquery/qrcode.js"></script>
+
 				<style type="text/css">
 					body * {
 						overflow: hidden;
@@ -333,7 +336,7 @@ require_once 'persistencias/certificadoPersistencia.php';
 				</style>
 			</head>
 			
-			<body>
+			<body onload="update_qrcode()">
 				' . $cuerpoRepetitivo . '
 			</body>
 		</html>';

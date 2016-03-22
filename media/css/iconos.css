@@ -365,3 +365,8 @@
 	{
 		background-image: url('../imagenes/iconos/blanco/phone.png');
 	}
+
+	div#cuerpo_completo a img.contacto.negro
+	{
+		background-image: url('../imagenes/iconos/negro/phone.png');
+	}

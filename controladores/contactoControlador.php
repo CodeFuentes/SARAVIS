@@ -47,6 +47,10 @@ require_once 'modelos/contacto.php';
 					self::_guardarModificar();
 					
 				break;
+
+				case 'verInf':
+					self::_verInf();
+					break;
 				
 
 				default:
@@ -69,7 +73,7 @@ require_once 'modelos/contacto.php';
 		
 			vistaGestor::agregarArchivoCss('formularios');
 			vistaGestor::agregarDiccionario('link_form_contacto', '?ctrl=contacto&acc=guarRegi');
-			vistaGestor::documentoNormal('Contacto', array('vistas/contacto/formContacto.html'));
+			vistaGestor::documentoNormal('Contacto', array('vistas/ayuda/formContacto.html'));
 		}
 		
 		private function _guardarRegistro()
@@ -82,6 +86,11 @@ require_once 'modelos/contacto.php';
 
 			$resultado = $contacto->registrar();
 
+		}
+
+		public function _verInf()
+		{
+			vistaGestor::documentoNormal('Informacion', array('vistas/ayuda/informacion.html'));
 		}
 	}
 	
