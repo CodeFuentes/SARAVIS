@@ -1,16 +1,15 @@
 <?php
 
 require_once 'persistencias/contactoPersistencia.php';
-
 	class contacto
 	{
-		private $_correo;
+		private $_asunto;
 		private $_mensaje;
 	
 	
-		public function __construct($correo, $mensaje)
+		public function __construct($asunto, $mensaje)
 		{
-			$this->_correo = $correo;
+			$this->_asunto = $asunto;
 			$this->_mensaje = $mensaje;
 		}
 		
@@ -26,8 +25,8 @@ require_once 'persistencias/contactoPersistencia.php';
 			return $this->_mensaje;
 		}
 	
-		public function dameCorreo(){
-			return $this->_correo;
+		public function dameAsunto(){
+			return $this->_asunto;
 		}
 		
 		//
@@ -46,15 +45,19 @@ require_once 'persistencias/contactoPersistencia.php';
 			 $headers = "MIME-Version: 1.0\r\n"; 
 			 $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
 			 $headers .= "From: blink242@outlook.com"." >\r\n";
-		
+			
+		     $id_usuario = $_SESSION['session']['id'];
+		     $mensaje = new contactoPersistencia();
+		     $mensaje = $mensaje->registrarMensaje($id_usuario, $this->_mensaje, $this->_asunto);
+
 			 $bool = mail("blink242@outlook.com",$titulo,$mail,$headers);
 			 if($bool){
-			     echo "Mensaje enviado";
+			     echo "<script>alert('Mensaje Enviado')</script>";
 			     echo "<script>
 			     	location.href='./';
 			     </script>";
 			 }else{
-			     echo "Mensaje no enviado";
+			     echo "<script>alert('Mensaje no Enviado')</script>";
 			     echo "<script>
 			     	location.href='./';
 			     </script>";

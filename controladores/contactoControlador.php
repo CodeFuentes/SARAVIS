@@ -1,7 +1,7 @@
 <?php
 
 require_once 'modelos/contacto.php';
-
+require_once 'modelos/usuario.php';
 	class contactoControlador
 	{
 		static public function procesarAccion($accion)

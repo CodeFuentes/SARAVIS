@@ -1,21 +1,11 @@
 -- phpMyAdmin SQL Dump
-<<<<<<< HEAD
 -- version 4.1.6
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-03-2016 a las 06:23:07
+-- Tiempo de generación: 23-03-2016 a las 18:45:27
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
-=======
--- version 4.4.15.4
--- http://www.phpmyadmin.net
---
--- Servidor: localhost
--- Tiempo de generación: 03-03-2016 a las 05:52:40
--- Versión del servidor: 10.0.22-MariaDB
--- Versión de PHP: 5.6.1
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -24,11 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-<<<<<<< HEAD
 /*!40101 SET NAMES utf8 */;
-=======
-/*!40101 SET NAMES utf8mb4 */;
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
 
 --
 -- Base de datos: `saravis`
@@ -41,23 +27,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `certificados` (
-<<<<<<< HEAD
   `id_certificado` int(11) NOT NULL AUTO_INCREMENT,
-=======
-  `id_certificado` int(11) NOT NULL,
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
   `id_edicion` int(11) NOT NULL,
   `firma_facilitador` varchar(200) NOT NULL,
   `firmas_extras` varchar(750) NOT NULL,
   `fondo` varchar(20) NOT NULL,
-<<<<<<< HEAD
   `logo_extra` varchar(20) NOT NULL,
   PRIMARY KEY (`id_certificado`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
-=======
-  `logo_extra` varchar(20) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Volcado de datos para la tabla `certificados`
@@ -70,7 +47,23 @@ INSERT INTO `certificados` (`id_certificado`, `id_edicion`, `firma_facilitador`,
 (5, 5, 'Profa.(#=D=#)Profesora Estudios Generales', 'Profa.(#=D=#)Rectora UPT Aragua FBF(#=D=#)Bettys E. Muñoz H.(#=P=#)Prof.(#=D=#)Coordinador Área Cultural(#=D=#)César Mòsquera', 'fondo_12_5.jpeg', 'logo_12_5.jpeg'),
 (6, 6, 'TSU(#=D=#)Facilitadora', 'Ing.(#=D=#)Coordinador Cultura(#=D=#)Gabriel Vastag', 'fondo_11_6.jpeg', 'logo_11_6.jpeg'),
 (7, 4, 'TSU(#=D=#)Facilitadora', 'Profa.(#=D=#)César Mosquera(#=D=#)Coordinador de Cultura', 'fondo_11_4.jpeg', 'logo_11_4.jpeg'),
-(8, 7, 'Profa.(#=D=#)Jefa del Departamento de Informática', 'Profa.(#=D=#)Rectora(#=D=#)Bettys Muñoz Henriquez(#=P=#)Prof.(#=D=#)Coordinador de Creación Intelectual y Desarrollo Socioproductivo(#=D=#)Richard Castellanos(#=P=#)Sr.(#=D=#)Coordinador de la UDER(#=D=#)Ramón Garcia', 'fondo_13_7.jpeg', 'logo_13_7.jpeg');
+(8, 7, 'Profa.(#=D=#)Jefa del Departamento de Informática', 'Profa.(#=D=#)Rectora(#=D=#)Bettys Muñoz Henriquez(#=P=#)Prof.(#=D=#)Coordinador de Creación Intelectual y Desarrollo Socioproductivo(#=D=#)Richard Castellanos(#=P=#)Sr.(#=D=#)Coordinador de la UDER(#=D=#)Ramón Garcia', 'fondo_13_7.jpeg', 'logo_13_7.jpeg'),
+(9, 9, 'TSU(#=D=#)Facilitador', '', 'fondo_1_9.jpeg', 'ninguno');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `contacto`
+--
+
+CREATE TABLE IF NOT EXISTS `contacto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) NOT NULL,
+  `asunto` varchar(50) NOT NULL,
+  `mensaje` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -79,29 +72,18 @@ INSERT INTO `certificados` (`id_certificado`, `id_edicion`, `firma_facilitador`,
 --
 
 CREATE TABLE IF NOT EXISTS `cursos` (
-<<<<<<< HEAD
   `id_curso` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   PRIMARY KEY (`id_curso`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
-=======
-  `id_curso` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `descripcion` varchar(200) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
 
 --
 -- Volcado de datos para la tabla `cursos`
 --
 
 INSERT INTO `cursos` (`id_curso`, `nombre`, `descripcion`) VALUES
-<<<<<<< HEAD
 (1, 'Programacion Web: MVC', 'Programacion Web'),
-=======
-(1, 'Programacion Web: MVC', 'Programacion Web: MVC'),
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
 (2, 'Programacion Web: Javascript', 'Programacion Web: Javascript'),
 (3, 'Programacion Web: Jquery', 'Programacion Web: Jquery'),
 (4, 'Programacion Web: CSS3', 'Programacion Web: CSS3'),
@@ -123,11 +105,7 @@ INSERT INTO `cursos` (`id_curso`, `nombre`, `descripcion`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `ediciones` (
-<<<<<<< HEAD
   `id_edicion` int(11) NOT NULL AUTO_INCREMENT,
-=======
-  `id_edicion` int(11) NOT NULL,
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
   `id_curso` int(11) NOT NULL,
   `id_facilitador` int(11) NOT NULL,
   `estado` enum('normal','bloqueada') NOT NULL,
@@ -137,14 +115,9 @@ CREATE TABLE IF NOT EXISTS `ediciones` (
   `duracion` varchar(15) NOT NULL,
   `limite` int(3) NOT NULL,
   `horario` varchar(200) NOT NULL,
-<<<<<<< HEAD
   `sinoptico` varchar(500) NOT NULL,
   PRIMARY KEY (`id_edicion`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
-=======
-  `sinoptico` varchar(500) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
 
 --
 -- Volcado de datos para la tabla `ediciones`
@@ -158,12 +131,8 @@ INSERT INTO `ediciones` (`id_edicion`, `id_curso`, `id_facilitador`, `estado`, `
 (5, 12, 12, 'normal', 'taller_apro', '2014-03-27', '2014-04-29', '20 Horas', 5, 'Martes y Jueves de 4:00 pm a 6:00 pm', 'El arte de leer\r\nSelección de temas\r\nLa postura\r\nEl lugar\r\nLa iluminación\r\nEl Texto digital'),
 (6, 11, 6, 'bloqueada', 'taller_apro', '2014-04-29', '2014-05-06', '10 Horas', 5, 'martes y jueves de 2:00 a 4:00pm', 'Taller orientado a formar actores para realizar pantomima artística'),
 (7, 13, 136, 'normal', 'taller_part', '2015-04-29', '2015-04-29', '4 Horas', 120, '2:00 pm a 6:00 pm', 'Uso de las TIC en apoyo al Desarrollo Socio Productivo de las Comunidades'),
-<<<<<<< HEAD
 (8, 14, 136, 'normal', 'taller_part', '2015-07-09', '2015-07-09', '8 Horas', 600, '8:00am a 12:00m y 1:00pm a 6:00pm', ''),
 (9, 1, 155, 'normal', 'curso_part', '2016-03-02', '2016-03-04', '2 Horas', 50, '8:00', '');
-=======
-(8, 14, 136, 'normal', 'taller_part', '2015-07-09', '2015-07-09', '8 Horas', 600, '8:00am a 12:00m y 1:00pm a 6:00pm', '');
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
 
 -- --------------------------------------------------------
 
@@ -312,12 +281,8 @@ INSERT INTO `ediciones_personas` (`id_edicion`, `id_persona`, `estado`) VALUES
 (8, 201, 'ninguno'),
 (8, 202, 'ninguno'),
 (8, 162, 'ninguno'),
-<<<<<<< HEAD
 (8, 161, 'ninguno'),
-(9, 127, 'ninguno');
-=======
-(8, 161, 'ninguno');
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
+(9, 127, 'participacion');
 
 -- --------------------------------------------------------
 
@@ -326,18 +291,11 @@ INSERT INTO `ediciones_personas` (`id_edicion`, `id_persona`, `estado`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `identificadores` (
-<<<<<<< HEAD
   `id_identificador` int(11) NOT NULL AUTO_INCREMENT,
   `id_edicion` int(11) NOT NULL,
   `fondo` varchar(20) NOT NULL,
   PRIMARY KEY (`id_identificador`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
-=======
-  `id_identificador` int(11) NOT NULL,
-  `id_edicion` int(11) NOT NULL,
-  `fondo` varchar(20) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `identificadores`
@@ -350,7 +308,8 @@ INSERT INTO `identificadores` (`id_identificador`, `id_edicion`, `fondo`) VALUES
 (4, 4, 'fondo_11_4.jpeg'),
 (5, 5, 'fondo_12_5.jpeg'),
 (6, 6, 'fondo_11_6.jpeg'),
-(7, 7, 'fondo_13_7.jpeg');
+(7, 7, 'fondo_13_7.jpeg'),
+(8, 9, 'fondo_1_9.jpeg');
 
 -- --------------------------------------------------------
 
@@ -359,11 +318,7 @@ INSERT INTO `identificadores` (`id_identificador`, `id_edicion`, `fondo`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `personas` (
-<<<<<<< HEAD
   `id_persona` int(11) NOT NULL AUTO_INCREMENT,
-=======
-  `id_persona` int(11) NOT NULL,
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
   `documento` varchar(10) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(30) NOT NULL,
@@ -371,15 +326,10 @@ CREATE TABLE IF NOT EXISTS `personas` (
   `fecha_nacimiento` date NOT NULL,
   `telefono` varchar(11) NOT NULL,
   `direccion` varchar(200) NOT NULL,
-<<<<<<< HEAD
   `correo` varchar(50) NOT NULL,
   PRIMARY KEY (`id_persona`),
   UNIQUE KEY `documento` (`documento`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=203 ;
-=======
-  `correo` varchar(50) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=205 DEFAULT CHARSET=latin1;
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=205 ;
 
 --
 -- Volcado de datos para la tabla `personas`
@@ -581,13 +531,9 @@ INSERT INTO `personas` (`id_persona`, `documento`, `nombre`, `apellido`, `sexo`,
 (199, 'V-26349335', 'Emilbeth', 'Teran', 'femenino', '1997-01-04', '04123451662', 'emilbethteran@gmail.com', ''),
 (200, 'V-24924056', 'Lorena', 'Sanchez', 'femenino', '1995-09-16', '04125127296', 'sanchezlorena607@gmail.com', ''),
 (201, 'V-23627784', 'Luis', 'Acosta', 'masculino', '1995-10-16', '04243443307', 'acosta.luism6@gmail.com', ''),
-<<<<<<< HEAD
-(202, 'V-22504753', 'Gisel', 'Ovando', 'femenino', '1995-03-15', '04261437654', 'ovandogisel1@gmail.com', '');
-=======
 (202, 'V-22504753', 'Gisel', 'Ovando', 'femenino', '1995-03-15', '04261437654', 'ovandogisel1@gmail.com', ''),
-(203, 'V-21252491', 'Carlos', 'Fuentes', 'masculino', '1995-09-22', '04128809495', 'La haciendita, Cagua', 'asdf@ot.c'),
-(204, 'V-123123', 'Armando Esteban', 'Quito', 'masculino', '2016-03-21', '11231231231', 'asdfasdg', 'asf@s.com');
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
+(203, 'V-12412412', 'asfas', 'asfas', 'masculino', '2016-03-22', '12412412211', 'asfas', 'asf@gmail.com'),
+(204, 'V-1234567', 'asfs', 'asf', 'masculino', '2016-03-13', '04142145215', 'asfas', 'blink242@outlook.com');
 
 -- --------------------------------------------------------
 
@@ -596,23 +542,14 @@ INSERT INTO `personas` (`id_persona`, `documento`, `nombre`, `apellido`, `sexo`,
 --
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
-<<<<<<< HEAD
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
-=======
-  `id_usuario` int(11) NOT NULL,
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
   `nombre_completo` varchar(50) NOT NULL,
   `usuario` varchar(10) NOT NULL,
   `clave` varchar(16) NOT NULL,
   `permisos` varchar(50) NOT NULL,
-<<<<<<< HEAD
   `estado` enum('activo','bloqueado','restablecer') NOT NULL,
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
-=======
-  `estado` enum('activo','bloqueado','restablecer') NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -626,89 +563,9 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre_completo`, `usuario`, `clave`, `pe
 (5, 'uptavsuno', 'uptavs1', 'uptavs1', 'cursos,personas,documentos,impresiones', 'activo'),
 (6, 'uptavsdos', 'uptavs2', 'uptavs2', 'cursos,personas,documentos,impresiones', 'activo'),
 (7, 'uptavstres', 'uptavs3', 'uptavs3', 'cursos,personas,documentos,impresiones', 'activo'),
-<<<<<<< HEAD
 (8, 'uptavscuatro', 'uptavs4', 'uptavs4', 'cursos,personas,documentos,impresiones', 'activo'),
-(9, 'Luis', 'Ugueto', '24388425', 'cursos,personas,documentos,impresiones', 'activo');
+(9, 'Luis', 'Ugueto', '24388425', 'admin', 'activo');
 
-=======
-(8, 'uptavscuatro', 'uptavs4', 'uptavs4', 'cursos,personas,documentos,impresiones', 'activo');
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `certificados`
---
-ALTER TABLE `certificados`
-  ADD PRIMARY KEY (`id_certificado`);
-
---
--- Indices de la tabla `cursos`
---
-ALTER TABLE `cursos`
-  ADD PRIMARY KEY (`id_curso`);
-
---
--- Indices de la tabla `ediciones`
---
-ALTER TABLE `ediciones`
-  ADD PRIMARY KEY (`id_edicion`);
-
---
--- Indices de la tabla `identificadores`
---
-ALTER TABLE `identificadores`
-  ADD PRIMARY KEY (`id_identificador`);
-
---
--- Indices de la tabla `personas`
---
-ALTER TABLE `personas`
-  ADD PRIMARY KEY (`id_persona`),
-  ADD UNIQUE KEY `documento` (`documento`);
-
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usuario`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `certificados`
---
-ALTER TABLE `certificados`
-  MODIFY `id_certificado` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT de la tabla `cursos`
---
-ALTER TABLE `cursos`
-  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
---
--- AUTO_INCREMENT de la tabla `ediciones`
---
-ALTER TABLE `ediciones`
-  MODIFY `id_edicion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT de la tabla `identificadores`
---
-ALTER TABLE `identificadores`
-  MODIFY `id_identificador` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT de la tabla `personas`
---
-ALTER TABLE `personas`
-  MODIFY `id_persona` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=205;
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
->>>>>>> 5da2e234d9f5b158e0a3af388b1014accda164b5
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
