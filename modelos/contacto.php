@@ -1,6 +1,8 @@
 <?php
 
 require_once 'persistencias/contactoPersistencia.php';
+require_once 'nucleo/PHPMailer/class.phpmailer.php';
+	
 	class contacto
 	{
 		private $_asunto;
@@ -40,32 +42,50 @@ require_once 'persistencias/contactoPersistencia.php';
 		
 		public function registrar()
 		{
+			//postmaster@localhost
 			 $mail = $this->_mensaje;
-			 $titulo = "Contacto";
-			 $headers = "MIME-Version: 1.0\r\n"; 
-			 $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-			 $headers .= "From: blink242@outlook.com"." >\r\n";
-			
-		     $id_usuario = $_SESSION['session']['id'];
-		     $mensaje = new contactoPersistencia();
-		     $mensaje = $mensaje->registrarMensaje($id_usuario, $this->_mensaje, $this->_asunto);
 
-			 $bool = mail("blink242@outlook.com",$titulo,$mail,$headers);
-			 if($bool){
-			     echo "<script>alert('Mensaje Enviado')</script>";
+			 $correo = new PHPMailer(); //Creamos una instancia en lugar usar mail()
+ 
+			//Usamos el SetFrom para decirle al script quien envia el correo
+			$correo->SetFrom("ugueto.luis18@gmail.com", "Prueba");
+			 
+			//Usamos el AddReplyTo para decirle al script a quien tiene que responder el correo
+			$correo->AddReplyTo("ugueto.luis19@gmail.com","Prueba");
+			 
+			//Usamos el AddAddress para agregar un destinatario
+			$correo->AddAddress("ugueto.luis19@gmail.com", "Prueba");
+			 
+			//Ponemos el asunto del mensaje
+			$correo->Subject = "Prueba";
+			 
+			/*
+			 * Si deseamos enviar un correo con formato HTML utilizaremos MsgHTML:
+			 * $correo->MsgHTML("<strong>Mi Mensaje en HTML</strong>");
+			 * Si deseamos enviarlo en texto plano, haremos lo siguiente:
+			 * $correo->IsHTML(false);
+			 * $correo->Body = "Mi mensaje en Texto Plano";
+			 */
+			$correo->IsHTML(false);
+			$correo->Body = "Prueba";
+			 
+			//Enviamos el correo
+			if(!$correo->Send()) {
+			  $msg = "Hubo un error: " . $correo->ErrorInfo;
+   			  echo "<script>alert($msg)</script>";
+		      echo "<script>
+			     	location.href='./';
+			     </script>";
+			} else {
+			   echo "<script>alert('Mensaje Enviado')</script>";
 			     echo "<script>
 			     	location.href='./';
 			     </script>";
-			 }else{
-			     echo "<script>alert('Mensaje no Enviado')</script>";
-			     echo "<script>
-			     	location.href='./';
-			     </script>";
-			 }
+			}
+
+			 $id_usuario = $_SESSION['session']['id'];
+		     $mensaje = new contactoPersistencia();
+		     $mensaje = $mensaje->registrarMensaje($id_usuario, $this->_asunto, $this->_mensaje);
 		}
 		
-	}
-	
-	
-	
-	
+	}	
