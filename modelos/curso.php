@@ -231,6 +231,8 @@ require_once 'modelos/edicion.php';
 			
 			return $retorna;
 		}
+ 
+		
 	}
 	
 	

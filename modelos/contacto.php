@@ -46,18 +46,35 @@ require_once 'nucleo/PHPMailer/class.phpmailer.php';
 			 $mail = $this->_mensaje;
 
 			 $correo = new PHPMailer(); //Creamos una instancia en lugar usar mail()
- 
-			//Usamos el SetFrom para decirle al script quien envia el correo
-			$correo->SetFrom("ugueto.luis18@gmail.com", "Prueba");
-			 
-			//Usamos el AddReplyTo para decirle al script a quien tiene que responder el correo
-			$correo->AddReplyTo("ugueto.luis19@gmail.com","Prueba");
-			 
-			//Usamos el AddAddress para agregar un destinatario
-			$correo->AddAddress("ugueto.luis19@gmail.com", "Prueba");
-			 
-			//Ponemos el asunto del mensaje
-			$correo->Subject = "Prueba";
+
+
+			 $correo->IsSMTP();
+			//Esto es para activar el modo depuración. En entorno de pruebas lo mejor es 2, en producción siempre 0
+			// 0 = off (producción)
+			// 1 = client messages
+			// 2 = client and server messages
+			$correo->SMTPDebug  = 0;
+			//Ahora definimos gmail como servidor que aloja nuestro SMTP
+			$correo->Host       = 'smtp.gmail.com';
+			//El puerto será el 587 ya que usamos encriptación TLS
+			$correo->Port       = 587;
+			//Definmos la seguridad como TLS
+			$correo->SMTPSecure = 'tls';
+			//Tenemos que usar gmail autenticados, así que esto a TRUE
+			$correo->SMTPAuth   = true;
+			//Definimos la cuenta que vamos a usar. Dirección completa de la misma
+			$correo->Username   = "prueba";
+			//Introducimos nuestra contraseña de gmail
+			$correo->Password   = "";
+			//Definimos el remitente (dirección y, opcionalmente, nombre)
+			$correo->SetFrom('ugueto.luis18@gmail.com', 'Mi nombre');
+			//Esta línea es por si queréis enviar copia a alguien (dirección y, opcionalmente, nombre)
+			//$correo->AddReplyTo('ugueto.luis18@gmail.com','El de la réplica');
+			//Y, ahora sí, definimos el destinatario (dirección y, opcionalmente, nombre)
+			$correo->AddAddress('ugueto.luis18@gmail.com', 'El Destinatario');
+			//Definimos el tema del email
+			$correo->Subject = 'Esto es un correo de prueba';
+
 			 
 			/*
 			 * Si deseamos enviar un correo con formato HTML utilizaremos MsgHTML:

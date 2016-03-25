@@ -51,7 +51,9 @@ require_once 'modelos/edicion.php';
 				case 'bloquear':
 					self::bloquear();
 					break;
-				
+				case 'historial':
+					self::_historial();
+					break;
 				default:
 
 					self::_formularioBusqueda();
@@ -415,6 +417,19 @@ require_once 'modelos/edicion.php';
 				unset($_SESSION['formulario']['idCurso']);
 				self::_formularioBusqueda();
 			}
+		}
+
+		private function _historial()
+		{
+				$arrayCursos = edicion::historialEdiciones();
+					
+					foreach($arrayCursos as $edicion)
+					{	
+						$id = $edicion->dameId();
+						
+					}
+			vistaGestor::agregarArchivoCss('formularios');
+			vistaGestor::documentoNormal('Historial Curso/Taller', array('vistas/curso/listadoCursos.html'));
 		}
 
 	}

@@ -217,4 +217,16 @@ require_once 'nucleo/bdGestor.php';
 			
 			return $idGenerado;
 		}
+
+		public function listadoEdiciones(){
+			$GBD = new baseDatosGestor();
+			$GBD->abrirConexion();
+
+			$query = "SELECT * FROM ediciones ORDER BY fecha_inicio ASC";
+
+			$retorna = $GBD->resultadoQuery($query);
+			$GBD->cerrarConexion();
+
+			return $retorna;
+		}
 	}

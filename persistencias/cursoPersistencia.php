@@ -1,6 +1,9 @@
 <?php
 
 require_once 'nucleo/bdGestor.php';
+require_once 'nucleo/utilidades/listadoGenerador.php';
+require_once 'nucleo/utilidades/listado.php';
+
 
 	final class cursoPersistencia
 	{

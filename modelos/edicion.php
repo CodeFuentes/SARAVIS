@@ -387,17 +387,38 @@ require_once 'modelos/identificador.php';
 
 			return $datosAsociaciones;
 		}
-		
-		
-		//	FUNCTION CARGAR FULL EDICCION
-		////
-		//	FUNCTION CARGAR FULL EDICCION
-		////
-		//	FUNCTION CARGAR FULL EDICCION
-		////
-		//	FUNCTION CARGAR FULL EDICCION
-		//
 
+		public function historialEdiciones(){
+			$edicionPersistencia = new edicionPersistencia();
+			$ediciones = $edicionPersistencia->listadoEdiciones();
+
+			 if(!empty($ediciones))
+			 {
+
+		 		foreach($ediciones as $edicion)
+			 		{
+			 
+						$retorna[] = new edicion(
+											$edicion['id_edicion'],
+											$edicion['tipo'],
+											$edicion['fecha_inicio'],
+											$edicion['fecha_fin'],
+											$edicion['duracion'],
+											$edicion['limite'],
+											$edicion['horario'],
+											$edicion['sinoptico'],
+											$edicion['estado']
+										);
+					}
+				
+			}
+			else
+			{
+				$retorna = NULL;
+			}
+			
+			return $retorna;
+		}
 
 	}
 	
