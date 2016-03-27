@@ -150,6 +150,16 @@ require_once 'modelos/persona.php';
 			{
 				$persona = persona::buscar($_POST['tipoDocumentoPers'] . '-' . $_POST['documentoPers']);
 				
+				if(empty($persona)){
+					list($tipo, $documento) = explode('-', $_GET['documento']);
+					vistaGestor::agregarDiccionario('post_documentoPers', $documento);
+					vistaGestor::agregarDiccionario('selected_tipo_' . $tipo, 'selected="selected"');
+					vistaGestor::agregarArchivoCss('formularios');
+					vistaGestor::agregarDiccionario('link_form_persona', '?ctrl=persona&acc=guarRegi');
+					vistaGestor::documentoNormal('Registrar una Persona', array('vistas/persona/formPersona.html'));
+					}
+				
+
 				if(!empty($persona))
 				{
 					vistaGestor::agregarDiccionario('link_modificar', '?ctrl=persona&acc=formModi&id=' . $persona->dameId());
@@ -163,13 +173,14 @@ require_once 'modelos/persona.php';
 					vistaGestor::agregarArchivoCss('formularios');
 					vistaGestor::documentoNormal('Buscar Persona', array('vistas/persona/formBusqueda.html', 'vistas/persona/opcionesPersona.html'));
 				}
-				else
-				{
-					vistaGestor::agregarDiccionario('link_registrar', '?ctrl=persona&acc=formRegi&documento=' . $_POST['tipoDocumentoPers'] . '-' . $_POST['documentoPers']);
+
+				// else
+				// {
+				// 	vistaGestor::agregarDiccionario('link_registrar', '?ctrl=persona&acc=formRegi&documento=' . $_POST['tipoDocumentoPers'] . '-' . $_POST['documentoPers']);
 					
-					vistaGestor::agregarArchivoCss('formularios');
-					vistaGestor::documentoNormal('Buscar Persona', array('vistas/persona/formBusqueda.html', 'vistas/persona/preguntaRegistrar.html'));
-				}
+				// 	vistaGestor::agregarArchivoCss('formularios');
+				// 	vistaGestor::documentoNormal('Buscar Persona', array('vistas/persona/formBusqueda.html', 'vistas/persona/preguntaRegistrar.html'));
+				// }
 			}
 			else
 			{

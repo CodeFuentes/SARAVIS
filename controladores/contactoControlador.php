@@ -22,32 +22,12 @@ require_once 'modelos/usuario.php';
 					
 				break;
 
-				case 'formBusq': 
-				
-					self::_formularioBusqueda();
-					
-				break;
-				
-				case 'buscPers': 
-				
-					self::_realizarBusqueda();
-					
-				break;
-				
-				case 'formModi': 
-					
-					index::permitirAcceso('personas');
-					self::_formularioModificar();
-					
-				break;
-				
-				case 'guarModi': 
-				
-					index::permitirAcceso('personas');
-					self::_guardarModificar();
-					
-				break;
+				case 'regError':
 
+					self::_regError();
+
+				break;
+				
 				case 'verInf':
 					self::_verInf();
 					break;
@@ -55,18 +35,23 @@ require_once 'modelos/usuario.php';
 
 				default:
 
-					self::_formularioBusqueda();
+					self::_regresarPrincipal();
 
 				break;
 			}
 		}
 		
+
+		private function _regresarPrincipal()
+		{
+			header('location: ?ctrl=contacto');
+		}
 		//
 		//++++
 		//		REGISTRO PERSONA
 		//++++
 		//
-		
+
 		private function _formularioRegistro()
 		{			
 			
@@ -86,6 +71,11 @@ require_once 'modelos/usuario.php';
 
 			$resultado = $contacto->registrar();
 
+		}
+
+		public function _regError()
+		{
+			header('Location: ?');
 		}
 
 		public function _verInf()
