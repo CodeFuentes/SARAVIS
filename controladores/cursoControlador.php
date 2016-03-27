@@ -422,13 +422,46 @@ require_once 'modelos/edicion.php';
 		private function _historial()
 		{
 				$arrayCursos = edicion::historialEdiciones();
+
+				$titulos = array('Curso','Descripción','Tipo', 'Duracion', 'Inicio', 'Final', 'Cupos');
+				$linkBase = '?ctrl=curso&acc=historial';
 					
-					foreach($arrayCursos as $edicion)
+				$listadoGenerador = new listado($arrayCursos, $titulos, $linkBase, $_GET['pag'], 5);
+					
+					if(!empty($arrayCursos))
 					{	
-						$id = $edicion->dameId();
-						
+						foreach($arrayCursos as $edicion)
+						{							
+							$facilitador = $edicion->dameFacilitador();
+							
+							if(!empty($facilitador))
+							{
+								$nombreFacilitador = $facilitador->dameNombre();
+							}
+							else
+							{
+								$nombreFacilitador = 'No asignado';
+							}
+							
+							$listadoGenerador->agregarFila(
+								array (
+										$edicion->dameNombreCurso(),
+										$edicion->dameDescripcionCurso(),
+										ucfirst($edicion->dameTipoLegible()),
+										ucfirst($edicion->dameDuracion()),
+										invertirFecha($edicion->dameFechaInicio()),
+										invertirFecha($edicion->dameFechaFin()),
+										$edicion->cuposEdicion() . '/' . $edicion->dameLimite(),
+										)
+								, '');
+						}
 					}
+
+			$htmlListado = $listadoGenerador->generarListado();
+	
+			vistaGestor::agregarDiccionario('htmlListado', $htmlListado);		
 			vistaGestor::agregarArchivoCss('formularios');
+			vistaGestor::agregarArchivoCss('listados');
 			vistaGestor::documentoNormal('Historial Curso/Taller', array('vistas/curso/listadoCursos.html'));
 		}
 

@@ -26,6 +26,7 @@
 		
 		public function __construct(array &$array, array $titulos, &$pagina = 1, $rango = 120)
 		{
+
 			$this->_titulos = $titulos;
 			
 			$this->_tamanoArray = count($array);
@@ -122,44 +123,44 @@
 				
 				if($this->_paginaMaxima > 1)
 				{
-					// if($this->_paginaActual == 1)
-					// {
-					// 	$anterior = "";
-					// }
-					// else
-					// {
-					// 	$anterior = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual - 1) . '" class="anterior">Anterior</a>';
-					// }
+					if($this->_paginaActual == 1)
+					{
+						$anterior = "";
+					}
+					else
+					{
+						$anterior = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual - 1) . '" class="anterior">Anterior</a>';
+					}
 					
-					// if($this->_paginaActual == $this->_paginaMaxima)
-					// {
-					// 	$siguiente = "";
-					// }
-					// else
-					// {
-					// 	$siguiente = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual + 1) . '" class="anterior">Siguiente</a>';
-					// }
+					if($this->_paginaActual == $this->_paginaMaxima)
+					{
+						$siguiente = "";
+					}
+					else
+					{
+						$siguiente = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual + 1) . '" class="anterior">Siguiente</a>';
+					}
 					
-					// $ciclo = 1;
+					$ciclo = 1;
 					
-					// while($ciclo <= self::RANGO_PAGINADOR and ($this->_paginaActual + $ciclo) <= $this->_paginaMaxima)
-					// {
+					while($ciclo <= self::RANGO_PAGINADOR and ($this->_paginaActual + $ciclo) <= $this->_paginaMaxima)
+					{
 						
-					// 	$linkSiguiente .= '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual + $ciclo) . '" class="anterior">' . ($this->_paginaActual + $ciclo) . '</a>';
+						$linkSiguiente .= '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual + $ciclo) . '" class="anterior">' . ($this->_paginaActual + $ciclo) . '</a>';
 
-					// 	$ciclo++;
-					// }
+						$ciclo++;
+					}
 					
-					// $ciclo = 1;
+					$ciclo = 1;
 					
-					// while($ciclo <= self::RANGO_PAGINADOR and ($this->_paginaActual - $ciclo) > 0)
-					// {			
-					// 	$linkAnterior = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual - $ciclo) . '" class="anterior">' . ($this->_paginaActual - $ciclo) . '</a>' . $linkAnterior;
+					while($ciclo <= self::RANGO_PAGINADOR and ($this->_paginaActual - $ciclo) > 0)
+					{			
+						$linkAnterior = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual - $ciclo) . '" class="anterior">' . ($this->_paginaActual - $ciclo) . '</a>' . $linkAnterior;
 
-					// 	$ciclo++;
-					// }
+						$ciclo++;
+					}
 
-					// $paginador = $anterior . $linkAnterior . "<span>" .$this->_paginaActual . "</span>" . $linkSiguiente . $siguiente;
+					$paginador = $anterior . $linkAnterior . "<span>" .$this->_paginaActual . "</span>" . $linkSiguiente . $siguiente;
 				}
 				else
 				{

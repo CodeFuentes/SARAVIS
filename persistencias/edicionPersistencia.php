@@ -222,7 +222,13 @@ require_once 'nucleo/bdGestor.php';
 			$GBD = new baseDatosGestor();
 			$GBD->abrirConexion();
 
-			$query = "SELECT * FROM ediciones ORDER BY fecha_inicio ASC";
+			$query = "SELECT e.*, 
+					p.id_persona AS p_id_persona, p.documento AS p_documento, p.nombre AS p_nombre, p.apellido AS p_apellido, p.sexo AS p_sexo, p.fecha_nacimiento AS p_fecha_nacimiento, p.telefono AS p_telefono, p.direccion AS p_direccion,
+					c.id_curso AS e_id_curso, c.nombre AS e_nombre, c.descripcion AS e_descripcion
+					FROM ediciones AS e
+					LEFT JOIN personas AS p ON e.id_facilitador = p.id_persona 
+					LEFT JOIN cursos AS c ON e.id_edicion = c.id_curso
+					ORDER BY fecha_inicio DESC";
 
 			$retorna = $GBD->resultadoQuery($query);
 			$GBD->cerrarConexion();

@@ -17,13 +17,16 @@ require_once 'modelos/identificador.php';
 		private $_limite;
 		private $_horario;
 		private $_sinoptico;
+		private $_nombreFacilitador;
 		private $_facilitador = NULL;
 		private $_certificado = NULL;
 		private $_identificador = NULL;
 		private $_colEstudiantes = array();
+		private $_nombreCurso;
+		private $_descripcionCurso;
 	
 		public function __construct($idEdicion, $tipo, $fechaInicio, $fechaFin, $duracion, $limite, 
-									$horario, $sinoptico, $estado = '')
+									$horario, $sinoptico, $estado = '', $nombre, $descripcion)
 		{
 			$this->_idEdicion = $idEdicion;
 			$this->_tipo = $tipo;			
@@ -34,8 +37,10 @@ require_once 'modelos/identificador.php';
 			$this->_horario = $horario;
 			$this->_sinoptico = $sinoptico;
 			$this->_estado = $estado;
-		}
-		
+			$this->_nombreCurso = $nombre;
+			$this->_descripcionCurso = $descripcion;
+		}		
+
 		//
 		//++
 		//+++++
@@ -126,6 +131,14 @@ require_once 'modelos/identificador.php';
 		public function dameIdentificador()
 		{
 			return $this->_identificador;
+		}
+		public function dameNombreCurso()
+		{
+			return $this->_nombreCurso;
+		}
+		public function dameDescripcionCurso()
+		{
+			return $this->_descripcionCurso;
 		}
 		
 		public function ponerFacilitador(persona $facilitador)
@@ -397,8 +410,7 @@ require_once 'modelos/identificador.php';
 
 		 		foreach($ediciones as $edicion)
 			 		{
-			 
-						$retorna[] = new edicion(
+						$edic[] = new edicion(
 											$edicion['id_edicion'],
 											$edicion['tipo'],
 											$edicion['fecha_inicio'],
@@ -407,8 +419,29 @@ require_once 'modelos/identificador.php';
 											$edicion['limite'],
 											$edicion['horario'],
 											$edicion['sinoptico'],
-											$edicion['estado']
+											$edicion['estado'], 
+											$edicion['e_nombre'],
+											$edicion['e_descripcion']
 										);
+				
+						/*if(!empty($edicion['p_id_persona']))
+						{
+							
+							$persona = new persona(
+											$edicion['p_id_persona'], $edicion['p_documento'], $edicion['p_nombre'],
+											$edicion['p_apellido'], $edicion['p_sexo'], $edicion['p_fecha_nacimiento'],
+											$edicion['p_telefono'], $edicion['p_direccion']
+											);
+											
+							$edicion->_facilitador = $persona;
+						}
+						else
+						{
+							$edicion->_facilitador = NULL;
+						} */
+
+					$retorna = $edic;
+					
 					}
 				
 			}
