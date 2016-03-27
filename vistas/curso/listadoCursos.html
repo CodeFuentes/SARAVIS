@@ -3,6 +3,33 @@
 		<article>
 	
 			<div class="sub_titulo">Cursos/Talleres</div>
+
+			<div class="formulario">
+		
+			<form id="formBusq" name="formBusq" method="post" action="#" autocomplete="off">
+		
+			<ul>
+				<li>
+					<div class="doble">
+					</div>
+					
+					<div class="complemento">
+						<label>Nombre</label>
+						
+						<input id="nombreCurso" name="nombreCurso" value="{#post_nombreCurso}" type="text" placeholder="Ejm: Programacion">
+					</div>
+					
+					<div class="boton_acompanante">
+						<input id="btn_busqueda" name="btn_busqueda" type="submit" value="Buscar">
+					</div>
+					{#error_busqueda}
+				</li>
+				
+			</ul>
+			
+			</form>
+			
+		</div>
 				
 				{#htmlListado}
 				

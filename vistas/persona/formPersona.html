@@ -9,13 +9,13 @@
 					<li>
 						<div class="doble">
 							<label>Nombres<span>*</span></label>
-							<input id="nombrePers" name="nombrePers" value="{#post_nombrePers}" type="text" >
+							<input id="nombrePers" name="nombrePers" value="{#post_nombrePers}" type="text" placeholder="Ejm: Pedro">
 							{#error_nombrePers}
 						</div>
 						
 						<div class="doble">
 							<label>Apellidos<span>*</span></label>
-							<input id="apellidoPers" name="apellidoPers" value="{#post_apellidoPers}" type="text" >
+							<input id="apellidoPers" name="apellidoPers" value="{#post_apellidoPers}" type="text" placeholder="Ejm: Rodriguez">
 							{#error_apellidoPers}
 						</div>
 					</li>
@@ -48,7 +48,7 @@
 						</div>
 						<div class="doble">
 							<label>Documento<span>*</span></label>
-							<input id="documentoPers" name="documentoPers" value="{#post_documentoPers}" type="text" readonly="readonly"/>
+							<input id="documentoPers" name="documentoPers" value="{#post_documentoPers}" type="text" readonly="readonly" placeholder="Ejm: 123456789"/>
 							{#error_documentoPers}
 						</div>
 					</li>
@@ -56,7 +56,7 @@
 					<li>
 						<div class="unico">
 							<label>Tel&eacute;fono<span>*</span></label>
-							<input id="telefonoPers" name="telefonoPers" value="{#post_telefonoPers}" type="text"/>
+							<input id="telefonoPers" name="telefonoPers" value="{#post_telefonoPers}" type="text" placeholder="Ejm: 04160000000"/>
 							{#error_telefonoPers}
 						</div>
 					</li>
@@ -64,7 +64,7 @@
 					<li>
 						<div class="unico">
 							<label>Direcci&oacute;n<span>*</span></label>
-							<textarea id="direccionPers" name="direccionPers">{#post_direccionPers}</textarea>
+							<textarea id="direccionPers" name="direccionPers">{#post_direccionPers}</textarea placeholder="Ejm: Calle Bolivar Nº 10">
 							{#error_direccionPers}
 						</div>
 					</li>
@@ -72,13 +72,13 @@
 					<li>
 						<div class="doble">
 							<label>Correo<span>*</span></label>
-							<input id="correoPers" type="email" name="correoPers" value="{#post_correoPers}" style="height:25px;">
+							<input id="correoPers" type="email" name="correoPers" value="{#post_correoPers}" style="height:25px;" placeholder="Ejm: saravis@upta.com">
 							{#error_correoPers}
 						</div>
 
 						<div class="doble">
 							<label>Confirmar Correo<span>*</span></label>
-							<input id="confCorreoPers" type="email" name="confCorreoPers" value="{#post_confCorreoPers}" style="height:25px;">
+							<input id="confCorreoPers" type="email" name="confCorreoPers" value="{#post_confCorreoPers}" style="height:25px;" placeholder="Ejm: saravis@upta.com">
 						</div>
 					</li>
 				</ul>
