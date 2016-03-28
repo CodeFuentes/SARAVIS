@@ -951,6 +951,7 @@ require_once 'modelos/identificador.php';
 							</select>';
 						}
 						else
+						
 						{
 							$select = 'No curso';
 						}
@@ -1083,7 +1084,6 @@ require_once 'modelos/identificador.php';
 											$imprimir, $codigoGenerado, $nombreCurso,
 											$duracionEdicion, $fechaEdicion, $nombreCompletoFacilitador
 											);
-	
 						generarPDF::cargarDocumento($HTML, 'Certificados', 'descargar');
 					}
 					else

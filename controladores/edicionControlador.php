@@ -327,7 +327,7 @@ require_once 'modelos/edicion.php';
 					{
 						$lasOpciones = 'Certificaci&oacute;n';
 					}
-					
+
 					$titulos = array('Nombre', 'Apellido', 'Documento', $lasOpciones);
 					$linkBase = '#';
 					
@@ -361,7 +361,7 @@ require_once 'modelos/edicion.php';
 					
 					$htmlListado = $listadoGenerador->generarListado();
 					$nombreFacilitador = $facilitador->dameNombre() . ' ' . $facilitador->dameApellido();
-					
+	
 					vistaGestor::agregarDiccionario('nombreFacilitador', $nombreFacilitador);
 					vistaGestor::agregarDiccionario('horarioEdicion', $edicion->dameHorario());
 					

@@ -174,7 +174,7 @@ require_once 'modelos/identificador.php';
 		{
 			$edicionPersistencia = new edicionPersistencia();
 			$datosColParticipantes = $edicionPersistencia->traerColParticipantes($this->_idEdicion);
-		
+			
 			
 			foreach($datosColParticipantes as $participante)
 			{
