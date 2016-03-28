@@ -423,7 +423,7 @@ require_once 'modelos/edicion.php';
 		{
 				$arrayCursos = edicion::historialEdiciones();
 
-				$titulos = array('Curso','Descripción','Tipo', 'Duracion', 'Inicio', 'Final', 'Cupos');
+				$titulos = array('Curso','Descripción','Tipo', 'Duracion', 'Inicio', 'Final');
 				$linkBase = '?ctrl=curso&acc=historial';
 					
 				$listadoGenerador = new listado($arrayCursos, $titulos, $linkBase, $_GET['pag'], 5);
@@ -451,7 +451,6 @@ require_once 'modelos/edicion.php';
 										ucfirst($edicion->dameDuracion()),
 										invertirFecha($edicion->dameFechaInicio()),
 										invertirFecha($edicion->dameFechaFin()),
-										$edicion->cuposEdicion() . '/' . $edicion->dameLimite(),
 										)
 								, '');
 						}
