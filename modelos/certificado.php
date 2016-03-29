@@ -1,6 +1,7 @@
 <?php
 
 require_once 'persistencias/certificadoPersistencia.php';
+include("nucleo/qrcode.php");
 
 	class certificado
 	{
@@ -110,7 +111,10 @@ require_once 'persistencias/certificadoPersistencia.php';
 		}
 
 		public function generarHtmlCertificado($imprimir, $codigoGenerado, $tituloCurso, $duracionEdicion, $fechaEdicion, $nombreFacilitador)
-		{		
+		{	
+			//Instanciando Librería para hacer el codigo QR.	
+			$qr = new qrcode();
+
 			$miFondo = 'background: url("recursos/certificados/' . $this->_fondo . '") no-repeat';
 		
 			$valorLogoExtra = $this->dameLogoExtra();
@@ -193,6 +197,12 @@ require_once 'persistencias/certificadoPersistencia.php';
 				if($tipo != 0 or $tipo == 'facilitador' or $tipo == 'participacion')
 				{
 
+			
+
+//link
+			$qr->link($codigoGenerado."-".$idPersona);
+			$link = "<p><img src='".$qr->get_link()."' border='0'/></p>";
+
 		$cuerpoRepetitivo .= '<div class="cuerpoCompleto">
 					<table class="cabesera">
 						<tr>
@@ -237,14 +247,17 @@ require_once 'persistencias/certificadoPersistencia.php';
 					</table>
 					<table class="firmas" style="font-size: 22px;">
 						<tr>
+
+	
+
 							' . $tdFirmantes . '
 						</tr>
 						<tr>
 							' . $tdFirmantesCargos . '
 						</tr>
 					</table>
-					'.$qr.'
-					<table class="codigoGenerado"><tr><td><p style="font-size: 20px; margin: 0px;">C&oacute;digo Verificaci&oacute;n: ' . $codigoGenerado . '-' . $idPersona . '</p></td></tr></table>
+					<div class="codigoQR">'.$link.'</div>
+					<table class="codigoGenerado"><tr><td><p style="font-size: 20px; margin: 0px;">C&oacute;digo Verificaci&oacute;n: ' . $codigoGenerado . '-' . $idPersona .'</p></td></tr></table>
 				</div>';
 				}
 			}
@@ -330,6 +343,11 @@ require_once 'persistencias/certificadoPersistencia.php';
 						left: 0px;
 						width: 1100px;
 					}
+					div.codigoQR{
+						position: absolute;
+						top: 600px;
+						left: 10%;
+					}
 					
 					table.codigoGenerado td {
 						text-align: center;
@@ -339,7 +357,7 @@ require_once 'persistencias/certificadoPersistencia.php';
 			</head>
 			
 			<body onload="update_qrcode()">
-				' . $cuerpoRepetitivo . '
+				'.$html1 . $cuerpoRepetitivo . '
 			</body>
 		</html>';
 		
