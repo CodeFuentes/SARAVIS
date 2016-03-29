@@ -1,7 +1,7 @@
 <?php
 
 require_once 'persistencias/contactoPersistencia.php';
-require_once 'nucleo/PHPMailer/class.phpmailer.php';
+require_once 'nucleo/PHPMailer/PHPMailerAutoload.php';
 	
 	class contacto
 	{
@@ -43,68 +43,48 @@ require_once 'nucleo/PHPMailer/class.phpmailer.php';
 		public function registrar()
 		{
 			//postmaster@localhost
-			 $mail = $this->_mensaje;
+		  	$mail = new PHPMailer;
+			
+			$mail->isSMTP();                                      // Set mailer to use SMTP
+			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+			$mail->SMTPAuth = true;                               // Enable SMTP authentication
+			$mail->Username = 'saravis.upta@gmail.com';                 // SMTP username
+			$mail->Password = 'SARAVIS2016@';                           // SMTP password
+			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+			$mail->Port = 587;                                    // TCP port to connect to
 
-			//  $correo = new PHPMailer(); //Creamos una instancia en lugar usar mail()
+			$mail->From = 'saravis.upta@gmail.com';
+			$mail->FromName = 'APP SARAVIS';
+
+			//$email = "blink242@outlook.com";
+			//$email1 = "codefuentes@outlook.com";
+			$email2 = "saravis.upta@gmail.com";
 
 
-			//  $correo->IsSMTP();
-			// //Esto es para activar el modo depuración. En entorno de pruebas lo mejor es 2, en producción siempre 0
-			// // 0 = off (producción)
-			// // 1 = client messages
-			// // 2 = client and server messages
-			// $correo->SMTPDebug  = 0;
-			// //Ahora definimos gmail como servidor que aloja nuestro SMTP
-			// $correo->Host       = 'smtp.gmail.com';
-			// //El puerto será el 587 ya que usamos encriptación TLS
-			// $correo->Port       = 587;
-			// //Definmos la seguridad como TLS
-			// $correo->SMTPSecure = 'tls';
-			// //Tenemos que usar gmail autenticados, así que esto a TRUE
-			// $correo->SMTPAuth   = true;
-			// //Definimos la cuenta que vamos a usar. Dirección completa de la misma
-			// $correo->Username   = "prueba";
-			// //Introducimos nuestra contraseña de gmail
-			// $correo->Password   = "";
-			// //Definimos el remitente (dirección y, opcionalmente, nombre)
-			// $correo->SetFrom('ugueto.luis18@gmail.com', 'Mi nombre');
-			// //Esta línea es por si queréis enviar copia a alguien (dirección y, opcionalmente, nombre)
-			// //$correo->AddReplyTo('ugueto.luis18@gmail.com','El de la réplica');
-			// //Y, ahora sí, definimos el destinatario (dirección y, opcionalmente, nombre)
-			// $correo->AddAddress('ugueto.luis18@gmail.com', 'El Destinatario');
-			// //Definimos el tema del email
-			// $correo->Subject = 'Esto es un correo de prueba';
+			//$mail->addAddress($email);         // Add attachments
+			//$mail->addAddress($email1);
+			$mail->addAddress($email2);
+			    // Optional name
+			$mail->isHTML(true);                                  // Set email format to HTML
 
-			 
-			// /*
-			//  * Si deseamos enviar un correo con formato HTML utilizaremos MsgHTML:
-			//  * $correo->MsgHTML("<strong>Mi Mensaje en HTML</strong>");
-			//  * Si deseamos enviarlo en texto plano, haremos lo siguiente:
-			//  * $correo->IsHTML(false);
-			//  * $correo->Body = "Mi mensaje en Texto Plano";
-			//  */
-			// $correo->IsHTML(false);
-			// $correo->Body = "Prueba";
-			 
-			// //Enviamos el correo
-			// if(!$correo->Send()) {
-			//   $msg = "Hubo un error: " . $correo->ErrorInfo;
-   // 			  echo "<script>alert($msg)</script>";
-		 //      echo "<script>
-			//      	location.href='./';
-			//      </script>";
-			// } else {
-			//    echo "<script>alert('Mensaje Enviado')</script>";
-			//      echo "<script>
-			//      	location.href='./';
-			//      </script>";
-			// }
+			$mail->Subject = ''.$this->_asunto;
+			$mail->Body    = '<b>'.$this->_mensaje;
 
-			 $id_usuario = $_SESSION['session']['id'];
-		     $mensaje = new contactoPersistencia();
-		     $mensaje = $mensaje->registrarMensaje($id_usuario, $this->_asunto, $this->_mensaje);
+	     	$id_usuario = $_SESSION['session']['id'];
+		    $mensaje = new contactoPersistencia();
+		    $mensaje = $mensaje->registrarMensaje($id_usuario, $this->_asunto, $this->_mensaje);
 
-		     header('Location: ?');
+			if(!$mail->send()) {
+				echo "<script>
+						alert('Mensaje no Enviado.');
+						window.location='?';
+					</script>";
+			} else {
+				echo "<script>
+						alert('Mensaje Enviado.');
+						window.location='?';
+					</script>";
+			}
 		}
 		
 	}	
