@@ -113,7 +113,7 @@ include("nucleo/qrcode.php");
 		public function generarHtmlCertificado($imprimir, $codigoGenerado, $tituloCurso, $duracionEdicion, $fechaEdicion, $nombreFacilitador)
 		{	
 			//Instanciando Librería para hacer el codigo QR.	
-			$qr = new qrcode();
+
 
 			$miFondo = 'background: url("recursos/certificados/' . $this->_fondo . '") no-repeat';
 		
@@ -200,8 +200,11 @@ include("nucleo/qrcode.php");
 			
 
 //link
-			$qr->link($codigoGenerado."-".$idPersona);
-			$link = "<p><img src='".$qr->get_link()."' border='0'/></p>";
+			qrcode::link($codigoGenerado."-".$idPersona);
+			$link = qrcode::get_link();
+
+
+
 
 		$cuerpoRepetitivo .= '<div class="cuerpoCompleto">
 					<table class="cabesera">
@@ -256,7 +259,8 @@ include("nucleo/qrcode.php");
 							' . $tdFirmantesCargos . '
 						</tr>
 					</table>
-					<div class="codigoQR">'.$link.'</div>
+					<div class="codigoQR">
+			<p><img src='.$link.' border="0"/></p></div>
 					<table class="codigoGenerado"><tr><td><p style="font-size: 20px; margin: 0px;">C&oacute;digo Verificaci&oacute;n: ' . $codigoGenerado . '-' . $idPersona .'</p></td></tr></table>
 				</div>';
 				}

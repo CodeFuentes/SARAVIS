@@ -325,11 +325,6 @@ require_once 'modelos/edicion.php';
 		
 		private function _verEdiciones()
 		{
-			$edicion = new edicion();
-			if($_GET['accion']=='bloquear') $bloquear = $edicion->bloquearEdicion($_GET['id_edicion']);
-			if($_GET['accion']=='desbloquear') $desbloquear = $edicion->desbloquearEdicion($_GET['id_edicion']);
-
-
 			if(!empty($_GET['id']))
 			{
 				$_SESSION['formulario']['idCurso'] = $_GET['id'];

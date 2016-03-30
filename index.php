@@ -1,9 +1,9 @@
 <?php
-error_reporting(0);
 header("Content-Type: text/html; charset=iso-8859-1");
 header("Cache-Control: no-cache, must-revalidate");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 
+error_reporting(0);
 require_once 'nucleo/configuracion/baseDatos.php';
 require_once 'nucleo/bdGestor.php';
 require_once 'nucleo/vistaGestor.php';

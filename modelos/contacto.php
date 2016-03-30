@@ -1,7 +1,7 @@
 <?php
 
 require_once 'persistencias/contactoPersistencia.php';
-require_once 'nucleo/PHPMailer/PHPMailerAutoload.php';
+include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 	
 	class contacto
 	{
@@ -43,7 +43,7 @@ require_once 'nucleo/PHPMailer/PHPMailerAutoload.php';
 		public function registrar()
 		{
 			//postmaster@localhost
-		  	$mail = new PHPMailer;
+		  	$mail = new PHPMailer();
 			
 			$mail->isSMTP();                                      // Set mailer to use SMTP
 			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
