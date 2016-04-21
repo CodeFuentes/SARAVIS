@@ -1,5 +1,6 @@
 <?php
 require_once 'modelos/curso.php';
+require_once 'modelos/contacto.php';
 require_once 'modelos/edicion.php';
 require_once 'modelos/certificado.php';
 require_once 'modelos/identificador.php';
@@ -1057,8 +1058,8 @@ require_once 'modelos/identificador.php';
 							{
 								$nombre = $participante->dameNombre();
 								$apellido = $participante->dameApellido();
-								
-								$nombreCompleto = $nombre . ' ' . $apellido;
+								$correo = $participante->dameCorreo();
+								$nombreCompleto = $nombre .' ' . $apellido;
 								$documento = $participante->dameDocumento();
 
 								$imprimir[] = array('nombre' => $nombreCompleto, 'documento' => $documento, 
@@ -1084,7 +1085,8 @@ require_once 'modelos/identificador.php';
 											$imprimir, $codigoGenerado, $nombreCurso,
 											$duracionEdicion, $fechaEdicion, $nombreCompletoFacilitador
 											);
-						generarPDF::cargarDocumento($HTML, 'Certificados', 'descargar');
+
+						generarPDF::cargarDocumento($HTML, "Certificado", 'descargar', $correo);
 					}
 					else
 					{

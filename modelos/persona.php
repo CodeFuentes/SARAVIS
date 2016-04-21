@@ -14,7 +14,7 @@ require_once 'persistencias/personaPersistencia.php';
 		private $_direccion;
 		private $_correo;
 	
-		public function __construct($idPersona, $documento, $nombre, $apellido, $sexo, $fechaNacimiento, $telefono, $direccion)
+		public function __construct($idPersona, $documento, $nombre, $apellido, $sexo, $fechaNacimiento, $telefono, $direccion, $correo)
 		{
 			$this->_idPersona = $idPersona;
 			$this->_documento = $documento;

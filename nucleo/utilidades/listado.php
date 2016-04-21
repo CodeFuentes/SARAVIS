@@ -24,7 +24,7 @@
 		//***
 		//, 
 		
-		public function __construct(array &$array, array $titulos, &$pagina = 1, $rango = 120)
+		public function __construct(array $array, array $titulos, $pagina = 1, $rango = 120)
 		{
 
 			$this->_titulos = $titulos;
@@ -36,7 +36,7 @@
 				$this->_rango = $rango;
 		
 				$this->_paginaMaxima = abs(floor(((count($array) - 1) / $this->_rango))) + 1;
-				
+			
 				if(!is_numeric($pagina) or $pagina == 0 or $pagina < 1)
 				{
 					$pagina = 1;

@@ -101,7 +101,7 @@ class qrcode
     }  
       
     //getting link for image  
-    public function get_link($size = 150, $EC_level = 'L', $margin = '0'){  
+    public function get_link($size = 100, $EC_level = 'L', $margin = '0'){  
         $this->data = urlencode($this->data);   
         return 'http://chart.apis.google.com/chart?chs='.$size.'x'.$size.'&cht=qr&chld='.$EC_level.'|'.$margin.'&chl='.$this->data;  
     }  

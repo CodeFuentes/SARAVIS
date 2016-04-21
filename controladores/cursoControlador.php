@@ -235,7 +235,7 @@ require_once 'modelos/edicion.php';
 										'?ctrl=curso&acc=verEdic&id=' . $curso->dameId(),
 										'ver negro') 
 									)
-							, '');
+							, ''); 
 					}
 					
 					$htmlListado = $listadoGenerador->generarListado();

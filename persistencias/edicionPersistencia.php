@@ -228,7 +228,7 @@ require_once 'nucleo/bdGestor.php';
 					FROM ediciones AS e
 					LEFT JOIN personas AS p ON e.id_facilitador = p.id_persona 
 					LEFT JOIN cursos AS c ON e.id_edicion = c.id_curso
-					ORDER BY fecha_inicio DESC";
+					ORDER BY fecha_inicio DESC LIMIT 15";
 
 			$retorna = $GBD->resultadoQuery($query);
 			$GBD->cerrarConexion();

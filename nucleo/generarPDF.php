@@ -6,7 +6,7 @@ require_once 'dompdf/dompdf_config.inc.php';
 
 	final class generarPDF
 	{
-		static public function cargarDocumento($html, $nombre, $salida, $orientacion = 'horizontal')
+		static public function cargarDocumento($html, $nombre, $salida,$correo, $orientacion = 'horizontal')
 		{
 			//$html = file_get_contents('http://localhost/mercal/index.php?ctrl=almacen&acc=mostAlma');
 			//$html = file_get_contents('http://localhost/mercal/index.php?ctrl=entrada&acc=listado');
@@ -49,12 +49,20 @@ require_once 'dompdf/dompdf_config.inc.php';
 		
 			if($salida == 'guardar')
 			{
+
 				$output = $mipdf->output();
 				file_put_contents($nombre . '.pdf', $output);
 			}
 			elseif($salida == 'descargar')
 			{
+				$archivo = $mipdf ->stream($nombre . '.pdf');
+				
+
+				$contacto = new contacto("Certificado de Participación", "Certificado de Participación:", $correo);
+
+				$resultado = $contacto->registrar();
 				$mipdf ->stream($nombre . '.pdf');
+				
 			}
 		}
 	}

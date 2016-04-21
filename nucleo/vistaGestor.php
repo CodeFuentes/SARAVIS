@@ -220,6 +220,8 @@
 			self::$_codigoImprimir .= '{#notificacionPermanente}';
 		}
 
+		
+
 		private function _cerrarDocumento()
 		{
 			

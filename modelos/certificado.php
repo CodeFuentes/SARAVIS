@@ -1,6 +1,7 @@
 <?php
 
 require_once 'persistencias/certificadoPersistencia.php';
+require_once 'nucleo/bdGestor.php';
 include("nucleo/qrcode.php");
 
 	class certificado
@@ -113,7 +114,7 @@ include("nucleo/qrcode.php");
 		public function generarHtmlCertificado($imprimir, $codigoGenerado, $tituloCurso, $duracionEdicion, $fechaEdicion, $nombreFacilitador)
 		{	
 			//Instanciando Librería para hacer el codigo QR.	
-
+			$GBD = new baseDatosGestor();				
 
 			$miFondo = 'background: url("recursos/certificados/' . $this->_fondo . '") no-repeat';
 		
@@ -200,7 +201,10 @@ include("nucleo/qrcode.php");
 			
 
 //link
-			qrcode::link($codigoGenerado."-".$idPersona);
+			$explode = $GBD->dameURL();
+			$enlace = explode("?", $explode);
+			$linkk = $enlace[0]."verificacionCod.php?id=".$codigoGenerado."-".$idPersona;
+			qrcode::link($linkk);
 			$link = qrcode::get_link();
 
 
@@ -260,7 +264,8 @@ include("nucleo/qrcode.php");
 						</tr>
 					</table>
 					<div class="codigoQR">
-			<p><img src='.$link.' border="0"/></p></div>
+						<img src='.$link.' border="0"/>
+					</div>
 					<table class="codigoGenerado"><tr><td><p style="font-size: 20px; margin: 0px;">C&oacute;digo Verificaci&oacute;n: ' . $codigoGenerado . '-' . $idPersona .'</p></td></tr></table>
 				</div>';
 				}
@@ -347,10 +352,11 @@ include("nucleo/qrcode.php");
 						left: 0px;
 						width: 1100px;
 					}
-					div.codigoQR{
+					div.codigoQR img{
 						position: absolute;
-						top: 600px;
-						left: 10%;
+						top: 680px;
+						float: right;
+						right: 40%;
 					}
 					
 					table.codigoGenerado td {

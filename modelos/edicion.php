@@ -181,7 +181,7 @@ require_once 'modelos/identificador.php';
 				$persona = new persona(
 							$participante['id_persona'], $participante['documento'], $participante['nombre'],
 							$participante['apellido'], $participante['sexo'], $participante['fecha_nacimiento'],
-							$participante['telefono'], $participante['direccion']
+							$participante['telefono'], $participante['direccion'], $participante['correo']
 							);
 							
 				$this->_colEstudiantes[] = $persona;
@@ -423,23 +423,6 @@ require_once 'modelos/identificador.php';
 											$edicion['e_nombre'],
 											$edicion['e_descripcion']
 										);
-				
-						/*if(!empty($edicion['p_id_persona']))
-						{
-							
-							$persona = new persona(
-											$edicion['p_id_persona'], $edicion['p_documento'], $edicion['p_nombre'],
-											$edicion['p_apellido'], $edicion['p_sexo'], $edicion['p_fecha_nacimiento'],
-											$edicion['p_telefono'], $edicion['p_direccion']
-											);
-											
-							$edicion->_facilitador = $persona;
-						}
-						else
-						{
-							$edicion->_facilitador = NULL;
-						} */
-
 					$retorna = $edic;
 					
 					}
