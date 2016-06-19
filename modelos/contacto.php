@@ -9,13 +9,17 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 		private $_mensaje;
 		private $_archivo;
 		private $_correo;
+		private $_idCurso;
+		private $_idEdicion;
 	
-		public function __construct($asunto, $mensaje, $correo,$archivo)
+		public function __construct($asunto, $mensaje, $correo, $archivo, $idCurso, $idEdicion)
 		{
 			$this->_asunto = $asunto;
 			$this->_mensaje = $mensaje;
 			$this->_archivo = $archivo;
 			$this->_correo = $correo;
+			$this->_idCurso = $idCurso;
+			$this->_idEdicion = $idEdicion;
 		}
 		
 		//
@@ -42,7 +46,7 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 		//++
 		//
 		
-		public function registrar()
+		public function enviarCertificado()
 		{
 			//postmaster@localhost
 		  	$mail = new PHPMailer();
@@ -65,8 +69,8 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 
 			//$mail->addAddress($email);         // Add attachments
 			//$mail->addAddress($email1);
-			$mail->addAddress($email2);
-			$mail->AddAttachment($this->_archivo);
+			$mail->addAddress($this->_correo);
+        	$mail->AddAttachment('recursos/'.$this->_archivo);
 			    // Optional name
 			$mail->isHTML(true);                                  // Set email format to HTML
 
@@ -76,16 +80,16 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 	     	$id_usuario = $_SESSION['session']['id'];
 		    $mensaje = new contactoPersistencia();
 		    $mensaje = $mensaje->registrarMensaje($id_usuario, $this->_asunto, $this->_mensaje);
-
+		    $id = $this->_idEdicion;
 			if(!$mail->send()) {
 				echo "<script>
-						alert('Mensaje no Enviado.');
-						window.location='?';
+						alert('Certificado no Enviado.');
+						window.location='?ctrl=edicion&acc=menuEdic&id=$id';
 					</script>";
 			} else {
 				echo "<script>
-						alert('Mensaje Enviado.');
-						window.location='?';
+						alert('Certificado Enviado.');
+						window.location='?ctrl=edicion&acc=menuEdic&id=$id';
 					</script>";
 			}
 		}

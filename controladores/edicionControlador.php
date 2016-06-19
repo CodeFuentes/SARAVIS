@@ -665,6 +665,10 @@ require_once 'modelos/edicion.php';
 													Imprimir Culminaci&oacute;n
 													<img class="negro imprimir"></img>
 												</a>';
+					$linkEnviarCertificado = '<a href="?ctrl=documento&acc=envCert">
+													Enviar certificados
+													<img class="negro imprimir"></img>
+												</a>';
 					
 					$elSinopticoComparacion = $edicion->dameSinoptico();
 					
@@ -697,6 +701,9 @@ require_once 'modelos/edicion.php';
 				vistaGestor::agregarDiccionario('link_imprimir_culminacion', $linkImprimirCerrar);
 				
 				vistaGestor::agregarDiccionario('link_imprimir_reverso', $linkImprimirReverso);
+				
+				vistaGestor::agregarDiccionario('link_enviar_certificado', $linkEnviarCertificado);
+
 				
 				
 				if(!empty($facilitador) and count($edicion->dameColParticipantes()) > 0)

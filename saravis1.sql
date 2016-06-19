@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2016 a las 08:56:48
+-- Tiempo de generación: 23-03-2016 a las 18:45:27
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
 
@@ -48,7 +48,7 @@ INSERT INTO `certificados` (`id_certificado`, `id_edicion`, `firma_facilitador`,
 (6, 6, 'TSU(#=D=#)Facilitadora', 'Ing.(#=D=#)Coordinador Cultura(#=D=#)Gabriel Vastag', 'fondo_11_6.jpeg', 'logo_11_6.jpeg'),
 (7, 4, 'TSU(#=D=#)Facilitadora', 'Profa.(#=D=#)César Mosquera(#=D=#)Coordinador de Cultura', 'fondo_11_4.jpeg', 'logo_11_4.jpeg'),
 (8, 7, 'Profa.(#=D=#)Jefa del Departamento de Informática', 'Profa.(#=D=#)Rectora(#=D=#)Bettys Muñoz Henriquez(#=P=#)Prof.(#=D=#)Coordinador de Creación Intelectual y Desarrollo Socioproductivo(#=D=#)Richard Castellanos(#=P=#)Sr.(#=D=#)Coordinador de la UDER(#=D=#)Ramón Garcia', 'fondo_13_7.jpeg', 'logo_13_7.jpeg'),
-(9, 9, 'TSU(#=D=#)Facilitador', '', 'fondo_1_9.jpeg', 'logo_1_9.jpeg');
+(9, 9, 'TSU(#=D=#)Facilitador', '', 'fondo_1_9.jpeg', 'ninguno');
 
 -- --------------------------------------------------------
 
@@ -63,95 +63,7 @@ CREATE TABLE IF NOT EXISTS `contacto` (
   `mensaje` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=88 ;
-
---
--- Volcado de datos para la tabla `contacto`
---
-
-INSERT INTO `contacto` (`id`, `id_usuario`, `asunto`, `mensaje`) VALUES
-(6, 1, 'asfsaf', 'asfasf'),
-(7, 1, 'asfasf', 'safsa'),
-(8, 1, 'asfasf', 'asfas'),
-(9, 1, 'HOLAAAA', 'asfsaf'),
-(10, 1, 'hola1234', 'asfas'),
-(11, 1, 'hola1234', 'asfas'),
-(12, 1, 'hola1234', 'hola'),
-(13, 1, 'hola1234', 'hola'),
-(14, 1, 'hola', 'hola1234'),
-(15, 1, 'hola', 'hola1234'),
-(16, 1, 'hola', 'hola1234'),
-(17, 1, 'hola', 'hola1234'),
-(18, 1, 'hola', 'hola1234'),
-(19, 1, 'hola', 'hola1234'),
-(20, 1, 'asf', ''),
-(21, 1, 'hola', 'hola'),
-(22, 1, 'hola', 'hola'),
-(23, 1, 'asfsa', 'asfa'),
-(24, 1, 'hola', ''),
-(25, 1, 'asf', ''),
-(26, 1, 'asf', ''),
-(27, 1, '', 'asf'),
-(28, 1, '', 'asfas'),
-(29, 1, 'asfas', 'asfa'),
-(30, 1, 'hola', 'quetal'),
-(31, 1, 'hola', 'quetal'),
-(32, 1, 'hola', 'quetal'),
-(33, 1, 'hola', 'quetal'),
-(34, 1, 'hola', 'quetal'),
-(35, 1, 'hola', 'quetal'),
-(36, 1, 'hola', 'quetal'),
-(37, 1, 'hola', 'quetal'),
-(38, 1, 'hola', 'quetal'),
-(39, 1, 'hola', 'quetal'),
-(40, 1, 'Hola', 'que tal'),
-(41, 1, 'hola', 'que talco'),
-(42, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(43, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(44, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(45, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(46, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(47, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(48, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(49, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(50, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(51, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(52, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(53, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(54, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(55, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(56, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(57, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(58, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(59, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(60, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(61, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(62, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(63, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(64, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(65, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(66, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(67, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(68, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(69, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(70, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(71, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(72, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(73, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(74, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(75, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(76, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(77, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(78, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(79, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(80, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(81, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(82, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(83, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(84, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(85, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(86, 1, 'Certificado de Participación', 'Certificado de Participación:'),
-(87, 1, 'Certificado de Participación', 'Certificado de Participación:');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -220,7 +132,7 @@ INSERT INTO `ediciones` (`id_edicion`, `id_curso`, `id_facilitador`, `estado`, `
 (6, 11, 6, 'bloqueada', 'taller_apro', '2014-04-29', '2014-05-06', '10 Horas', 5, 'martes y jueves de 2:00 a 4:00pm', 'Taller orientado a formar actores para realizar pantomima artística'),
 (7, 13, 136, 'normal', 'taller_part', '2015-04-29', '2015-04-29', '4 Horas', 120, '2:00 pm a 6:00 pm', 'Uso de las TIC en apoyo al Desarrollo Socio Productivo de las Comunidades'),
 (8, 14, 136, 'normal', 'taller_part', '2015-07-09', '2015-07-09', '8 Horas', 600, '8:00am a 12:00m y 1:00pm a 6:00pm', ''),
-(9, 1, 155, 'bloqueada', 'curso_part', '2016-03-02', '2016-03-04', '2 Horas', 50, '8:00', '');
+(9, 1, 155, 'normal', 'curso_part', '2016-03-02', '2016-03-04', '2 Horas', 50, '8:00', '');
 
 -- --------------------------------------------------------
 
@@ -370,8 +282,7 @@ INSERT INTO `ediciones_personas` (`id_edicion`, `id_persona`, `estado`) VALUES
 (8, 202, 'ninguno'),
 (8, 162, 'ninguno'),
 (8, 161, 'ninguno'),
-(9, 127, 'participacion'),
-(9, 161, 'participacion');
+(9, 127, 'participacion');
 
 -- --------------------------------------------------------
 
@@ -507,7 +418,7 @@ INSERT INTO `personas` (`id_persona`, `documento`, `nombre`, `apellido`, `sexo`,
 (82, 'V-25448466', 'YORGELISS', 'BELLO', '', '0000-00-00', '', 'yorgeliss05@gmail.com', ''),
 (83, 'V-8693257', 'BEATRIZ', 'LOPEZ', '', '0000-00-00', '', '', ''),
 (84, 'V-3934558', 'LIZ MARIA', 'MARTINEZ', '', '0000-00-00', '', '', ''),
-(127, 'V-21253028', 'Christian', 'Pires', 'masculino', '1993-05-12', '04128725723', ' chriss.pires.12@gmail.com', 'blink242@outlook.com'),
+(127, 'V-21253028', 'Christian', 'Pires', 'masculino', '1993-05-12', '04128725723', 'chriss.pires.12@gmail.com', ''),
 (86, 'V-13634553', 'ERICK', 'BETANCOURT', '', '0000-00-00', '', 'erickvictoria010@gmail.com', ''),
 (126, 'V-8819893', 'Yamilet', 'Vivas', 'femenino', '1966-09-17', '04162475630', 'vivasyamileth@gmail.com', ''),
 (88, 'V-13862794', 'CARLOS', 'ZAMBRANO', '', '0000-00-00', '', 'carlosjzambrano@gmail.com', ''),
@@ -573,13 +484,13 @@ INSERT INTO `personas` (`id_persona`, `documento`, `nombre`, `apellido`, `sexo`,
 (152, 'V-24923173', 'Fabiana Alexandra', 'Ruberto Sanchez', 'femenino', '1995-08-02', '04263316883', 'fabii_ruberto@hotmail.com', ''),
 (153, 'V-20770785', 'Maria De Los Angeles', 'Nieves De Rodriguez', 'femenino', '1982-12-15', '04264628306', 'angel.edden21@gmail.com', ''),
 (154, 'V-8815545', 'Marlene', 'Pinto', 'femenino', '1967-02-22', '04124448791', 'pintomar22@gmail.com', ''),
-(155, 'V-24388425', 'Luis Alejandro', 'Ugueto Escobar', 'masculino', '1995-08-04', '04262388985', 'calle urdaneta nº 18, El consejo', 'blink242@outlook.com'),
+(155, 'V-24388425', 'Luis Alejandro', 'Ugueto Escobar', 'masculino', '1995-08-04', '04262388985', 'blink242@outlook.com', ''),
 (156, 'V-24343170', 'Sthefany Lissete', 'Gomez Tua', 'femenino', '1995-04-09', '04126722912', 'sther10_1995@hotmail.com', ''),
 (157, 'V-8582086', 'Lilia Caridad', 'Lugo Flores', 'femenino', '1962-03-08', '04124453040', 'caridad_1962@hotmail.com', ''),
 (158, 'V-7474040', 'Ramón', 'García', 'masculino', '1958-02-18', '04141449494', 'ramongarciadiputado@hotmail.com', ''),
 (159, 'V-5979574', 'Raiza', 'Yanez Lopez', 'femenino', '1958-02-12', '04161469861', 'zairayanez1258@hotmail.com', ''),
 (160, 'V-15733261', 'Antony Eleazar', 'Mayora Pariata', 'masculino', '1981-08-24', '04121323735', 'toros-coleados2010@hotmail.com', ''),
-(161, 'V-23795244', 'Carlos Alberto', 'Fuentes Cobo', 'masculino', '1995-09-22', '04128809495', 'codefuentes@outlook.com', 'ugueto.luis19@gmail.com'),
+(161, 'V-23795244', 'Carlos Alberto', 'Fuentes Cobo', 'masculino', '1995-09-22', '04128809495', 'codefuentes@outlook.com', ''),
 (162, 'V-25067745', 'Jesus Manuel', 'Ibarra Rojas', 'masculino', '1996-03-20', '04124164309', 'jesusmanuelir@gmail.com', ''),
 (163, 'V-16760183', 'Aldley Rafaela', 'Algara Martinez', 'femenino', '1982-11-29', '04125091274', 'aldleyalgara@hotmail.com', ''),
 (164, 'V-20057901', 'Victor Jose', 'Corzo Valencia', 'masculino', '1991-12-01', '04128318818', 'vittodub@gmail.com', ''),

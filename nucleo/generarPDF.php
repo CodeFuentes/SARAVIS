@@ -6,7 +6,7 @@ require_once 'dompdf/dompdf_config.inc.php';
 
 	final class generarPDF
 	{
-		static public function cargarDocumento($html, $nombre, $salida,$correo, $orientacion = 'horizontal')
+		static public function cargarDocumento($html, $nombre, $salida, $correo, $curso, $edicion, $orientacion = 'horizontal')
 		{
 			//$html = file_get_contents('http://localhost/mercal/index.php?ctrl=almacen&acc=mostAlma');
 			//$html = file_get_contents('http://localhost/mercal/index.php?ctrl=entrada&acc=listado');
@@ -51,7 +51,12 @@ require_once 'dompdf/dompdf_config.inc.php';
 			{
 
 				$output = $mipdf->output();
-				file_put_contents($nombre . '.pdf', $output);
+			//	file_put_contents('recursos/'.$nombre . '.pdf', $output);
+				$archivo = 'recursos/'.$nombre.'.pdf';
+		//		$archivo = ''.$nombre.'.pdf';
+			//	$contacto = new contacto("Certificado de Participación", "Certificado de Participación:", $correo, $archivo, $curso, $edicion);
+			//	$resultado = $contacto->enviarCertificado();
+
 			}
 			elseif($salida == 'descargar')
 			{
@@ -60,9 +65,18 @@ require_once 'dompdf/dompdf_config.inc.php';
 
 				$contacto = new contacto("Certificado de Participación", "Certificado de Participación:", $correo);
 
-				$resultado = $contacto->registrar();
-				$mipdf ->stream($nombre . '.pdf');
+				$resultado = $contacto->enviarCorreo();
+				$mipdf ->stream('recursos/'.$nombre . '.pdf');
 				
+			}
+			elseif($salida == 'enviar')
+			{
+				$output = $mipdf->output();
+				file_put_contents('recursos/'.$nombre . '.pdf', $output);
+				$archivo = 'recursos/'.$nombre.'.pdf';
+				$archivo = ''.$nombre.'.pdf';
+				$contacto = new contacto("Certificado de Participación", "Certificado de Participación:", $correo, $archivo, $curso, $edicion);
+				$resultado = $contacto->enviarCertificado();
 			}
 		}
 	}

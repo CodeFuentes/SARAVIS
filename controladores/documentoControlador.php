@@ -7,6 +7,7 @@ require_once 'modelos/identificador.php';
 
 	class documentoControlador
 	{
+		private $tipo = '';
 		function procesarAccion($accion)
 		{
 			switch($accion)
@@ -44,6 +45,11 @@ require_once 'modelos/identificador.php';
 				case 'imprCert': 
 					index::permitirAcceso('impresiones');
 					self::_imprimirCertificados();
+				break;
+
+				case 'envCert': 
+					index::permitirAcceso('documentos');
+					self::_enviarCertificados();
 				break;
 				
 				case 'geneCert':
@@ -890,9 +896,117 @@ require_once 'modelos/identificador.php';
 				self::_regresarPrincipal();
 			}
 		}
+
+		private function _enviarCertificados(){
+			$tipo = 'enviar';
+			$curso = curso::cargarCurso($_SESSION['formulario']['idCurso']);
+			if(!empty($curso)){
+				$edicion = $curso->seleccionarEdicion($_SESSION['formulario']['idEdicion']);
+			}
+	
+			if(!empty($curso) and !empty($edicion))
+			{
+				$error = '';
+			
+				$facilitador = $edicion->dameFacilitador();
+				$certificado = $edicion->dameIdentificador();
+				$colParticipantes = $edicion->dameColParticipantes();
+				$identificador = $edicion->dameIdentificador();
+				
+				if(
+					!empty($facilitador) and !empty($certificado) and !empty($identificador) 
+					and $edicion->cuposEdicion() < $edicion->dameLimite() and
+					$edicion->dameEstado() == 'bloqueada'
+					)
+				{
+					$titulos = array('Nombre', 'Apellido', 'Documento', 'Opcion');
+					$linkBase = '#';
+					
+					$listadoGenerador = new listadoGenerador($colParticipantes, $titulos, $linkBase, $_GET['pag'], $edicion->dameLimite());
+					
+					vistaGestor::agregarDiccionario('boton_imprimir_documento', '<input type="submit" id="btn_imprimir" name="btn_imprimir" value="Enviar">');
+					
+					$listadoGenerador->agregarFila(
+					array (
+							'<b>Facilitador: </b> ' . $facilitador->dameNombre(),
+							$facilitador->dameApellido(),
+							$facilitador->dameDocumento(),
+							'<select name="imprimir_facilitador" name="imprimir_participante">
+								<option value="no_' . $facilitador->dameId() . '">No Enviar</option>
+								<option value="si_' . $facilitador->dameId(). '">Enviar</option>
+							</select>'
+							)
+					, '');
+					
+					$datosRelacionados = $edicion->dameRelacionParticipantes();
+					
+					foreach($datosRelacionados as $valores)
+					{
+						$idTemporar = $valores['id_persona'];
+						$tipoImpresion[$idTemporar] = $valores['estado'];
+					}
+					
+					foreach($colParticipantes as $participante)
+					{
+						$tipoImpresionPersona = $tipoImpresion[$participante->dameId()];
+					
+						if($tipoImpresionPersona != 0 or $tipoImpresionPersona == 'facilitador' or $tipoImpresionPersona == 'participacion')
+						{
+							$select = '<select name="imprimir_participante[]" name="imprimir_participante[]">
+								<option value="no_' . $participante->dameId() . '">No Enviar</option>
+								<option value="si_' . $participante->dameId() . '">Enviar</option>
+							</select>';
+						}
+						else
+						
+						{
+							$select = 'No curso';
+						}
+					
+						$listadoGenerador->agregarFila(
+							array (
+									$participante->dameNombre(),
+									$participante->dameApellido(),
+									$participante->dameDocumento(),
+									$select
+									)
+							, '');
+					}
+
+					$htmlListado = $listadoGenerador->generarListado();
+
+					$nombreFacilitador = $facilitador->dameNombre() . ' ' . $facilitador->dameApellido();
+
+					vistaGestor::agregarDiccionario('nombreFacilitador', $nombreFacilitador);
+					vistaGestor::agregarDiccionario('horarioEdicion', $edicion->dameHorario());
+					
+					vistaGestor::agregarDiccionario('htmlListado', $htmlListado);
+					vistaGestor::agregarDiccionario('link_imprimir_documento', '?ctrl=documento&acc=geneCert');
+					
+					vistaGestor::agregarDiccionario('nombreCurso', $curso->dameNombre());
+					vistaGestor::agregarDiccionario('tipoEdicion', $edicion->dameTipoLegible());
+					vistaGestor::agregarDiccionario('duracionEdicion', $edicion->dameDuracion());
+					vistaGestor::agregarDiccionario('inicioEdicion', invertirFecha($edicion->dameFechaInicio()));
+					vistaGestor::agregarDiccionario('finalEdicion', invertirFecha($edicion->dameFechaFin()));
+					vistaGestor::agregarDiccionario('cuposEdicion', $edicion->cuposEdicion() . ' / ' . $edicion->dameLimite());
+					
+					vistaGestor::agregarArchivoCss('listados');
+					vistaGestor::documentoNormal('Enviar certificados', array('vistas/edicion/datosEdicion.html', 'vistas/documento/imprimirIdentificador.html'));
+				}
+				else
+				{
+					self::_regresarPrincipal();
+				}
+			}
+			else
+			{
+				self::_regresarPrincipal();
+			}
+		}
 		
 		private function _imprimirCertificados()
 		{
+			$tipo = 'imprimir';
 			$curso = curso::cargarCurso($_SESSION['formulario']['idCurso']);
 			if(!empty($curso)){
 				$edicion = $curso->seleccionarEdicion($_SESSION['formulario']['idEdicion']);
@@ -1085,8 +1199,8 @@ require_once 'modelos/identificador.php';
 											$imprimir, $codigoGenerado, $nombreCurso,
 											$duracionEdicion, $fechaEdicion, $nombreCompletoFacilitador
 											);
-
-						generarPDF::cargarDocumento($HTML, "Certificado", 'descargar', $correo);
+							generarPDF::cargarDocumento($HTML, "Certificado", 'descargar', $correo, $curso->dameId(), $edicion->dameId());
+							self::_imprimirCertificados();
 					}
 					else
 					{
