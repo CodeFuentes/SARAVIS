@@ -148,6 +148,7 @@
 			self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/estructura.css"/>';
 			self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/menu.css"/>';
 			self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/iconos.css"/>';
+			self::$_codigoImprimir .= '<link type="text/css" rel="stylesheet" href="media/css/materialize.min.css"  media="screen,projection"/>';
 
 
 			if(count(vistaGestor::$_archivosCss) > 0)
@@ -163,6 +164,7 @@
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/jquery/jqueryui.js"></script>';
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/calendario.js"></script>';
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/jquery/qrcode.js"></script>';
+			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/materialize.min.js"></script>';
 			
 
 
@@ -190,8 +192,8 @@
 
 		private function _cargarMenuTitulo()
 		{
-			self::$_codigoImprimir .= '<nav>';
-			self::$_codigoImprimir .= '</nav>';
+			// self::$_codigoImprimir .= '<nav>';
+			// self::$_codigoImprimir .= '</nav>';
 			self::$_codigoImprimir .= '<div id="cuerpo_completo">';
 			
 			if($_SESSION['session']['conectado'] == "SI")
