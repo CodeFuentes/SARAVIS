@@ -1,79 +1,9 @@
-
-	
-	/*
-	****
-	*******
-	**********	PRINCIPAL
-	*******
-	****
-	*/
-	
-	@font-face
-	{
-		font-family: ComfortaaRegular;
-		src: local("?"), url("../fuentes/ComfortaaRegular.ttf") format("truetype");
-	}
-	
-	*
-	{
-		font-family: ComfortaaRegular, arial, Corbert, trebuchet ms, sans-serif;
-		font-weight: normal;
-		font-size: 15px;
-		list-style:none;
-		text-decoration:none;
-		color: #404040;
-	}
-
-	
-	html 
-	{
-		background-color: #fff;
-	}
-	
-	
-	body 
-	{
-		margin: 0px;
-		min-width: 960px;
-		background-color: #FFF;
-	}
 		
 	div.separador
 	{
 		float: left;
 		height: 20px;
 		width: 90%;
-	}
-	
-	/*
-	****
-	*******
-	**********	HEADER
-	*******
-	****
-	*/
-		
-		
-	header
-	{
-		background: #fff;
-		height: 65px;
-	}	
-	
-		
-	header div#cuerpo_header 
-	{
-		width: 1000px;
-		height: 85px;
-		margin: auto;
-	}
-	
-	header div#cuerpo_header div.banner
-	{
-		width: 1000px;
-		height: 85px;
-		margin: auto;
-		background: url("../imagenes/barra_n.png") no-repeat;
 	}
 	
 	
@@ -111,26 +41,6 @@
 		color: #9EC630;
 	}
 	
-	
-	
-	
-	
-	
-	/*
-	****
-	*******
-	**********	NAV
-	*******
-	****
-	*/
-		
-		
-	nav
-	{
-		background-color: #9EC630;
-		height: 8px;
-	}	
-
 	
 	/*
 	****
@@ -376,78 +286,6 @@
 		float: right;
 		margin-top: -3px;
 		margin-left: 5px;
-	}
-	
-	/*
-	****
-	*******
-	**********	FOOTER
-	*******
-	****
-	*/
-	
-	
-	footer 
-	{
-		height: 100px;
-		background: #404040;
-		z-index: -1;
-		border-top: 8px solid #9EC630;
-	}
-	
-	
-	footer div#cuerpo_footer
-	{
-		width: 960px;
-		height: 100px;
-		margin: 0px auto;
-		
-	}
-	
-	
-	footer div#cuerpo_footer div#imagen_footer
-	{
-		float: left;
-		background: url("../imagenes/footer.png") no-repeat;
-		width: 220px;
-		height: 120px;
-	}
-	
-	
-	footer div#cuerpo_footer div#contenido_footer
-	{
-		float: left;
-		width: 700px;
-		margin-left: 250px;
-		margin-top: 50px;
-	}
-	
-	
-	footer div#cuerpo_footer div#contenido_footer *
-	{
-		color: #FFF;
-	}
-	
-	
-	footer div#cuerpo_footer div#contenido_footer h1
-	{
-		float: right;
-		margin: 0px;
-		margin-right: 20px;
-	}
-	
-	
-	footer div#cuerpo_footer div#contenido_footer a 
-	{
-		float: left;
-		margin-left: 20px;
-		padding-right: 20px;
-		font-size: 12px;
-	}	
-	
-	footer div#cuerpo_footer div#contenido_footer a:hover 
-	{
-		color: #4284B0;
 	}
 	
 	/*

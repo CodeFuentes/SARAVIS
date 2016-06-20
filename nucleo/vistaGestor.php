@@ -185,8 +185,7 @@
 			self::$_codigoImprimir .= '</head>';
 			self::$_codigoImprimir .= '<body>';
 			self::$_codigoImprimir .= '<header>';
-			self::$_codigoImprimir .= '<div id="cuerpo_header"><div class="banner"></div></div>
-			</div>';
+			self::$_codigoImprimir .= '<div class="row"><div class="col s12 center-align"><img src="media/imagenes/barra_n.png"></div></div>';
 			self::$_codigoImprimir .= '</header>';
 		}
 
