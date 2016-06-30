@@ -146,8 +146,8 @@
 			self::$_codigoImprimir .= self::$_redireccionamiento;
 
 			self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/estructura.css"/>';
-			self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/menu.css"/>';
-			self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/iconos.css"/>';
+			// self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/menu.css"/>';
+			// self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/iconos.css"/>';
 			self::$_codigoImprimir .= '<link type="text/css" rel="stylesheet" href="media/css/materialize.min.css"  media="screen,projection"/>';
 
 
@@ -187,16 +187,17 @@
 			self::$_codigoImprimir .= '<header>';
 			self::$_codigoImprimir .= '<div class="row"><div class="col s12 center-align"><img src="media/imagenes/barra_n.png"></div></div>';
 			self::$_codigoImprimir .= '</header>';
+			// self::$_codigoImprimir .= '<hr>';
+			self::$_codigoImprimir .= '<div class="container">';
+			self::$_codigoImprimir .= '<div class="row">';
 		}
 
 		private function _cargarMenuTitulo()
 		{
-			// self::$_codigoImprimir .= '<nav>';
-			// self::$_codigoImprimir .= '</nav>';
-			self::$_codigoImprimir .= '<div id="cuerpo_completo">';
 			
 			if($_SESSION['session']['conectado'] == "SI")
 			{		
+				self::$_codigoImprimir .= '<div class="col s12">';
 				if($_SESSION['session']['permisos'][0] == 'admin')
 				{
 					$misPermisos = 'Administrador';
@@ -206,15 +207,15 @@
 					$misPermisos = 'Usuario';
 				}
 			
-				self::$_codigoImprimir .= '<div class="cerrarSession">Usuario: <a>' . $_SESSION['session']['nombre_completo'] . '</a> | Nivel: <a>' . $misPermisos . '</a> | <a class="link" href="?ctrl=inicio&acc=cerrSess">Cerrar Sesión<img class="salir negro"></a></div>';
+				self::$_codigoImprimir .= '<div class="col s3">Usuario: <a>' . $_SESSION['session']['nombre_completo'] . '</a> | Nivel: <a>' . $misPermisos . '</a> | <a class="link" href="?ctrl=inicio&acc=cerrSess">Cerrar Sesión<img class="salir negro"></a></div>';
 				self::$_codigoImprimir .= self::_cargarContenidoHtml('media/html/menu.html');
+				self::$_codigoImprimir .= '</div>';
 			}
 			
-			self::$_codigoImprimir .= '<div id="cuerpo_principal">';
 			
 			if(!empty(self::$_tituloPrincipal))
 			{
-				self::$_codigoImprimir .= '<div id="titulo_principal">' . self::$_tituloPrincipal . '</div>';
+				self::$_codigoImprimir .= '<h3>' . self::$_tituloPrincipal . '</h3>';
 			}
 			
 			self::$_codigoImprimir .= '{#notificacion}';

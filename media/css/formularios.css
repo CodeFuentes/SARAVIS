@@ -1,12 +1,6 @@
+/*
 
-
-	/*
-	****
-	*******
-	**********	PRINCIPAL
-	*******
-	****
-	*/
+	
 	
 	div#cuerpo_completo section div.formulario ul
 	{
@@ -36,13 +30,7 @@
 		border: 1px solid #CCCCCC;
 	}
 		
-	/*
-	****
-	*******
-	**********	TAMAÑOS LINEAS
-	*******
-	****
-	*/
+	
 	
 	div#cuerpo_completo section div.formulario ul li div.unico
 	{
@@ -72,13 +60,7 @@
 	}
 	
 	
-	/*
-	****
-	*******
-	**********	TAMAÑOS CAMPOS
-	*******
-	****
-	*/
+	
 	
 	article div.formulario ul li div.total input[type="text"],
 	article div.formulario ul li div.total input[type="password"],
@@ -133,13 +115,7 @@
 		height: 31px;
 	}
 	
-	/*
-	****
-	*******
-	**********	BOTON ACOMPAÑANTE
-	*******
-	****
-	*/
+	
 	
 	article div.formulario ul li div.boton_acompanante
 	{
@@ -178,4 +154,4 @@
 	{
 		position:relative;
 		top:2px;
-	}
+	}*/

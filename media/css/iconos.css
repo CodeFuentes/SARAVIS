@@ -1,7 +1,5 @@
+/*	
 	
-	/*
-		cancelar
-	*/
 	
 	div#cuerpo_completo a img.cancelar.negro
 	{
@@ -13,9 +11,7 @@
 		background-image: url('../imagenes/iconos/blanco/cancel.png');
 	}
 	
-	/*
-		abierto
-	*/
+	
 	
 	div#cuerpo_completo a img.abierto.negro
 	{
@@ -28,9 +24,7 @@
 	}
 
 	
-	/*
-		verificar
-	*/
+	
 	
 	div#cuerpo_completo a img.verificar.negro
 	{
@@ -42,9 +36,7 @@
 		background-image: url('../imagenes/iconos/blanco/information.png');
 	}
 	
-	/*
-		bloquear
-	*/
+	
 	
 	div#cuerpo_completo a img.bloquear.negro
 	{
@@ -55,9 +47,7 @@
 	{
 		background-image: url('../imagenes/iconos/blanco/lock.png');
 	}
-	/*
-		usuarios
-	*/
+	
 	
 	div#cuerpo_completo a img.usuarios.negro
 	{
@@ -68,12 +58,7 @@
 	{
 		background-image: url('../imagenes/iconos/blanco/users.png');
 	}
-	
-	/*
-	
-		continuar
-	*/
-	
+		
 	div#cuerpo_completo a img.continuar.negro
 	{
 		background-image: url('../imagenes/iconos/negro/foward.png');
@@ -84,9 +69,7 @@
 		background-image: url('../imagenes/iconos/blanco/foward.png');
 	}
 	
-	/*
-		borrar
-	*/
+	
 	
 	div#cuerpo_completo a img.borrar.negro
 	{
@@ -98,9 +81,7 @@
 		background-image: url('../imagenes/iconos/blanco/delete.png');
 	}
 	
-	/*
-		actualizar
-	*/
+	
 	
 	div#cuerpo_completo a img.actualizar.negro
 	{
@@ -112,9 +93,7 @@
 		background-image: url('../imagenes/iconos/blanco/refresh.png');
 	}
 	
-	/*
-		imprimir
-	*/
+	
 	
 	div#cuerpo_completo a img.imprimir.negro
 	{
@@ -126,9 +105,7 @@
 		background-image: url('../imagenes/iconos/blanco/document.png');
 	}	
 	
-	/*
-		crear
-	*/
+	
 	
 	div#cuerpo_completo a img.crear.negro
 	{
@@ -140,9 +117,7 @@
 		background-image: url('../imagenes/iconos/blanco/bulb.png');
 	}
 	
-	/*
-		inscribir
-	*/
+	
 	
 	div#cuerpo_completo a img.inscribir.negro
 	{
@@ -154,9 +129,7 @@
 		background-image: url('../imagenes/iconos/blanco/signature.png');
 	}
 	
-	/*
-		selccionar
-	*/
+	
 	
 	div#cuerpo_completo a img.selccionar.negro
 	{
@@ -169,9 +142,7 @@
 	}
 	
 	
-	/*
-		Modificar
-	*/
+	
 	
 	div#cuerpo_completo a img.modificar.negro
 	{
@@ -183,9 +154,7 @@
 		background-image: url('../imagenes/iconos/blanco/edit.png');
 	}
 	
-	/*
-		Persona
-	*/
+	
 	
 	div#cuerpo_completo a img.persona.negro
 	{
@@ -197,9 +166,7 @@
 		background-image: url('../imagenes/iconos/blanco/id-card.png');
 	}
 	
-	/*
-		asignar
-	*/
+	
 	
 	
 	div#cuerpo_completo a img.asignar.negro
@@ -212,9 +179,7 @@
 		background-image: url('../imagenes/iconos/blanco/redo.png');
 	}
 	
-	/*
-		Guardar
-	*/
+	
 	
 	
 	div#cuerpo_completo a img.guardar.negro
@@ -227,9 +192,7 @@
 		background-image: url('../imagenes/iconos/blanco/save.png');
 	}
 	
-	/*
-		Inicio
-	*/
+	
 	
 	div#cuerpo_completo a img.inicio.negro
 	{
@@ -241,9 +204,7 @@
 		background-image: url('../imagenes/iconos/blanco/home.png');
 	}
 	
-	/*
-		Cursos
-	*/
+	
 	
 	div#cuerpo_completo a img.cursos.negro
 	{
@@ -255,9 +216,7 @@
 		background-image: url('../imagenes/iconos/blanco/presentation.png');
 	}
 	
-	/*
-		Mantenimiento
-	*/
+	
 	
 	div#cuerpo_completo a img.mantenimiento.negro
 	{
@@ -269,9 +228,7 @@
 		background-image: url('../imagenes/iconos/blanco/wrench.png');
 	}
 	
-	/*
-		Usuarios
-	*/
+	
 	
 	div#cuerpo_completo a img.usuarios.negro
 	{
@@ -283,9 +240,7 @@
 		background-image: url('../imagenes/iconos/blanco/users.png');
 	}
 	
-	/*
-		Registrar
-	*/
+	
 	
 	div#cuerpo_completo a img.registrar.negro
 	{
@@ -297,9 +252,7 @@
 		background-image: url('../imagenes/iconos/blanco/add.png');
 	}
 	
-	/*
-		Buscar
-	*/
+	
 	
 	div#cuerpo_completo a img.buscar.negro
 	{
@@ -311,9 +264,7 @@
 		background-image: url('../imagenes/iconos/blanco/search.png');
 	}
 	
-	/*
-		Listado
-	*/
+	
 	
 	div#cuerpo_completo a img.listado.negro
 	{
@@ -325,9 +276,7 @@
 		background-image: url('../imagenes/iconos/blanco/paste.png');
 	}
 	
-	/*
-		Listado
-	*/
+	
 	
 	div#cuerpo_completo a img.ver.negro
 	{
@@ -339,9 +288,7 @@
 		background-image: url('../imagenes/iconos/blanco/eye.png');
 	}
 	
-	/*
-		salir
-	*/
+	
 	
 	div#cuerpo_completo a img.salir.negro
 	{
@@ -358,9 +305,7 @@
 		background-image: url('../imagenes/iconos/negro/alert.png');
 	}
 
-/*
-	Contacto
-*/
+
 	div#cuerpo_completo a img.contacto
 	{
 		background-image: url('../imagenes/iconos/blanco/phone.png');
@@ -369,4 +314,4 @@
 	div#cuerpo_completo a img.contacto.negro
 	{
 		background-image: url('../imagenes/iconos/negro/phone.png');
-	}
+	}*/

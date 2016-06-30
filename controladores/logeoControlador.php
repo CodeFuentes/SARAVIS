@@ -42,8 +42,8 @@ require_once 'modelos/logeo.php';
 		
 		private function _mostrarFormInicioSession()
 		{
-			vistaGestor::agregarArchivoCss('formularios');
-			vistaGestor::agregarArchivoCss('indexModificador');
+			// vistaGestor::agregarArchivoCss('formularios');
+			// vistaGestor::agregarArchivoCss('indexModificador');
 	
 			vistaGestor::documentoNormal('', array('vistas/logeo/formInicioSession.html', 'vistas/logeo/portada.html'));
 		}
@@ -51,7 +51,7 @@ require_once 'modelos/logeo.php';
 		private function _mostrarIntentosMaximos()
 		{
 		
-			vistaGestor::agregarArchivoCss('indexModificador');
+			// vistaGestor::agregarArchivoCss('indexModificador');
 			
 			vistaGestor::agregarDiccionario('segundosBloqueados', ($_SESSION['logeoCtrl']['tiempo'] - time()));
 			
