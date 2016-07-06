@@ -53,4 +53,18 @@
 	}
 	
 	
-	
+	function iniciarSesion () {
+		showLoading();
+		$('#loginModal').closeModal();
+		setTimeout(function () {
+			document.login.submit();
+		    }, 1000);
+	}
+
+	function showLoading () {
+		$('.loading')[0].style.visibility = 'visible';
+	}
+
+	function hideLoading () {
+		$('.loading')[0].style.visibility = 'hidden';
+	}

@@ -56,9 +56,10 @@ require_once 'modelos/logeo.php';
 			vistaGestor::agregarDiccionario('segundosBloqueados', ($_SESSION['logeoCtrl']['tiempo'] - time()));
 			
 			vistaGestor::agregarErrorForm('usuarioClave', 'El logeo se ha bloqueado por ' . ($_SESSION['logeoCtrl']['tiempo'] - time()) . ' segundos');
-			
+			echo ($_SESSION['logeoCtrl']['tiempo'] - time());
 			
 			vistaGestor::agregarRedicionar('./', ($_SESSION['logeoCtrl']['tiempo'] - time()));
+					// echo "hola";
 			
 			self::_mostrarFormInicioSession();
 		}
@@ -73,7 +74,6 @@ require_once 'modelos/logeo.php';
 		private function _iniciarSession()
 		{
 			$id = logeo::existeUsuario($_POST['usuario'], $_POST['clave']);
-			
 			switch($id)
 			{
 				case 'errorUsuario':
@@ -107,6 +107,8 @@ require_once 'modelos/logeo.php';
 					}
 
 				break;
+				default: 
+					break;
 			}
 
 		}

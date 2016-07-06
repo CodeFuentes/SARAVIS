@@ -1,5 +1,77 @@
+	<div class="header-image col s12 center-align white-text">
+		<div class="h1">
+			<h1><strong>SARAVIS</strong></h1>
+			<h4><small>Software de Asistencia, Registro y Acreditación<br>de Eventos y Talleres del Dpto. de Vinculación Social</small></h4>
+		</div>
+	</div>
+	<nav>
+	   <div class="nav-wrapper light-green">
+	     <a href="#" class="brand-logo">Bienvenido a SARAVIS</a>
+	     <ul id="nav-mobile" class="right hide-on-med-and-down">
+	       <li><a href="#!" onclick="$('#loginModal').openModal();">Iniciar Sesión</a></li>
+	     </ul>
+	   </div>
+	 </nav>
+	<div class="container">
+		<div class="row">
+			<br>
+			<div class="col s12">	
+				<h4>¿Qué es SARAVIS?</h4>
 
-		<div class="col s12 m8 offset-m1">	
-			<h4>Bienvenido a SARAVIS</h4>
+			</div>
+
+				<div id="loginModal" class="modal hoverable">
+					<div class="modal-content white-text light-green darken-1">
+						<!-- <img src="media/imagenes/patterns/greenpolygons.jpg"> -->
+						<h5 class="modal-title">Iniciar Sesión</h5>
+					</div>
+			
+					<div class="modal-content">
+						<form method="POST" name="login" action="?ctrl=logeo&acc=iniciar" autocomplete="off">
+						<div class="input-field">
+							<div>
+								<input id="usuario" type="text" name="usuario" autocomplete="off" placeholder="Usuario" class="validate" />
+								<div class="error">{#error_usuario}</div>
+							</div>
+							<div>
+								<input id="clave" type="password" name="clave" autocomplete="off" placeholder="Clave" class="validate" />
+								<div class="error">{#error_clave}</div>
+							</div>
+								<div class="error">{#error_usuarioClave}</div>
+						</div>	
+
+						<div class="botones right-align">
+						
+							<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="ingresarBtn" onclick="iniciarSesion()">Ingresar</button>
+							<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#loginModal').closeModal();">Cerrar</a>
+						</div>
+						</form>
+					</div>
+				</div>
 
 		</div>
+	</div>
+	<footer class="page-footer light-green darken-1">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col l4 s12">
+	        <h5 class="white-text">Footer Content</h5>
+	        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+	      </div>
+	      <div class="col l7 offset-l1 s12">
+	        <h5 class="white-text">Enlaces relacionados</h5>
+	        <ul>
+	          <li><a class="grey-text text-lighten-3" href="#!">UPT Aragua - Página Principal</a></li>
+	          <li><a class="grey-text text-lighten-3" href="#!">VINSSOFT - Sistema de Gestión de Eventos de la UPT Aragua</a></li>
+	          <li><a class="grey-text text-lighten-3" href="#!">ARRAU - Comunidad de Programadores</a></li>
+	          <li><a class="grey-text text-lighten-3" href="#!">DACE - Gestión del Rendimiento Académico UPT Aragua</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="footer-copyright grey darken-4">
+	    <div class="container center-align">
+	    UPT Aragua Federico Brito Figueroa Todos los Derechos Reservados © 2016. Comunidad de Programadores Arrau.
+	    </div>
+	  </div>
+	</footer>

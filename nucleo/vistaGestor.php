@@ -142,7 +142,7 @@
 		private function _iniciarDocumento()
 		{
 			self::$_codigoImprimir .= self::_cargarContenidoHtml('media/html/cabeceraComun.html');
-
+			header('Content-Type:text/html;charset=utf-8');
 			self::$_codigoImprimir .= self::$_redireccionamiento;
 
 			self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/estructura.css"/>';
@@ -164,12 +164,11 @@
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/jquery/jqueryui.js"></script>';
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/calendario.js"></script>';
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/jquery/qrcode.js"></script>';
-			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/materialize.min.js"></script>';
-			
-
-
-			
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/general.js"></script>';
+			
+
+
+			
 			
 			if(count(vistaGestor::$_archivosJs) > 0)
 			{
@@ -179,17 +178,52 @@
 				}
 			}
 	
+			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/materialize.min.js"></script>';
 			
 			$nombreMeses = array('', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Noviembre', 'Diciembre');
 			
+
 			self::$_codigoImprimir .= '</head>';
 			self::$_codigoImprimir .= '<body>';
 			self::$_codigoImprimir .= '<header>';
-			self::$_codigoImprimir .= '<div class="row"><div class="col s12 center-align"><img src="media/imagenes/barra_n.png"></div></div>';
+			self::$_codigoImprimir .= '<div class="row">';
+			if($_SESSION['session']['conectado'] == "SI") {
+				self::$_codigoImprimir .= '
+				<div class="col s9 offset-s3">
+					<img class="responsive-img" src="media/imagenes/barra_n.png">
+				</div>';
+			} else {
+				self::$_codigoImprimir .= '
+				<div class="col s12 center-align">
+					<img src="media/imagenes/barra_n.png">
+				</div>';
+			}
+			self::$_codigoImprimir .= '
+				
+				<div class="loading center-align valign-wrapper">
+					<div id="preloader" class="preloader-wrapper big active">
+					    <div class="spinner-layer spinner-blue-only">
+					      <div class="circle-clipper left">
+					        <div class="circle"></div>
+					      </div><div class="gap-patch">
+					        <div class="circle"></div>
+					      </div><div class="circle-clipper right">
+					        <div class="circle"></div>
+					      </div>
+					    </div>
+					  </div>';
+
+			/*if($_SESSION['session']['conectado'] != "SI") {
+				self::$_codigoImprimir .= '
+				';
+			}*/
+
+			self::$_codigoImprimir .= '</div>';
+			self::$_codigoImprimir .= '</div>';
+
 			self::$_codigoImprimir .= '</header>';
 			// self::$_codigoImprimir .= '<hr>';
-			self::$_codigoImprimir .= '<div class="container">';
-			self::$_codigoImprimir .= '<div class="row">';
+
 		}
 
 		private function _cargarMenuTitulo()
@@ -197,7 +231,7 @@
 			
 			if($_SESSION['session']['conectado'] == "SI")
 			{		
-				self::$_codigoImprimir .= '<div class="col s12">';
+				self::$_codigoImprimir .= '<div class="row"><div class="col s9 offset-s3">';
 				if($_SESSION['session']['permisos'][0] == 'admin')
 				{
 					$misPermisos = 'Administrador';
@@ -207,8 +241,9 @@
 					$misPermisos = 'Usuario';
 				}
 			
-				self::$_codigoImprimir .= '<div class="col s3">Usuario: <a>' . $_SESSION['session']['nombre_completo'] . '</a> | Nivel: <a>' . $misPermisos . '</a> | <a class="link" href="?ctrl=inicio&acc=cerrSess">Cerrar Sesión<img class="salir negro"></a></div>';
+				self::$_codigoImprimir .= '<div class="chip"><b>Usuario:</b> ' . $_SESSION['session']['nombre_completo'] . '</div> <div class="chip"> <b>Nivel:</b> ' . $misPermisos . '</div>';
 				self::$_codigoImprimir .= self::_cargarContenidoHtml('media/html/menu.html');
+				self::$_codigoImprimir .= '</div>';
 				self::$_codigoImprimir .= '</div>';
 			}
 			
@@ -226,11 +261,10 @@
 
 		private function _cerrarDocumento()
 		{
-			
-			self::$_codigoImprimir .= '</div>';
-			self::$_codigoImprimir .= '</div>';
-			self::$_codigoImprimir .= self::_cargarContenidoHtml('media/html/footer.html');
-
+			if($_SESSION['session']['conectado'] == "SI")
+			{	
+				self::$_codigoImprimir .= self::_cargarContenidoHtml('media/html/footer.html');
+			}
 			self::$_codigoImprimir .= '</body>';
 			self::$_codigoImprimir .= '</html>';
 		}

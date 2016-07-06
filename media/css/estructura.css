@@ -1,3 +1,38 @@
+.header-image {
+	background: url(../imagenes/bg.jpg) no-repeat center;
+	background-size: 100% auto;
+}
+
+.header-image .h1{
+	padding: 14% 0;
+}
+
+.header-image h1, .header-image h3 {
+	text-shadow: 0 0 5px black;
+}
+
+.error {
+	color: red;
+	font-size: 11px;
+}
+
+.loading {
+	visibility: hidden;
+	position: fixed;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 50;
+	background-color: rgba(255,255,255,0.8);
+}
+
+#preloader {
+	margin: auto;
+}
+
+.nav-wrapper {
+	padding-left: 20px;
+}
 
 /*		
 	div.separador

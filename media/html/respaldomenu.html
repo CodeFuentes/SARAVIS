@@ -1,0 +1,62 @@
+<aside>
+	<div id="menu">
+		<ul>
+		
+			<li class="nivelUno primera"><a href="./" class="nivelUno">Inicio<img class="inicio blanco"/></a></li>
+			
+			<li class="nivelUno"><a href="?ctrl=persona&acc=formRegi" class="nivelUno">Persona<img class="persona blanco"/></a>
+				<ul>
+					{@personas}<li ><a href="?ctrl=persona&acc=formBusq">Registrar<img class="registrar negro"/></a></li>{@personas}
+				<!--	<li ><a href="?ctrl=persona&acc=formBusq">Buscar<img class="buscar negro"/></a></li> -->
+				</ul>
+			</li>
+			
+			<li class="nivelUno"><a href="?ctrl=curso&acc=listado" class="nivelUno">Curso/Taller<img class="cursos blanco"/></a>
+				<ul>
+					{@cursos}<li ><a href="?ctrl=curso&acc=formRegiC">Registrar<img class="registrar negro"/></a></li>{@cursos}
+					<li ><a href="?ctrl=curso&acc=formBusq">B&uacute;squeda<img class="buscar negro"/></a></li>
+					<li ><a href="?ctrl=curso&acc=veriCodi">Verificar C&oacute;digo<img class="verificar negro"/></a></li>
+					<li ><a href="?ctrl=curso&acc=historial">Historial<img class="imprimir negro"/></a></li>
+				</ul>
+			</li>
+			
+			<li class="nivelUno"><a href="#" class="nivelUno">Usuarios<img class="usuarios blanco"/></a>
+				<ul>
+					{@admin}<li ><a href="?ctrl=usuario&acc=regiUsua">Registrar<img class="registrar negro"/></a></li>{@admin}
+					{@admin}<li ><a href="?ctrl=usuario&acc=listUsua">Listado<img class="listado negro"/></a></li>{@admin}
+					<li ><a href="?ctrl=usuario&acc=cambClav">Cambiar Clave<img class="actualizar negro"/></a></li>
+				</ul>
+			</li>
+			<li class=""><a href="#" class="">Ayuda<img class="contacto"/></a>
+				<ul>
+					<li ><a href="?ctrl=contacto&acc=verInf">Informaci&oacute;n<img class="verificar	negro"/></a></li>
+					<li ><a href="?ctrl=contacto&acc=formRegi">Contacto<img class="contacto negro"/></a></li>
+				<!--	<li ><a href="?ctrl=contacto&acc=regError">Reportar Error<img class="alert negro"/></a></li> -->
+					
+				</ul>
+			</li>
+			<!--
+			<li class="nivelUno"><a href="#" class="nivelUno">Mantenimiento<img class="mantenimiento blanco"/></a>
+				<ul>
+					<li ><a href="?ctrl=admin&acc=respalBD">Respaldar data</a></li>
+					<li><a href="?ctrl=admin&acc=restauBD">Restaurar data</a></li>
+					<li><a href="?ctrl=auditoria&acc=mostAudi">Auditoria</a></li>
+					<li><a href="?ctrl=admin&acc=listUsua">Listado de Usuarios</a></li>
+					<li><a href="?ctrl=admin&acc=regiUsua">Registro de Usuarios</a></li>
+				</ul>
+			</li>
+			
+			<li class="nivelUno"><a  href="#" class="">Usuarios<img class="usuarios blanco"/></a>
+				<ul>
+					<li ><a href="?ctrl=almacen&acc=mostAlma">Inventario<img class="usuarios blanco"/></a></li>
+					<li><a href="?ctrl=entrada&acc=registro">Registrar Entrada</a></li>
+					<li><a href="?ctrl=entrada&acc=listado">Listado de Entrada</a></li>
+					
+					<li><a href="?ctrl=salida&acc=registro">Registrar Salida</a></li>
+					<li><a href="?ctrl=salida&acc=listado">Listado de Salida</a></li>
+				</ul>
+			</li>
+			-->
+		</ul>
+	</div>
+</aside>

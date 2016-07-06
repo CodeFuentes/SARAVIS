@@ -162,7 +162,7 @@ require_once 'nucleo/utilidades/listadoGenerador.php';
 	$nombreControlador = $controlador . 'Controlador';
 	
 	$acc = isset($_GET['acc']) ? $_GET['acc'] : '';
-	$nombreControlador::procesarAccion($acc);
 
+	$nombreControlador::procesarAccion($acc);
 
 

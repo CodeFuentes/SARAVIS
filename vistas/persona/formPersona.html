@@ -1,5 +1,26 @@
 <form method="POST" action="{#link_form_persona}" autocomplete="off">
-			
+
+<div class="row">
+	<div class="input-field col s4">
+	    <input id="nombrePers" name="nombrePers" value="{#post_nombrePers}" type="text" placeholder="Ejm: Pedro">
+	    {#error_nombrePers}
+	    <label>Nombres</label>
+	</div>
+	<div class="input-field col s4">
+	    <input id="apellidoPers" name="apellidoPers" value="{#post_apellidoPers}" type="text" placeholder="Ejm: Rodriguez">
+	    {#error_apellidoPers}
+	    <label>Apellidos</label>
+	</div>
+	<div class="input-field col s4">
+	    <select id="sexoPers" name="sexoPers">
+	    	<option value="masculino" {#selected_sexo_masculino} >Masculino</option>
+	    	<option value="femenino" {#selected_sexo_femenino} >Femenino</option>
+	    </select>
+	    {#error_sexoPers}
+	    <label>Sexo</label>
+	</div>
+</div>
+
 <section>
 	<article>
 			<div class="sub_titulo">Datos de la persona</div>
@@ -9,25 +30,19 @@
 					<li>
 						<div class="doble">
 							<label>Nombres<span>*</span></label>
-							<input id="nombrePers" name="nombrePers" value="{#post_nombrePers}" type="text" placeholder="Ejm: Pedro">
-							{#error_nombrePers}
+							
 						</div>
 						
 						<div class="doble">
 							<label>Apellidos<span>*</span></label>
-							<input id="apellidoPers" name="apellidoPers" value="{#post_apellidoPers}" type="text" placeholder="Ejm: Rodriguez">
-							{#error_apellidoPers}
+							
 						</div>
 					</li>
 
 					<li>
 						<div class="doble">
 							<label>Sexo<span>*</span></label>
-							<select id="sexoPers" name="sexoPers">
-								<option value="masculino" {#selected_sexo_masculino}>Masculino</option>
-								<option value="femenino" {#selected_sexo_femenino}>Femenino</option>
-							</select>
-							{#error_sexoPers}
+							
 						</div>
 						
 						<div class="doble">
