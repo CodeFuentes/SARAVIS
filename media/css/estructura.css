@@ -34,6 +34,11 @@
 	padding-left: 20px;
 }
 
+.container.main h4, .container.main h5
+{
+	text-align: center;
+}
+
 /*		
 	div.separador
 	{

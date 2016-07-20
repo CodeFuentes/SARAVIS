@@ -1,5 +1,7 @@
 <?php
 
+require_once 'modelos/curso.php';
+require_once 'modelos/edicion.php';
 require_once 'modelos/logeo.php';
 
 	class logeoControlador
@@ -44,7 +46,50 @@ require_once 'modelos/logeo.php';
 		{
 			// vistaGestor::agregarArchivoCss('formularios');
 			// vistaGestor::agregarArchivoCss('indexModificador');
-	
+				$arrayCursos = edicion::historialEdicionesSimple();
+
+				$titulos = array('Curso', 'Tipo', 'Duracion', 'Final');
+				$linkBase = '?ctrl=curso&acc=historial';
+					
+				$listadoGenerador = new listado($arrayCursos, $titulos, $linkBase, 0, 1);
+					
+					if(!empty($arrayCursos))
+					{	
+						$i = 0;
+
+						foreach($arrayCursos as $edicion)
+						{	
+							if ($i == 5) break;			
+							$facilitador = $edicion->dameFacilitador();
+							
+							if(!empty($facilitador))
+							{
+								$nombreFacilitador = $facilitador->dameNombre();
+							}
+							else
+							{
+								$nombreFacilitador = 'No asignado';
+							}
+							
+							$listadoGenerador->agregarFila(
+								array (
+										$edicion->dameNombreCurso(),
+										$edicion->dameDescripcionCurso(),
+										ucfirst($edicion->dameTipoLegible()),
+										ucfirst($edicion->dameDuracion()),
+										invertirFecha($edicion->dameFechaInicio()),
+										invertirFecha($edicion->dameFechaFin()),
+										)
+								, '');
+
+							$i++;
+						}
+					}
+
+			$htmlListado = $listadoGenerador->generarListado();
+			
+			vistaGestor::agregarDiccionario('htmlListado', $htmlListado);		
+
 			vistaGestor::documentoNormal('', array('vistas/logeo/formInicioSession.html', 'vistas/logeo/portada.html'));
 		}
 		

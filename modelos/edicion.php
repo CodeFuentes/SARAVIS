@@ -436,6 +436,41 @@ require_once 'modelos/identificador.php';
 			return $retorna;
 		}
 
+		public function historialEdicionesSimple(){
+			$edicionPersistencia = new edicionPersistencia();
+			$ediciones = $edicionPersistencia->listadoEdiciones();
+
+			 if(!empty($ediciones))
+			 {
+
+		 		foreach($ediciones as $edicion)
+			 		{
+						$edic[] = new edicion(
+											$edicion['id_edicion'],
+											$edicion['tipo'],
+											$edicion['fecha_inicio'],
+											$edicion['fecha_fin'],
+											$edicion['duracion'],
+											$edicion['limite'],
+											$edicion['horario'],
+											$edicion['sinoptico'],
+											$edicion['estado'], 
+											$edicion['e_nombre'],
+											$edicion['e_descripcion']
+										);
+					$retorna = $edic;
+					
+					}
+				
+			}
+			else
+			{
+				$retorna = NULL;
+			}
+			
+			return $retorna;
+		}
+
 	}
 	
 	

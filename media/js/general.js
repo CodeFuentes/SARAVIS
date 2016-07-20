@@ -52,7 +52,30 @@
 		}
 	}
 	
-	
+	function contacto () {
+		showLoading();
+		$('#contactoModal').closeModal();
+		setTimeout(function () {
+			document.contacto.submit();
+		    }, 1000);
+	}
+
+	function registrarse () {
+		showLoading();
+		$('#contactoModal').closeModal();
+		setTimeout(function () {
+			document.contacto.submit();
+		    }, 1000);
+	}
+
+	function verificacion () {
+		showLoading();
+		$('#contactoModal').closeModal();
+		setTimeout(function () {
+			document.contacto.submit();
+		    }, 1000);
+	}
+
 	function iniciarSesion () {
 		showLoading();
 		$('#loginModal').closeModal();

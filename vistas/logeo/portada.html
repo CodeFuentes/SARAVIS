@@ -2,6 +2,7 @@
 		<div class="h1">
 			<h1><strong>SARAVIS</strong></h1>
 			<h4><small>Software de Asistencia, Registro y Acreditación<br>de Eventos y Talleres del Dpto. de Vinculación Social</small></h4>
+			<h5><small>UPT Aragua "Federico Brito Figueroa"</small></h5>
 		</div>
 	</div>
 	<nav>
@@ -9,62 +10,67 @@
 	     <a href="#" class="brand-logo">Bienvenido a SARAVIS</a>
 	     <ul id="nav-mobile" class="right hide-on-med-and-down">
 	       <li><a href="#!" onclick="$('#loginModal').openModal();">Iniciar Sesión</a></li>
+	       <li><a id="lireg" href="#!" onclick="$('#registroModal').openModal();">Registrarse</a></li>
+	       <li><a href="#!" onclick="$('#verificacionModal').openModal();">Verificar Certificado</a></li>
+	       <li><a href="#!" onclick="$('#contactoModal').openModal();">Contacto</a></li>
 	     </ul>
 	   </div>
 	 </nav>
-	<div class="container">
+	<div class="container main">
 		<div class="row">
 			<br>
-			<div class="col s12">	
+			<div class="col s8">	
 				<h4>¿Qué es SARAVIS?</h4>
+				<p class="flow-text" style="text-align: justify;">
+					Es el Software de Asistencia, Registro y Acreditación de Cursos y Talleres del Departamento de Vinculación Social para la Universidad Politécnica Territorial del Estado Aragua "Federico Brito Figueroa", desarrollado por la Comunidad de Programadores Arrau.
+				</p>
 
+				<h5>Funcionalidad</h5>
+
+				<p class="flow-text" style="text-align: justify;">
+					SARAVIS cubre la siguiente funcionalidad:
+				</p>
+				<span class="list">
+					<li>Gestión y Búsqueda de Eventos, Talleres, Responsables y Asistentes</li>
+					<li>Generación de Certificados</li>
+					<li>Generación de Lista de Asistencia</li>
+					<li>Verificación de Certificados por clave y código QR</li>
+					<li>Gestión de Usuarios y Personas</li>
+					<li>Múltiples ediciones de Eventos y Talleres</li>
+				</span>
+				<p class="flow-text" style="text-align: justify">
+					El uso del software está mayormente dirigido al personal del Departamento de Vinculación Social, sin embargo, usted puede acceder al software <a href="#!" onclick="$('#lireg').click();">registrándose</a>, y utilizar parte de la funcionalidad, a saber, registrar eventos y gestionarlos a través del software y el personal del departamento.
+				</p>
+
+				<!-- <h5>¿Cómo usarlo?</h5>
+				<p class="flow-text" style="text-align: justify">
+
+				</p> -->
 			</div>
+			<div class="col s4">
+				<h5>Próximos Eventos</h5>
 
-				<div id="loginModal" class="modal hoverable">
-					<div class="modal-content white-text light-green darken-1">
-						<!-- <img src="media/imagenes/patterns/greenpolygons.jpg"> -->
-						<h5 class="modal-title">Iniciar Sesión</h5>
-					</div>
-			
-					<div class="modal-content">
-						<form method="POST" name="login" action="?ctrl=logeo&acc=iniciar" autocomplete="off">
-						<div class="input-field">
-							<div>
-								<input id="usuario" type="text" name="usuario" autocomplete="off" placeholder="Usuario" class="validate" />
-								<div class="error">{#error_usuario}</div>
-							</div>
-							<div>
-								<input id="clave" type="password" name="clave" autocomplete="off" placeholder="Clave" class="validate" />
-								<div class="error">{#error_clave}</div>
-							</div>
-								<div class="error">{#error_usuarioClave}</div>
-						</div>	
-
-						<div class="botones right-align">
-						
-							<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="ingresarBtn" onclick="iniciarSesion()">Ingresar</button>
-							<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#loginModal').closeModal();">Cerrar</a>
-						</div>
-						</form>
-					</div>
-				</div>
-
+				<hr>
+				<h5>Eventos Pasados</h5>
+				<!-- {#htmlListado} -->
+			</div>
 		</div>
 	</div>
 	<footer class="page-footer light-green darken-1">
 	  <div class="container">
 	    <div class="row">
 	      <div class="col l4 s12">
-	        <h5 class="white-text">Footer Content</h5>
-	        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-	      </div>
-	      <div class="col l7 offset-l1 s12">
 	        <h5 class="white-text">Enlaces relacionados</h5>
 	        <ul>
-	          <li><a class="grey-text text-lighten-3" href="#!">UPT Aragua - Página Principal</a></li>
-	          <li><a class="grey-text text-lighten-3" href="#!">VINSSOFT - Sistema de Gestión de Eventos de la UPT Aragua</a></li>
-	          <li><a class="grey-text text-lighten-3" href="#!">ARRAU - Comunidad de Programadores</a></li>
-	          <li><a class="grey-text text-lighten-3" href="#!">DACE - Gestión del Rendimiento Académico UPT Aragua</a></li>
+	          <li><a class="grey-text text-lighten-3" href="http://www.upta.edu.ve/">UPT Aragua - Página Principal</a></li>
+	          <li><a class="grey-text text-lighten-3" href="http://www.vinssoft.upta.edu.ve/">VINSSOFT - Sistema de Gestión de Eventos de la UPT Aragua</a></li>
+	        </ul>
+	      </div>
+	      <div class="col l4 s12">
+	      	<h5>&nbsp;</h5>
+	        <ul>
+	        	<li><a class="grey-text text-lighten-3" href="http://www.arrau.upta.edu.ve/">ARRAU - Comunidad de Programadores</a></li>
+	        	<li><a class="grey-text text-lighten-3" href="http://www.dace.upta.edu.ve/">DACE - Gestión del Rendimiento Académico UPT Aragua</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -75,3 +81,124 @@
 	    </div>
 	  </div>
 	</footer>
+
+<!-- -------------------------- VENTANAS MODALES -------------------------- -->
+
+	<div id="loginModal" class="modal hoverable">
+		<div class="modal-content white-text light-green darken-1">
+			<!-- <img src="media/imagenes/patterns/greenpolygons.jpg"> -->
+			<h5 class="modal-title">Iniciar Sesión</h5>
+		</div>
+	
+		<div class="modal-content">
+			<form method="POST" name="login" action="?ctrl=logeo&acc=iniciar" autocomplete="off">
+			<div class="input-field">
+				<div>
+					<input id="usuario" type="text" name="usuario" autocomplete="off" placeholder="Usuario" class="validate" />
+					<div class="error">{#error_usuario}</div>
+				</div>
+				<div>
+					<input id="clave" type="password" name="clave" autocomplete="off" placeholder="Clave" class="validate" />
+					<div class="error">{#error_clave}</div>
+				</div>
+					<div class="error">{#error_usuarioClave}</div>
+			</div>	
+
+			<div class="botones right-align">
+			
+				<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="ingresarBtn" onclick="iniciarSesion()">Ingresar</button>
+				<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#loginModal').closeModal();">Cerrar</a>
+			</div>
+			</form>
+		</div>
+	</div>
+
+
+	<div id="contactoModal" class="modal hoverable">
+		<div class="modal-content white-text light-green darken-1">
+			<!-- <img src="media/imagenes/patterns/greenpolygons.jpg"> -->
+			<h5 class="modal-title">Contacto</h5>
+		</div>
+	
+		<div class="modal-content">
+			<form method="POST" name="contacto" action="?ctrl=contacto&acc=guarRegi" autocomplete="off">
+			<div class="input-field">
+				<div>
+					<input id="nombre" type="text" name="nombre" autocomplete="off" placeholder="Nombre" class="validate" />
+				</div>
+				<div>
+					<input id="asunto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" />
+				</div>
+				<div>
+					<textarea id="mensaje" name="mensaje" autocomplete="off" placeholder="Mensaje" class="validate"></textarea>
+				</div>
+
+
+				{#error_form}
+			</div>	
+
+			<div class="botones right-align">
+			
+				<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="enviarBtn" onclick="contacto()">Ingresar</button>
+				<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#contactoModal').closeModal();">Cerrar</a>
+			</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="registroModal" class="modal hoverable">
+		<div class="modal-content white-text light-green darken-1">
+			<!-- <img src="media/imagenes/patterns/greenpolygons.jpg"> -->
+			<h5 class="modal-title">Registrarse</h5>
+		</div>
+	
+		<div class="modal-content">
+			<form method="POST" name="registro" action="?ctrl=contacto&acc=guarRegi" autocomplete="off">
+			<div class="input-field">
+				<div>
+					<input id="correo" type="text" name="correo" autocomplete="off" placeholder="Correo Electrónico" class="validate" />
+				</div>
+				<div>
+					<input id="clave" type="text" name="clave" autocomplete="off" placeholder="Contraseña" class="validate" />
+				</div>
+
+				{#error_form}
+			</div>	
+
+			<div class="botones right-align">
+			
+				<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="enviarBtn" onclick="registrarse()">Registrarse</button>
+				<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#registroModal').closeModal();">Cerrar</a>
+			</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="verificacionModal" class="modal hoverable">
+		<div class="modal-content white-text light-green darken-1">
+			<!-- <img src="media/imagenes/patterns/greenpolygons.jpg"> -->
+			<h5 class="modal-title">Verificar Certificado</h5>
+		</div>
+	
+		<div class="modal-content">
+			<p class="flow-text">
+				Ingrese el código escrito en el certificado para verificar su existencia en el sistema
+			</p>
+			<form method="POST" name="verificacion" action="verificacionCod.php" autocomplete="off">
+			<div class="input-field">
+				<div>
+					<input id="codigo" type="text" name="codigo" autocomplete="off" placeholder="Código de Verificación" class="validate" />
+				</div>
+
+				{#error_form}
+			</div>	
+
+			<div class="botones right-align">
+			
+				<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="enviarBtn" onclick="registrarse()">Verificar</button>
+				<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#verificacionModal').closeModal();">Cerrar</a>
+			</div>
+			</form>
+		</div>
+	</div>
+
