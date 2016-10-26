@@ -70,7 +70,7 @@
 		
 		public function crearOpcion($titulo, $link, $clase)
 		{			
-			$opcion = '<a href="' . $link. '" title="' . $titulo . '"><img class="' . $clase. '"/></a>';
+			$opcion = '<a href="' . $link. '" title="' . $titulo . '"><img class="' . $clase. '"/>'.$titulo.'</a>';
 
 			return  $opcion;
 		}
