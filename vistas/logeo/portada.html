@@ -56,7 +56,7 @@
 			</div>
 		</div>
 	</div>
-	<footer class="page-footer light-green darken-1">
+	<footer class="page-footer teal darken-2 ">
 	  <div class="container">
 	    <div class="row">
 	      <div class="col l4 s12">
@@ -94,7 +94,7 @@
 			<form method="POST" name="login" action="?ctrl=logeo&acc=iniciar" autocomplete="off">
 			<div class="input-field">
 				<div>
-					<input id="usuario" type="text" name="usuario" autocomplete="off" placeholder="Usuario" class="validate" />
+					<input id="usuario" type="text" name="usuario" autocomplete="off" placeholder="Usuario" class="validate" required="" aria-required="true"/>
 					<div class="error">{#error_usuario}</div>
 				</div>
 				<div>
@@ -121,27 +121,27 @@
 		</div>
 	
 		<div class="modal-content">
-			<form method="POST" name="contacto" action="?ctrl=contacto&acc=guarRegi" autocomplete="off">
-			<div class="input-field">
-				<div>
-					<input id="nombre" type="text" name="nombre" autocomplete="off" placeholder="Nombre" class="validate" />
-				</div>
-				<div>
-					<input id="asunto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" />
-				</div>
-				<div>
-					<textarea id="mensaje" name="mensaje" autocomplete="off" placeholder="Mensaje" class="validate"></textarea>
-				</div>
+			<form method="POST" name="contacto" action="?ctrl=logeo&acc=guarRegi" autocomplete="off">
+				<div class="input-field">
+					<div>
+						<input id="asunto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" required="" aria-required="true" />
+					</div>
+					<div>
+						<input id="mensaje" type="text" name="mensaje" autocomplete="off" placeholder="Mensaje" class="validate" required="" aria-required="true"/>
+					</div>
+					<div>
+						<input id="correo" type="email" name="correo" autocomplete="off" placeholder="Correo Electrónico" class="validate" required="" aria-required="true"/>
+					</div>
 
 
-				{#error_form}
-			</div>	
+					{#error_form}
+				</div>	
 
-			<div class="botones right-align">
-			
-				<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="enviarBtn" onclick="contacto()">Ingresar</button>
-				<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#contactoModal').closeModal();">Cerrar</a>
-			</div>
+				<div class="botones right-align">
+				
+					<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="enviarBtn" onclick="contacto()">Enviar</button>
+					<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#contactoModal').closeModal();">Cerrar</a>
+				</div>
 			</form>
 		</div>
 	</div>
@@ -153,23 +153,27 @@
 		</div>
 	
 		<div class="modal-content">
-			<form method="POST" name="registro" action="?ctrl=contacto&acc=guarRegi" autocomplete="off">
-			<div class="input-field">
-				<div>
-					<input id="correo" type="text" name="correo" autocomplete="off" placeholder="Correo Electrónico" class="validate" />
-				</div>
-				<div>
-					<input id="clave" type="text" name="clave" autocomplete="off" placeholder="Contraseña" class="validate" />
-				</div>
-
-				{#error_form}
-			</div>	
-
-			<div class="botones right-align">
+			<form method="POST" name="registro" action="?ctrl=logeo&acc=guarRegi" autocomplete="off">
+				<div class="input-field">
+					<div>
+						<input id="asunto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" required="" aria-required="true" />
+					</div>
+					<div>
+						<input id="mensaje" type="text" name="mensaje" autocomplete="off" placeholder="Mensaje" class="validate" required="" aria-required="true"/>
+					</div>
+					<div>
+						<input id="correo" type="email" name="correo" autocomplete="off" placeholder="Correo Electrónico" class="validate" required="" aria-required="true"/>
+					</div>
 			
-				<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="enviarBtn" onclick="registrarse()">Registrarse</button>
-				<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#registroModal').closeModal();">Cerrar</a>
-			</div>
+
+					{#error_form}
+				</div>	
+
+				<div class="botones right-align">
+				
+					<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="enviarBtn" onclick="registrarse()">Solicitar Acceso</button>
+					<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#registroModal').closeModal();">Cerrar</a>
+				</div>
 			</form>
 		</div>
 	</div>
@@ -184,21 +188,22 @@
 			<p class="flow-text">
 				Ingrese el código escrito en el certificado para verificar su existencia en el sistema
 			</p>
-			<form method="POST" name="verificacion" action="verificacionCod.php" autocomplete="off">
+		<form action="verificacion.php" method="POST" name="verificacion" autocomplete="off">
 			<div class="input-field">
 				<div>
-					<input id="codigo" type="text" name="codigo" autocomplete="off" placeholder="Código de Verificación" class="validate" />
+					<input id="codigo" type="text" name="codigo" autocomplete="off" placeholder="Código de Verificación" class="validate"
+					required="" aria-required="true" />
 				</div>
 
 				{#error_form}
 			</div>	
 
 			<div class="botones right-align">
-			
-				<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="enviarBtn" onclick="registrarse()">Verificar</button>
+				<input type="submit" class="waves-effect waves-light btn light-green darken-1" value="Verificar">
+				
 				<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#verificacionModal').closeModal();">Cerrar</a>
 			</div>
-			</form>
+		</form>
 		</div>
 	</div>
 

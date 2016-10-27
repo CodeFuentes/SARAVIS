@@ -147,7 +147,7 @@
 
 			self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/estructura.css"/>';
 			// self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/menu.css"/>';
-			// self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/iconos.css"/>';
+		    self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/css/iconos.css"/>';
 			self::$_codigoImprimir .= '<link type="text/css" rel="stylesheet" href="media/css/materialize.min.css"  media="screen,projection"/>';
 			self::$_codigoImprimir .= '<link type="text/css" rel="stylesheet" href="media/css/font-awesome.min.css"  media="screen,projection"/>';
 
@@ -251,7 +251,7 @@
 			
 			if(!empty(self::$_tituloPrincipal))
 			{
-				self::$_codigoImprimir .= '<h3>' . self::$_tituloPrincipal . '</h3>';
+				self::$_codigoImprimir .= '<h3 align="center">' . self::$_tituloPrincipal . '</h3>';
 			}
 			
 			self::$_codigoImprimir .= '{#notificacion}';

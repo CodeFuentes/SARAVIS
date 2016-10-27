@@ -11,7 +11,7 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 		private $_correo;
 		private $_idCurso;
 		private $_idEdicion;
-	
+
 		public function __construct($asunto, $mensaje, $correo, $archivo, $idCurso, $idEdicion)
 		{
 			$this->_asunto = $asunto;
@@ -46,6 +46,50 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 		//++
 		//
 		
+		
+		public function solicitarAcceso(){
+			//postmaster@localhost
+		  	$mail = new PHPMailer();
+			
+			$mail->isSMTP();                                      // Set mailer to use SMTP
+			$mail->SMTPDebug = 0;
+			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+			$mail->SMTPAuth = true;                               // Enable SMTP authentication
+	//		$mail->Username = 'saravis.upta@gmail.com';                 // SMTP username
+	//		$mail->Password = 'SARAVIS2016@';                           // SMTP password
+			$mail->SMTPSecure = 'tls';
+			$mail->Port = 587;// TCP port to connect to
+
+			$mail->From = 'ugueto.luis19@gmail.com';
+			$mail->FromName = 'APP SARAVIS';
+
+			//$email = "blink242@outlook.com";
+			//$email1 = "codefuentes@outlook.com";
+
+			//$mail->addAddress($email);         // Add attachments
+			//$mail->addAddress($email1);
+			$mail->addAddress($this->_correo);
+			    // Optional name
+			$mail->isHTML(true);                                  // Set email format to HTML
+
+			$mail->Subject = ''.$this->_asunto;
+			$mail->Body    = '<b>'.$this->_mensaje;
+			if(!$mail->send()) {
+				echo "<script>
+						alert('Mensaje No Enviado.');
+						window.location='?';
+					</script>";
+			
+			} else {
+				echo "<script>
+						alert('Mensaje Enviado.');
+						window.location='?';
+					</script>";
+			}
+
+		}
+
+
 		public function enviarCertificado()
 		{
 			//postmaster@localhost
@@ -102,8 +146,8 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 			$mail->isSMTP();                                      // Set mailer to use SMTP
 			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 			$mail->SMTPAuth = true;                               // Enable SMTP authentication
-			$mail->Username = 'saravis.upta@gmail.com';                 // SMTP username
-			$mail->Password = 'SARAVIS2016@';                           // SMTP password
+			$mail->Username = 'ugueto.luis19@gmail.com';                 // SMTP username
+			$mail->Password = 'LuisUgueto...';                           // SMTP password
 			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 			$mail->Port = 587;                                    // TCP port to connect to
 
@@ -127,19 +171,11 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 	     	$id_usuario = $_SESSION['session']['id'];
 		    $mensaje = new contactoPersistencia();
 		    $mensaje = $mensaje->registrarMensaje($id_usuario, $this->_asunto, $this->_mensaje);
-
-			if(!$mail->send()) {
+		    $mail->send();
 				echo "<script>
-						alert('Mensaje no Enviado.');
+						alert('Enviando mensaje...');
 						window.location='?';
 					</script>";
-			} else {
-				echo "<script>
-						alert('Mensaje Enviado.');
-						window.location='?';
-					</script>";
-			}
-		}
-
-		
+			
+		}	
 	}	

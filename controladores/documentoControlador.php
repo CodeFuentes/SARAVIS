@@ -4,6 +4,7 @@ require_once 'modelos/contacto.php';
 require_once 'modelos/edicion.php';
 require_once 'modelos/certificado.php';
 require_once 'modelos/identificador.php';
+require_once 'nucleo/generarPDF.php';
 
 	class documentoControlador
 	{
@@ -12,6 +13,7 @@ require_once 'modelos/identificador.php';
 		{
 			switch($accion)
 			{
+				
 				case 'creaCert': 
 					index::permitirAcceso('documentos');
 					self::_fromCrearCertificado();
@@ -51,7 +53,12 @@ require_once 'modelos/identificador.php';
 					index::permitirAcceso('documentos');
 					self::_enviarCertificados();
 				break;
-				
+
+				case 'procCert':
+					index::permitirAcceso('impresiones');
+					self::_procesarCertificados();
+				break;
+
 				case 'geneCert':
 					index::permitirAcceso('impresiones');
 					self::_generarCertificados();
@@ -981,7 +988,7 @@ require_once 'modelos/identificador.php';
 					vistaGestor::agregarDiccionario('horarioEdicion', $edicion->dameHorario());
 					
 					vistaGestor::agregarDiccionario('htmlListado', $htmlListado);
-					vistaGestor::agregarDiccionario('link_imprimir_documento', '?ctrl=documento&acc=geneCert');
+					vistaGestor::agregarDiccionario('link_imprimir_documento', '?ctrl=documento&acc=procCert');
 					
 					vistaGestor::agregarDiccionario('nombreCurso', $curso->dameNombre());
 					vistaGestor::agregarDiccionario('tipoEdicion', $edicion->dameTipoLegible());
@@ -1006,12 +1013,13 @@ require_once 'modelos/identificador.php';
 		
 		private function _imprimirCertificados()
 		{
+
 			$tipo = 'imprimir';
 			$curso = curso::cargarCurso($_SESSION['formulario']['idCurso']);
 			if(!empty($curso)){
 				$edicion = $curso->seleccionarEdicion($_SESSION['formulario']['idEdicion']);
 			}
-	
+		
 			if(!empty($curso) and !empty($edicion))
 			{
 				$error = '';
@@ -1082,7 +1090,7 @@ require_once 'modelos/identificador.php';
 					}
 
 					$htmlListado = $listadoGenerador->generarListado();
-
+	
 					$nombreFacilitador = $facilitador->dameNombre() . ' ' . $facilitador->dameApellido();
 
 					vistaGestor::agregarDiccionario('nombreFacilitador', $nombreFacilitador);
@@ -1199,13 +1207,122 @@ require_once 'modelos/identificador.php';
 											$imprimir, $codigoGenerado, $nombreCurso,
 											$duracionEdicion, $fechaEdicion, $nombreCompletoFacilitador
 											);
-							generarPDF::cargarDocumento($HTML, "Certificado", 'descargar', $correo, $curso->dameId(), $edicion->dameId());
+							generarPDF::cargarDocumento($HTML, "Certificado", "descargar", $correo);
 							self::_imprimirCertificados();
 					}
 					else
 					{
 						vistaGestor::agregarNotificacion('alerta', 'Debe seleccionar al menos una impresi&oacute;n');
 						self::_imprimirCertificados();
+					}					
+				}
+				else
+				{
+					self::_regresarPrincipal();
+				}
+			}
+			else
+			{
+				self::_regresarPrincipal();
+			}
+		}
+
+		private function _procesarCertificados()
+		{
+			$curso = curso::cargarCurso($_SESSION['formulario']['idCurso']);
+			if(!empty($curso)){
+				$edicion = $curso->seleccionarEdicion($_SESSION['formulario']['idEdicion']);
+			}
+	
+			if(!empty($curso) and !empty($edicion) and !empty($_POST))
+			{
+				$certificado = $edicion->dameCertificado();
+				$facilitador = $edicion->dameFacilitador();
+				$colParticipantes = $edicion->dameColParticipantes();
+				
+				if(!empty($facilitador) AND !empty($certificado) AND !empty($colParticipantes) 
+					AND $edicion->dameEstado() == 'bloqueada')
+				{
+					$existeSi = 0;
+				
+					list($preguntaF, $idF) = explode('_', $_POST['imprimir_facilitador']);
+					
+					$nombre = $facilitador->dameNombre();
+					$apellido = $facilitador->dameApellido();
+						
+					$nombreCompletoFacilitador = $nombre . ' ' . $apellido;
+					
+					if($preguntaF == 'si') {
+						
+						$nombre = $facilitador->dameNombre();
+						$apellido = $facilitador->dameApellido();
+						
+						$nombreCompleto = $nombre . ' ' . $apellido;
+						$documento = $facilitador->dameDocumento();
+
+						$idPersona = $facilitador->dameId();
+
+						$imprimir[] = array('nombre' => $nombreCompleto, 'documento' => $documento, 'tipo' => 'facilitador', 'id' => $idPersona);
+
+						$existeSi++;
+					}
+					
+					$datosRelacionados = $edicion->dameRelacionParticipantes();
+					
+					foreach($datosRelacionados as $valores)
+					{
+						$idTemporar = $valores['id_persona'];
+						$tipoImpresion[$idTemporar] = $valores['estado'];
+					}
+
+					foreach($_POST['imprimir_participante'] as $valor)
+					{
+						list($pregunta, $idPersona) = explode('_', $valor);
+						
+						if($pregunta == 'si')
+						{
+							$participante = $edicion->buscarParticipante($idPersona);
+							
+							if($participante != NULL)
+							{
+								$nombre = $participante->dameNombre();
+								$apellido = $participante->dameApellido();
+								$correo = $participante->dameCorreo();
+								$nombreCompleto = $nombre .' ' . $apellido;
+								$documento = $participante->dameDocumento();
+
+								$imprimir[] = array('nombre' => $nombreCompleto, 'documento' => $documento, 
+								'tipo' => $tipoImpresion[$idPersona], 'id' => $idPersona);
+								
+								$existeSi++;
+							}
+							
+						}
+					}
+					
+					if($existeSi != 0)
+					{
+						$codigoGenerado = $curso->dameId() . '-' . $edicion->dameId();
+
+
+						$nombreCurso = $curso->dameNombre();
+						$duracionEdicion = $edicion->dameDuracion();
+						$fechaEdicion = invertirFecha($edicion->dameFechaInicio()) . ' al '. invertirFecha($edicion->dameFechaFin());
+						
+						$HTML = $certificado->generarHtmlCertificado
+											(
+											$imprimir, $codigoGenerado, $nombreCurso,
+											$duracionEdicion, $fechaEdicion, $nombreCompletoFacilitador
+											);	
+
+							generarPDF::cargarDocumento($HTML, "Certificado", "enviar", $correo);
+
+							self::_enviarCertificados();
+					}
+					else
+					{
+						vistaGestor::agregarNotificacion('alerta', 'Debe seleccionar al menos una impresi&oacute;n');
+						self::_enviarCertificados();
 					}					
 				}
 				else
@@ -1818,19 +1935,3 @@ require_once 'modelos/identificador.php';
 		}
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	

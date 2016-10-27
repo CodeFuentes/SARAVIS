@@ -154,15 +154,17 @@ require_once 'nucleo/utilidades/listadoGenerador.php';
 	}
 
 	$controlador = index::iniciar();
-
 	$rutaControlador = 'controladores/'. $controlador . 'Controlador.php';
 
 	require_once $rutaControlador;
 
 	$nombreControlador = $controlador . 'Controlador';
-	
-	$acc = isset($_GET['acc']) ? $_GET['acc'] : '';
 
+	$acc = isset($_GET['acc']) ? $_GET['acc'] : '';
+	
 	$nombreControlador::procesarAccion($acc);
+
+
+
 
 

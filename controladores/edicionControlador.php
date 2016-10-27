@@ -1040,6 +1040,7 @@ require_once 'modelos/edicion.php';
 		
 		private function _verParticipantes()
 		{
+			
 			$curso = curso::cargarCurso($_SESSION['formulario']['idCurso']);
 			if(!empty($curso)){
 				$edicion = $curso->seleccionarEdicion($_SESSION['formulario']['idEdicion']);
