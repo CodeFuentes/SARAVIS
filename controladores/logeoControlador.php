@@ -3,6 +3,7 @@
 require_once 'modelos/curso.php';
 require_once 'modelos/edicion.php';
 require_once 'modelos/logeo.php';
+require_once 'modelos/contacto.php';
 
 	class logeoControlador
 	{
@@ -10,6 +11,9 @@ require_once 'modelos/logeo.php';
 		{
 			switch($accion)
 			{
+				case 'guarRegi':
+					self::_guardarRegistro();
+				break;
 				case 'mostrar': 
 				
 					self::_mostrarLogeo();
@@ -28,6 +32,14 @@ require_once 'modelos/logeo.php';
 
 				break;
 			}
+		}
+
+		public function _guardarRegistro(){
+			$asunto = $_POST['asunto'];
+			$mensaje = $_POST['mensaje'];
+			$correo = $_POST['correo'];
+			$contacto = new contacto($asunto, $mensaje, $correo,'','','');
+			$resultado = $contacto->enviarCorreo();
 		}
 
 		private function _mostrarLogeo()

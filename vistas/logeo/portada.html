@@ -121,16 +121,16 @@
 		</div>
 	
 		<div class="modal-content">
-			<form method="POST" name="contacto" action="?ctrl=contacto&acc=guarRegi" autocomplete="off">
+			<form method="POST" name="contacto" action="?ctrl=logeo&acc=guarRegi" autocomplete="off">
 			<div class="input-field">
 				<div>
-					<input id="nombre" type="text" name="nombre" autocomplete="off" placeholder="Nombre" class="validate" />
+					<input id="asunto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" required />
 				</div>
 				<div>
-					<input id="asunto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" />
+					<input id="mensaje" type="text" name="mensaje" autocomplete="off" placeholder="Mensaje" class="validate" required/>
 				</div>
 				<div>
-					<textarea id="mensaje" name="mensaje" autocomplete="off" placeholder="Mensaje" class="validate"></textarea>
+					<input id="correo" type="text" name="correo" autocomplete="off" placeholder="Correo Electrónico" class="validate" required/>
 				</div>
 
 
@@ -153,16 +153,16 @@
 		</div>
 	
 		<div class="modal-content">
-			<form method="POST" name="registro" action="?ctrl=contacto&acc=guarRegi" autocomplete="off">
+			<form method="POST" name="registro" action="?ctrl=logeo&acc=guarRegi" autocomplete="off">
 			<div class="input-field">
 				<div>
-					<input id="asunto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" />
+					<input id="asunto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" required />
 				</div>
 				<div>
-					<input id="mensaje" type="text" name="mensaje" autocomplete="off" placeholder="Mensaje" class="validate" />
+					<input id="mensaje" type="text" name="mensaje" autocomplete="off" placeholder="Mensaje" class="validate" required/>
 				</div>
 				<div>
-					<input id="correo" type="text" name="correo" autocomplete="off" placeholder="Correo Electrónico" class="validate" />
+					<input id="correo" type="text" name="correo" autocomplete="off" placeholder="Correo Electrónico" class="validate" required/>
 				</div>
 		
 

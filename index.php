@@ -154,7 +154,6 @@ require_once 'nucleo/utilidades/listadoGenerador.php';
 	}
 
 	$controlador = index::iniciar();
-
 	$rutaControlador = 'controladores/'. $controlador . 'Controlador.php';
 
 	require_once $rutaControlador;

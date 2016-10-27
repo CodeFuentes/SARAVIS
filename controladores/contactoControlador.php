@@ -59,7 +59,8 @@ require_once 'modelos/usuario.php';
 			$mensaje = $_POST['mensaje'];
 			$correo = $_POST['correo'];
 			$clave = $_POST['clave'];
-
+			echo $asunto;
+			break;
 			$contacto = new contacto($asunto, $mensaje, $correo);
 			$resultado = $contacto->solicitarAcceso();
 		}
