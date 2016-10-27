@@ -9,29 +9,21 @@ require_once 'modelos/usuario.php';
 			switch($accion)
 			{
 				case 'formRegi': 
-					
-					index::permitirAcceso('personas');
 					self::_formularioRegistro();
-					
 				break;
 				
 				case 'guarRegi': 
-				
-					index::permitirAcceso('personas');
+
 					self::_guardarRegistro();
-					
 				break;
 
 				case 'regError':
-
 					self::_regError();
-
 				break;
 				
 				case 'verInf':
 					self::_verInf();
-					break;
-				
+					break;		
 
 				default:
 
@@ -62,15 +54,14 @@ require_once 'modelos/usuario.php';
 		}
 		
 		private function _guardarRegistro()
-		{		
-			
-			$a = $_POST['mensaje'];
-			$b = $_POST['asunto'];
+		{	
+			$asunto = $_POST['asunto'];
+			$mensaje = $_POST['mensaje'];
+			$correo = $_POST['correo'];
+			$clave = $_POST['clave'];
 
-			$contacto = new contacto($_POST['asunto'], $_POST['mensaje']);
-
-			$resultado = $contacto->registrar();
-
+			$contacto = new contacto($asunto, $mensaje, $correo);
+			$resultado = $contacto->solicitarAcceso();
 		}
 
 		public function _regError()

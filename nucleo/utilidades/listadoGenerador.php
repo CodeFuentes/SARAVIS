@@ -65,12 +65,12 @@
 		
 		public function agregarFila(array $datos, $clase = '')
 		{
-			$this->_filas[] = array('datos' => $datos, 'clases' => $clase);
+			$this->_filas[] = array('datos' => $datos, 'clases' => $clase);				
 		}
 		
 		public function crearOpcion($titulo, $link, $clase)
 		{			
-			$opcion = '<a href="' . $link. '" title="' . $titulo . '"><img class="' . $clase. '"/></a>';
+			$opcion = '<a href="' . $link. '" title="' . $titulo . '"><img class="' . $clase. '"/>'.$titulo.'</a>';
 
 			return  $opcion;
 		}
@@ -86,6 +86,7 @@
 		
 		public function generarListado()
 		{
+			
 			$this->_htmlListado .= '<table class="tabla_listado"><thead><tr>';
 
 			foreach($this->_titulos as $valor)
@@ -99,6 +100,7 @@
 			{
 				foreach($this->_filas as $filas)
 				{
+					
 					if($filas['clases'] != '')
 					{
 						$this->_htmlListado .= '<tr class="' . $filas['clases'] . '">';
@@ -108,6 +110,7 @@
 						$this->_htmlListado .= '<tr>';
 					}
 					
+			
 					foreach($filas['datos'] as $dato)
 					{
 						$this->_htmlListado .= '<td>' . $dato . '</td>';
@@ -178,7 +181,6 @@
 				$paginador = "";
 			}
 			
-		
 			$this->_htmlListado .= $paginador;
 
 			$this->_htmlListado .= '</div></th></tr></tfoot></table>';

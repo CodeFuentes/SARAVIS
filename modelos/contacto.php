@@ -11,7 +11,7 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 		private $_correo;
 		private $_idCurso;
 		private $_idEdicion;
-	
+
 		public function __construct($asunto, $mensaje, $correo, $archivo, $idCurso, $idEdicion)
 		{
 			$this->_asunto = $asunto;
@@ -46,6 +46,51 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 		//++
 		//
 		
+		
+		public function solicitarAcceso(){
+			$mail = new PHPMailer();
+			
+			$mail->isSMTP();                                      // Set mailer to use SMTP
+			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+			$mail->SMTPAuth = true;                               // Enable SMTP authentication
+			$mail->Username = 'saravis.upta@gmail.com';                 // SMTP username
+			$mail->Password = 'SARAVIS2016@';                           // SMTP password
+			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+			$mail->Port = 587;                                    // TCP port to connect to
+
+			$mail->From = 'saravis.upta@gmail.com';
+			$mail->FromName = 'APP SARAVIS';
+
+			//$email = "blink242@outlook.com";
+			//$email1 = "codefuentes@outlook.com";
+			$email2 = "saravis.upta@gmail.com";
+
+
+			//$mail->addAddress($email);         // Add attachments
+			//$mail->addAddress($email1);
+			$mail->addAddress($this->_correo);
+			    // Optional name
+			$mail->isHTML(true);                                  // Set email format to HTML
+
+			$mail->Subject = ''.$this->_asunto;
+			$mail->Body    = '<h2>Solicitud de Acceso</h2><br>
+
+				'.$this->_mensaje;
+
+			if(!$mail->send()) {
+				echo "<script>
+						alert('Solicitud de Acceso no Enviada.');
+						window.location='?';
+					</script>";
+			} else {
+				echo "<script>
+						alert('Solicitud de Acceso Enviada.');
+					</script>";
+			}
+
+		}
+
+
 		public function enviarCertificado()
 		{
 			//postmaster@localhost
@@ -139,7 +184,5 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 						window.location='?';
 					</script>";
 			}
-		}
-
-		
+		}	
 	}	

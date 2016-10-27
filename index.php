@@ -160,9 +160,12 @@ require_once 'nucleo/utilidades/listadoGenerador.php';
 	require_once $rutaControlador;
 
 	$nombreControlador = $controlador . 'Controlador';
-	
-	$acc = isset($_GET['acc']) ? $_GET['acc'] : '';
 
+	$acc = isset($_GET['acc']) ? $_GET['acc'] : '';
+	
 	$nombreControlador::procesarAccion($acc);
+
+
+
 
 
