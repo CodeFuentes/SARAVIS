@@ -12,10 +12,10 @@ require_once 'modelos/curso.php';
 require_once 'modelos/edicion.php';
 
 //$id = $_POST['codigo'];
-
+//codigo Prueba = 1-9-127
 $codigoCorrecto = 'NO';
-	
-list($idCurso, $idEdicion, $idPersona) = explode('-', '1-9-127');
+
+list($idCurso, $idEdicion, $idPersona) = explode('-', $id);
 
 $curso = curso::cargarCurso($idCurso);
 			
