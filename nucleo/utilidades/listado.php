@@ -86,7 +86,7 @@
 		
 		public function generarListado()
 		{
-			$this->_htmlListado .= '<table class="tabla_listado"><thead><tr>';
+			$this->_htmlListado .= '<table class="striped"><thead><tr>';
 
 			foreach($this->_titulos as $valor)
 			{				
@@ -129,7 +129,7 @@
 					}
 					else
 					{
-						$anterior = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual - 1) . '" class="anterior">Anterior</a>';
+						$anterior = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual - 1) . '" class="anterior"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Anterior</a>';
 					}
 					
 					if($this->_paginaActual == $this->_paginaMaxima)
@@ -138,7 +138,7 @@
 					}
 					else
 					{
-						$siguiente = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual + 1) . '" class="anterior">Siguiente</a>';
+						$siguiente = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual + 1) . '" class="anterior"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Siguiente</a>';
 					}
 					
 					$ciclo = 1;

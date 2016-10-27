@@ -45,11 +45,15 @@
 	function borrarNotificacion()
 	{
 		arrayNotificaciones = $('div.mensaje_resultado.normal');
-		
-		for(i = 0; i < arrayNotificaciones.length; i++)
-		{
-			arrayNotificaciones[i].style.display = "none";
-		}
+		var tl = new TimelineLite({paused: true});
+		tl.to(arrayNotificaciones, 1, {opacity: 0})
+		.to(arrayNotificaciones, 0, {display: "none"});
+		tl.play();
+		// for(i = 0; i < arrayNotificaciones.length; i++)
+		// {
+		// 	tl.to($(arrayNotificaciones[i]), 0.5, {opacity: 0}, "not"+i)
+		// 	.to($(arrayNotificaciones[i]), 0, {display: "none"}, "not"+i);
+		// }
 	}
 	
 	function contacto () {

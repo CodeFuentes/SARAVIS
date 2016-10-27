@@ -1,80 +1,62 @@
 <form method="POST" action="{#link_form_edicion}" autocomplete="off">
 			
-<section>
-	<article>
-			<div class="sub_titulo">Datos de la Edici&oacute;n</div>
-			
-			<div class="formulario">
-				<ul>
-					<li>
-						<div class="doble">
-							<label>L&iacute;mite<span>*</span></label>
-							<input id="limiteEdic" name="limiteEdic" value="{#post_limiteEdic}" type="text"/>
-							{#error_limiteEdic}
-						</div>
-						
-						<div class="doble">
-							<label>Duraci&oacute;n<span>*</span></label>
-							<input id="duracionEdic" name="duracionEdic" value="{#post_duracionEdic}" type="text"/>
-							{#error_duracionEdic}
-						</div>
-					</li>
+<div class="col s12">
+<h5>Datos de la Edici&oacute;n</h5>			
+			<div class="row">
+				<div class="col s4">
+					<label>L&iacute;mite de Personas<span>*</span></label>
+					<input id="limiteEdic" name="limiteEdic" value="{#post_limiteEdic}" type="text"/>
+					{#error_limiteEdic}
+				</div>
+				<div class="col s4">
+					<label>Duraci&oacute;n<span>*</span></label>
+					<input id="duracionEdic" name="duracionEdic" value="{#post_duracionEdic}" type="text"/>
+					{#error_duracionEdic}
+				</div>
+				<div class="col s4">
+					<label>Tipo de Evento<span>*</span></label>
+					<select id="tipoEdic" name="tipoEdic">
+						<option value="curso_apro" {#selected_tipo_curso_apro}>Curso / Aprobaci&oacute;n</option>
+						<option value="curso_part" {#selected_tipo_curso_part}>Curso / Participaci&oacute;n</option>
+						<option value="taller_apro" {#selected_tipo_taller_apro}>Taller / Aprobaci&oacute;n</option>
+						<option value="taller_part" {#selected_tipo_taller_part}>Taller / Participaci&oacute;n</option>
+					</select>
+					{#error_tipoEdic}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s4">
+					<label>Inicia<span>*</span></label>
+					<input id="fechaInicioEdic" name="fechaInicioEdic" value="{#post_fechaInicioEdic}" type="text" >
+					{#error_fechaInicioEdic}
+				</div>
+				<div class="col s4">
+					<label>Culmina<span>*</span></label>
+					<input id="fechaFinEdic" name="fechaFinEdic" value="{#post_fechaFinEdic}" type="text" >
+					{#error_fechaFinEdic}
+				</div>
+				<div class="col s4">
 					
-					<li>
-						<div class="unico">
-							<label>Tipo de Evento<span>*</span></label>
-							<select id="tipoEdic" name="tipoEdic">
-								<option value="curso_apro" {#selected_tipo_curso_apro}>Curso / Aprobaci&oacute;n</option>
-								<option value="curso_part" {#selected_tipo_curso_part}>Curso / Participaci&oacute;n</option>
-								<option value="taller_apro" {#selected_tipo_taller_apro}>Taller / Aprobaci&oacute;n</option>
-								<option value="taller_part" {#selected_tipo_taller_part}>Taller / Participaci&oacute;n</option>
-							</select>
-							{#error_tipoEdic}
-						</div>
-					</li>
-					
-					<li>
-						<div class="doble">
-							<label>Inicia<span>*</span></label>
-							<input id="fechaInicioEdic" name="fechaInicioEdic" value="{#post_fechaInicioEdic}" type="text" >
-							{#error_fechaInicioEdic}
-						</div>
-						
-						<div class="doble">
-							<label>Culmina<span>*</span></label>
-							<input id="fechaFinEdic" name="fechaFinEdic" value="{#post_fechaFinEdic}" type="text" >
-							{#error_fechaFinEdic}
-						</div>
-					</li>
-					
-					<li>
-						<div class="unico">
-							<label>Horario<span>*</span></label>
-							<textarea id="horarioEdic" name="horarioEdic">{#post_horarioEdic}</textarea>
-							{#error_horarioEdic}
-						</div>
-						
-					</li>
-					
-					<li>
-						<div class="unico">
-							<label>Sin&oacute;ptico</label>
-							<textarea id="sinopticoEdic" name="sinopticoEdic">{#post_sinopticoEdic}</textarea>
-							{#error_sinopticoEdic}
-						</div>
-					</li>
-
-				</ul>
-				
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<label>Horario<span>*</span></label>
+					<textarea class="materialize-textarea" id="horarioEdic" name="horarioEdic">{#post_horarioEdic}</textarea>
+					{#error_horarioEdic}
+				</div>
+				<div class="col s6">
+					<label>Sin&oacute;ptico</label>
+					<textarea class="materialize-textarea" id="sinopticoEdic" name="sinopticoEdic">{#post_sinopticoEdic}</textarea>
+					{#error_sinopticoEdic}
+				</div>
 			</div>
 
-	</article>
-
-</section>
+</div>
 
 	<div class="botones">
-		<input id="guardarEdicion" name="guardarEdicion" type="submit" value="Guardar">
-		<a href="?ctrl=edicion&acc=menuEdic">Salir</a>
+		<button class="waves-effect btn waves-light blue" id="guardarEdicion" name="guardarEdicion" type="submit" value="Guardar">Guardar</button>
+		<a href="?ctrl=edicion&acc=menuEdic"><button class="waves-effect btn waves-light blue">Salir</button></a>
 	</div>
 	
 	</form>

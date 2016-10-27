@@ -117,7 +117,7 @@ require_once 'modelos/edicion.php';
 					if(segundosFecha($_POST['fechaInicioEdic']) > segundosFecha($_POST['fechaFinEdic']))
 					{
 						$errores .= 'ERROR';
-						vistaGestor::agregarErrorForm('fechaInicioEdic', 'La fecha de inicio es mayor a la de culminación');
+						vistaGestor::agregarErrorForm('fechaInicioEdic', 'La fecha de inicio es mayor a la de culminaci&oacute;n');
 					}
 				}
 				
@@ -141,7 +141,7 @@ require_once 'modelos/edicion.php';
 					
 					$edicionCompleta = $curso->seleccionarEdicion($edicionIncompleta->dameId());
 				
-					vistaGestor::agregarNotificacion('exito', 'Se ha registrado con éxito la edición');
+					vistaGestor::agregarNotificacion('exito', 'Se ha registrado con &eacute;xito la edici&oacute;n');
 
 					self::_formularioFijarFacilitador($curso, $edicionCompleta);
 				}
@@ -345,7 +345,7 @@ require_once 'modelos/edicion.php';
 						{
 							$opcionesParticipante = '<select name="participante_' . $participante->dameId() . '">
 								<option value="participacion">Por participaci&oacute;n</option>
-								<option value="noCurso">No cursó (Sin certificado)</option>
+								<option value="noCurso">No curs&oacute; (Sin certificado)</option>
 							</select>';
 						}
 					
@@ -731,7 +731,7 @@ require_once 'modelos/edicion.php';
 
 				$arrayVistas = array('vistas/edicion/datosCompletoEdicion.html', 'vistas/edicion/opcionesMenu.html');
 				
-				vistaGestor::documentoNormal('Menú de la Edición', $arrayVistas);
+				vistaGestor::documentoNormal('Men&uacute; de la Edici&oacute;n', $arrayVistas);
 			}
 			else
 			{
@@ -784,7 +784,7 @@ require_once 'modelos/edicion.php';
 				}
 				
 				vistaGestor::agregarArchivoCss('formularios');
-				vistaGestor::documentoNormal('Modificar Edición', array('vistas/edicion/datosEdicion.html', 'vistas/edicion/formEdicion.html'));
+				vistaGestor::documentoNormal('Modificar Edici&oacute;n', array('vistas/edicion/datosEdicion.html', 'vistas/edicion/formEdicion.html'));
 			}
 			else
 			{
@@ -810,7 +810,7 @@ require_once 'modelos/edicion.php';
 					if(segundosFecha($_POST['fechaInicioEdic']) > segundosFecha($_POST['fechaFinEdic']))
 					{
 						$errores .= 'ERROR';
-						vistaGestor::agregarErrorForm('fechaInicioEdic', 'La fecha de inicio es mayor a la de culminación');
+						vistaGestor::agregarErrorForm('fechaInicioEdic', 'La fecha de inicio es mayor a la de culminaci&oacute;n');
 					}
 				}
 				
@@ -834,7 +834,7 @@ require_once 'modelos/edicion.php';
 					
 						$edicionModificar->modificar();
 
-						vistaGestor::agregarNotificacion('exito', 'Se ha modificado con éxito la edición');
+						vistaGestor::agregarNotificacion('exito', 'Se ha modificado con &eacute;xito la edici&oacute;n');
 
 						self::_menuEdicion();
 					}
@@ -916,7 +916,7 @@ require_once 'modelos/edicion.php';
 							
 							if(!empty($resultado))
 							{
-								$mensaje = 'Esta persona esta registrada en esta Edición ¿Desea desincorporarla?';
+								$mensaje = 'Esta persona esta registrada en esta Edici&oacute;n ¿Desea desincorporarla?';
 								$icono = 'borrar';
 								$palabra = 'Desincorporar';
 								$link = '?ctrl=edicion&acc=guarPart';
@@ -941,7 +941,7 @@ require_once 'modelos/edicion.php';
 									
 									if($idFacilitador != $personaEncontrada->dameId())
 									{
-										$mensaje = 'Esta persona no esta registrada en esta Edición ¿Desea inscribirla?';
+										$mensaje = 'Esta persona no esta registrada en esta Edici&oacute;n ¿Desea inscribirla?';
 										$icono = 'asignar';
 										$palabra = 'Inscribir';
 										$link = '?ctrl=edicion&acc=guarPart';
@@ -997,7 +997,7 @@ require_once 'modelos/edicion.php';
 				{
 					$edicion->desincorporarPersona($_SESSION['formulario']['idParticipante']);
 					
-					$mensajeResultado = 'desincorporación';
+					$mensajeResultado = 'desincorporaci&oacute;n';
 				}
 				else
 				{
@@ -1012,7 +1012,7 @@ require_once 'modelos/edicion.php';
 					{
 						$edicion->incribirPersona($_SESSION['formulario']['idParticipante']);
 					
-						$mensajeResultado = 'inscripción';
+						$mensajeResultado = 'inscripci&oacute;n';
 					}
 					else
 					{
@@ -1024,7 +1024,7 @@ require_once 'modelos/edicion.php';
 				{
 					unset($_SESSION['formulario']['idParticipante']);
 					
-					vistaGestor::agregarNotificacion('exito', "Se ha realizado la $mensajeResultado con éxito");
+					vistaGestor::agregarNotificacion('exito', "Se ha realizado la $mensajeResultado con &eacute;xito");
 					self::_menuEdicion();
 				}
 				else
@@ -1050,7 +1050,7 @@ require_once 'modelos/edicion.php';
 			{
 				$colParticipantes = $edicion->dameColParticipantes();
 				
-				$titulos = array('Nombre', 'Apellido', 'Documento', 'Teléfono');
+				$titulos = array('Nombre', 'Apellido', 'Documento', 'Tel&eacute;fono');
 				$linkBase = '?ctrl=curso&acc=buscCurso';
 				
 				$listadoGenerador = new listadoGenerador($colParticipantes, $titulos, $linkBase, $_GET['pag'], 15);
@@ -1148,7 +1148,7 @@ require_once 'modelos/edicion.php';
 						}
 						elseif($miTipoCulminacion == 'noCurso')
 						{
-							$datoTipo = 'No cursó';
+							$datoTipo = 'No curs&oacute;';
 						}
 						elseif($miTipoCulminacion > 0)
 						{
@@ -1156,7 +1156,7 @@ require_once 'modelos/edicion.php';
 						}
 						elseif($miTipoCulminacion == 0)
 						{
-							$datoTipo = 'No cursó';
+							$datoTipo = 'No curs&oacute;';
 						}
 						else
 						{

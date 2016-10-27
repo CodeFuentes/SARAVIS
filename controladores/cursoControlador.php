@@ -160,7 +160,7 @@ require_once 'modelos/edicion.php';
 				
 				if($resultado == 'exito')
 				{
-					vistaGestor::agregarNotificacion('exito', 'Se ha registrado con éxito el Curso/Taller');
+					vistaGestor::agregarNotificacion('exito', 'Se ha registrado con &eacute;xito el Curso/Taller');
 					self::_formularioBusqueda();
 				}
 				elseif($resultado == 'existeNombre')
@@ -207,7 +207,7 @@ require_once 'modelos/edicion.php';
 				
 				if(!empty($arrayCursos))
 				{
-					$titulos = array('Nombre', 'Descripción', 'Opciones');
+					$titulos = array('Nombre', 'Descripci&oacute;n', 'Opciones');
 					$linkBase = '?ctrl=curso&acc=buscCurso&dato=' . urlencode($_GET['dato']);
 					
 					$listadoGenerador = new listadoGenerador($arrayCursos, $titulos, $linkBase, $_GET['pag'], 5);
@@ -227,11 +227,11 @@ require_once 'modelos/edicion.php';
 								$nombre,
 								$descripcion,
 									'{@cursos}' . listadoGenerador::crearOpcion(
-										'Modificar Curso',
+										"<i class='fa fa-2x fa-edit' aria-hidden='true'></i>",
 										'?ctrl=curso&acc=formModiC&id=' . $curso->dameId(),
 										'modificar negro') . '{@cursos} ' .
 										listadoGenerador::crearOpcion(
-										'Ver Ediciones',
+										"<i class='fa fa-2x fa-search-plus' aria-hidden='true'></i>",
 										'?ctrl=curso&acc=verEdic&id=' . $curso->dameId(),
 										'ver negro') 
 									)
@@ -247,7 +247,7 @@ require_once 'modelos/edicion.php';
 				}
 				else
 				{
-					vistaGestor::agregarNotificacion('alerta', 'No hay resultados para la búsqueda');
+					vistaGestor::agregarNotificacion('alerta', 'No hay resultados para la b&uacute;squeda');
 					self::_formularioBusqueda();
 				}
 			}
@@ -301,7 +301,7 @@ require_once 'modelos/edicion.php';
 					if($resultado == 'exito')
 					{
 					
-						vistaGestor::agregarNotificacion('exito', 'Se ha modificado con éxito el Curso/Taller');
+						vistaGestor::agregarNotificacion('exito', 'Se ha modificado con &eacute;xito el Curso/Taller');
 						self::_formularioBusqueda();
 					}
 					elseif($resultado == 'existeNombre')
@@ -361,12 +361,12 @@ require_once 'modelos/edicion.php';
 							}
 							
 							if($edicion->dameEstado() == 'bloqueada') {
-								$estadoIcono = '<a title="Edición Bloqueada" href="#">
+								$estadoIcono = '<a title="Edici&oacute;n Bloqueada" href="#">
 													<img class="bloquear negro">
 												</a>';
 							}
 							else {
-								$estadoIcono = '<a title="Edición Abierta" href="#">
+								$estadoIcono = '<a title="Edici&oacute;n Abierta" href="#">
 													<img class="abierto negro">
 												</a>';
 							}
@@ -381,7 +381,7 @@ require_once 'modelos/edicion.php';
 										$edicion->cuposEdicion() . '/' . $edicion->dameLimite() . ' ' . $estadoIcono,
 									
 										listadoGenerador::crearOpcion(
-											'Seleccionar Edición',
+											'Seleccionar Edici&oacute;n',
 											'?ctrl=edicion&acc=menuEdic&id=' . $edicion->dameId(),
 											'selccionar negro')
 										)
@@ -418,7 +418,7 @@ require_once 'modelos/edicion.php';
 		{
 				$arrayCursos = edicion::historialEdiciones();
 
-				$titulos = array('Curso','Descripción','Tipo', 'Duracion', 'Inicio', 'Final');
+				$titulos = array('Curso','Descripci&oacute;n','Tipo', 'Duracion', 'Inicio', 'Final');
 				$linkBase = '?ctrl=curso&acc=historial';
 					
 				$listadoGenerador = new listado($arrayCursos, $titulos, $linkBase, $_GET['pag'], 5);

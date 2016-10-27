@@ -35,7 +35,7 @@
 	    <label>Tipo de Documento</label>
 	</div>
 	<div class="input-field col s4">
-	    <input id="documentoPers" name="documentoPers" value="{#post_documentoPers}" type="text" readonly="readonly" placeholder="Ejm: 123456789"/>
+	    <input id="documentoPers" name="documentoPers" value="{#post_documentoPers}" type="text" placeholder="Ejm: 123456789"/>
 	    {#error_documentoPers}
 	    <label>Documento</label>
 	</div>
@@ -58,13 +58,13 @@
 </div>
 <div class="row">
 	<div class="input-field col s12">
-	    <textarea id="direccionPers" name="direccionPers">{#post_direccionPers}</textarea placeholder="Ejm: Calle Bolivar Nº 10">
+	    <textarea class="materialize-textarea" id="direccionPers" name="direccionPers">{#post_direccionPers}</textarea placeholder="Ejm: Calle Bolivar Nº 10">
 	    {#error_direccionPers}
 	    <label>Dirección</label>
 	</div>
 </div>
 					
 		<button id="guardarPersona" name="guardarPersona" class="btn waves-effect waves-light blue" type="submit">Guardar</button>
-		<a class="btn waves-effect waves-light blue" href="./?ctrl=persona&acc=formBusq">Salir</a>
+		<a class="btn waves-effect waves-light blue" href="./?ctrl=persona&acc=formBusq"><button class="waves-effect btn waves-light blue">Salir</button></a>
 	
 	</form>

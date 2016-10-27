@@ -1,8 +1,7 @@
 <form method="POST" action="{#link_form_curso}" autocomplete="off">
 			
-<section>
-	<article>
-			<div class="sub_titulo">Datos del Curso/Taller</div>
+<div class="col s12">
+			<h5>Datos del Curso/Taller</h5>
 			
 			<div class="formulario">
 				<ul>
@@ -17,7 +16,7 @@
 					<li>
 						<div class="unico">
 							<label>Descripci&oacute;n<span>*</span></label>
-							<textarea id="descripcionCurso" name="descripcionCurso">{#post_descripcionCurso}</textarea>
+							<textarea class="materialize-textarea" id="descripcionCurso" name="descripcionCurso">{#post_descripcionCurso}</textarea>
 							{#error_descripcionCurso}
 						</div>
 					</li>
@@ -25,13 +24,11 @@
 				
 			</div>
 
-	</article>
-
-</section>
+</div>
 
 	<div class="botones">
-		<input id="guardarCurso" name="guardarCurso" type="submit" value="Guardar">
-		<a href="./?ctrl=curso&acc=formBusq">Salir</a>
+		<button class="btn waves-effect waves-light blue" id="guardarCurso" name="guardarCurso" type="submit" value="Guardar">Guardar</button>
+		<a href="./?ctrl=curso&acc=formBusq"><button class="btn waves-effect waves-light blue">Salir</button></a>
 	</div>
 	
 	</form>

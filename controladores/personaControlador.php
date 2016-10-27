@@ -112,7 +112,7 @@ require_once 'modelos/persona.php';
 				$resultado = $persona->registrar();
 				if($resultado == 'exito')
 				{
-					vistaGestor::agregarNotificacion('exito', 'Se ha registrado con éxito a la persona');
+					vistaGestor::agregarNotificacion('exito', 'Se ha registrado con &eacute;xito a la persona');
 					self::_formularioBusqueda();
 				}
 				elseif($resultado == 'existeDocumento')
@@ -277,7 +277,7 @@ require_once 'modelos/persona.php';
 
 					if($resultado == 'exito')
 					{
-						vistaGestor::agregarNotificacion('exito', 'Se han modificado los datos de la persona con éxito');
+						vistaGestor::agregarNotificacion('exito', 'Se han modificado los datos de la persona con &eacute;xito');
 						self::_formularioBusqueda();
 					}
 					elseif($resultado == 'existeDocumento')

@@ -1,3 +1,10 @@
+* {
+	transition: 0.5s all;
+}
+.mensaje_resultado {
+	padding: 4px;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
+}
 .header-image {
 	background: url(../imagenes/bg.jpg) no-repeat center;
 	background-size: 100% auto;

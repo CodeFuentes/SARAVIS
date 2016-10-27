@@ -24,7 +24,7 @@
 		//***
 		//, 
 		
-		public function __construct(array &$array, array $titulos, $linkBase, &$pagina = 1, $rango = 120)
+		public function __construct(array $array, array $titulos, $linkBase, $pagina = 1, $rango = 10)
 		{
 			$this->_titulos = $titulos;
 			
@@ -87,7 +87,7 @@
 		public function generarListado()
 		{
 			
-			$this->_htmlListado .= '<table class="tabla_listado"><thead><tr>';
+			$this->_htmlListado .= '<div class="col s12"><table class="striped"><thead><tr>';
 
 			foreach($this->_titulos as $valor)
 			{				
@@ -121,49 +121,56 @@
 				
 				$this->_htmlListado .= '</tbody>';		
 				
-				$this->_htmlListado .= '<tfoot><tr><th colspan="10"><div class="paginador">';
+				$this->_htmlListado .= '</table>
+				</div>
+				<div class="col s12 center-align">
+				<ul class="pagination">';
 
 				
 				if($this->_paginaMaxima > 1)
 				{
-					// if($this->_paginaActual == 1)
-					// {
-					// 	$anterior = "";
-					// }
-					// else
-					// {
-					// 	$anterior = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual - 1) . '" class="anterior">Anterior</a>';
-					// }
+					if($this->_paginaActual == 1)
+					{
+						$anterior = '<li class="disabled">
+										<a href="#!">
+											<i class="fa fa-chevron-left" style="font-size: 22px;"></i>
+										</a>
+									</li>';
+					}
+					else
+					{
+						$anterior = '<li class="waves-effect"><a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual - 1) . '"><i class="fa fa-chevron-left" style="font-size: 22px;"></i></a></li>';
+					}
 					
-					// if($this->_paginaActual == $this->_paginaMaxima)
-					// {
-					// 	$siguiente = "";
-					// }
-					// else
-					// {
-					// 	$siguiente = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual + 1) . '" class="anterior">Siguiente</a>';
-					// }
+					if($this->_paginaActual == $this->_paginaMaxima)
+					{
+						$siguiente = '<li class="disabled"><a href="#!"><i class="fa fa-chevron-right" style="font-size: 22px;"></i></a></li>';
+					}
+					else
+					{
+						$siguiente = '<li class="waves-effect"><a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual + 1) . '"><i class="fa fa-chevron-right" style="font-size: 22px;"></i></a></li>';
+					}
 					
-					// $ciclo = 1;
+					$ciclo = 1;
 					
-					// while($ciclo <= self::RANGO_PAGINADOR and ($this->_paginaActual + $ciclo) <= $this->_paginaMaxima)
-					// {
+					while($ciclo <= self::RANGO_PAGINADOR and ($this->_paginaActual + $ciclo) <= $this->_paginaMaxima)
+					{
 						
-					// 	$linkSiguiente .= '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual + $ciclo) . '" class="anterior">' . ($this->_paginaActual + $ciclo) . '</a>';
+						$linkSiguiente .= '<li class="waves-effect"><a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual + $ciclo) . '">' . ($this->_paginaActual + $ciclo) . '</a></li>';
 
-					// 	$ciclo++;
-					// }
+						$ciclo++;
+					}
 					
-					// $ciclo = 1;
+					$ciclo = 1;
 					
-					// while($ciclo <= self::RANGO_PAGINADOR and ($this->_paginaActual - $ciclo) > 0)
-					// {			
-					// 	$linkAnterior = '<a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual - $ciclo) . '" class="anterior">' . ($this->_paginaActual - $ciclo) . '</a>' . $linkAnterior;
+					while($ciclo <= self::RANGO_PAGINADOR and ($this->_paginaActual - $ciclo) > 0)
+					{			
+						$linkAnterior = '<li class="waves-effect"><a href="' . $this->_linkBase . '&pag=' . ($this->_paginaActual - $ciclo) . '">' . ($this->_paginaActual - $ciclo) . '</a>' . $linkAnterior . '</li>';
 
-					// 	$ciclo++;
-					// }
+						$ciclo++;
+					}
 
-					// $paginador = $anterior . $linkAnterior . "<span>" .$this->_paginaActual . "</span>" . $linkSiguiente . $siguiente;
+					$paginador = $anterior . $linkAnterior . '<li class="active"><a href="#!">' .$this->_paginaActual . '</a></li>' . $linkSiguiente . $siguiente;
 				}
 				else
 				{
@@ -172,18 +179,17 @@
 			}
 			else
 			{				
-				$this->_htmlListado .= '<tr><td colspan="' . count($this->_titulos) .'">No hay resultados</td></tr>';
-			
-				$this->_htmlListado .= '</tbody>';		
-				
-				$this->_htmlListado .= '<tfoot><tr><th colspan="10"><div class="paginador">';
+				$this->_htmlListado .= 'No hay resultados';
+							
+				$this->_htmlListado .= '<ul class="pagination">';
 				
 				$paginador = "";
 			}
 			
 			$this->_htmlListado .= $paginador;
 
-			$this->_htmlListado .= '</div></th></tr></tfoot></table>';
+			$this->_htmlListado .= '</ul></div>';
+
 			
 			return $this->_htmlListado;
 		}

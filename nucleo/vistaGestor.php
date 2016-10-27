@@ -92,10 +92,8 @@
 		
 		static public function agregarNotificacion($tipo, $contenido)
 		{
-			self::$_notificacion = '<div class="mensaje_resultado ' . $tipo . ' normal">
-											<img class="izquierda">
+			self::$_notificacion = '<div class="mensaje_resultado ' . $tipo . ' normal green-text">
 												' . $contenido . '
-											<img class="derecha">
 										</div>';
 		}
 		
@@ -163,6 +161,7 @@
 			self::$_codigoImprimir .= '<link rel="stylesheet" type="text/css" href="media/js/jquery/css/jqueryui.css"/>';
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/jquery/jquery.js"></script>';
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/jquery/jqueryui.js"></script>';
+			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/TweenMax.min.js"></script>';
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/calendario.js"></script>';
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/jquery/qrcode.js"></script>';
 			self::$_codigoImprimir .= '<script type="text/javascript" src="media/js/general.js"></script>';
