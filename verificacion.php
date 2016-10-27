@@ -11,14 +11,14 @@ require_once 'nucleo/utilidades/listadoGenerador.php';
 require_once 'modelos/curso.php';
 require_once 'modelos/edicion.php';
 
-//$id = $_POST['codigo'];
+$id = $_POST['codigo'];
 //codigo Prueba = 1-9-127
 $codigoCorrecto = 'NO';
 
 list($idCurso, $idEdicion, $idPersona) = explode('-', $id);
 
 $curso = curso::cargarCurso($idCurso);
-			
+
 if(!empty($curso))
 {
 
@@ -66,6 +66,9 @@ if($codigoCorrecto == 'CORRECTO')
 }
 else
 { 
-//	echo "<script> alert('Participante no encontrado.'); </script>"; 
+	echo "<script> alert('Participante no encontrado.'); 
+	window.location = './';
+	</script>"; 
+	
 }
 ?>
