@@ -91,3 +91,7 @@
 	function hideLoading () {
 		$('.loading')[0].style.visibility = 'hidden';
 	}
+
+	$(document).ready(function() {
+	    $('select').material_select();
+	});
