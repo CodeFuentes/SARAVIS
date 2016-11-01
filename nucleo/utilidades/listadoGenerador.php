@@ -12,7 +12,7 @@
 		
 		private $_tamanoArray;
 		private $_htmlListado;
-		
+		private $_filasActuales;
 		
 		const RANGO_PAGINADOR = 3;
 
@@ -98,7 +98,8 @@
 			
 			if($this->_tamanoArray > 0)
 			{
-				foreach($this->_filas as $filas)
+				$this->_filasActuales = array_slice($this->_filas, ($this->_paginaActual * $this->_rango) - $this->_rango, $this->_rango);
+				foreach($this->_filasActuales as $filas)
 				{
 					
 					if($filas['clases'] != '')
@@ -179,7 +180,7 @@
 			}
 			else
 			{				
-				$this->_htmlListado .= 'No hay resultados';
+				$this->_htmlListado = 'No hay resultados';
 							
 				$this->_htmlListado .= '<ul class="pagination">';
 				

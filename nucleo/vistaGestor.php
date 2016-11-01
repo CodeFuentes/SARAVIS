@@ -92,17 +92,16 @@
 		
 		static public function agregarNotificacion($tipo, $contenido)
 		{
-			self::$_notificacion = '<div class="mensaje_resultado ' . $tipo . ' normal green-text">
+			/*self::$_notificacion = '<div class="mensaje_resultado ' . $tipo . ' normal green-text">
 												' . $contenido . '
-										</div>';
+										</div>';*/
+			self::$_notificacion = '<script>$(document).ready(function(){Materialize.toast('.$contenido.', 5000);});</script>';
 		}
 		
 		static public function agregarNotificacionPermanente($tipo, $contenido)
 		{
 			self::$_notificacion = '<div class="mensaje_resultado ' . $tipo . ' permanente">
-											<img class="izquierda">
 												' . $contenido . '
-											<img class="derecha">
 										</div>';
 		}
 		
