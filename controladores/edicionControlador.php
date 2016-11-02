@@ -896,7 +896,7 @@ require_once 'modelos/edicion.php';
 							
 							if(!empty($resultado))
 							{
-								$mensaje = 'Esta persona esta registrada en esta Edici&oacute;n ¿Desea desincorporarla?';
+								$mensaje = 'Esta persona esta registrada en esta Edici&oacute;n &iquest;Desea desincorporarla?';
 								$icono = 'borrar';
 								$palabra = 'Desincorporar';
 								$link = '?ctrl=edicion&acc=guarPart';
@@ -921,7 +921,7 @@ require_once 'modelos/edicion.php';
 									
 									if($idFacilitador != $personaEncontrada->dameId())
 									{
-										$mensaje = 'Esta persona no esta registrada en esta Edici&oacute;n ¿Desea inscribirla?';
+										$mensaje = 'Esta persona no esta registrada en esta Edici&oacute;n &iquest;Desea inscribirla?';
 										$icono = 'asignar';
 										$palabra = 'Inscribir';
 										$link = '?ctrl=edicion&acc=guarPart';
