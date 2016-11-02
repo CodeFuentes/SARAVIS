@@ -728,6 +728,7 @@ require_once 'modelos/edicion.php';
 				if(!empty($facilitador) and count($edicion->dameColParticipantes()) > 0)
 				{
 					$linkImprimirParticipantes = '<a href="?ctrl=documento&acc=imprPart">
+					<i class="fa fa-2x fa-print"></i>
 						Imprimir participantes
 						<img class="negro imprimir"></img>
 					</a>';
