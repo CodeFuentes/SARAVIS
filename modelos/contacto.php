@@ -171,11 +171,20 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 	     	$id_usuario = $_SESSION['session']['id'];
 		    $mensaje = new contactoPersistencia();
 		    $mensaje = $mensaje->registrarMensaje($id_usuario, $this->_asunto, $this->_mensaje);
-		    $mail->send();
+		    if(!$mail->send())
+		    {
 				echo "<script>
 						alert('Enviando mensaje...');
 						window.location='?';
 					</script>";
+		    }
+		    else
+		    {
+		    	echo "<script>
+						alert('Enviando mensaje...');
+						window.location='?';
+					</script>";
+		    }
 			
 		}	
 	}	
