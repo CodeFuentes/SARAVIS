@@ -224,11 +224,11 @@ require_once 'modelos/edicion.php';
 								{
 									vistaGestor::agregarDiccionario('mensaje_seleccion_facilitador', '¿Desea asignarlo como Facilitador de este Curso/Taller?');
 									
-									$linkSeleccionFacilitador = '<div class="opciones">
-											<a href="?ctrl=edicion&acc=guarFijaFaci">
-												Asignar<img class="negro asignar"></img>
-											</a>
-										</div>';
+									$linkSeleccionFacilitador = '<a href="?ctrl=edicion&acc=guarFijaFaci">
+											<button type="button" class="btn waves-effect waves-light blue">
+												Asignar
+											</button>
+										</a>';
 										
 									vistaGestor::agregarDiccionario('link_seleccion_facilitador', $linkSeleccionFacilitador);
 								}
@@ -241,11 +241,11 @@ require_once 'modelos/edicion.php';
 							{
 								vistaGestor::agregarDiccionario('mensaje_seleccion_facilitador', '¿Desea asignarlo como Facilitador de este Curso/Taller?');
 								
-								$linkSeleccionFacilitador = '<div class="opciones">
-											<a href="?ctrl=edicion&acc=guarFijaFaci">
-												Asignar<img class="negro asignar"></img>
-											</a>
-										</div>';
+								$linkSeleccionFacilitador = '<a href="?ctrl=edicion&acc=guarFijaFaci">
+											<button type="button" class="btn waves-effect waves-light blue">
+												Asignar
+											</button>
+										</a>';
 										
 									vistaGestor::agregarDiccionario('link_seleccion_facilitador', $linkSeleccionFacilitador);
 							}
