@@ -95,7 +95,9 @@
 			/*self::$_notificacion = '<div class="mensaje_resultado ' . $tipo . ' normal green-text">
 												' . $contenido . '
 										</div>';*/
-			self::$_notificacion = '<script>$(document).ready(function(){Materialize.toast('.$contenido.', 5000);});</script>';
+			self::$_notificacion = '<input type="text" class="notificacion ' . $tipo . '"
+												value="' . $contenido .'">';
+			// self::$_notificacion = '<script>notificacion(\''.$contenido.'\');</script>';
 		}
 		
 		static public function agregarNotificacionPermanente($tipo, $contenido)

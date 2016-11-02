@@ -222,13 +222,13 @@ require_once 'modelos/edicion.php';
 							{
 								if($personaEncontrada->dameId() != $facilitador->dameId())
 								{
-									vistaGestor::agregarDiccionario('mensaje_seleccion_facilitador', '¿Desea asignarlo como Facilitador de este Curso/Taller?');
+									vistaGestor::agregarDiccionario('mensaje_seleccion_facilitador', '<br>&iquest;Desea asignarlo como Facilitador de este Curso/Taller?<br>');
 									
-									$linkSeleccionFacilitador = '<a href="?ctrl=edicion&acc=guarFijaFaci">
+									$linkSeleccionFacilitador = '<br><a href="?ctrl=edicion&acc=guarFijaFaci">
 											<button type="button" class="btn waves-effect waves-light blue">
 												Asignar
 											</button>
-										</a>';
+										</a><br>';
 										
 									vistaGestor::agregarDiccionario('link_seleccion_facilitador', $linkSeleccionFacilitador);
 								}
@@ -239,13 +239,13 @@ require_once 'modelos/edicion.php';
 							}
 							else
 							{
-								vistaGestor::agregarDiccionario('mensaje_seleccion_facilitador', '¿Desea asignarlo como Facilitador de este Curso/Taller?');
+								vistaGestor::agregarDiccionario('mensaje_seleccion_facilitador', '<br>&iquest;Desea asignarlo como Facilitador de este Curso/Taller?<br>');
 								
-								$linkSeleccionFacilitador = '<a href="?ctrl=edicion&acc=guarFijaFaci">
+								$linkSeleccionFacilitador = '<br><a href="?ctrl=edicion&acc=guarFijaFaci">
 											<button type="button" class="btn waves-effect waves-light blue">
 												Asignar
 											</button>
-										</a>';
+										</a><br>';
 										
 									vistaGestor::agregarDiccionario('link_seleccion_facilitador', $linkSeleccionFacilitador);
 							}
@@ -555,9 +555,8 @@ require_once 'modelos/edicion.php';
 					)
 				{
 					$linkCerrarEdicion = '<a href="?ctrl=edicion&acc=cerrar">
-					<i class="fa fa-2x fa-close" ></i>
-						Cerrar Curso/Taller
-						<img class="negro bloquear"></img>
+						<span class="option light-green">Cerrar Curso/Taller</span>
+
 					</a>';
 					
 					vistaGestor::agregarDiccionario('link_cerrar_edicion', $linkCerrarEdicion);
@@ -566,40 +565,34 @@ require_once 'modelos/edicion.php';
 				if($edicion->dameEstado() != 'bloqueada')
 				{
 					$linkModificarEdicion = '<a href="?ctrl=edicion&acc=formModiE">
-					<i class="fa fa-2x fa-edit"></i>
-												Modificar Edici&oacute;n
-												<img class="negro modificar"></img>
+						<span class="option light-green">Modificar Edici&oacute;n</span>
+
 											</a>';
 					
 					vistaGestor::agregarDiccionario('link_modificar_ediccion', $linkModificarEdicion);
 					
 					$linkAsignarFacilitador = '<a href="?ctrl=edicion&acc=formFijaFaci">
-					<i class="fa fa-2x fa-male"></i>
-													Asignar Facilitador
-													<img class="negro asignar"></img>
+						<span class="option light-green">Asignar Facilitador</span>
 												</a>';
 												
 					$linkInscripcionParticipante = '<a href="?ctrl=edicion&acc=formPart">
-					<i class="fa fa-2x fa-male"></i>
-														Inscribir/Desincorporar participante
-														<img class="negro inscribir"></img>
+						<span class="option light-green">Inscribir/Desincorporar participante</span>
+
 													</a>';
 													
 					if(!empty($certificado))
 					{
 						
 						$linkCreacionCertificado = '<a href="?ctrl=documento&acc=creaCert">
-						<i class="fa fa-2x fa-edit"></i>
-														Modificar Certificado
-														<img class="negro modificar"></img>
+							<span class="option light-green">Modificar Certificado</span>
+
 													</a>';
 					}
 					else
 					{
 						$linkCreacionCertificado = '<a href="?ctrl=documento&acc=creaCert">
-						<i class="fa fa-2x fa-book"></i>
-														Crear Certificado
-														<img class="negro crear"></img>
+							<span class="option light-green">Crear Certificado</span>
+
 													</a>';
 					}
 
@@ -607,23 +600,18 @@ require_once 'modelos/edicion.php';
 					{
 						
 						$linkCreacionIdentificador = '<a href="?ctrl=documento&acc=creaIden">
-						<i class="fa fa-2x fa-edit"></i>
-														Modificar Identificador
-														<img class="negro modificar"></img>
+							<span class="option light-green">Modificar Identificador</span>
 													</a>';
 													
 						$linkImprimirIdentificador = '<a href="?ctrl=documento&acc=imprIden">
-						<i class="fa fa-2x fa-print"></i>
-													Imprimir identificadores
-													<img class="negro imprimir"></img>
+							<span class="option light-green">Imprimir identificadores</span>
+
 												</a>';
 					}
 					else
 					{
 						$linkCreacionIdentificador = '<a href="?ctrl=documento&acc=creaIden">
-						<i class="fa fa-2x fa-book"></i>
-														Crear Identificador
-														<img class="negro crear"></img>
+							<span class="option light-green">Crear Identificador</span>
 													</a>';
 													
 						$linkImprimirIdentificador = '';
@@ -633,59 +621,41 @@ require_once 'modelos/edicion.php';
 					if($edicion->cuposEdicion() < $edicion->dameLimite())
 					{
 						$linkImprimirAsistencias = '<a href="?ctrl=documento&acc=imprAsis">
-						<i class="fa fa-2x fa-print"></i>
-													Imprimir Asistencias
-													<img class="negro imprimir"></img>
+							<span class="option light-green">Imprimir Asistencias</span>
 												</a>';
 					}
 				}
 				else
 				{
 					$linkAsignarFacilitador = '<a href="#misOpciones">
-													<i class="fa fa-2x fa-male"></i>
-													Asignar Facilitador (Bloqueado)
-													<img class="negro asignar"></img>
+						<span class="option light-green">Asignar Facilitador (Bloqueado)</span>
 												</a>';
 												
 					$linkInscripcionParticipante = '<a href="#misOpciones">
-					<i class="fa fa-2x fa-male"></i>
-													Inscribir/Desincorporar participante (Bloqueado)
-													<img class="negro asignar"></img>
+						<span class="option light-green">Inscribir/Desincorporar participante (Bloqueado)</span>
 												</a>';
 												
 					$linkCreacionCertificado = '<a href="#misOpciones">
-					<i class="fa fa-2x fa-edit"></i>
-														Modificar Certificado (Bloqueado)
-														<img class="negro modificar"></img>
+						<span class="option light-green">Modificar Certificado (Bloqueado)</span>
 													</a>';
 													
 					$linkCreacionIdentificador = '<a href="#misOpciones">
-					<i class="fa fa-2x fa-edit"></i>
-														Modificar Identificador (Bloqueado)
-														<img class="negro modificar"></img>
+						<span class="option light-green">Modificar Identificador (Bloqueado)</span>
 													</a>';
 													
 					$linkImprimirCertificado = '<a href="?ctrl=documento&acc=imprCert">
-					<i class="fa fa-2x fa-print"></i>
-													Imprimir certificados
-													<img class="negro imprimir"></img>
+						<span class="option light-green">Imprimir certificados</span>
 												</a>';
 												
 					$linkVerCerrar = '<a href="?ctrl=edicion&acc=verCerrar">
-					<i class="fa fa-2x fa-eye"></i>
-										Ver culminaci&oacute;n
-										<img class="negro ver"></img>
+						<span class="option light-green">Ver culminaci&oacute;n</span>
 									</a>';
 									
 					$linkImprimirCerrar = '<a href="?ctrl=documento&acc=imprCulm">
-					<i class="fa fa-2x fa-print"></i>
-													Imprimir Culminaci&oacute;n
-													<img class="negro imprimir"></img>
+						<span class="option light-green">Imprimir Culminaci&oacute;n</span>
 												</a>';
 					$linkEnviarCertificado = '<a href="?ctrl=documento&acc=envCert">
-					<i class="fa fa-2x fa-send"></i>
-													Enviar certificados
-													<img class="negro imprimir"></img>
+						<span class="option light-green">Enviar certificados</span>
 												</a>';
 					
 					$elSinopticoComparacion = $edicion->dameSinoptico();
@@ -693,9 +663,7 @@ require_once 'modelos/edicion.php';
 					if(!empty($elSinopticoComparacion))
 					{
 						$linkImprimirReverso = '<a href="?ctrl=documento&acc=imprReve">
-						<i class="fa fa-2x fa-print"></i>
-													Imprimir reverso de los certificados
-													<img class="negro imprimir"></img>
+							<span class="option light-green">Imprimir reverso de los certificados</span>
 												</a>';
 					}					
 					
@@ -728,9 +696,7 @@ require_once 'modelos/edicion.php';
 				if(!empty($facilitador) and count($edicion->dameColParticipantes()) > 0)
 				{
 					$linkImprimirParticipantes = '<a href="?ctrl=documento&acc=imprPart">
-					<i class="fa fa-2x fa-print"></i>
-						Imprimir participantes
-						<img class="negro imprimir"></img>
+						<span class="option light-green">Imprimir participantes</span>
 					</a>';
 					
 					vistaGestor::agregarDiccionario('link_imprimir_participantes', $linkImprimirParticipantes);
@@ -936,7 +902,7 @@ require_once 'modelos/edicion.php';
 							
 							if(!empty($resultado))
 							{
-								$mensaje = 'Esta persona esta registrada en esta Edici&oacute;n ¿Desea desincorporarla?';
+								$mensaje = 'Esta persona esta registrada en esta Edici&oacute;n &iquest;Desea desincorporarla?';
 								$icono = 'borrar';
 								$palabra = 'Desincorporar';
 								$link = '?ctrl=edicion&acc=guarPart';
@@ -961,7 +927,7 @@ require_once 'modelos/edicion.php';
 									
 									if($idFacilitador != $personaEncontrada->dameId())
 									{
-										$mensaje = 'Esta persona no esta registrada en esta Edici&oacute;n ¿Desea inscribirla?';
+										$mensaje = 'Esta persona no esta registrada en esta Edici&oacute;n &iquest;Desea inscribirla?';
 										$icono = 'asignar';
 										$palabra = 'Inscribir';
 										$link = '?ctrl=edicion&acc=guarPart';

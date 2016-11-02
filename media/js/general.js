@@ -99,3 +99,13 @@
 	$(document).ready(function() {
 	    $('select').material_select();
 	});
+
+	$(window).ready(function () {
+		$( ".notificacion" ).each(function( index ) {
+		  notificacion($( this ).val() );
+		});
+	});
+
+	function notificacion (texto) {
+		Materialize.toast(texto, 5000);
+	}
