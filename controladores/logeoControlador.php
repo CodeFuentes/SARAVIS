@@ -131,32 +131,35 @@ require_once 'modelos/contacto.php';
 		private function _iniciarSession()
 		{
 			$id = logeo::existeUsuario($_POST['usuario'], $_POST['clave']);
+
 			switch($id)
 			{
 				case 'errorUsuario':
+				echo 0;	
+					// vistaGestor::agregarErrorForm('usuarioClave', 'El usuario no existe o los datos son incorrectos');
 					
-					vistaGestor::agregarErrorForm('usuarioClave', 'El usuario no existe o los datos son incorrectos');
-					
-					logeo::usuarioErroneo();					
-					self::_mostrarLogeo();
-					
+					// logeo::usuarioErroneo();					
+					// self::_mostrarLogeo();					
 				break;
 				
 				case 'errorCampos':
-				
-					self::_mostrarLogeo();
+				echo 0;
+				//	self::_mostrarLogeo();
+					
 					
 				break;
 			
 				case ($id > 0):
-					
+
 					$usuarioObjeto = logeo::cargarUsuario($id);
-				
+					
 					if(!logeo::usuarioBloquado($usuarioObjeto))
 					{
 						logeo::cargarSession($usuarioObjeto);
 						
-						header('location:./');
+						
+						echo 1;
+						die();
 					}
 					else
 					{

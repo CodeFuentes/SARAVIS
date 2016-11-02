@@ -66,7 +66,7 @@ if($codigoCorrecto == 'CORRECTO')
 }
 else
 { 
-	echo "<script> alert('Participante no encontrado.'); 
+	echo "<script> alert('Certificado no encontrado.'); 
 	window.location = './';
 	</script>"; 
 	
