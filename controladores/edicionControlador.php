@@ -556,6 +556,7 @@ require_once 'modelos/edicion.php';
 				{
 					$linkCerrarEdicion = '<a href="?ctrl=edicion&acc=cerrar">
 						<span class="option light-green">Cerrar Curso/Taller</span>
+
 					</a>';
 					
 					vistaGestor::agregarDiccionario('link_cerrar_edicion', $linkCerrarEdicion);
@@ -565,6 +566,7 @@ require_once 'modelos/edicion.php';
 				{
 					$linkModificarEdicion = '<a href="?ctrl=edicion&acc=formModiE">
 						<span class="option light-green">Modificar Edici&oacute;n</span>
+
 											</a>';
 					
 					vistaGestor::agregarDiccionario('link_modificar_ediccion', $linkModificarEdicion);
@@ -575,6 +577,7 @@ require_once 'modelos/edicion.php';
 												
 					$linkInscripcionParticipante = '<a href="?ctrl=edicion&acc=formPart">
 						<span class="option light-green">Inscribir/Desincorporar participante</span>
+
 													</a>';
 													
 					if(!empty($certificado))
@@ -582,12 +585,14 @@ require_once 'modelos/edicion.php';
 						
 						$linkCreacionCertificado = '<a href="?ctrl=documento&acc=creaCert">
 							<span class="option light-green">Modificar Certificado</span>
+
 													</a>';
 					}
 					else
 					{
 						$linkCreacionCertificado = '<a href="?ctrl=documento&acc=creaCert">
 							<span class="option light-green">Crear Certificado</span>
+
 													</a>';
 					}
 
@@ -600,6 +605,7 @@ require_once 'modelos/edicion.php';
 													
 						$linkImprimirIdentificador = '<a href="?ctrl=documento&acc=imprIden">
 							<span class="option light-green">Imprimir identificadores</span>
+
 												</a>';
 					}
 					else
