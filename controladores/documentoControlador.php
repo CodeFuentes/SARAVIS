@@ -1047,7 +1047,7 @@ require_once 'nucleo/generarPDF.php';
 							'<b>Facilitador: </b> ' . $facilitador->dameNombre(),
 							$facilitador->dameApellido(),
 							$facilitador->dameDocumento(),
-							'<select name="imprimir_facilitador" name="imprimir_participante">
+							'<select class="input-field" name="imprimir_facilitador" name="imprimir_participante">
 								<option value="no_' . $facilitador->dameId() . '">No imprimir</option>
 								<option value="si_' . $facilitador->dameId(). '">Imprimir</option>
 							</select>'
