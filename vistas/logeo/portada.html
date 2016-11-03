@@ -91,7 +91,7 @@
 		</div>
 	
 		<div class="modal-content">
-			<form method="POST" name="login" action="?ctrl=logeo&acc=iniciar" autocomplete="off">
+			<form method="POST" name="login" autocomplete="off">
 			<div class="input-field">
 				<div>
 					<input id="usuario" type="text" name="usuario" autocomplete="off" placeholder="Usuario" class="validate" required="" aria-required="true"/>
@@ -102,11 +102,12 @@
 					<div class="error">{#error_clave}</div>
 				</div>
 					<div class="error">{#error_usuarioClave}</div>
+					<div id="error" class="error" style="display:none">Error en el acceso.</div>
 			</div>	
 
 			<div class="botones right-align">
 			
-				<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="ingresarBtn" onclick="iniciarSesion()">Ingresar</button>
+				<input id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="button" name="ingresarBtn" onclick="iniciar()" value="Ingresar">
 				<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#loginModal').closeModal();">Cerrar</a>
 			</div>
 			</form>
@@ -153,7 +154,7 @@
 		</div>
 	
 		<div class="modal-content">
-			<form method="POST" name="registro" action="?ctrl=logeo&acc=guarRegi" autocomplete="off">
+			<form  method="POST" name="registro" action="?ctrl=logeo&acc=guarRegi" autocomplete="off">
 				<div class="input-field">
 					<div>
 						<input id="asunto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" required="" aria-required="true" />
@@ -188,18 +189,19 @@
 			<p class="flow-text">
 				Ingrese el código escrito en el certificado para verificar su existencia en el sistema
 			</p>
-		<form action="verificacion.php" method="POST" name="verificacion" autocomplete="off">
+		<form id="target" method="POST" action="verificacion.php" name="verificacion" autocomplete="off">
 			<div class="input-field">
 				<div>
-					<input id="codigo" type="text" name="codigo" autocomplete="off" placeholder="Código de Verificación" class="validate"
+					<input id="codigoo" type="text" name="codigo" autocomplete="off" placeholder="Código de Verificación" class="validate"
 					required="" aria-required="true" />
 				</div>
 
 				{#error_form}
+				<div id="error1" class="error" style="display:none">Código no Existente.</div>
 			</div>	
 
 			<div class="botones right-align">
-				<input type="submit" class="waves-effect waves-light btn light-green darken-1" value="Verificar">
+				<input type="submit" class="waves-effect waves-light btn light-green darken-1" value="Verificar" onclick="verificar()">
 				
 				<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#verificacionModal').closeModal();">Cerrar</a>
 			</div>
@@ -207,3 +209,23 @@
 		</div>
 	</div>
 
+				<script>
+                    function iniciar(){
+                    	var usuario = $('#usuario').val();
+                    	var clave = $('#clave').val();
+                    	
+                        $.ajax(
+                        {
+                            type: 'POST',
+                            url: '?ctrl=logeo&acc=iniciar',
+                            data: { usuario : usuario, clave : clave},
+                        })
+                        .done(function(data){
+                            if(data==1) window.location= './';
+                            else $('#error').css("display", '');
+                        })
+                        .fail(function(data){})
+                        .always(function(data){ });    
+                    }
+
+                 </script>
