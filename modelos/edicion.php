@@ -73,7 +73,7 @@ require_once 'modelos/identificador.php';
 				break;
 				
 				case 'curso_part':
-					$tipoFormateado = 'Curso / Participación';
+					$tipoFormateado = 'Curso / ParticipaciÃ³n';
 				break;
 				
 				case 'taller_apro':
@@ -81,7 +81,7 @@ require_once 'modelos/identificador.php';
 				break;
 				
 				case 'taller_part':
-					$tipoFormateado = 'Taller / Participación';
+					$tipoFormateado = 'Taller / ParticipaciÃ³n';
 				break;
 			}
 			
@@ -399,6 +399,76 @@ require_once 'modelos/identificador.php';
 			$datosAsociaciones = $edicionPersistencia->desbloquearEdicion($id_edicion);
 
 			return $datosAsociaciones;
+		}
+
+		public function eventosPasados(){
+			$edicionPersistencia = new edicionPersistencia();
+			$ediciones = $edicionPersistencia->eventosPasados();
+
+			 if(!empty($ediciones))
+			 {
+
+		 		foreach($ediciones as $edicion)
+			 		{
+						$edic[] = new edicion(
+											$edicion['id_edicion'],
+											$edicion['tipo'],
+											$edicion['fecha_inicio'],
+											$edicion['fecha_fin'],
+											$edicion['duracion'],
+											$edicion['limite'],
+											$edicion['horario'],
+											$edicion['sinoptico'],
+											$edicion['estado'], 
+											$edicion['e_nombre'],
+											$edicion['e_descripcion']
+										);
+					$retorna = $edic;
+					
+					}
+				
+			}
+			else
+			{
+				$retorna = NULL;
+			}
+			
+			return $retorna;
+		}
+
+		public function eventosProximos(){
+			$edicionPersistencia = new edicionPersistencia();
+			$ediciones = $edicionPersistencia->eventosProximos();
+
+			 if(!empty($ediciones))
+			 {
+
+		 		foreach($ediciones as $edicion)
+			 		{
+						$edic[] = new edicion(
+											$edicion['id_edicion'],
+											$edicion['tipo'],
+											$edicion['fecha_inicio'],
+											$edicion['fecha_fin'],
+											$edicion['duracion'],
+											$edicion['limite'],
+											$edicion['horario'],
+											$edicion['sinoptico'],
+											$edicion['estado'], 
+											$edicion['e_nombre'],
+											$edicion['e_descripcion']
+										);
+					$retorna = $edic;
+					
+					}
+				
+			}
+			else
+			{
+				$retorna = NULL;
+			}
+			
+			return $retorna;
 		}
 
 		public function historialEdiciones(){

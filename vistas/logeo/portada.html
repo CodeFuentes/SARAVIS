@@ -47,12 +47,12 @@
 
 				</p> -->
 			</div>
-			<div class="col s4">
+			<div class="col s4" onload="eventosPasados()">
 				<h5><i class="fa fa-calendar"></i> Próximos Eventos</h5>
-
-				<hr>
+					{#htmlListado1}
+				<hr><br>
 				<h5>Eventos Pasados</h5>
-				<!-- {#htmlListado} -->
+				 {#htmlListado} 
 			</div>
 		</div>
 	</div>
@@ -226,6 +226,33 @@
                         })
                         .fail(function(data){})
                         .always(function(data){ });    
+                    }
+
+                    function eventosProximos(){
+                    	$.ajax(
+                        {
+                            type: 'POST',
+                            url: '?ctrl=logeo&acc=proximos',
+                        })
+                        .done(function(data){
+                      
+                        })
+                        .fail(function(data){})
+                        .always(function(data){ }); 
+                    }
+
+                    function eventosPasados(){
+                    	$.ajax(
+                        {
+                            type: 'POST',
+                            url: '?ctrl=logeo&acc=pasados',
+     
+                        })
+                        .done(function(data){
+                            console.log(data);
+                        })
+                        .fail(function(data){})
+                        .always(function(data){ }); 
                     }
 
                  </script>

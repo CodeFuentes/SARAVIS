@@ -235,4 +235,40 @@ require_once 'nucleo/bdGestor.php';
 
 			return $retorna;
 		}
+
+		public function eventosProximos(){
+			$GBD = new baseDatosGestor();
+			$GBD->abrirConexion();
+
+			$query = "SELECT e.*, 
+					p.id_persona AS p_id_persona, p.documento AS p_documento, p.nombre AS p_nombre, p.apellido AS p_apellido, p.sexo AS p_sexo, p.fecha_nacimiento AS p_fecha_nacimiento, p.telefono AS p_telefono, p.direccion AS p_direccion,
+					c.id_curso AS e_id_curso, c.nombre AS e_nombre, c.descripcion AS e_descripcion
+					FROM ediciones AS e
+					LEFT JOIN personas AS p ON e.id_facilitador = p.id_persona 
+					LEFT JOIN cursos AS c ON e.id_edicion = c.id_curso WHERE fecha_inicio > now()
+					ORDER BY fecha_inicio DESC LIMIT 5";
+
+			$retorna = $GBD->resultadoQuery($query);
+			$GBD->cerrarConexion();
+			if($GDB->damefilas==0){ $retorna['p_id_persona']=0; }
+			return $retorna;
+		}
+
+		public function eventosPasados(){
+			$GBD = new baseDatosGestor();
+			$GBD->abrirConexion();
+
+			$query = "SELECT e.*, 
+					p.id_persona AS p_id_persona, p.documento AS p_documento, p.nombre AS p_nombre, p.apellido AS p_apellido, p.sexo AS p_sexo, p.fecha_nacimiento AS p_fecha_nacimiento, p.telefono AS p_telefono, p.direccion AS p_direccion,
+					c.id_curso AS e_id_curso, c.nombre AS e_nombre, c.descripcion AS e_descripcion
+					FROM ediciones AS e
+					LEFT JOIN personas AS p ON e.id_facilitador = p.id_persona 
+					LEFT JOIN cursos AS c ON e.id_edicion = c.id_curso WHERE NOW() > fecha_inicio
+					ORDER BY fecha_inicio DESC LIMIT 5";
+
+			$retorna = $GBD->resultadoQuery($query);
+			$GBD->cerrarConexion();
+
+			return $retorna;
+		}
 	}
