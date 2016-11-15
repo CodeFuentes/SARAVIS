@@ -73,7 +73,7 @@ require_once 'modelos/contacto.php';
 			$titulos = array('Curso','Descripci&oacute;n','Tipo', 'Duracion', 'Inicio', 'Final');
 				$linkBase = '?ctrl=curso&acc=proximos';
 					
-				$listadoGenerador = new listado($arrayCursos, $titulos, $linkBase, $_GET['pag'], 5);
+				$listadoGenerador = new listado($arrayCursos, $titulos, $linkBase);
 					
 
 			$htmlListado = $listadoGenerador->eventosPasados();

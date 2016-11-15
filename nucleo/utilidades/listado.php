@@ -198,6 +198,7 @@
 				$this->_htmlListado .= '<th >' . $valor . '</th>';
 			}
 			
+			
 			$this->_htmlListado .= 	'</tr></thead><tbody>';
 			
 			if($this->_tamanoArray > 0)
@@ -206,6 +207,7 @@
 				{
 					if($filas['clases'] != '')
 					{
+
 						$this->_htmlListado .= '<tr class="' . $filas['clases'] . '">';
 					}
 					else
@@ -215,6 +217,7 @@
 					
 					foreach($filas['datos'] as $dato)
 					{
+						if(empty($dato))$this->_htmlListado .= '<td>No hay Resultados.</td>';
 						$this->_htmlListado .= '<td>' . $dato . '</td>';
 					}
 					

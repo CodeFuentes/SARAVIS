@@ -68,7 +68,7 @@ require_once 'modelos/usuario.php';
 		public function _regError()
 		{
 			header('Location: ?');
-		}
+  }
 
 		public function _verInf()
 		{
