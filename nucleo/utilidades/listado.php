@@ -112,7 +112,8 @@
 					
 					foreach($filas['datos'] as $dato)
 					{
-						$this->_htmlListado .= '<td>' . $dato . '</td>';
+						if(empty($dato))$this->_htmlListado .= '<td>No hay Resultados.</td>';
+						else $this->_htmlListado .= '<td>' . $dato . '</td>';
 					}
 					
 					$this->_htmlListado .= '</tr>';
@@ -218,7 +219,7 @@
 					foreach($filas['datos'] as $dato)
 					{
 						if(empty($dato))$this->_htmlListado .= '<td>No hay Resultados.</td>';
-						$this->_htmlListado .= '<td>' . $dato . '</td>';
+						else $this->_htmlListado .= '<td>' . $dato . '</td>';
 					}
 					
 					$this->_htmlListado .= '</tr>';
