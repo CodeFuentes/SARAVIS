@@ -133,30 +133,32 @@
 		</div>
 	
 		<div class="modal-content">
-			<form method="POST" name="contacto" action="?ctrl=logeo&acc=guarRegi" autocomplete="off">
+			<!--<form  method="POST" name="contacto" action="?ctrl=logeo&acc=guarRegi" autocomplete="off"> -->
+			<form autocomplete="off">
 				<div class="input-field">
 					<div>
-						<input id="asunto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" required="" aria-required="true" />
+						<input id="asuntoContacto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" required="" aria-required="true" />
 					</div>
 					<div>
-						<input id="mensaje" type="text" name="mensaje" autocomplete="off" placeholder="Mensaje" class="validate" required="" aria-required="true"/>
+						<input id="mensajeContacto" type="text" name="mensaje" autocomplete="off" placeholder="Mensaje" class="validate" required="" aria-required="true"/>
 					</div>
 					<div>
-						<input id="correo" type="email" name="correo" autocomplete="off" placeholder="Correo Electrónico" class="validate" required="" aria-required="true"/>
+						<input id="correoContacto" type="email" name="correo" autocomplete="off" placeholder="Correo Electrónico" class="validate" required="" aria-required="true"/>
 					</div>
-
+			
 
 					{#error_form}
 				</div>	
 
 				<div class="botones right-align">
 				
-					<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="enviarBtn" onclick="contacto()">Enviar</button>
-					<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#contactoModal').closeModal();">Cerrar</a>
+					<input id="ingresar2" class="waves-effect waves-light btn light-green darken-1" type="button" name="ingresarBtn" onclick="contactanos()" value="Enviar">
+					<a href="#!" id="cerrarContacto" class="waves-effect waves-light btn red darken-4" onclick="$('#contactoModal').closeModal();">Cerrar</a>
 				</div>
 			</form>
 		</div>
 	</div>
+
 
 	<div id="registroModal" class="modal hoverable">
 		<div class="modal-content white-text light-green darken-1">
@@ -165,7 +167,8 @@
 		</div>
 	
 		<div class="modal-content">
-			<form  method="POST" name="registro" action="?ctrl=logeo&acc=guarRegi" autocomplete="off">
+		<!--	<form  method="POST" name="registro" action="?ctrl=logeo&acc=guarRegi" autocomplete="off">-->
+		
 				<div class="input-field">
 					<div>
 						<input id="asunto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" required="" aria-required="true" />
@@ -183,10 +186,10 @@
 
 				<div class="botones right-align">
 				
-					<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="submit" name="enviarBtn" onclick="registrarse()">Solicitar Acceso</button>
-					<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#registroModal').closeModal();">Cerrar</a>
+					<input id="ingresar" class="waves-effect waves-light btn light-green darken-1" type="button" name="ingresarBtn" onclick="registrarse()" value="Solicitar Acceso">
+					<a href="#!" id="cerrarRegistro" class="waves-effect waves-light btn red darken-4" onclick="$('#registroModal').closeModal();">Cerrar</a>
 				</div>
-			</form>
+			
 		</div>
 	</div>
 
@@ -226,15 +229,6 @@
 	      top: 600,
 	      offset: 0
 	    });
-
-  $('.pushpin').each(function() {
-    var $this = $(this);
-    var $target = $('#' + $(this).attr('data-target'));
-    $this.pushpin({
-      top: $target.offset().top,
-      bottom: $target.offset().top + $target.outerHeight() - $this.height()
-    });
-  });
         
 	  });
 </script>

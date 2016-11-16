@@ -172,17 +172,20 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 		    $mensaje = $mensaje->registrarMensaje($id_usuario, $this->_asunto, $this->_mensaje);
 		    if(!$mail->send())
 		    {
-				echo "<script>
+		    	echo 0;
+				/*echo "<script>
 						alert('Enviando mensaje...');
 						window.location='?';
-					</script>";
+					</script>";*/
 		    }
 		    else
 		    {
+		    	echo 1;
+		    	/*
 		    	echo "<script>
 						alert('Enviando mensaje...');
 						window.location='?';
-					</script>";
+					</script>"; */
 		    }
 			
 		}	

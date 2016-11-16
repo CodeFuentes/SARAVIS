@@ -186,11 +186,7 @@
 
 			self::$_codigoImprimir .= '</head>';
 			self::$_codigoImprimir .= '<body>';
-			self::$_codigoImprimir .= '<script>
-				$(document).ready(function(){
-						eventosPasados();
-				});
-			</script>';
+		
 			self::$_codigoImprimir .= '<header>';
 			/*self::$_codigoImprimir .= '<div class="row">';
 			if($_SESSION['session']['conectado'] == "SI") {

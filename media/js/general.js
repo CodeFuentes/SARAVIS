@@ -1,4 +1,3 @@
-
 	window.onload = function()
 	{		
 		setTimeout(borrarNotificacion , 10000);
@@ -153,4 +152,5 @@
 	    })
 	    .fail(function(data){})
 	    .always(function(data){ }); 
+
 	}
