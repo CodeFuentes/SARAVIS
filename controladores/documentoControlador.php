@@ -748,8 +748,7 @@ require_once 'nucleo/generarPDF.php';
 				
 				if(empty($error))
 				{
-					vistaGestor::agregarDiccionario('boton_imprimir_documento', '<input type="submit" id="btn_imprimir" name="btn_imprimir" value="Imprimir">');
-				}
+					vistaGestor::agregarDiccionario('boton_imprimir_documento', '<button type="submit" id="btn_imprimir" name="btn_imprimir" class="btn waves-effect waves-light blue">Imprimir</button>'); }
 
 				if(!empty($colParticipantes))
 				{
@@ -877,7 +876,11 @@ require_once 'nucleo/generarPDF.php';
 						}
 					}
 					
-					if($existeSi != 0)
+					if($existeSi > 1) {
+						vistaGestor::agregarNotificacion('alerta', 'Seleccione s&oacute;lo una impresi&oacute;n');
+						self::_imprimirIdentificadores();
+					}
+					else if($existeSi != 0)
 					{
 						$nombreCurso = $curso->dameNombre();
 						$duracionEdicion = $edicion->dameDuracion();
@@ -931,7 +934,7 @@ require_once 'nucleo/generarPDF.php';
 					
 					$listadoGenerador = new listadoGenerador($colParticipantes, $titulos, $linkBase, $_GET['pag'], $edicion->dameLimite());
 					
-					vistaGestor::agregarDiccionario('boton_imprimir_documento', '<input type="submit" id="btn_imprimir" name="btn_imprimir" value="Enviar">');
+					vistaGestor::agregarDiccionario('boton_imprimir_documento', '<button type="submit" id="btn_imprimir" name="btn_imprimir" class="btn waves-effect waves-light blue">Enviar</button>');
 					
 					$listadoGenerador->agregarFila(
 					array (
@@ -1040,7 +1043,7 @@ require_once 'nucleo/generarPDF.php';
 					
 					$listadoGenerador = new listadoGenerador($colParticipantes, $titulos, $linkBase, $_GET['pag'], $edicion->dameLimite());
 					
-					vistaGestor::agregarDiccionario('boton_imprimir_documento', '<input type="submit" id="btn_imprimir" name="btn_imprimir" value="Imprimir">');
+					vistaGestor::agregarDiccionario('boton_imprimir_documento', '<button type="submit" id="btn_imprimir" name="btn_imprimir" class="btn waves-effect waves-light blue">Imprimir</button>');
 					
 					$listadoGenerador->agregarFila(
 					array (
@@ -1193,7 +1196,12 @@ require_once 'nucleo/generarPDF.php';
 						}
 					}
 					
-					if($existeSi != 0)
+					if ($existeSi > 1)
+					{
+						vistaGestor::agregarNotificacion('alerta', 'Por favor seleccione s&oacute;lo 1 impresi&oacute;n');
+						self::_imprimirCertificados();
+					}
+					else if($existeSi != 0)
 					{
 						$codigoGenerado = $curso->dameId() . '-' . $edicion->dameId();
 
@@ -1209,8 +1217,7 @@ require_once 'nucleo/generarPDF.php';
 											);
 							generarPDF::cargarDocumento($HTML, "Certificado", "descargar", $correo);
 							self::_imprimirCertificados();
-					}
-					else
+					}  else
 					{
 						vistaGestor::agregarNotificacion('alerta', 'Debe seleccionar al menos una impresi&oacute;n');
 						self::_imprimirCertificados();
@@ -1374,7 +1381,7 @@ require_once 'nucleo/generarPDF.php';
 					$htmlListado = $listadoGenerador->generarListado();
 					
 					$cabecera = '
-					<img width="710px" height="60px" src="media/imagenes/barra_n.png"/>
+					<img width="810px" height="60px" src="media/imagenes/barra_n.png"/>
 					<div class="sub_titulo">Informaci&oacute;n de la edici&oacute;n</div>
 						<table>
 							<tr>								

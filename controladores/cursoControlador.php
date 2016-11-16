@@ -370,14 +370,10 @@ require_once 'modelos/edicion.php';
 							}
 							
 							if($edicion->dameEstado() == 'bloqueada') {
-								$estadoIcono = '<a title="Edici&oacute;n Bloqueada" href="#">
-													<img class="bloquear negro">
-												</a>';
+								$estadoIcono = '<div class="fa fa-lock"></div>';
 							}
 							else {
-								$estadoIcono = '<a title="Edici&oacute;n Abierta" href="#">
-													<img class="abierto negro">
-												</a>';
+								$estadoIcono = '<div class="fa fa-unlock"></div>';
 							}
 							
 							$listadoGenerador->agregarFila(
@@ -390,7 +386,7 @@ require_once 'modelos/edicion.php';
 										$edicion->cuposEdicion() . '/' . $edicion->dameLimite() . ' ' . $estadoIcono,
 									
 										listadoGenerador::crearOpcion(
-											'Seleccionar Edici&oacute;n',
+											"<i aria-hidden='true' class='fa fa-2x fa-search-plus' title='Seleccionar Edici&oacute;n'></i>",
 											'?ctrl=edicion&acc=menuEdic&id=' . $edicion->dameId(),
 											'selccionar negro')
 										)

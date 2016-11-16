@@ -247,7 +247,7 @@
 					$misPermisos = 'Usuario';
 				}
 			
-				self::$_codigoImprimir .= '<div class="chip"><img src="media/imagenes/usuario.png"><b>Usuario:</b> ' . $_SESSION['session']['nombre_completo'] . '</div> <div class="chip"> <b>Nivel:</b> ' . $misPermisos . '</div>';
+				self::$_codigoImprimir .= '<br><strong style="padding-right: 10px;">Bienvenido a Saravis</strong> <div class="chip"><img src="media/imagenes/usuario.png"><b>Usuario:</b> ' . $_SESSION['session']['nombre_completo'] . '</div> <div class="chip"><img src="media/imagenes/level.png"> <b>Nivel:</b> ' . $misPermisos . '</div>';
 				self::$_codigoImprimir .= self::_cargarContenidoHtml('media/html/menu.html');
 				self::$_codigoImprimir .= '</div>';
 				self::$_codigoImprimir .= '</div>';
@@ -256,7 +256,7 @@
 			
 			if(!empty(self::$_tituloPrincipal))
 			{
-				self::$_codigoImprimir .= '<h3 align="center">' . self::$_tituloPrincipal . '</h3>';
+				self::$_codigoImprimir .= '<h3>' . self::$_tituloPrincipal . '</h3>';
 			}
 			
 			self::$_codigoImprimir .= '{#notificacion}';

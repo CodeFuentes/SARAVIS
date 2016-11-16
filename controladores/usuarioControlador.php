@@ -79,7 +79,7 @@ require_once 'modelos/usuario.php';
 			if(!empty($usuario))
 			{				
 				vistaGestor::agregarArchivoCss('formularios');
-				vistaGestor::documentoNormal('Cambiar contraseña', array('vistas/usuario/formClave.html'));
+				vistaGestor::documentoNormal('Cambiar contrase&ntilde;a', array('vistas/usuario/formClave.html'));
 			}
 			else
 			{
@@ -112,7 +112,7 @@ require_once 'modelos/usuario.php';
 				if(empty($errores))
 				{
 					$usuario->cambiarClave($_POST['claveUno']);
-					vistaGestor::agregarNotificacion('exito', 'Se ha cambiado la clave con éxito');
+					vistaGestor::agregarNotificacion('exito', 'Se ha cambiado la clave con &eacute;xito');
 					self::_inicioCopia();
 				}
 				else
@@ -154,13 +154,13 @@ require_once 'modelos/usuario.php';
 				
 				if($usuario->dameEstado() == 'activo' OR $usuario->dameEstado() == 'restablecer')
 				{		
-					$mesanjeEstado = 'El usuario se encuentra activo ¿Desea bloquearlo?';
+					$mesanjeEstado = 'El usuario se encuentra activo &iquest;Desea bloquearlo?';
 					$palabraAccion = 'Bloquear Usuario';
 					$iconoAccion = 'bloquear';
 				}
 				else
 				{
-					$mesanjeEstado = 'El usuario se encuentra bloqueado ¿Desea activarlo?';
+					$mesanjeEstado = 'El usuario se encuentra bloqueado &iquest;Desea activarlo?';
 					$palabraAccion = 'Activar Usuario';
 					$iconoAccion = 'abierto';
 				}
@@ -185,7 +185,7 @@ require_once 'modelos/usuario.php';
 			{
 				$usuario->guardarEstado();
 				
-				vistaGestor::agregarNotificacion('exito', 'Se ha modificado el estado del usuario con éxito');
+				vistaGestor::agregarNotificacion('exito', 'Se ha modificado el estado del usuario con &eacute;xito');
 				self::_listadoUsuarios();
 			}
 			else
@@ -239,7 +239,7 @@ require_once 'modelos/usuario.php';
 				{
 					$usuario->guardarRestablecer();
 					
-					vistaGestor::agregarNotificacion('exito', 'Se ha restablecido la clave del usuario con éxito');
+					vistaGestor::agregarNotificacion('exito', 'Se ha restablecido la clave del usuario con &eacute;xito');
 					self::_listadoUsuarios();
 				}
 				else
@@ -357,7 +357,7 @@ require_once 'modelos/usuario.php';
 
 				if($resultado == 'exito')
 				{
-					vistaGestor::agregarNotificacion('exito', 'Se ha registrado con éxito al usuario');
+					vistaGestor::agregarNotificacion('exito', 'Se ha registrado con &eacute;xito al usuario');
 					self::_listadoUsuarios();
 				}
 				elseif($resultado == 'existeUsuario')
@@ -420,7 +420,7 @@ require_once 'modelos/usuario.php';
 
 					$usuarioModificar->modificar();
 					
-					vistaGestor::agregarNotificacion('exito', 'Se ha modificado con éxito al usuario');
+					vistaGestor::agregarNotificacion('exito', 'Se ha modificado con &eacute;xito al usuario');
 					self::_listadoUsuarios();
 				}
 				else
@@ -449,7 +449,7 @@ require_once 'modelos/usuario.php';
 					foreach($colUsuarios as $usuario)
 					{
 						$opciones = listadoGenerador::crearOpcion(
-											'Modificar Usuario',
+											"<i class='fa fa-edit fa-2x' title='Modificar Usuario' aria-hidden='true'></i>",
 											'?ctrl=usuario&acc=modiUsua&id=' . $usuario->dameId(),
 											'modificar negro');
 						
@@ -461,13 +461,13 @@ require_once 'modelos/usuario.php';
 						}
 
 						$opciones .= listadoGenerador::crearOpcion(
-											'Cambiar Estado',
+											"<i class='fa fa-universal-access fa-2x' title='Cambiar Estado' aria-hidden='true'></i>",
 											'?ctrl=usuario&acc=cambEsta&id=' . $usuario->dameId(),
 											$iconoAccion . ' negro');
 					
 						if($usuario->dameEstado() == 'activo') {
 							$opciones .= listadoGenerador::crearOpcion(
-											'Restablecer Clave',
+											"<i class='fa fa-unlock-alt fa-2x' title='Restablecer Clave' aria-hidden='true'></i>",
 											'?ctrl=usuario&acc=restClav&id=' . $usuario->dameId(),
 											'actualizar negro');
 						}

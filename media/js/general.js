@@ -109,3 +109,48 @@
 	function notificacion (texto) {
 		Materialize.toast(texto, 5000);
 	}
+
+	function iniciar(){
+		var usuario = $('#usuario').val();
+		var clave = $('#clave').val();
+		
+	    $.ajax(
+	    {
+	        type: 'POST',
+	        url: '?ctrl=logeo&acc=iniciar',
+	        data: { usuario : usuario, clave : clave},
+	    })
+	    .done(function(data){
+	        if(data==1) window.location= './';
+	        else $('#error').css("display", '');
+	    })
+	    .fail(function(data){})
+	    .always(function(data){ });    
+	}
+
+	function eventosProximos(){
+		$.ajax(
+	    {
+	        type: 'POST',
+	        url: '?ctrl=logeo&acc=proximos',
+	    })
+	    .done(function(data){
+	  
+	    })
+	    .fail(function(data){})
+	    .always(function(data){ }); 
+	}
+
+	function eventosPasados(){
+		$.ajax(
+	    {
+	        type: 'POST',
+	        url: '?ctrl=logeo&acc=pasados',
+	
+	    })
+	    .done(function(data){
+	        console.log(data);
+	    })
+	    .fail(function(data){})
+	    .always(function(data){ }); 
+	}

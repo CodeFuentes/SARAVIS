@@ -82,7 +82,7 @@ require_once 'persistencias/identificadorPersistencia.php';
 
 		public function htmlIdentificador($nombreCurso, $duracionEdicion, $fechaFinEdicion)
 		{
-				$miFondo = 'background: url("recursos/identificadores/' . $this->dameFondo() . '") no-repeat';
+				$miFondo = 'background: url("recursos/identificadores/' . $this->dameFondo() . '") no-repeat center';
 				
 				$cuerpo = '			
 			<table>
@@ -162,6 +162,7 @@ require_once 'persistencias/identificadorPersistencia.php';
 							margin: 40px 0px 30px 30px;
 							width: 208px;
 							height: 321px;
+							background-size: auto 100%;
 							' . $miFondo .'
 						}
 						
@@ -236,7 +237,7 @@ require_once 'persistencias/identificadorPersistencia.php';
 			$cuerpoRepetitivo = '';
 			$elFondo = $this->_fondo;
 			
-			$miFondo = 'background: url("recursos/identificadores/' . $elFondo .'") no-repeat';
+			$miFondo = 'background: url("recursos/identificadores/' . $elFondo .'") no-repeat center;';
 
 			for($j = 1; $j <= count($participantes); $j++)
 			{			
@@ -328,8 +329,9 @@ require_once 'persistencias/identificadorPersistencia.php';
 						body *
 						{
 							overflow: hidden;
-							font-family: Arial;
-							font-weight: bold;
+							font-family: Arial, Helvetica, sans-serif;
+							color: white;
+							text-shadow: 0px 0px 5px black;
 						}
 						
 						@page
@@ -346,24 +348,30 @@ require_once 'persistencias/identificadorPersistencia.php';
 						{
 							float: left;
 							margin: 40px 0px 30px 30px;
-							width: 208px;
-							height: 321px;
+							width: 258px;
+							height: 371px;
 							' . $miFondo .'
+							background-size: auto 321px;
 						}
 						
 
 						
 						div.cuerpoDatos
 						{
-							width: 190px;
+							width: 230px;
 							font-size: 11;
-							padding: 7px 7px 0px 7px;
+							padding: 10px 10px 0px 15px;
 							text-align: center;
+						}
+
+						.cuerpoDatos > * {
+							margin-top: 1px;
+							background: url(media/imagenes/black-transparent.png);
 							
-						
+						}
 						table.cabesera
 						{
-							width: 208px;
+							width: 238px;
 							padding: 7px 7px 0px 7px;
 							left:0px;
 							top:0px;
@@ -380,13 +388,13 @@ require_once 'persistencias/identificadorPersistencia.php';
 						{
 							width: 70px;
 							height: 90px;
-							margin-left: 70px;
+							margin-left: 90px;
 						}
 						
 						table td.lado 
 						{
 							width: 70px;
-							height: 90px;
+							height: 100px;
 						}
 						
 						table td.centro 
@@ -399,11 +407,11 @@ require_once 'persistencias/identificadorPersistencia.php';
 						
 						div.unaLinea
 						{
-							height: 18px;
+							height: 22px;
 						}
 						div.dosLinea
 						{
-							height: 43px;
+							height: 46px;
 						}
 						
 						

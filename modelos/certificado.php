@@ -266,7 +266,7 @@ include("nucleo/qrcode.php");
 					<div class="codigoQR">
 						<img src='.$link.' border="0"/>
 					</div>
-					<table class="codigoGenerado"><tr><td><p style="font-size: 20px; margin: 0px;">C&oacute;digo Verificaci&oacute;n: ' . $codigoGenerado . '-' . $idPersona .'</p></td></tr></table>
+					<div class="codigoGenerado" style="font-size: 20px; margin: 0px;">C&oacute;digo de<br>Verificaci&oacute;n:<br>' . $codigoGenerado . '-' . $idPersona .'</div>
 				</div>';
 				}
 			}
@@ -278,10 +278,14 @@ include("nucleo/qrcode.php");
 				<script type="text/javascript" src="media/js/jquery/qrcode.js"></script>
 
 				<style type="text/css">
+				
+					
 					body * {
 						overflow: hidden;
-						font-family: kartika;
+						font-family: Arial, Helvetica, sans-serif;
 						font-weight: bold;
+						color: white;
+
 					}
 					
 					@page {
@@ -298,6 +302,7 @@ include("nucleo/qrcode.php");
 						margin: 0px;
 						width: 1000px;
 						height: 700px;
+						
 					}
 					
 					
@@ -315,6 +320,7 @@ include("nucleo/qrcode.php");
 						position:absolute;
 						left:0px;
 						top:0px;
+						font-size: 11px;
 					}
 					
 					table.firmas {
@@ -346,28 +352,34 @@ include("nucleo/qrcode.php");
 						vertical-align: text-top;
 					}
 
-					table.codigoGenerado {
+					.codigoGenerado {
 						position: absolute;
-						top: 700px;
-						left: 0px;
-						width: 1100px;
-					}
-					div.codigoQR img{
-						position: absolute;
-						top: 680px;
-						float: right;
-						right: 40%;
-					}
-					
-					table.codigoGenerado td {
+						bottom: 230px;
+						left: 100px;
 						text-align: center;
+						font-size: 10px;
+					}
+					.codigoQR {
+						position: absolute;
+						left: 100px;
+						bottom: 320px;
+					}
+					.wrapper {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 1400px;
+						height: 1000px;
+						background: url(media/imagenes/black-transparent.png);
 					}
 
 				</style>
 			</head>
 			
 			<body onload="update_qrcode()">
+				<div class="wrapper">
 				'.$html1 . $cuerpoRepetitivo . '
+				</div>
 			</body>
 		</html>';
 		

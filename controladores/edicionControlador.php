@@ -628,19 +628,19 @@ require_once 'modelos/edicion.php';
 				else
 				{
 					$linkAsignarFacilitador = '<a href="#misOpciones">
-						<span class="option light-green">Asignar Facilitador (Bloqueado)</span>
+						<span class="option grey" style="cursor: default">Asignar Facilitador (Bloqueado)</span>
 												</a>';
 												
 					$linkInscripcionParticipante = '<a href="#misOpciones">
-						<span class="option light-green">Inscribir/Desincorporar participante (Bloqueado)</span>
+						<span class="option grey" style="cursor: default">Inscribir/Desincorporar participante (Bloqueado)</span>
 												</a>';
 												
 					$linkCreacionCertificado = '<a href="#misOpciones">
-						<span class="option light-green">Modificar Certificado (Bloqueado)</span>
+						<span class="option grey" style="cursor: default">Modificar Certificado (Bloqueado)</span>
 													</a>';
 													
 					$linkCreacionIdentificador = '<a href="#misOpciones">
-						<span class="option light-green">Modificar Identificador (Bloqueado)</span>
+						<span class="option grey" style="cursor: default">Modificar Identificador (Bloqueado)</span>
 													</a>';
 													
 					$linkImprimirCertificado = '<a href="?ctrl=documento&acc=imprCert">
@@ -936,8 +936,8 @@ require_once 'modelos/edicion.php';
 									{
 										$mensaje = 'Esta persona se encuentra registrada como el facilitador de este Curso/Taller';
 										$icono = 'bloquear';
-										$palabra = 'Inscribir';
-										$link = '#documentoPers';
+										$palabra = 'Volver';
+										$link = './?ctrl=edicion&acc=menuEdic';
 									}
 								}
 							}

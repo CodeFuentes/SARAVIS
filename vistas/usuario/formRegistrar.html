@@ -2,76 +2,55 @@
 		
 			<h5>Datos del Usuario</h5>
 
-			<div class="formulario">
-				
-				<form id="formRegistrarUsua" name="formRegistrarUsua" method="post" action="?ctrl=usuario&acc=guarUsua" autocomplete="off">
-				
-				<ul>
-					<li>
-						<div class="unico">
-							<label>Nombre<span>*</span></label>
-							<input id="nombreUsua" name="nombreUsua" type="text" value="{#post_nombreUsua}" placeholder="Ejm: Pedro" autofocus/>
-							
-							{#error_nombreUsua}
-						</div>
-					</li>
+			<form id="formRegistrarUsua" name="formRegistrarUsua" method="post" action="?ctrl=usuario&acc=guarUsua" autocomplete="off">
+			<div class="col s12">
+				<div class="col s4">
+					<label>Nombre<span>*</span></label>
+					<input id="nombreUsua" name="nombreUsua" type="text" value="{#post_nombreUsua}" placeholder="Ejm: Pedro" autofocus/>
 					
-					<li>
-						<div class="unico">
-							<label>Usuario<span>*</span></label>
-							<input id="loginUsua" name="loginUsua" type="text" value="{#post_loginUsua}" placeholder="Ejm: pedro"/>
+					{#error_nombreUsua}
+				</div>
+				<div class="col s4">
+					<label>Usuario<span>*</span></label>
+					<input id="loginUsua" name="loginUsua" type="text" value="{#post_loginUsua}" placeholder="Ejm: pedro"/>
+					
+					{#error_loginUsua}
+				</div>
+				<div class="col s4">
+					<label>Contrase&ntilde;a<span>*</span></label>
+					<input id="claveUno" name="claveUno" value="{#post_claveUno}"  type="password"/>
+					
+					{#error_claveUno}
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="col s4">
+					<label>Repita la contrase&ntilde;a<span>*</span></label>
+					<input id="claveDos" name="claveDos" value="{#post_claveDos}" type="password"/>
+					
+					{#error_claveDos}
+				</div>
+				<div class="col s8">
+						<label>Permisos<span>*</span></label>
+												
+							<br/><br/><input class="browser-default" id="cursosPerm" name="cursosPerm" type="checkbox" value="cursos" {#checked_permisos_cursos}> <label for="cursosPerm">Curso/Taller/Facilitador</label>
 							
-							{#error_loginUsua}
-						</div>
-					</li>
-	
-					<li>
-						<div class="unico">
-							<label>Contraseña<span>*</span></label>
-							<input id="claveUno" name="claveUno" value="{#post_claveUno}"  type="password"/>
+							<br/><input id="personasPerm" name="personasPerm" type="checkbox" value="personas" {#checked_permisos_personas}> <label for="personasPerm">Persona/Participante</label>
 							
-							{#error_claveUno}
-						</div>
-					</li/>
-
-					<li>
-						<div class="unico">
-							<label>Repita la contraseña<span>*</span></label>
-							<input id="claveDos" name="claveDos" value="{#post_claveDos}" type="password"/>
 							
-							{#error_claveDos}
-						</div>
-						
-						
-					</li>
+							<br/><input id="documentosPerm" name="documentosPerm" type="checkbox" value="documentos" {#checked_permisos_documentos}> <label for="documentosPerm">Documentos</label>
+							
+							<br/><input id="impresionesPerm" name="impresionesPerm" type="checkbox" value="impresiones" {#checked_permisos_impresiones}> <label for="impresionesPerm">Impresiones</label>
+					
+					{#error_permisos}
+				</div>
+			</div>
+		<div class="col s12">
+			<button class="waves-effect btn waves-light blue" id="btnGuardar" name="btnGuardar" type="submit" value="Guardar">Guardar</button>
+			<a href="./"><button type="button" class="waves-effect btn waves-light blue">Salir</button></a>		
+		</div>
 
-					<li>
-						<div class="unico">
-							<label>Permisos<span>*</span></label>
-													
-								<br/><br/><input id="cursosPerm" name="cursosPerm" type="checkbox" value="cursos" {#checked_permisos_cursos}>Curso/Taller/Facilitador
-								
-								<br/><input id="personasPerm" name="personasPerm" type="checkbox" value="personas" {#checked_permisos_personas}>Persona/Participante
-								
-								
-								<br/><input id="documentosPerm" name="documentosPerm" type="checkbox" value="documentos" {#checked_permisos_documentos}>Documentos
-								
-								<br/><input id="impresionesPerm" name="impresionesPerm" type="checkbox" value="impresiones" {#checked_permisos_impresiones}>Impresiones	
-						</div>
-						
-						{#error_permisos}
-					</li/>
-				</ul>
-	
-			</div>	
-
+	</form>
 </div>
 	
-		<div class="botones">	
-			<button class="waves-effect btn waves-light blue" id="btnGuardar" name="btnGuardar" type="submit" value="Guardar">Guardar</button>
-			<a href="./"><button class="waves-effect btn waves-light blue">Salir</button></a>		
-		</div>
-	
 		
-		
-	</form>
