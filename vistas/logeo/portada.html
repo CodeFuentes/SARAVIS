@@ -1,11 +1,12 @@
 	<div class="header-image col s12 center-align white-text">
 		<div class="h1">
+			<img class="responsive-img" style="width: 150px;" src="media/imagenes/saravislogo.png">
 			<h1><strong>SARAVIS</strong></h1>
 			<h4><small>Software de Asistencia, Registro y Acreditación<br>de Eventos y Talleres de la Coordinación de Vinculación Social</small></h4>
 			<h5><small>UPT Aragua "Federico Brito Figueroa"</small></h5>
 		</div>
 	</div>
-	<nav>
+	<nav class="pushpin">
 	   <div class="nav-wrapper light-green">
 	     <a href="#" class="brand-logo">Bienvenido a SARAVIS</a>
 	     <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -39,7 +40,11 @@
 					<li>Múltiples ediciones de Eventos y Talleres</li>
 				</span>
 				<p class="flow-text" style="text-align: justify">
+<<<<<<< HEAD
 					
+=======
+					Nace por la necesidad de gestionar eficientemente los cursos y talleres dictados en la universidad, manejar sistemáticamente la información, proporcionar un método para verificar la validez de los certificados y al mismo tiempo generarlos fácilmente, ahorrar tiempo al no crear las listas de asistencia manualmente, y tener la capacidad de acceder a toda esta funcionalidad desde cualquier dispositivo con internet. Hoy por hoy el software cumple su propósito y le es de gran beneficio a la entera población de la universidad y otros involucrados en los cursos y talleres de la misma.
+>>>>>>> 2af0a47d4b57f79a4e761a8c8936ebd9c1b53ef1
 				</p>
 				<p class="flow-text" style="text-align: justify">
 					El uso del software está mayormente dirigido al personal de la Coordinación de Vinculación Social, sin embargo, usted puede acceder al software <a href="#!" onclick="$('#lireg').click();">registrándose</a>, y utilizar parte de la funcionalidad, a saber, registrar eventos y gestionarlos a través del software y el personal de la coordinación.
@@ -62,21 +67,25 @@
 			</div>
 		</div>
 	</div>
-	<footer class="page-footer teal darken-2 ">
-	  <div class="container">
+	<footer class="page-footer light-green ">
+	<!-- teal darken-2 -->
+	  <div style="padding: 0 50px;">
 	    <div class="row">
+	      <div class="col l4 s12">
+	      	<img class="responsive-img" src="media/imagenes/arrau4.png">
+	      </div>
 	      <div class="col l4 s12">
 	        <h5 class="white-text">Enlaces relacionados</h5>
 	        <ul>
-	          <li><a class="grey-text text-lighten-3" href="http://www.upta.edu.ve/">UPT Aragua - Página Principal</a></li>
-	          <li><a class="grey-text text-lighten-3" href="http://www.vinssoft.upta.edu.ve/">VINSSOFT - Sistema de Gestión de Eventos de la UPT Aragua</a></li>
+	          <li><div class="fa fa-caret-right white-text">&nbsp;</div><a class="grey-text text-lighten-3" href="http://www.upta.edu.ve/">UPT Aragua - Página Principal</a></li>
+	          <li><div class="fa fa-caret-right white-text">&nbsp;</div><a class="grey-text text-lighten-3" href="http://www.vinssoft.upta.edu.ve/">VINSSOFT - Sistema de Gestión de Eventos de la UPT Aragua</a></li>
 	        </ul>
 	      </div>
 	      <div class="col l4 s12">
 	      	<h5>&nbsp;</h5>
 	        <ul>
-	        	<li><a class="grey-text text-lighten-3" href="http://www.arrau.upta.edu.ve/">ARRAU - Comunidad de Programadores</a></li>
-	        	<li><a class="grey-text text-lighten-3" href="http://www.dace.upta.edu.ve/">DACE - Gestión del Rendimiento Académico UPT Aragua</a></li>
+	        	<li><div class="fa fa-caret-right white-text">&nbsp;</div><a class="grey-text text-lighten-3" href="http://www.arrau.upta.edu.ve/">ARRAU - Comunidad de Programadores</a></li>
+	        	<li><div class="fa fa-caret-right white-text">&nbsp;</div><a class="grey-text text-lighten-3" href="http://www.dace.upta.edu.ve/">DACE - Gestión del Rendimiento Académico UPT Aragua</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -289,3 +298,21 @@
                    	}
 
                  </script>
+<script>
+	$(document).ready(function(){
+	    $('.pushpin').pushpin({
+	      top: 600,
+	      offset: 0
+	    });
+
+  $('.pushpin').each(function() {
+    var $this = $(this);
+    var $target = $('#' + $(this).attr('data-target'));
+    $this.pushpin({
+      top: $target.offset().top,
+      bottom: $target.offset().top + $target.outerHeight() - $this.height()
+    });
+  });
+        
+	  });
+</script>
