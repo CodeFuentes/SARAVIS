@@ -50,7 +50,7 @@
 
 				</p> -->
 			</div>
-			<div class="col s4">
+			<div class="col s4" onload="eventosPasados()">
 				<h5><i class="fa fa-calendar"></i> Próximos Eventos</h5>
 					{#htmlListado1}
 				<div class="divider"></div><br>
@@ -108,7 +108,7 @@
 					<div class="error">{#error_clave}</div>
 				</div>
 					<div class="error">{#error_usuarioClave}</div>
-				<!--	<div id="error" class="error" style="display:none">Error en el acceso.</div> -->
+					<div id="error" class="error" style="display:none">Error en el acceso.</div>
 			</div>	
 
 			<div class="botones right-align">
@@ -124,12 +124,12 @@
 	<div id="contactoModal" class="modal hoverable">
 		<div class="modal-content white-text light-green darken-1">
 			<!-- <img src="media/imagenes/patterns/greenpolygons.jpg"> -->
-			<h5 class="modal-title">Registrarse</h5>
+			<h5 class="modal-title">Contacto</h5>
 		</div>
 	
 		<div class="modal-content">
-			<!-- <form  method="POST" name="registro" action="?ctrl=logeo&acc=guarRegi" autocomplete="off">-->
-			<form name="contacto" autocomplete="off">
+			<!--<form  method="POST" name="contacto" action="?ctrl=logeo&acc=guarRegi" autocomplete="off"> -->
+			<form autocomplete="off">
 				<div class="input-field">
 					<div>
 						<input id="asuntoContacto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" required="" aria-required="true" />
@@ -147,12 +147,13 @@
 
 				<div class="botones right-align">
 				
-					<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="button" name="enviarBtn" onclick="contactanos()">Solicitar Acceso</button>
+					<input id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="button" name="ingresarBtn" onclick="contactanos()" value="Enviar">
 					<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#contactoModal').closeModal();">Cerrar</a>
 				</div>
 			</form>
 		</div>
 	</div>
+
 
 	<div id="registroModal" class="modal hoverable">
 		<div class="modal-content white-text light-green darken-1">
@@ -161,8 +162,8 @@
 		</div>
 	
 		<div class="modal-content">
-			<!-- <form  method="POST" name="registro" action="?ctrl=logeo&acc=guarRegi" autocomplete="off">-->
-			<form name="registro" autocomplete="off">
+		<!--	<form  method="POST" name="registro" action="?ctrl=logeo&acc=guarRegi" autocomplete="off">-->
+		
 				<div class="input-field">
 					<div>
 						<input id="asunto" type="text" name="asunto" autocomplete="off" placeholder="Asunto" class="validate" required="" aria-required="true" />
@@ -180,10 +181,10 @@
 
 				<div class="botones right-align">
 				
-					<button id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="button" name="enviarBtn" onclick="registrar()">Solicitar Acceso</button>
+					<input id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="button" name="ingresarBtn" onclick="registrarse()" value="Solicitar Acceso">
 					<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#registroModal').closeModal();">Cerrar</a>
 				</div>
-			</form>
+			
 		</div>
 	</div>
 
@@ -230,65 +231,61 @@
                         })
                         .done(function(data){
                             if(data==1) window.location= './';
-                          //  else $('#error').css("display", '');
-                          	else notificacion("Error en el acceso.");
+                            else $('#error').css("display", '');
                         })
                         .fail(function(data){})
                         .always(function(data){ });    
                     }
 
-                    function contactanos(){
-                    	var mensaje = $('#mensajeContacto').val();
-                 		var asunto = $('#asuntoContacto').val();
-                 		var correo  = $('#correoContacto').val();
+                   	function registrarse(){
+                   		var asunto = $("#asunto").val();
+                   		var mensaje = $("#mensaje").val();
+                   		var correo = $("#correo").val();
+                   		notificacion("Enviando Solicitud.");
 
-                 		notificacion("Enviando Mensaje...");
-                 		
-                 		$.ajax({
-                 			type: 'POST',
-                 			url: '?ctrl=logeo&acc=guarRegi',
-                 			data: {asunto: asunto, mensaje: mensaje, correo: correo},
-                 		})
-                 		.done(function(data){
-                 			if(data==1) {
-                 				notificacion("Mensaje Enviado.");
-                 				$('#mensajeContacto').val("");
-                 				$('#asuntoContacto').val("");
-                 				$('#correoContacto').val("");
-                 			}
-                 			else notificacion("Error al enviar el Mensaje.");
-                 		})
-                 		.fail(function(data){
+                   		 $.ajax(
+                        {
+                            type : 'POST',
+                   			url : '?ctrl=logeo&acc=guarRegi',
+                   			data : {asunto: asunto, mensaje: mensaje, correo: correo},
+                        })
 
-                 		});
-                    }
+                        .done(function(data){
+	                          if(data==1){
+	                   				notificacion("Solicitud Enviada.");
+	                   				$("#asunto").val("");
+	                   				$("#mensaje").val("");
+	                   				$("#correo").val("");
+	                   			}
+	                   			else notificacion("Error al Enviar el Mensaje.");
+                        })
+                        .fail(function(data){})
+                        .always(function(data){ });  
 
-                 	function registrar(){
-                 		var mensaje = $('#mensaje').val();
-                 		var asunto = $('#asunto').val();
-                 		var correo  = $('#correo').val();
+            
+                   	}
 
-                 		notificacion("Enviando Mensaje...");
+                   	function contactanos(){
+                   		var asunto = $("#asuntoContacto").val();
+                   		var mensaje = $("#mensajeContacto").val();
+                   		var correo = $("#correoContacto").val();
+                   		notificacion("Enviando Solicitud.");
+                   		$.ajax({
+                   			type : 'POST',
+                   			url : '?ctrl=logeo&acc=guarRegi',
+                   			data : {asunto: asunto, mensaje: mensaje, correo: correo},
+                   		})
+                   		.done(function(data){
+                   			if(data==1){
+                   				notificacion("Solicitud Enviada.");
+                   				$("#asuntoContacto").val("");
+                   				$("#mensajeContacto").val("");
+                   				$("#correoContacto").val("");
+                   			}
+                   			else notificacion("Error al Enviar el Mensaje.");
 
-                 		$.ajax({
-                 			type: 'POST',
-                 			url: '?ctrl=logeo&acc=guarRegi',
-                 			data: {asunto: asunto, mensaje: mensaje, correo: correo},
-                 		})
-                 		.done(function(data){
-                 			if(data==1) {
-                 				notificacion("Mensaje Enviado.");
-                 				$('#mensaje').val("");
-                 				$('#asunto').val("");
-                 				$('#correo').val("");
-                 			}
-                 			else notificacion("Error al enviar el Mensaje.");
-                 		})
-                 		.fail(function(data){
-
-                 		});
-                 	}
-
-                 	
+                   		})
+                   		.fail(function(data){});
+                   	}
 
                  </script>
