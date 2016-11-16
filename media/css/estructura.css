@@ -19,10 +19,12 @@ span.option {
 .header-image {
 	background: url(../imagenes/bg.jpg) no-repeat center;
 	background-size: 100% auto;
+	height: 600px;
+	vertical-align: middle;
 }
 
 .header-image .h1{
-	padding: 14% 0;
+	padding-top: 40px;
 }
 
 .header-image h1, .header-image h3 {
