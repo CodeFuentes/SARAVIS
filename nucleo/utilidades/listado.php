@@ -88,6 +88,7 @@
 
 		public function generarListado()
 		{
+			header('Content-Type:text/html;charset=utf-8');
 			$this->_htmlListado .= '<table class="striped"><thead><tr>';
 
 			foreach($this->_titulos as $valor)
@@ -192,6 +193,7 @@
 
 		public function listado()
 		{
+			header('Content-Type:text/html;charset=utf-8');
 			$this->_htmlListado .= '<table class="striped"><thead><tr>';
 
 			foreach($this->_titulos as $valor)
