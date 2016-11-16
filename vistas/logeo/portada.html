@@ -16,7 +16,7 @@
 	     </ul>
 	   </div>
 	 </nav>
-	<div class="container main">
+	<div class="main" style="padding: 0 5vw;">
 		<div class="row">
 			<br>
 			<div class="col s8">	
@@ -25,7 +25,7 @@
 					Es el Software de Asistencia, Registro y Acreditación de Cursos y Talleres de la Coordinación de Vinculación Social para la Universidad Politécnica Territorial del Estado Aragua "Federico Brito Figueroa", desarrollado por la Comunidad de Programadores Arrau.
 				</p>
 
-				<h5>Funcionalidad</h5>
+				<h5>¿Qué ofrece el software?</h5>
 
 				<p class="flow-text" style="text-align: justify;">
 					SARAVIS cubre la siguiente funcionalidad:
@@ -39,6 +39,9 @@
 					<li>Múltiples ediciones de Eventos y Talleres</li>
 				</span>
 				<p class="flow-text" style="text-align: justify">
+					
+				</p>
+				<p class="flow-text" style="text-align: justify">
 					El uso del software está mayormente dirigido al personal de la Coordinación de Vinculación Social, sin embargo, usted puede acceder al software <a href="#!" onclick="$('#lireg').click();">registrándose</a>, y utilizar parte de la funcionalidad, a saber, registrar eventos y gestionarlos a través del software y el personal de la coordinación.
 				</p>
 
@@ -47,12 +50,15 @@
 
 				</p> -->
 			</div>
-			<div class="col s4">
+			<div class="col s4" onload="eventosPasados()">
 				<h5><i class="fa fa-calendar"></i> Próximos Eventos</h5>
-
-				<hr>
+					{#htmlListado1}
+				<div class="divider"></div><br>
 				<h5>Eventos Pasados</h5>
-				<!-- {#htmlListado} -->
+				 {#htmlListado}
+				<div class="divider"></div><br>
+				<img class="responsive-img" src="media/imagenes/pueblovictorioso.png">
+				<img class="responsive-img" src="media/imagenes/portada.jpg">
 			</div>
 		</div>
 	</div>
@@ -226,6 +232,33 @@
                         })
                         .fail(function(data){})
                         .always(function(data){ });    
+                    }
+
+                    function eventosProximos(){
+                    	$.ajax(
+                        {
+                            type: 'POST',
+                            url: '?ctrl=logeo&acc=proximos',
+                        })
+                        .done(function(data){
+                      
+                        })
+                        .fail(function(data){})
+                        .always(function(data){ }); 
+                    }
+
+                    function eventosPasados(){
+                    	$.ajax(
+                        {
+                            type: 'POST',
+                            url: '?ctrl=logeo&acc=pasados',
+     
+                        })
+                        .done(function(data){
+                            console.log(data);
+                        })
+                        .fail(function(data){})
+                        .always(function(data){ }); 
                     }
 
                  </script>

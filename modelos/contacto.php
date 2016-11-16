@@ -1,5 +1,5 @@
 <?php
-
+set_time_limit(500);
 require_once 'persistencias/contactoPersistencia.php';
 include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 	
@@ -92,14 +92,15 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 
 		public function enviarCertificado()
 		{
-			//postmaster@localhost
-		  	$mail = new PHPMailer();
+			
+			$mail = new PHPMailer();
 			
 			$mail->isSMTP();                                      // Set mailer to use SMTP
+			$mail->CharSet = "UTF-8"; 
 			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 			$mail->SMTPAuth = true;                               // Enable SMTP authentication
-			$mail->Username = 'saravis.upta@gmail.com';                 // SMTP username
-			$mail->Password = 'SARAVIS2016@';                           // SMTP password
+			$mail->Username = 'ugueto.luis19@gmail.com';                 // SMTP username
+			$mail->Password = 'LuisUgueto...';                           // SMTP password
 			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 			$mail->Port = 587;                                    // TCP port to connect to
 
@@ -108,22 +109,20 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 
 			//$email = "blink242@outlook.com";
 			//$email1 = "codefuentes@outlook.com";
-			$email2 = "saravis.upta@gmail.com";
-
 
 			//$mail->addAddress($email);         // Add attachments
 			//$mail->addAddress($email1);
-			$mail->addAddress($this->_correo);
-        	$mail->AddAttachment('recursos/'.$this->_archivo);
-			    // Optional name
-			$mail->isHTML(true);                                  // Set email format to HTML
-
+                           // Set email format to HTML
+			$mail->IsHTML(true);
 			$mail->Subject = ''.$this->_asunto;
-			$mail->Body    = '<b>'.$this->_mensaje;
+			$mail->Body    = ''.$this->_mensaje;
+			$mail->addAddress($this->_correo);
+        	$mail->AddAttachment('recursos/Certificado.pdf', 'Certificado.pdf');
+			    // Optional name
+	
 
 	     	$id_usuario = $_SESSION['session']['id'];
-		    $mensaje = new contactoPersistencia();
-		    $mensaje = $mensaje->registrarMensaje($id_usuario, $this->_asunto, $this->_mensaje);
+		  
 		    $id = $this->_idEdicion;
 			if(!$mail->send()) {
 				echo "<script>

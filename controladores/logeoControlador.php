@@ -26,6 +26,15 @@ require_once 'modelos/contacto.php';
 
 				break;
 
+				case 'pasados':
+					self::_pasados();
+					break;
+
+				case 'proximos':
+					self::_proximos();
+					break;
+
+
 				default:
 
 					self::_mostrarLogeo();
@@ -53,14 +62,33 @@ require_once 'modelos/contacto.php';
 				self::_mostrarFormInicioSession();
 			}
 		}
+
+		public function _pasados(){
+			$array = edicion::eventosPasados();
+			return $array;
+		}
+
+		public function _proximos(){
+			$arrayCursos = edicion::eventosProximos();
+			$titulos = array('Curso','Descripci&oacute;n','Tipo', 'Duracion', 'Inicio', 'Final');
+				$linkBase = '?ctrl=curso&acc=proximos';
+					
+				$listadoGenerador = new listado($arrayCursos, $titulos, $linkBase);
+					
+
+			$htmlListado = $listadoGenerador->eventosPasados();
+	
+			vistaGestor::agregarDiccionario('htmlListado1', $htmlListado);		
+			vistaGestor::agregarArchivoCss('formularios');
+		}
 		
 		private function _mostrarFormInicioSession()
 		{
 			// vistaGestor::agregarArchivoCss('formularios');
 			// vistaGestor::agregarArchivoCss('indexModificador');
-				$arrayCursos = edicion::historialEdicionesSimple();
+				$arrayCursos = edicion::eventosPasados();
 
-				$titulos = array('Curso', 'Tipo', 'Duracion', 'Final');
+				$titulos = array('Curso/Taller', 'Fecha');
 				$linkBase = '?ctrl=curso&acc=historial';
 					
 				$listadoGenerador = new listado($arrayCursos, $titulos, $linkBase, 0, 1);
@@ -86,11 +114,9 @@ require_once 'modelos/contacto.php';
 							$listadoGenerador->agregarFila(
 								array (
 										$edicion->dameNombreCurso(),
-										$edicion->dameDescripcionCurso(),
-										ucfirst($edicion->dameTipoLegible()),
-										ucfirst($edicion->dameDuracion()),
 										invertirFecha($edicion->dameFechaInicio()),
-										invertirFecha($edicion->dameFechaFin()),
+										
+										
 										)
 								, '');
 
@@ -98,9 +124,51 @@ require_once 'modelos/contacto.php';
 						}
 					}
 
-			$htmlListado = $listadoGenerador->generarListado();
+			$htmlListado = $listadoGenerador->listado();
 			
-			vistaGestor::agregarDiccionario('htmlListado', $htmlListado);		
+			vistaGestor::agregarDiccionario('htmlListado', $htmlListado);	
+
+			
+			$arrayCursos = edicion::eventosProximos();
+
+				$titulos = array('Curso/Taller', 'Fecha');
+				$linkBase = '?ctrl=curso&acc=historial';
+					
+				$listadoGenerador = new listado($arrayCursos, $titulos, $linkBase, 0, 1);
+					
+					if(!empty($arrayCursos))
+					{	
+						$i = 0;
+
+						foreach($arrayCursos as $edicion)
+						{	
+							if ($i == 5) break;			
+							$facilitador = $edicion->dameFacilitador();
+							
+							if(!empty($facilitador))
+							{
+								$nombreFacilitador = $facilitador->dameNombre();
+							}
+							else
+							{
+								$nombreFacilitador = 'No asignado';
+							}
+							
+							$listadoGenerador->agregarFila(
+								array (
+										$edicion->dameNombreCurso(),
+										invertirFecha($edicion->dameFechaFin()),
+										
+										)
+								, '');
+
+							$i++;
+						}
+					}
+
+			$htmlListado = $listadoGenerador->listado();
+			
+			vistaGestor::agregarDiccionario('htmlListado1', $htmlListado);	
 
 			vistaGestor::documentoNormal('', array('vistas/logeo/formInicioSession.html', 'vistas/logeo/portada.html'));
 		}

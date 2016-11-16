@@ -54,6 +54,15 @@ require_once 'modelos/edicion.php';
 				case 'historial':
 					self::_historial();
 					break;
+
+				case 'pasados':
+					self::_pasados();
+					break;
+
+				case 'proximos':
+					self::_proximos();
+					break;
+
 				default:
 
 					self::_formularioBusqueda();
@@ -413,6 +422,26 @@ require_once 'modelos/edicion.php';
 				self::_formularioBusqueda();
 			}
 		}
+
+		public function _pasados(){
+			$array = edicion::eventosPasados();
+			return $array;
+		}
+
+		public function _proximos(){
+			$arrayCursos = edicion::eventosProximos();
+			$titulos = array('Curso','Descripci&oacute;n','Tipo', 'Duracion', 'Inicio', 'Final');
+				$linkBase = '?ctrl=curso&acc=proximos';
+					
+				$listadoGenerador = new listado($arrayCursos, $titulos, $linkBase, $_GET['pag'], 5);
+					
+
+			$htmlListado = $listadoGenerador->eventosPasados();
+	
+			vistaGestor::agregarDiccionario('htmlListado1', $htmlListado);		
+			vistaGestor::agregarArchivoCss('formularios');
+		}
+
 
 		private function _historial()
 		{

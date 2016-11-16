@@ -84,6 +84,9 @@
 		//***
 		//*
 		
+
+
+
 		public function generarListado()
 		{
 			
@@ -194,4 +197,7 @@
 			
 			return $this->_htmlListado;
 		}
+
+
+		
 	}

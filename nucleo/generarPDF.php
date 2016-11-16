@@ -1,6 +1,7 @@
 <?php 
 # Cargamos la librería dompdf.
 require_once 'dompdf/dompdf_config.inc.php';
+require_once 'modelos/contacto.php';
  
 # Contenido HTML del documento que queremos generar en PDF.
 
@@ -72,7 +73,7 @@ require_once 'dompdf/dompdf_config.inc.php';
 			elseif($salida == 'enviar')
 			{
 				$output = $mipdf->output();
-				file_put_contents('recursos/'.$nombre . '.pdf', $output);
+				file_put_contents('recursos/Certificado.pdf', $output);
 				$archivo = 'recursos/'.$nombre.'.pdf';
 				$archivo = ''.$nombre.'.pdf';
 				$contacto = new contacto("Certificado de Participación", "Certificado de Participación:", $correo, $archivo, $curso, $edicion);
