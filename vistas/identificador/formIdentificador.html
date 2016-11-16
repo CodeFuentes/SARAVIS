@@ -1,38 +1,25 @@
 <form method="POST" action="?ctrl=documento&acc=guarIden" enctype="multipart/form-data" autocomplete="off">
 
-<section>
-	<article>
-			<div class="formulario">
-				<ul>
+			<div class="row">
+				<div class="col s12">
 					<h5>Fondo del Identificador</h5>
 						
-					<li>
-						<div class="complemento">
-							<label>Fondo actual</label>
-						</div>
-						<div class="unico">
-							<img width="300px" height="220px" src="{#link_imagen_fondo}"/>
-						</div>
-					</li>
-					<li>
-						<div class="unico">
-							<input id="filaFondoDoc" name="filaFondoDoc" type="file" accept="image/*">
-							{#error_filaFondoDoc}
-						</div>
-						<div class="unico">
+					<div class="col s6">
+							<label>Fondo actual</label><br>
+							<img width="300px" height="220px" src="{#link_imagen_fondo}"/><br>
+
+							<input id="filaFondoDoc" name="filaFondoDoc" type="file" accept="image/*"><br>
+							{#error_filaFondoDoc}<br>
+
 							<label class="nota">Dimensiones: 1100 pixeles de ancho por 800 pixeles de alto preferiblemente</label>
-						</div>
-					</li>
-				</ul>
+					</div>
+					<div class="col s12">
+					<br>
+						<button class="btn waves-effect waves-light blue" id="guardarIdentificador" name="guardarIdentificador" type="submit">Guardar</button>
+						<a href="./?ctrl=edicion&acc=menuEdic"><button type="button" class="waves-effect btn waves-light blue">Salir</button></a>
+					</div>
+				</div class="col s12">
 			</div>
 
-	</article>
-
-</section>
-
-	<div class="botones">
-		<input id="guardarIdentificador" name="guardarIdentificador" type="submit" value="Guardar">
-		<a href="./?ctrl=edicion&acc=menuEdic"><button class="waves-effect btn waves-light blue">Salir</button></a>
-	</div>
 	
 	</form>

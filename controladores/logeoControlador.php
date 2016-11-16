@@ -49,6 +49,7 @@ require_once 'modelos/contacto.php';
 			$correo = $_POST['correo'];
 			$contacto = new contacto($asunto, $mensaje, $correo,'','','');
 			$resultado = $contacto->enviarCorreo();
+			echo $resultado;
 		}
 
 		private function _mostrarLogeo()

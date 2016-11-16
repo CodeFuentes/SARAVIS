@@ -186,13 +186,9 @@
 
 			self::$_codigoImprimir .= '</head>';
 			self::$_codigoImprimir .= '<body>';
-			self::$_codigoImprimir .= '<script>
-				$(document).ready(function(){
-						eventosPasados();
-				});
-			</script>';
+		
 			self::$_codigoImprimir .= '<header>';
-			self::$_codigoImprimir .= '<div class="row">';
+			/*self::$_codigoImprimir .= '<div class="row">';
 			if($_SESSION['session']['conectado'] == "SI") {
 				self::$_codigoImprimir .= '
 				<div class="col s9 offset-s3">
@@ -203,7 +199,7 @@
 				<div class="col s12 center-align">
 					<img src="media/imagenes/barra_n.png">
 				</div>';
-			}
+			}*/
 			self::$_codigoImprimir .= '
 				
 				<div class="loading center-align valign-wrapper">
@@ -225,7 +221,7 @@
 			}*/
 
 			self::$_codigoImprimir .= '</div>';
-			self::$_codigoImprimir .= '</div>';
+			// self::$_codigoImprimir .= '</div>';
 
 			self::$_codigoImprimir .= '</header>';
 			// self::$_codigoImprimir .= '<hr>';
@@ -247,7 +243,7 @@
 					$misPermisos = 'Usuario';
 				}
 			
-				self::$_codigoImprimir .= '<div class="chip"><b>Usuario:</b> ' . $_SESSION['session']['nombre_completo'] . '</div> <div class="chip"> <b>Nivel:</b> ' . $misPermisos . '</div>';
+				self::$_codigoImprimir .= '<div class="chip"><img src="media/imagenes/usuario.png"><b>Usuario:</b> ' . $_SESSION['session']['nombre_completo'] . '</div> <div class="chip"> <b>Nivel:</b> ' . $misPermisos . '</div>';
 				self::$_codigoImprimir .= self::_cargarContenidoHtml('media/html/menu.html');
 				self::$_codigoImprimir .= '</div>';
 				self::$_codigoImprimir .= '</div>';
