@@ -152,8 +152,8 @@
 
 				<div class="botones right-align">
 				
-					<input id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="button" name="ingresarBtn" onclick="contactanos()" value="Enviar">
-					<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#contactoModal').closeModal();">Cerrar</a>
+					<input id="ingresar2" class="waves-effect waves-light btn light-green darken-1" type="button" name="ingresarBtn" onclick="contactanos()" value="Enviar">
+					<a href="#!" id="cerrarContacto" class="waves-effect waves-light btn red darken-4" onclick="$('#contactoModal').closeModal();">Cerrar</a>
 				</div>
 			</form>
 		</div>
@@ -186,8 +186,8 @@
 
 				<div class="botones right-align">
 				
-					<input id="ingresarBtn" class="waves-effect waves-light btn light-green darken-1" type="button" name="ingresarBtn" onclick="registrarse()" value="Solicitar Acceso">
-					<a href="#!" class="waves-effect waves-light btn red darken-4" onclick="$('#registroModal').closeModal();">Cerrar</a>
+					<input id="ingresar" class="waves-effect waves-light btn light-green darken-1" type="button" name="ingresarBtn" onclick="registrarse()" value="Solicitar Acceso">
+					<a href="#!" id="cerrarRegistro" class="waves-effect waves-light btn red darken-4" onclick="$('#registroModal').closeModal();">Cerrar</a>
 				</div>
 			
 		</div>
@@ -247,6 +247,7 @@
                    		var mensaje = $("#mensaje").val();
                    		var correo = $("#correo").val();
                    		notificacion("Enviando Solicitud.");
+                   		$("#ingresar").attr('disabled', true);
 
                    		 $.ajax(
                         {
@@ -261,8 +262,12 @@
 	                   				$("#asunto").val("");
 	                   				$("#mensaje").val("");
 	                   				$("#correo").val("");
+	                   				$("#ingresar").attr('disabled', false);
 	                   			}
-	                   			else notificacion("Error al Enviar el Mensaje.");
+	                   			else{ 
+	                   				notificacion("Error al Enviar el Mensaje.");
+	                   				$("#ingresar").attr('disabled', false);	               
+	                   			}
                         })
                         .fail(function(data){})
                         .always(function(data){ });  
@@ -275,6 +280,7 @@
                    		var mensaje = $("#mensajeContacto").val();
                    		var correo = $("#correoContacto").val();
                    		notificacion("Enviando Solicitud.");
+						$("#ingresar2").attr('disabled', true);
                    		$.ajax({
                    			type : 'POST',
                    			url : '?ctrl=logeo&acc=guarRegi',
@@ -286,9 +292,12 @@
                    				$("#asuntoContacto").val("");
                    				$("#mensajeContacto").val("");
                    				$("#correoContacto").val("");
+                   				$("#ingresar2").attr('disabled', false);
                    			}
-                   			else notificacion("Error al Enviar el Mensaje.");
-
+                   			else{ 
+                   				notificacion("Error al Enviar el Mensaje.");
+                   				$("#ingresar2").attr('disabled', false);
+                   			}
                    		})
                    		.fail(function(data){});
                    	}
