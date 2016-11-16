@@ -112,7 +112,7 @@
 	function iniciar(){
 		var usuario = $('#usuario').val();
 		var clave = $('#clave').val();
-		
+
 	    $.ajax(
 	    {
 	        type: 'POST',
@@ -120,12 +120,79 @@
 	        data: { usuario : usuario, clave : clave},
 	    })
 	    .done(function(data){
-	        if(data==1) window.location= './';
-	        else $('#error').css("display", '');
+	        if(data==0){
+					notificacion("Datos Erroneos.");
+					$("#usuario").val("");
+					$("clave").val("");
+				}
+				else{
+					window.location = '?';
+				}
 	    })
 	    .fail(function(data){})
 	    .always(function(data){ });    
 	}
+
+
+	function contactanos(){
+		var asunto = $("#asuntoContacto").val();
+		var mensaje = $("#mensajeContacto").val();
+		var correo = $("#correoContacto").val();
+		notificacion("Enviando Mensaje...");
+		$("#ingresar2").attr('disabled', true);
+	    $.ajax(
+	    {
+	        type: 'POST',
+	        url: '?ctrl=logeo&acc=guarRegi',
+	        data: { asunto : asunto, mensaje : mensaje, correo : correo},
+	    })
+	    .done(function(data){
+	        if(data==0){
+					notificacion("No se pudo enviar el mensaje.");
+					$("#ingresar2").attr('disabled', false);
+				}
+				else{
+					notificacion("Mensaje Enviado.");
+					$("#asuntoContacto").val("");
+					$("#mensajeContacto").val("");
+					$("#correoContacto").val("");
+					$("#ingresar2").attr('disabled', false);
+				}
+	    })
+	    .fail(function(data){})
+	    .always(function(data){ });    
+	}
+
+
+	function registrarse(){
+		var asunto = $("#asunto").val();
+		var mensaje = $("#mensaje").val();
+		var correo = $("#correo").val();
+		notificacion("Solicitando Acceso...");
+		$("#ingresar").attr('disabled', true);
+	    $.ajax(
+	    {
+	        type: 'POST',
+	        url: '?ctrl=logeo&acc=guarRegi',
+	        data: { asunto : asunto, mensaje : mensaje, correo : correo},
+	    })
+	    .done(function(data){
+	        if(data==0){
+					notificacion("No se pudo enviar el acceso.");
+					$("#ingresar").attr('disabled', false);
+				}
+				else{
+					notificacion("Solicitud de Acceso Enviada.");
+					$("#asunto").val("");
+					$("#mensaje").val("");
+					$("#correo").val("");
+					$("#ingresar").attr('disabled', false);
+				}
+	    })
+	    .fail(function(data){})
+	    .always(function(data){ });    
+	}
+
 
 	function eventosProximos(){
 		$.ajax(
