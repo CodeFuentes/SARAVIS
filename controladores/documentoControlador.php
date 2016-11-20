@@ -5,6 +5,7 @@ require_once 'modelos/edicion.php';
 require_once 'modelos/certificado.php';
 require_once 'modelos/identificador.php';
 require_once 'nucleo/generarPDF.php';
+require_once 'modelos/persona.php';
 
 	class documentoControlador
 	{
@@ -941,12 +942,12 @@ require_once 'nucleo/generarPDF.php';
 							'<b>Facilitador: </b> ' . $facilitador->dameNombre(),
 							$facilitador->dameApellido(),
 							$facilitador->dameDocumento(),
-							'<select name="imprimir_facilitador" name="imprimir_participante">
+							'<select name="imprimir_facilitador">
 								<option value="no_' . $facilitador->dameId() . '">No Enviar</option>
 								<option value="si_' . $facilitador->dameId(). '">Enviar</option>
 							</select>'
 							)
-					, '');
+					, ''); 
 					
 					$datosRelacionados = $edicion->dameRelacionParticipantes();
 					
@@ -1142,7 +1143,7 @@ require_once 'nucleo/generarPDF.php';
 					$existeSi = 0;
 				
 					list($preguntaF, $idF) = explode('_', $_POST['imprimir_facilitador']);
-					
+
 					$nombre = $facilitador->dameNombre();
 					$apellido = $facilitador->dameApellido();
 						
@@ -1178,6 +1179,7 @@ require_once 'nucleo/generarPDF.php';
 						if($pregunta == 'si')
 						{
 							$participante = $edicion->buscarParticipante($idPersona);
+							$participante = (empty($participante)) ? $facilitador : $edicion->buscarParticipante($idPersona);
 							
 							if($participante != NULL)
 							{
@@ -1243,6 +1245,7 @@ require_once 'nucleo/generarPDF.php';
 	
 			if(!empty($curso) and !empty($edicion) and !empty($_POST))
 			{
+
 				$certificado = $edicion->dameCertificado();
 				$facilitador = $edicion->dameFacilitador();
 				$colParticipantes = $edicion->dameColParticipantes();
@@ -1256,7 +1259,10 @@ require_once 'nucleo/generarPDF.php';
 					
 					$nombre = $facilitador->dameNombre();
 					$apellido = $facilitador->dameApellido();
-						
+					$persona = new Persona();
+					$personaa =  $persona->cargarPersona($facilitador->dameId());
+					
+
 					$nombreCompletoFacilitador = $nombre . ' ' . $apellido;
 					
 					if($preguntaF == 'si') {
@@ -1266,7 +1272,7 @@ require_once 'nucleo/generarPDF.php';
 						
 						$nombreCompleto = $nombre . ' ' . $apellido;
 						$documento = $facilitador->dameDocumento();
-
+						$correo = $personaa->dameCorreo();
 						$idPersona = $facilitador->dameId();
 
 						$imprimir[] = array('nombre' => $nombreCompleto, 'documento' => $documento, 'tipo' => 'facilitador', 'id' => $idPersona);
@@ -1307,8 +1313,9 @@ require_once 'nucleo/generarPDF.php';
 						}
 					}
 					
-					if($existeSi != 0)
+					if($existeSi > 0)
 					{
+						
 						$codigoGenerado = $curso->dameId() . '-' . $edicion->dameId();
 
 

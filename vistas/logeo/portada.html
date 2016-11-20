@@ -1,8 +1,8 @@
 	<div class="header-image col s12 center-align white-text">
 		<div class="h1">
-			<img class="responsive-img" style="width: 150px;" src="media/imagenes/saravislogo.png">
+			<img class="responsive-img" style="width: 30vh;" src="media/imagenes/saravislogo.png">
 			<h1><strong>SARAVIS</strong></h1>
-			<h4><small>Software de Asistencia, Registro y Acreditación<br>de Eventos y Talleres Dictados en la </small></h4>
+			<h4><small>Software Genérico para el registro, acreditación y certificación <br>de cursos y talleres dictados en la </small></h4>
 			<h3><small>UPT Aragua "Federico Brito Figueroa"</small></h3>
 		</div>
 	</div>
@@ -203,10 +203,10 @@
 			<p class="flow-text">
 				Ingrese el código escrito en el certificado para verificar su existencia en el sistema
 			</p>
-		<form id="target" method="POST" action="verificacion.php" name="verificacion" autocomplete="off">
+		<form id="target" method="GET" action="verificacion.php" name="verificacion" autocomplete="off">
 			<div class="input-field">
 				<div>
-					<input id="codigoo" type="text" name="codigo" autocomplete="off" placeholder="Código de Verificación" class="validate"
+					<input id="codigo" type="text" name="id" autocomplete="off" placeholder="Código de Verificación" class="validate"
 					required="" aria-required="true" />
 				</div>
 

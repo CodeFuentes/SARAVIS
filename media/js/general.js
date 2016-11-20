@@ -123,7 +123,7 @@
 	        if(data==0){
 					notificacion("Datos Erroneos.");
 					$("#usuario").val("");
-					$("clave").val("");
+					$("#clave").val("");
 				}
 				else{
 					window.location = '?';
@@ -173,7 +173,7 @@
 	    $.ajax(
 	    {
 	        type: 'POST',
-	        url: '?ctrl=logeo&acc=guarRegi',
+	        url: '?ctrl=logeo&acc=solicitar',
 	        data: { asunto : asunto, mensaje : mensaje, correo : correo},
 	    })
 	    .done(function(data){

@@ -10,31 +10,38 @@ require_once 'nucleo/utilidades/catalogoFunciones.php';
 require_once 'nucleo/utilidades/listadoGenerador.php';
 require_once 'modelos/curso.php';
 require_once 'modelos/edicion.php';
+require_once 'modelos/persona.php';
 
-$id = $_POST['codigo'];
+
+$id = $_GET['id'];
 //codigo Prueba = 1-9-127
 $codigoCorrecto = 'NO';
 
 list($idCurso, $idEdicion, $idPersona) = explode('-', $id);
 
 $curso = curso::cargarCurso($idCurso);
+	
 
 if(!empty($curso))
 {
 
 	$edicion = $curso->seleccionarEdicion($idEdicion);
-				
+	
 	if(!empty($edicion))
 	{
+
 		if($edicion->dameEstado() == 'bloqueada')
 		{
+
 			$colParticipantes = $edicion->dameColParticipantes();
 			
 			$persona = $edicion->buscarParticipante($idPersona);
+			$facilitador = $edicion->dameFacilitador();
 							
+			$persona = (empty($persona)) ? $facilitador : $edicion->buscarParticipante($idPersona);
+			
 			if(!empty($persona))
 			{
-
 				$codigoCorrecto = 'CORRECTO';
 			}
 		}

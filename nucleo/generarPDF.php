@@ -61,12 +61,7 @@ require_once 'modelos/contacto.php';
 			}
 			elseif($salida == 'descargar')
 			{
-				$archivo = $mipdf ->stream($nombre . '.pdf');
-				
-
-				$contacto = new contacto("Certificado de Participación", "Certificado de Participación:", $correo);
-
-				$resultado = $contacto->enviarCorreo();
+			
 				$mipdf ->stream('recursos/'.$nombre . '.pdf');
 				
 			}

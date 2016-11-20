@@ -116,7 +116,7 @@ include("nucleo/qrcode.php");
 			//Instanciando Librería para hacer el codigo QR.	
 			$GBD = new baseDatosGestor();				
 
-			$miFondo = 'background: url("recursos/certificados/' . $this->_fondo . '") no-repeat';
+			$miFondo = 'background: url("recursos/certificados/' . $this->_fondo . '") no-repeat center center fixed';
 		
 			$valorLogoExtra = $this->dameLogoExtra();
 			$qr = '<div id="qr"></div>';
@@ -266,7 +266,7 @@ include("nucleo/qrcode.php");
 					<div class="codigoQR">
 						<img src='.$link.' border="0"/>
 					</div>
-					<div class="codigoGenerado" style="font-size: 20px; margin: 0px;">C&oacute;digo de<br>Verificaci&oacute;n:<br>' . $codigoGenerado . '-' . $idPersona .'</div>
+					<div class="codigoGenerado" style="font-size: 15px; margin: 0px;">C&oacute;digo de<br>Verificaci&oacute;n:<br>' . $codigoGenerado . '-' . $idPersona .'</div>
 				</div>';
 				}
 			}
@@ -293,7 +293,6 @@ include("nucleo/qrcode.php");
 					}
 					
 					body { 
-						
 						margin: 0px;
 						' . $miFondo .'
 					}

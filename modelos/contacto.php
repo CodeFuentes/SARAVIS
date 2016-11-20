@@ -49,43 +49,52 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 		
 		public function solicitarAcceso(){
 			//postmaster@localhost
+		  	//postmaster@localhost
 		  	$mail = new PHPMailer();
 			
 			$mail->isSMTP();                                      // Set mailer to use SMTP
-			$mail->SMTPDebug = 0;
 			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 			$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	//		$mail->Username = 'saravis.upta@gmail.com';                 // SMTP username
-	//		$mail->Password = 'SARAVIS2016@';                           // SMTP password
-			$mail->SMTPSecure = 'tls';
-			$mail->Port = 587;// TCP port to connect to
+			$mail->Username = 'ugueto.luis19@gmail.com';                 // SMTP username
+			$mail->Password = 'LuisUgueto...';                           // SMTP password
+			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+			$mail->Port = 587;                                    // TCP port to connect to
 
-			$mail->From = 'ugueto.luis19@gmail.com';
+			$mail->From = 'saravis.upta@gmail.com';
 			$mail->FromName = 'APP SARAVIS';
 
 			//$email = "blink242@outlook.com";
 			//$email1 = "codefuentes@outlook.com";
+			$email2 = "saravis.upta@gmail.com";
+
 
 			//$mail->addAddress($email);         // Add attachments
 			//$mail->addAddress($email1);
-			$mail->addAddress($this->_correo);
+			$mail->addAddress('ugueto.luis19@gmail.com');         // Add attachments
+			//$mail->addAddress($this->_correo);
 			    // Optional name
 			$mail->isHTML(true);                                  // Set email format to HTML
 
 			$mail->Subject = ''.$this->_asunto;
-			$mail->Body    = '<b>'.$this->_mensaje;
-			if(!$mail->send()) {
-				echo "<script>
-						alert('Mensaje No Enviado.');
+			$mail->Body    = '<h1 style="color:red;">Un usuario quiere tener acceso a la aplicacion con el correo: '.$this->_correo.' <br>Y ha dejado este mensaje: '.$this->_mensaje.'</h1>';
+
+		    if(!$mail->send())
+		    {
+		    	echo 0;
+				/*echo "<script>
+						alert('Enviando mensaje...');
 						window.location='?';
-					</script>";
-			
-			} else {
-				echo "<script>
-						alert('Mensaje Enviado.');
+					</script>";*/
+		    }
+		    else
+		    {
+		    	echo 1;
+		    	/*
+		    	echo "<script>
+						alert('Enviando mensaje...');
 						window.location='?';
-					</script>";
-			}
+					</script>"; */
+		    }
 
 		}
 
@@ -127,12 +136,12 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 			if(!$mail->send()) {
 				echo "<script>
 						alert('Certificado no Enviado.');
-						window.location='?ctrl=edicion&acc=menuEdic&id=$id';
+						window.location='?ctrl=documento&acc=envCert';
 					</script>";
 			} else {
 				echo "<script>
 						alert('Certificado Enviado.');
-						window.location='?ctrl=edicion&acc=menuEdic&id=$id';
+						window.location='?ctrl=documento&acc=envCert';
 					</script>";
 			}
 		}
@@ -158,18 +167,18 @@ include 'nucleo/PHPMailer/PHPMailerAutoload.php';
 			$email2 = "saravis.upta@gmail.com";
 
 
-			//$mail->addAddress($email);         // Add attachments
+			$mail->addAddress('ugueto.luis19@gmail.com');         // Add attachments
 			//$mail->addAddress($email1);
-			$mail->addAddress($this->_correo);
+			//$mail->addAddress($this->_correo);
 			    // Optional name
 			$mail->isHTML(true);                                  // Set email format to HTML
 
 			$mail->Subject = ''.$this->_asunto;
-			$mail->Body    = '<b>'.$this->_mensaje;
+			$mail->Body    = '<h1 style="color:red;">Un usuario quiere comunicarse con usted con el correo: '.$this->_correo.' <br>Y ha dejado este mensaje: '.$this->_mensaje.'</h1>';
 
-	     	$id_usuario = $_SESSION['session']['id'];
-		    $mensaje = new contactoPersistencia();
-		    $mensaje = $mensaje->registrarMensaje($id_usuario, $this->_asunto, $this->_mensaje);
+	     	// $id_usuario = $_SESSION['session']['id'];
+		    // $mensaje = new contactoPersistencia();
+		    // $mensaje = $mensaje->registrarMensaje($id_usuario, $this->_asunto, $this->_mensaje);
 		    if(!$mail->send())
 		    {
 		    	echo 0;

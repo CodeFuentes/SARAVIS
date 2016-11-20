@@ -6,6 +6,11 @@ span.option {
 	color: white;
 	margin: 5px 0;
 }
+
+span.list{
+	font-size: 140%;
+}
+
 .notificacion {
 	display: none;
 }
