@@ -133,11 +133,22 @@
 	    .always(function(data){ });    
 	}
 
+	function validateEmail(email) {
+	  	var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+	  	return emailReg.test( email );
+	}
+
 
 	function contactanos(){
 		var asunto = $("#asuntoContacto").val();
 		var mensaje = $("#mensajeContacto").val();
 		var correo = $("#correoContacto").val();
+
+		if(asunto.length < 10 || mensaje.length < 10 || validateEmail(correo)!= true){
+			notificacion("Error. ");
+			return;
+		}
+
 		notificacion("Enviando Mensaje...");
 		$("#ingresar2").attr('disabled', true);
 	    $.ajax(
@@ -168,6 +179,12 @@
 		var asunto = $("#asunto").val();
 		var mensaje = $("#mensaje").val();
 		var correo = $("#correo").val();
+
+		if(asunto.length < 10 || mensaje.length < 10 || validateEmail(correo)!= true){
+			notificacion("Error. ");
+			return;
+		}
+		
 		notificacion("Solicitando Acceso...");
 		$("#ingresar").attr('disabled', true);
 	    $.ajax(
