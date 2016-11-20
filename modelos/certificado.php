@@ -203,7 +203,7 @@ include("nucleo/qrcode.php");
 //link
 			$explode = $GBD->dameURL();
 			$enlace = explode("?", $explode);
-			$linkk = $enlace[0]."verificacionCod.php?id=".$codigoGenerado."-".$idPersona;
+			$linkk = $enlace[0]."verificacion.php?id=".$codigoGenerado."-".$idPersona;
 			qrcode::link($linkk);
 			$link = qrcode::get_link();
 
