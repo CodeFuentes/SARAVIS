@@ -148,6 +148,7 @@
 			notificacion("Error. ");
 			return;
 		}
+		else{
 
 		notificacion("Enviando Mensaje...");
 		$("#ingresar2").attr('disabled', true);
@@ -171,7 +172,8 @@
 				}
 	    })
 	    .fail(function(data){})
-	    .always(function(data){ });    
+	    .always(function(data){ });   
+	    } 
 	}
 
 
@@ -184,7 +186,8 @@
 			notificacion("Error. ");
 			return;
 		}
-		
+		else{
+
 		notificacion("Solicitando Acceso...");
 		$("#ingresar").attr('disabled', true);
 	    $.ajax(
@@ -208,6 +211,7 @@
 	    })
 	    .fail(function(data){})
 	    .always(function(data){ });    
+	}
 	}
 
 
