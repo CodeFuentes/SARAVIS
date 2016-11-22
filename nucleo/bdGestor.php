@@ -21,6 +21,7 @@
 			$this->_baseDatos = (string)BD_NOMBRE;
 
 			$this->conexion = new mysqli($this->_servidor, $this->_usuario, $this->_clave, $this->_baseDatos);
+			$this->conexion->set_charset("utf8");
 			
 			if(mysqli_connect_error()) 
 			{
