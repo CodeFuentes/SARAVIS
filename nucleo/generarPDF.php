@@ -74,5 +74,10 @@ require_once 'modelos/contacto.php';
 				$contacto = new contacto("Certificado de Participación", "Certificado de Participación:", $correo, $archivo, $curso, $edicion);
 				$resultado = $contacto->enviarCertificado();
 			}
+			elseif($salida == 'cargarDocumento')
+			{
+				$output = $mipdf->output();
+				file_put_contents('recursos/certificados/ejemplo.pdf', $output);
+			}
 		}
 	}

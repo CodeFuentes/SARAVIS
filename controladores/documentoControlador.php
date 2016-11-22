@@ -526,11 +526,11 @@ require_once 'modelos/persona.php';
 			}
 
 			$nocachepdf = rand();
-			generarPDF::cargarDocumento($htmlPDF, 'recursos/certificados/ejemplo' . $nocachepdf, 'guardar');
+			generarPDF::cargarDocumento($htmlPDF, 'recursos/certificados/ejemplo', 'cargarDocumento');
 		
 			vistaGestor::agregarDiccionario('link_continuar_pdf', '?ctrl=edicion&acc=menuEdic');
 			vistaGestor::agregarDiccionario('link_modificar_pdf', '?ctrl=documento&acc=creaCert');
-			vistaGestor::agregarDiccionario('link_documento_pdf', 'recursos/certificados/ejemplo' . $nocachepdf . '.pdf');
+			vistaGestor::agregarDiccionario('link_documento_pdf', 'recursos/certificados/ejemplo.pdf');
 			
 			vistaGestor::documentoNormal('Crear Certificado', array('vistas/certificado/informacionEdicion.html', 'vistas/certificado/mostrarDocumento.html'));
 		}
