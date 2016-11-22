@@ -77,7 +77,7 @@ require_once 'modelos/contacto.php';
 			elseif($salida == 'cargarDocumento')
 			{
 				$output = $mipdf->output();
-				file_put_contents('recursos/certificados/ejemplo.pdf', $output);
+				file_put_contents($nombre.'.pdf', $output);
 			}
 		}
 	}

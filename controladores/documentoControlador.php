@@ -696,11 +696,11 @@ require_once 'modelos/persona.php';
 			vistaGestor::agregarDiccionario('finalEdicion', invertirFecha($edicion->dameFechaFin()));
 			
 			$nocachepdf = rand();
-			generarPDF::cargarDocumento($htmlPDF, 'recursos/identificadores/ejemplo' . $nocachepdf, 'guardar');
+			generarPDF::cargarDocumento($htmlPDF, 'recursos/identificadores/ejemplo', 'cargarDocumento');
 		
 			vistaGestor::agregarDiccionario('link_continuar_pdf', '?ctrl=edicion&acc=menuEdic');
 			vistaGestor::agregarDiccionario('link_modificar_pdf', '?ctrl=documento&acc=creaIden');
-			vistaGestor::agregarDiccionario('link_documento_pdf', 'recursos/identificadores/ejemplo' . $nocachepdf . '.pdf');
+			vistaGestor::agregarDiccionario('link_documento_pdf', 'recursos/identificadores/ejemplo.pdf');
 			
 			vistaGestor::documentoNormal('Crear Identificador', array('vistas/identificador/informacionEdicion.html', 'vistas/identificador/mostrarDocumento.html'));
 		}
